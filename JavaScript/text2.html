@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+
+	</body>
+	<script type="text/javascript">
+		// // 判断一个数是否是3的倍数，5的倍数 ，3和5的倍数
+		// 	var num1 = Number(prompt("请输入一个整数："));
+		// 	if (num1 % 3 == 0) {
+		// 		alert(num1 + "是3的倍数");
+		// 	} else if (num1 % 5 == 0) {
+		// 		alert(num1 + "是5的倍数");
+		// 	} else if (num1 % 3 == 0 && num1 % 5 == 0) {
+		// 		alert(num1 + "是3和5的倍数");
+		// 	} else {
+		// 		alert(num1 + "既不是3的倍数也不是5的倍数");
+		// 	}
+
+
+		// 判断一个数是否是小于0的，大于10的，0--10之间的
+		// var num2=Number(prompt("请输入一个整数"));
+		// if(num2<0){
+		// 	alert(num2+"是一个小于0的数");
+		// }else if(num2>10){
+		// 	alert(num2+"是一个大于10的数");
+		// }else {
+		// 	alert(num2+"是一个0-10之间的数");
+		// }
+
+
+
+		//猜大小
+		var num3 = Math.round(Math.random() * 100);
+		var num4;
+		// while (isNaN(num4)) { //判断num4是否为数字
+		// 	alert("请输入数字");
+		// 	num4 = Number(prompt("猜一猜"));
+		// }
+			function num() {
+				num4 =Number(prompt("猜一猜0—100 它是哪个数呢"));
+				while (num4) {
+					if (num3 > num4) {
+						alert("有点小哦，再猜大一点！");
+						num4 = Number(prompt("请再猜一下吧"));
+					} else if (num3 < num4) {
+						alert("太大啦，猜小一点吧")
+						num4 = Number(prompt("请再猜一下吧"));
+					} else {
+						break;
+					}
+				}
+				if (num4) {
+					alert("猜对啦！！就是" + num3);
+				} else {
+					alert("请输入由0-9组成的数字");
+					num();
+				}
+			}
+		num();
+		
+		
+		// while(true){
+		// 	if(num3==num4){
+		// 		alert("猜对啦！！就是"+num3);
+		// 		break;
+		// 	}else{
+		// 		num4=Number(prompt("请再猜一下吧"));
+		// 	}
+		// }
+
+		// var num5=Number(prompt("请输入成绩"));
+		// var n=parseInt(num5/10);
+		// console.log(n);
+		// switch(n){
+		// 	case 8: alert("及格");
+		// 	break;
+		// }
+		//生成2-9之间的随机整数
+		// var min=2;
+		// var max=9;
+		// var num=Math.round(Math.random()*(max-min)+min);
+		// console.log(num);
+	</script>
+</html>

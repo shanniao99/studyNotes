@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>烟花</title>
+		<style type="text/css">
+			canvas {
+				background-color: #8FBC8F;
+			}
+
+			.body {
+				position: fixed;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				right: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="body">
+			<canvas id="box"></canvas>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var box = document.getElementById("box");
+		var can = box.getContext("2d");
+		var body = document.getElementsByClassName("body")[0];
+		box.width = body.clientWidth;
+		box.height = body.clientHeight;
+
+		var arr = [];
+
+		var x = box.width / 2;
+		var y = box.height;
+		var R = 50; //半径
+		var r = Math.floor(Math.random() * 256);
+		var g = Math.floor(Math.random() * 256);
+		var b = Math.floor(Math.random() * 256);
+		var a = 1;
+		var speed=Math.random()*4;
+
+		var fire = {
+			x,
+			y,
+			R,
+			r,
+			g,
+			b,
+			a,
+			speed
+		}
+		arr.push(fire);
+		
+		cir(fire);
+		function cir(fire) {
+			can.beginPath();
+			can.arc(fire.x, fire.y, fire.R, 0, 2 * Math.PI); //画圆
+			can.fillStyle = `rgba(${fire.r},${fire.g},${fire.b},${fire.a})`;
+			can.fill();
+			can.closePath();
+		}
+		
+		setInterval(function(){
+			
+		},1000)
+		
+	</script>
+</html>

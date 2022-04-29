@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="box"></div>
+		<input type="text">
+		<ul>
+			<li>11111</li>
+			<li>22222</li>
+		</ul>
+		<script type="text/javascript">
+			// 基本的数据类型
+			var a = 5,
+				b = [1, 2],
+				c = {},
+				d = true,
+				e = null,
+				f = undefined,
+				g = "123456";
+			console.log(typeof(a)) //number型数据
+			console.log(typeof(b)) //object数据  数组
+			console.log(typeof(c)) //object数据  对象
+			console.log(typeof(d)) //boolean数据  bool型数据 true false
+			console.log(typeof(e)) //object数据 null表示有值，但值为空
+			console.log(typeof(f)) //undefined数据  没有值
+			console.log(typeof(g)) //string类型数据  字符串数据
+
+			//变量的声明
+			var h;
+			h = 123; //1.先声明再赋值
+			var i = 456 //2.声明的同时赋值
+			var j = 1,
+				k = 2; //多个变量同时声明和赋值
+			//变量提升  使用变量在声明之前
+			console.log(l);
+			var l = "wkjlfk";
+			console.log(l)
+			//基本运算  加+  减-  乘*  除/  取余%
+			//默认运行顺序为从上到下，从左往右
+
+			var n1 = 123,
+				m = "123456"
+			console.log(n1 + m) //结果为123123456
+			//当“+”运算符的左右两边中  其中一边为字符串数据，那+意为串联字符串、
+
+			//非数字不能进行运算，否则得到一个非数值 ：NaN
+			var n1 = 12,
+				n2 = "￥23";
+			var n3 = "23"
+			console.log(n1 * n2) //得到NaN 
+			console.log(n1 * n3) //得到276 除了加之外的运算符都可以和只包含数字的字符串进行运算
+
+			//比较运算  > < >= <= == ===(完全等于:值和数据类型都要相等) =>结果都为布尔值  true/false
+			//特殊的比较
+			console.log(1 == true, 0 == false) //1相当于true  0相当于false
+			console.log(null == undefined) //true
+			console.log(NaN == NaN) //false
+			console.log(Infinity == Infinity) //ture Infinity无穷大，只可能有一个
+			console.log(null == false) //false null表示有值，值为空
+
+			//逻辑运算  与&&  或||  非!
+			//&&:运算符左右两边条件都为true时 结果为true，有一边为false时，结果为false
+			//||:只要有一边条件为true  结果就是true
+			//!取反  
+
+			//自增++  自减--
+			var n = 10;
+			console.log(n++); //10
+			console.log(n); //11
+			var m = 20;
+			console.log(++m); //21
+			console.log(m) //21   --同理
+
+
+			//选择结构  if(){...}  if(){...}else{...}   嵌套if(){...}else if(){...}...
+			// var num=prompt("请输入一个数值：");
+			var num = Math.floor(Math.random() * 10) + 1;
+			if (num % 2 == 0) {
+				console.log(num + "是2的倍数");
+			} else if (num % 3 == 0) {
+				console.log(num + "是3的倍数");
+			} else if (num % 2 == 0 && num % 3 == 0) {
+				console.log(num + "是2和3的公倍数");
+			}
+			//三元运算：条件式?值1:值2
+			num % 2 == 0 ? console.log(num) : console.log(num + "不是2的倍数");
+			//Switch结构
+
+			//循环结构 for  while  do...while
+			//while 先判断条件再执行循环体   do...while 先执行循环体再判断条件
+			//continue 结束本次循环，继续下一循环
+			//break 结束循环  直接跳出循环
+
+			//JS函数 格式：function 函数名(){代码段}
+
+			//数组
+			//数组的创建
+			var arr1 = [1, 2, 3, 4, 5] //方式一
+			var arr2 = new Array("123", "456"); //方式二
+			var arr3 = new Array(3) //指定数组长度为3
+			var arr4 = [];
+			arr4[2] = 45; //方式三
+			console.log(arr1, arr2, arr3, arr4)
+			//数组成员的引用 通过索引值
+			console.log(arr2[1])
+
+
+			//对象:一组无序的相关属性和方法的集合  让结构更清晰
+			// 属性：事物的特征  方法：事物的行为
+
+			//对象的创建 
+			//1.字面量创建对象
+			var obj1 = {
+				name: "张三",  //属性:属性值
+				age: 18,
+				sex: "男",
+				like: function() { //方法
+					var a="打篮球";
+					return a
+				}
+			};
+			
+			//2.利用new Object创建对象
+			var obj2=new Object();
+			obj2.name="李四";
+			obj2.age=18;
+			obj2.say=function(){
+				console.log("Hellow")
+			}
+			
+			//3.利用构造函数创建对象  利用函数的方法存放重复的数据 
+			// 构造函数就是把对象里面的相同属性和方法抽象出来封装到函数里面
+			// function 构造函数名(){
+			// 	this.属性名=值;
+			// 	this.方法=function(){
+			// 	}
+			// }
+			function Obj(uname,age,sex){
+				this.name=uname;
+				this.age=age;
+				this.sex=sex;
+				this.like=function(v){
+					return v;
+				}
+			}
+			//调用构造函数必须用new
+			var obj3=new Obj("王五",20,"男")  //返回一个object对象
+			console.log(obj3.name)
+			console.log(obj3.age)
+			console.log(obj3.like("跳舞"))  
+			
+			var obj4=new Obj("阿宁",22,"女")
+			console.log(obj4)
+			
+			//对象成员的调用：通过对象名['键名'] 或 对象名.键名  
+			console.log(obj1["name"] + "今年" + obj1.age + "岁，喜欢"+obj1.like());
+			
+			//对象遍历 for...in  for(变量 in 对象)
+			for(val in obj1){
+				console.log(val) //输出对象里面的属性名
+				console.log(obj1[val]) //输出对象里面的属性值
+			}
+			
+			//内置对象 JS自带
+			var box = document.getElementsByClassName("box")[0];
+			box.className = "box on";
+			box.id = "box";
+			//读取或修改对应的属性值
+			box.style.width = "300px";
+			box.style.height = "200px";
+			box.style.backgroundColor = "lightgreen";
+			//Math对象
+			
+
+			//内置函数
+			//alert()  弹框
+			// confirm() 带取消和确定的弹框
+			//prompt()  键盘输入值
+
+			
+
+			//时间 new Date()
+			var today = new Date() //当前时间
+			console.log(Date.now())
+			console.log(today.getTime()) //时间戳
+			console.log(today.getFullYear()) //年
+			console.log(today.getMonth() + 1) //月
+			console.log(today.getDate()) //日
+			console.log(today.getDay()) //星期
+			console.log(today.getHours()) //小时
+			console.log(today.getMinutes()) //分钟
+			console.log(today.getSeconds()) //秒
+			console.log(today.getMilliseconds()) //毫秒
+			//修改时间
+			console.log(today)
+			today.setHours(today.getHours() + 5 * 24)
+			console.log(today)
+			//字符串和数组处理的内置函数
+
+			//事件
+			// 阻止事件冒泡：防止事件继续往外传递
+			// event.stopPropagation()
+			// 阻止浏览器默认行为
+			// event.preventDefault() 
+
+			box.onclick = function() {
+				console.log("单击事件")
+			}
+			box.ondblclick = function() {
+				console.log("双击事件")
+			}
+			box.oncontextmenu = function() {
+				console.log("右击事件")
+			}
+			box.onmouseover = function() {
+				console.log("鼠标悬停事件")
+			}
+			box.onmousedown = function() {
+				console.log("鼠标按下")
+			}
+			box.onmouseup = function() {
+				console.log("鼠标抬起")
+			}
+			box.onmouseenter = function() {
+				console.log("鼠标进入")
+			}
+
+			box.onmouseleave = function() {
+				console.log("鼠标移出")
+			}
+			box.onmousemove = function() {
+				console.log("鼠标移动")
+			}
+			var inp = document.getElementsByTagName("input")[0]
+			inp.onfocus = function() {
+				console.log("聚焦事件")
+			}
+			inp.onblur = function() {
+				console.log("失去焦点")
+			}
+			inp.onkeydown = function() {
+				console.log("键盘按下")
+			}
+			inp.onkeyup = function() {
+				console.log("键盘抬起")
+			}
+			inp.onkeypress = function() {
+				console.log("键盘长按")
+			}
+			var lis = document.getElementsByTagName("li");
+			lis[0].ondragstart = function() {
+				console.log("开始拖拽")
+			}
+			lis[0].ondragend = function() {
+				console.log("结束拖拽")
+			}
+			lis[0].ondragenter = function() {
+				console.log("拖拽目标进入")
+			}
+			box.ondragover = function() {
+				console.log("拖拽目标悬浮")
+			}
+			box.ondragleave = function() {
+				console.log("拖拽目标离开")
+			}
+			box.ondrop = function() { //默认不触发，想要触发，需要在ondragover里面阻止默认行为event.preventDefault()
+				console.log("释放目标")
+			}
+			//触屏事件
+			box.ontouchstart = function() {
+				console.log("开始触屏")
+			}
+			box.ontouchmove = function() {
+				console.log("移动触屏")
+			}
+			box.ontouchend = function() {
+				console.log("结束触屏")
+			}
+		</script>
+	</body>
+</html>

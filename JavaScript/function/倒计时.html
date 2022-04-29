@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>下班倒计时</title>
+		<style type="text/css">
+			.box {
+				width: 800px;
+				height: 600px;
+				position: relative;
+				top: 60px;
+				left: 20%;
+				text-align: center;
+			}
+
+			.time {
+				font-size: 30px;
+				font-weight: bolder;
+				color: black;
+			}
+
+			.time input {
+				width: 70px;
+				height: 50px;
+				outline: none;
+				text-align: center;
+				font-size: 30px;
+				color: #000000;
+				font-weight: bolder;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="time">距离下班还有：
+				<input type="text" value="">天
+				<input type="text" value="">小时
+				<input type="text" value="">分
+				<input type="text" value="">秒
+			</div>
+			<img src="../img/4.gif">
+		</div>
+	</body>
+	<script type="text/javascript">
+		var newtime = new Date(2022, 0, 6, 17, 45, 0);
+		var inputs = document.getElementsByTagName("input");
+		var box = document.getElementsByClassName("box")[0];
+		var img = box.getElementsByTagName("img");
+		var timer;
+		var time;
+		var arr = new Array(4);
+		var today;
+
+		function Usetime() {
+			timer = setInterval(function() {
+				today = new Date();
+				time = newtime.getTime() - today.getTime();
+				arr[0] = Math.floor(time / 3600 / 1000 / 24); //天数
+				var leave1 = time % (3600 * 1000 * 24);
+				arr[1] = Math.floor(leave1 / (3600 * 1000)); //小时
+				var leave2 = leave1 % (3600 * 1000);
+				arr[2] = Math.floor(leave2 / (60 * 1000)); //分钟数
+				var leave3 = leave2 % (60 * 1000);
+				arr[3] = Math.floor(leave3 / 1000); //取秒
+				for (var i = 0; i < inputs.length; i++) {
+					inputs[i].value = arr[i]
+				}
+				img[0].src = "../img/" + Math.floor(Math.random() * 6 + 1) + ".gif";
+				if (time <= 1000) {
+					clearInterval(timer);
+					img[0].src = "../img/xiaban.gif";
+				}
+
+			}, 1000)
+		}
+		Usetime()
+	</script>
+</html>

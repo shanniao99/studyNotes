@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			canvas {
+				background-color: #999;
+			}
+		</style>
+	</head>
+	<body>
+
+		<canvas id="box" width="500" height="500"></canvas>
+		<script>
+			var box = document.getElementById("box")
+			var obj = box.getContext("2d")
+			var arr = []
+			var x = 250
+			var y = 250
+
+			box.onmousemove = function() {
+				x = event.offsetX
+				y = event.offsetY
+			}
+
+
+			setInterval(function() {
+
+				var r = Math.floor(Math.random() * 256)
+				var g = Math.floor(Math.random() * 256)
+				var b = Math.floor(Math.random() * 256)
+				var a = 1
+				// var x = Math.floor(Math.random() * box.width)
+				// var y = Math.floor(Math.random() * box.height)
+				var R = 1
+
+				var res = {
+					r,
+					g,
+					b,
+					a,
+					x,
+					y,
+					R
+				}
+				arr.push(res)
+				console.log(arr)
+
+				obj.clearRect(0, 0, 500, 500)
+
+				for (var i = 0; i < arr.length; i++) {
+					obj.fillStyle = `rgba(${arr[i].r},${arr[i].g},${arr[i].b},${arr[i].a})`
+					obj.beginPath()
+					obj.arc(arr[i].x, arr[i].y, arr[i].R, 0, 2 * Math.PI, true)
+					obj.closePath()
+					obj.fill()
+
+					arr[i].R++
+					arr[i].a = arr[i].a - 0.02
+
+					if (arr[i].R > 50 || arr[i].a <= 0) {
+						arr.splice(i, 1)
+					}
+				}
+
+			}, 10)
+		</script>
+	</body>
+</html>

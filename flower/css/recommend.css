@@ -1,0 +1,125 @@
+html {
+	font-size: 100px;
+	/* 定下一个标准  1rem==100px */
+}
+
+body {
+	font-size: 16px;
+	font-family: "苹方";
+}
+
+.list {
+	width: 7.5rem;
+	height: 1.9rem;
+	margin: 0 auto;
+	position: fixed;
+	top: .6rem;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.list input {
+	width: 6.4rem;
+	height: .7rem;
+	outline: none;
+	border: none;
+	border-radius: .5rem;
+	padding-left: .7rem;
+	font-size: .26rem;
+	color: #9f9f9f;
+	position: relative;
+	background-color: #f4f4f4;
+}
+
+.list img {
+	width: .26rem;
+	height: .26rem;
+	position: absolute;
+	top: .47rem;
+	left: .6rem;
+	z-index: 1;
+}
+
+.list ul {
+	width: 7.5rem;
+	display: flex;
+	justify-content: space-around;
+}
+
+.list ul li {
+	font-size: .3rem;
+	color: #333333;
+}
+.list ul li span{
+	color: #f4f4f4;
+	font-size: .2rem;
+}
+.list ul li.on,.list ul li.on span {
+	color: #e37198;
+}
+
+.mid {
+	width: 7.5rem;
+	margin: 0 auto;
+	background-color: #EEEEEE;
+	position: fixed;
+	top: 2.5rem;
+	bottom: 0rem;
+	left: 0;
+	overflow: scroll;
+}
+.mid ul {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	margin-top: .2rem;
+}
+
+.mid ul li {
+	width: 3.45rem;
+	height: 5.15rem;
+}
+
+.mid ul li img {
+	width: 3.45rem;
+	height: 3.75rem;
+}
+
+.text {
+	width: 3.45rem;
+	height: 1.25rem;
+	background-color: white;
+	border-bottom-right-radius: .5rem;
+}
+
+.text p {
+	font-size: .32rem;
+	color: #333333;
+}
+
+.text span {
+	font-size: .28rem;
+	color: #e37198;
+}
+
+.car {
+	width: 3rem;
+	height: .4rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.car span {
+	font-size: .22rem;
+	color: #999999;
+}
+
+@media screen and (max-width:375px) {
+	html {
+		font-size: 50px;
+	}
+
+}

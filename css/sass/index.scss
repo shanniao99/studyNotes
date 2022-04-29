@@ -1,0 +1,155 @@
+// 支持变量的使用
+$a:red;
+$b:width;
+body{
+	background-color: $a;
+	color:$a
+}
+##{$a}{
+	#{$b}: 750px;
+	border-#{$b}:10px ;
+}
+
+// 支持基本运算
+$num:750;
+.top{
+	width: 375/$num*100rem;
+	color: #ff0000+32;
+	height: 200-100px;
+}
+
+// 支持嵌套使用:  &表示当前嵌套的父元素
+ul{
+	list-style: none;
+	li{
+		float: left;
+		a{
+			color: $a;
+			&:hover{
+				color:yellow
+			}
+		}
+	}
+}
+
+// 支持 @extend 继承 (会以组合选择器的形式包含相同部分)
+.center{
+	width: 1200px;
+	margin: 0 auto;
+	div{
+		font-size: 12px;
+	}
+}
+
+.nav{
+	@extend .center;
+	color:red;
+}
+.footer{
+	@extend .center;
+}
+
+
+// 支持 @mixin 混入  和  @include 包含 (可带参数（可以有默认值）运行，也可不带)
+@mixin abc($v1:grey,$v2:white,$v3:orange) {
+	a{
+		color:$v1;
+		&:hover{
+			color:$v2;
+		}
+		&:active{
+			color:$v3;
+		}
+	}
+}
+
+.news{
+	@include abc(red,blue,yellow);
+}
+
+.list{
+	@include abc(green,cyan,black);
+}
+.pros{
+	@include abc();
+}
+
+.box1{
+	color:$a;
+}
+
+// 支持 @import 导入  使用外部的scss文件，冲突部分会覆盖处理
+@import "test.scss";
+
+.box2{
+	color:$a;
+}
+
+
+// 支持 @if...@else if...@else... 判断
+
+@if 1>2 {
+	.box3{ width: 750px;}
+}@else{
+	.box3{ width: 375px;}
+}
+
+$w:900;
+.box4{	
+		@if $w>1200{
+			width: 1000px;
+		}@else {
+			width: 500px;
+		}	
+}
+
+
+// 支持循环  @while  @for  @each
+$i:1;
+@while($i<=3){
+	.banner#{$i}{
+		background-image: url(#{$i}.jpg);
+	}
+	$i:$i+1
+}
+
+
+@for $m from 4 to 7{
+	.banner#{$m}{
+		background-image: url(#{$m}.jpg);
+	}
+}
+
+@each $n in one,two,three{
+	.#{$n}{
+		background-image: url(#{$n}.jpg);
+	}
+}
+
+
+
+
+// 支持函数 @function(){}  
+
+@function rem($val){
+	@return $val/750*100rem
+}
+
+.box6{
+	width: rem(750);
+	font-size: rem(375);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

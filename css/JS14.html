@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			// JS 正则表达式：对字符串的检测或匹配的工具
+			var str="hello tom! 123"
+			// 正则的声明
+			var reg1=new RegExp("L","ig")
+			var reg2=/L/ig
+			
+			
+			// 修饰符： g 全局匹配   i 忽略大小写  m 多行匹配
+			
+			
+			// 方括号：[]  设置单个字符的匹配范围
+			// 小括号：()  设置多个字符的匹配范围
+			var reg3=/[abcd]/ig
+			var reg4=/[a-z]/ig
+			var reg5=/[0-9]/ig
+			var reg6=/[0-9a-z !]/ig	
+			var reg7=/[^0-9]/ig			
+			 
+			var reg8=/hello (word|tom)/ig 
+			
+			
+			// 转义字符：“\”  转换成它本来的意思
+			str="hello ["
+			var reg9=/\[/ig
+			
+			str="123\\n456"
+			var reg10=/\\n/ig
+			
+			
+			// 换行符：\n
+			// document.write("123\n465")
+			
+			
+			// 元字符：一些特殊意义的字符
+			str="!@#$%^&*(.)_+ \na1"
+			var reg11=/./ig		
+			
+			//    \w == [0-9a-z_]   \W == [^0-9a-z_]
+			//    \d == [0-9]       \D == [^0-9]
+			var reg12=/\s/ig
+			
+			str="abcx xabc xabcx abc"
+			var reg13=/\Babc\b/ig			
+			console.log(reg13.exec(str))
+			console.log(reg13.exec(str))
+			
+			str="一你好阿斯顿发送到发龥yu"
+			var reg14=/[\u4e00-\u9fa5]/ig   // [\u4e00-\u9fa5]  == [一-龥]
+			
+			
+			
+			// 量词：对数量的形容  {min,max}
+			// {1,} == +    {0,1} == ?   {0,} == *   
+			str="123456789aa123aa"
+			var reg15=/\d*/ig
+			var reg16=/\d{1,2}/ig
+			console.log(str.match(reg16))
+			
+			tel="13688888888"
+			var reg17=/^\d{11}$/ig
+			console.log(reg17.test(tel))
+			
+			str="123\n456" 
+			var reg18=/^\d+$/igm  // m 多行匹配
+			console.log(str.match(reg18))
+			
+			str = "this is a pen"
+			var reg19=/is(?= i)/ig
+			console.log(reg19.exec(str))
+			console.log(reg19.exec(str))
+			
+			// 方法：
+			// console.log(str.match(reg1)) // 用字符串去匹配正则，并把结果输出			
+			// console.log(str.replace(reg2,"x"))
+			// console.log(reg1.test(str)) // 用正则检测字符串（结果是布尔值）			
+			// console.log(reg1.exec(str)) // 用正则逐个匹配字符串对应结果(从头到尾，依次检索)
+			
+			// 表单验证
+			// 邮箱 电话 身份证...
+			// 6543213@qq.com
+			// afas123@sina.cn
+			// 
+			var email="asdasd@163.com.cn"
+			var reg20=/[0-9a-z_-]+@[0-9a-z]+(\.(com|cn))+/ig
+			console.log(reg20.test(email))
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

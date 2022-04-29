@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>每隔1s给数组添加/输出数据</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr = [];
+			for (var i = 0; i < 5; i++) {
+				var x = prompt("请输入");
+				var res = arr.find(function(v) {
+					return v == x;
+				})
+				if (res) {
+					alert("数据重复！！！请重新输入");
+					i--;
+				} else {
+					arr[i] = x;
+				}
+				console.log(arr);
+			}
+			var num=arr.length;
+			for (var i = 0; i <num; i++) { //随机输出
+				var count = arr[Math.floor(Math.random() * (num-i))];
+				document.write(count + "<br>");
+				for (var j = arr.indexOf(count); j <num - 1; j++) {
+					arr[j] = arr[j + 1];
+				}
+				arr = arr.slice(0, num-i - 1);
+				console.log(arr);
+			}
+		</script>
+	</body>
+
+</html>

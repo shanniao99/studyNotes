@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div id="person"></div>
+		<div id="person2"></div>
+		<button type="button" onclick="btn()">点我点我</button>
+		<p id="demo"></p>
+	</body>
+	<script type="text/javascript">
+		var preson={
+			name:"张三",
+			sex:"男",
+			age:20,
+			like:"打篮球",
+			all:function(){
+				return this.name+"喜欢"+this.like;
+			}
+		}
+		document.getElementById("person").innerHTML=preson.name+"是一个"+preson.sex+"孩子"+",今年"+preson.age+"岁"+",喜欢"+preson.like;
+		document.getElementById("person2").innerHTML=preson.all();
+		
+		function btn(){
+			// alert("嗨~~嗨~~~");
+			alert(preson.name+"是一个"+preson.sex+"孩子"+",今年"+preson.age+"岁"+",喜欢"+preson.like)
+		}
+		function data(a,b){
+			return a*b;
+		}
+		document.getElementById("demo").innerHTML="25*4="+data(25,4);
+	</script>
+</html>

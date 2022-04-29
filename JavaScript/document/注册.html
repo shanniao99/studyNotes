@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>注册</title>
+		<style type="text/css">
+			.box {
+				width: 100%;
+				height: 740px;
+				background: url(../img/b1.gif) no-repeat center;
+				background-size: 100%;
+				margin: 0 auto;
+				overflow: hidden;
+				color: black;
+				font-size: 14px;
+			}
+
+			.email_box {
+				width: 450px;
+				height: 500px;
+				background-color: wheat;
+				opacity: 0.9;
+				margin: 0 auto;
+				border-radius: 10px;
+				position: relative;
+				top: 15%;
+			}
+
+			.email_box h1 {
+				text-align: center;
+			}
+
+			.email_box input {
+				width: 400px;
+				height: 40px;
+				margin: 10px 0;
+				font-size: 18px;
+				outline: none;
+			}
+
+			.email_box input[type="checkbox"] {
+				width: 15px;
+				height: 15px;
+				vertical-align: middle
+			}
+
+			.email_box span a {
+				text-decoration: none;
+				color: #333333;
+			}
+
+			.txt {
+				font-size: 14px;
+			}
+
+			form {
+				width: 400px;
+				margin: 0 auto;
+				position: absolute;
+				top: 40px;
+				left: 20px;
+			}
+
+			.inp {
+				margin: 10px 0;
+			}
+
+			button {
+				width: 150px;
+				height: 50px;
+				border: none;
+				background-color: #55A532;
+				border-radius: 5px;
+				font-size: 24px;
+				color: white;
+				position: absolute;
+				left: 125px;
+			}
+
+			.agin {
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="email_box">
+				<form>
+					<h1>欢迎注册邮箱！</h1>
+					<div class="inp">
+						<input type="text" placeholder="邮箱地址" name="email" />
+						<div class="txt" style="display: none;">邮箱地址由字母、数字、下划线组成(格式：用户名@域名),用户名为6-12位</div>
+						<div class="agin" style="display: none;">格式错误，请重新输入</div>
+					</div>
+					<div class="inp">
+						<input type="password" placeholder="邮箱密码" name="password" />
+						<div class="txt" style="display: none;">6-16个字符,需包含"大小写字母","数字","标点符号"中至少两种或以上组合</div>
+						<div class="agin" style="display: none;"></div>
+					</div>
+					<div class="inp">
+						<input type="text" placeholder="手机号码" name="number" />
+						<div class="txt" style="display: none;">11位由数字组成的有效手机号码</div>
+						<div class="agin" style="display: none;"></div>
+					</div>
+					<div class="inp">
+						<input type="checkbox">
+						<span>同意<a href="">《服务条款》</a>、<a href="">《隐私政策》</a>和<a href="">《儿童隐私政策》</a></span>
+					</div>
+					<button type="button" onclick="login()">立即注册</button>
+				</form>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var text = document.getElementsByClassName("txt");
+		var inputs = document.getElementsByTagName("input");
+		var agin = document.getElementsByClassName("agin");
+
+
+		// for (var i = 0; i < inputs.length - 1; i++) {
+		// 	inputs[i].index = i;
+		// 	inputs[i].onfocus = function() {
+		// 		text[this.index].style.display = "block";
+		// 	}
+		// }
+
+		// inputs[0].onblur = function() {
+		// 	var val = this.value;
+		// 	var num = val.indexOf("@"); //读取@的索引值，没有则返回-1
+		// 	var name = val.substring(0, num); //提取用户名
+		// 	var url = val.substring(num + 1); //提取域名
+		// 	var rag1 = /[a-z0-9_]{6,12}/ig; //用户名格式
+		// 	var rag2 = /[a-z0-9]+(\.(com|cn)){1}/ig; //域名格式
+		// 	if (num == -1) {
+		// 		agin[0].style.display = "block";
+		// 		this.value = "";
+		// 	} else if (!rag1.test(name)) {
+		// 		agin[0].innerHTML = "用户名格式错误，请重新输入由字母、数字、下划线组成的6-12位用户名";
+		// 		agin[0].style.display = "block";
+		// 		this.value = "";
+		// 	} else if (!rag2.test(url)) {
+		// 		agin[0].innerHTML = "域名格式错误，正确格式如：123.cn/qq.com/163.com等";
+		// 		agin[0].style.display = "block";
+		// 		this.value = "";
+		// 	}
+		// }
+
+		// inputs[1].onblur = function() {
+		// 	var val = this.value;
+		// 	var rag = /^.{6,16}$/ig;
+		// 	if (!rag.test(val)) {
+		// 		agin[1].innerHTML = "密码格式错误，请重新输入";
+		// 		agin[1].style.display = "block";
+		// 		this.value = "";
+		// 		this.onfocus = function() {
+		// 			text[1].style.display = "none";
+		// 		}
+		// 	} else {
+		// 		this.onfocus = function() {
+		// 			text[1].style.display = "none";
+		// 		}
+		// 		agin[1].style.display = "none";
+		// 	}
+		// }
+		// inputs[2].onblur = function() {
+		// 	var val = this.value;
+		// 	var rag = /^1[3-9]{1}[0-9]{9}$/ig
+		// 	if (!rag.test(val)) {
+		// 		agin[2].innerHTML = "手机号码必须是1开头，第二位为3-9之间的数字";
+		// 		agin[2].style.display = "block";
+		// 		this.value = "";
+		// 		this.onfocus = function() {
+		// 			text[2].style.display = "none";
+		// 		}
+		// 	} else {
+		// 		this.onfocus = function() {
+		// 			text[2].style.display = "none";
+		// 		}
+		// 		agin[2].style.display = "none";
+		// 	}
+		// }
+
+
+		function login() {
+			for (var i = 0; i < inputs.length - 1; i++) {
+				if (inputs[i].value == "") {
+					alert("请完善信息填写");
+
+				}
+			}
+			if (inputs[3].checked) {
+				alert("注册成功");
+			} else {
+				alert("请勾选同意");
+			}
+		}
+
+
+		for (var i = 0; i < inputs.length - 1; i++) {
+			inputs[i].index = i;
+			inputs[i].onfocus = function() {
+				text[this.index].style.display = "block";
+			}
+
+			inputs[i].onblur = function() {
+				var name = this.name;
+				console.log(name);
+				text[this.index].style.display = "none";
+				if (name == "email") {
+					emails(this, this.index);
+				} else if (name == "password") {
+					PWD(this, this.index);
+				} else if (name == "number") {
+					Phone(this, this.index);
+				}
+
+			}
+		}
+
+
+		function emails(inp, i) {
+			var val = inp.value;
+			var num = val.indexOf("@"); //读取@的索引值，没有则返回-1
+			var name = val.substring(0, num); //提取用户名
+			var url = val.substring(num + 1); //提取域名
+
+			var rag1 = /[a-z0-9_]{6,12}/ig
+			var rag2 = /[a-z0-9]+(\.(com|cn)){1}/ig
+			if (num == -1) {
+				agin[i].style.display = "block";
+				inp.value = "";
+				inp.focus();//获取焦点
+
+			} else if (!rag1.test(name)) {
+				agin[i].innerHTML = "用户名格式错误，请重新输入由字母、数字、下划线组成的6-12位用户名";
+				agin[i].style.display = "block";
+				inp.value = "";
+				inp.focus();//获取焦点
+			} else if (!rag2.test(url)) {
+				agin[i].innerHTML = "域名格式错误，正确格式如：123.cn/qq.com/163.com等";
+				agin[i].style.display = "block";
+				inp.value = "";
+				inp.focus();//获取焦点
+
+			} else {
+				inp.onfocus = function() {
+					text[i].style.display = "none";
+				}
+				agin[i].style.display = "none";
+			}
+		}
+
+		function PWD(inp, i) {
+			var val = inp.value;
+			var rag = /^.{6,16}$/ig;
+			if (!rag.test(val)) {
+				agin[i].innerHTML = "密码格式错误，请重新输入";
+				agin[i].style.display = "block";
+				inp.value = "";
+				inp.focus();//获取焦点
+			} else {
+				inp.onfocus = function() {
+					text[i].style.display = "none";
+				}
+				agin[i].style.display = "none";
+			}
+		}
+
+		function Phone(inp, i) {
+			var val = inp.value;
+			var rag = /^1[3-9]{1}[0-9]{9}$/ig
+			if (!rag.test(val)) {
+				agin[i].innerHTML = "手机号码必须是1开头，第二位为3-9之间的数字";
+				agin[i].style.display = "block";
+				inp.value = "";
+				inp.focus();  //获取焦点
+			} else {
+				inp.onfocus = function() {
+					text[i].style.display = "none";
+				}
+				agin[i].style.display = "none";
+			}
+		}
+	</script>
+</html>

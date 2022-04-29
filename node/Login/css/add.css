@@ -1,0 +1,72 @@
+.add,.change {
+	width: 650px;
+	height: 500px;
+	margin: 0 auto;
+	background-color: lightblue;
+	border-radius: 20px;
+	z-index: 2;
+}
+.on{
+	position:fixed;	
+	left:25%;
+	top:10%;
+	animation:myfirst 1s;
+	-webkit-animation:myfirst 1s; /* Safari and Chrome */
+}
+
+@keyframes myfirst
+{
+	0% {left: 25%;top: -67%;}
+	100% {left:25%; top:10%;}
+}
+#say {
+	height: 80px;
+	font-size: 30px;
+	text-align: center;
+	font-weight: bolder;
+	line-height: 80px;
+}
+
+form {
+	width: 600px;
+	height: 500px;
+	margin: 0 auto;
+}
+
+.box {
+	width: 600px;
+	height: 50px;
+}
+
+.head {
+	width: 80px;
+	float: left;
+
+}
+
+.txt {
+	width: 500px;
+	float: left;
+}
+
+.txt input {
+	width: 500px;
+	height: 30px;
+}
+
+.txt textarea {
+	width: 500px;
+	height: 100px;
+}
+
+.txt button {
+	margin-top: 25px;
+	margin-left: 300px;
+}
+
+.txt input[type="checkbox"] {
+	width: 15px;
+	height: 15px;
+	vertical-align: middle;
+	margin-left: 35px;
+}

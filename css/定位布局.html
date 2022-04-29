@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="box1">111</div>
+		<div class="box2">222</div>
+		这里的内容上不去，为什么？
+		<div class="box3">333</div>
+		<div class="box4">444</div>
+		<div class="box5">555</div>
+		<div class="box">
+			<span class="box6">666</span>
+			<div class="box7">777</div>
+		</div>
+		<style>
+		.box1{
+			width: 200px;
+			height: 100px;
+			background-color: red;
+		}
+		.box2{
+			width: 200px;
+			height: 100px;
+			background-color: orange;
+			position: relative;
+			right: -100px;
+			top: -50px;
+			z-index: 1;
+			/* 相对定位：不会改变元素特性
+			相对于原来位置进行移动，移动后原来（文档流）位置还存在着
+			会继续占用空间，导致后面内容上不来
+			定位元素的移动距离由 left/right/top/bottom 等控制
+			z-index为定位元素的层级设置：数值越大越上面显示，网页默认0层（内容可以覆盖叠加）
+			*/
+		}
+		.box3{
+			width: 200px;
+			height: 100px;
+			background-color: yellow;
+		}
+		.box4{			
+			height: 100px;
+			background-color: green;
+			position: fixed;
+			right: 0;
+			left: 0;
+			top: 0;
+			z-index: 2;
+			/* 固定定位：会改变元素特性（行内元素可以设置宽高，块状元素只占内容宽度）
+			固定在浏览器的显示窗口上（视口上）
+			原来（文档流）位置不存在了，导致后面内容自动挤上来，被挡住了
+			定位元素的移动距离由 left/right/top/bottom 等控制
+			z-index为定位元素的层级设置：数值越大越上面显示，网页默认0层（内容可以覆盖叠加）
+			*/
+		}
+		.box5{
+			width: 205px;
+			height: 105px;
+			background-color: cyan;
+		}
+		.box6{
+			width: 200px;
+			height: 100px;
+			background-color: blue;
+			position: absolute;
+			right: 0;
+			top: 0;
+			z-index: 3;
+			/* 绝对定位：会改变元素特性（行内元素可以设置宽高，块状元素只占内容宽度）
+			参照物并不绝对，是可以置换的！
+			先以最近的父级定位元素为参照物进行移动，如果没有则以整个网页为参照物进行移动
+			原来（文档流）位置不存在了，导致后面内容自动挤上来，被挡住了
+			定位元素的移动距离由 left/right/top/bottom 等控制
+			z-index为定位元素的层级设置：数值越大越上面显示，网页默认0层（内容可以覆盖叠加）
+			*/
+		}
+		.box7{
+			width: 205px;
+			height: 105px;
+			background-color: purple;
+		}
+		.box{
+			width: 300px;
+			height: 300px;
+			background-color: grey;
+			position: relative;
+			/* 相对定位：不会改变元素特性，这里只是为了给里面绝对定位设定参照物用 */
+		}
+		div{
+			position: static;/* 默认没有定位 */
+		}
+		.box3{
+			position: sticky;/* 粘性定位：兼容性不好 */
+			top: 50px;
+			z-index: 4;
+		}
+		
+		</style>
+	</body>
+</html>

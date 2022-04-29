@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<script>
+		// 新增 对象方法
+		
+		let obj1={name:"张三",age:18}
+		let obj2={name:"张三123",gen:"男"}		
+		console.log(Object.assign(obj1,obj2)) // 对象合并
+		console.log(obj1)
+		console.log(Object.keys(obj1)) // 对象键值
+		console.log(Object.values(obj1)) // 对象属性值
+		console.log(Object.is(NaN,NaN)) // 等于判断
+		console.log(NaN==NaN)
+		console.log(Object.entries(obj1)) //对象变二维数组
+		
+		// 对象代理器(vue数据绑定原理)
+		let a={}
+		Object.defineProperty(a,"name",{
+			value:"123", //设置默认值
+			writable:true //设置可修改属性
+		})
+		a.name="456"
+		console.log(a.name)
+		
+		
+		Object.defineProperty(a,"age",{
+			get:()=>{
+				console.log("获取")
+				return 666
+			},
+			set:val=>{
+				console.log("设置")				
+				return val
+			}
+		})
+		
+		console.log(a.age=20)
+		
+		
+		// 新增：二进制 八进制 十六进制  box
+		let b=12
+		let c=0b11 //  0 1 10 11 100 ....
+		let d=0o11 // 7 10 11 12 ...
+		let e=0xff // 10 a b c d e f 11
+		console.log(e)
+		
+		// 新增 Set和Map 构造函数
+		 
+		// Set 对象形式的数组（自动去重）
+		let f=new Set(["aa","bb","cc","aa"]) // 对象形式的数组（自动去重）
+		// 新的方法
+		f.add("dd") //添加成员
+		f.delete("bb") //删除成员
+		console.log(f.size) //读取长度
+		console.log(f.has("bb")) //判断是否有该成员
+		f.forEach(v=>{ //forEach遍历Set
+			console.log(v)
+		})
+		let arr=[...f]// Set转换数组(才能使用数组方法)  [...{"aa","cc","dd"}]
+		let g=new Set(arr) // 数组转换Set
+		console.log(g)
+		// f.clear() //清空
+		console.log(f,arr[1])
+		
+		
+		let arr1=[123,456,789,66,99,88,77]
+		let arr2=[123,22,33,66,44,88,77]
+		// 读取重复部分，[123,66,88,77]		
+		let res=arr1.filter(v=>new Set(arr2).has(v))
+		console.log(res)
+		
+		
+		// Map  二维数组形式的对象，（任何数据都可以作为键名使用）
+		let test={b:456}
+		let h=new Map([
+			[123,"张三"],
+			[true,18],
+			[{a:123},"男"],
+			[function(){},"测试"],
+			[test,123456789]
+		]) 	
+		console.log(h.size)// 读取长度
+		console.log(h.get(123))//根据键名读取对应属性值
+		console.log(h.get({a:123})) //数据对应不上（等址判断的问题）
+		console.log({a:123}=={a:123})//不同地址
+		console.log(h.get(test))//相同地址才能拿到数据
+		h.set(["aa","bb"],666) //添加成员
+		console.log(h.has({a:123}))// 判断是否有该成员（等址判断的问题）
+		h.forEach(v=>{ //遍历Map读取值
+			console.log(v)
+		})
+		console.log(h.keys()) //读取键名
+		console.log(h.values()) //读取属性值
+		
+		h.delete(123) //删除成员
+		// h.clear()//清空
+		
+		let obj=Object.fromEntries(h)
+		console.log(obj) //Map转换成对象
+		
+		
+		
+		
+		
+		
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				text-indent: 2em;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- <p id="demo"></p>
+		<p id="demo1"></p>
+		<p id="demo2"></p> -->
+		<hr >
+		<table border="1" cellspacing="0" cellpadding="0">
+			<tr>
+				<td >第一个值：<input type="text"  id="one"></td>
+			</tr>
+			<tr>
+				<td>第二个值：<input type="text"  id="two" ></td>
+			</tr>
+			<tr>
+				<td>第三个值：<input type="text"  id="three"></td>
+			</tr>
+			<tr>
+				<td><button type="button" onclick="add()">+</button>
+				<button type="button" onclick="subtract()">-</button>
+				<button type="button" onclick="ride()">*</button>
+				<button type="button" onclick="devide()">/</button>
+				<button type="button" onclick="take()">%</button>
+				<button type="button" onclick="average()">平均值</button></td>
+			</tr>
+			<tr>
+				<td height="30px" >
+					<p id="result"></p>
+				</td>
+			</tr>
+		</table>
+	</body>
+	<script type="text/javascript">
+		// var Zhang={
+		// 	name:"张三",
+		// 	age:19,
+		// 	height:"180cm"
+		// }
+		// document.getElementById("demo").innerHTML=Zhang.name;
+		// document.getElementById("demo1").innerHTML=Zhang.age;
+		// document.getElementById("demo2").innerHTML=Zhang.height;
+		
+		// var s1="红",s2="蓝",s3;
+		// document.write("s1,s2的值分别为："+s1,s2+"<br>");
+		// s3=s1;
+		// s1=s2;
+		// s2=s3;
+		// document.write("交换后s1,s2的值分别为："+s1,s2);
+		
+		
+		var result_value;
+		
+		//加法
+		function add(){
+			var a=getone();
+			var b=gettwo();
+			var c=getthree();
+			var result=Number(a)+Number(b)+Number(c);
+			resultNum(result);
+		}
+		//减法
+		function subtract(){
+			var a=getone();
+			var b=gettwo();
+			var c=getthree();
+			var result=a-b-c;
+			resultNum(result);
+			
+		}
+		//乘法
+		function ride(){
+			var a=getone();
+			var b=gettwo();
+			var c=getthree();
+			var result=a*b*c;
+			resultNum(result);
+		}
+		//除法
+		function devide(){
+			var a=getone();
+			var b=gettwo();
+			var c=getthree();
+			var result=a/b/c;
+			resultNum(result);
+		}
+		//取余
+		function take(){
+			var a=getone();
+			var b=gettwo();
+			var c=getthree();
+			var result=a%b%c;
+			resultNum(result);
+		}
+		//平均值
+		function average(){
+			var a=getone();
+			var b=gettwo();
+			var c=getthree();
+			var result=Number(a)+Number(b)+Number(c);
+			resultNum(result/3);
+		}
+		//结果
+		function resultNum(result_value){
+			var num=document.getElementById("result");
+			num.innerHTML=result_value;
+		}
+		//获取第一个值
+		function getone(){
+			var num1=document.getElementById("one").value;
+			return num1;
+		}
+		//获取第二个值
+		function gettwo(){
+			var num2=document.getElementById("two").value;
+			return num2;
+		}
+		// 获取第三个值
+		function getthree(){
+			var num3=document.getElementById("three").value;
+			return num3;
+		}
+	</script>
+</html>

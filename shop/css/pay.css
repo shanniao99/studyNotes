@@ -1,0 +1,100 @@
+ html{
+		 font-size: 100px; /* 定下一个标准  1rem==100px */
+	 }
+body{
+	 		 font-size: 16px;
+	 }
+.top{
+	width: 7.5rem;
+	height: 3rem;
+	background-color: #FF5E46;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 1.75rem;
+	text-align: center;
+}
+.top img{
+	width: 2.4rem;
+	height: 1.1rem;
+}
+.top p{
+	font-size: .36rem;
+	font-family: "黑体";
+	color: white;
+	padding-top: .4rem;
+}
+.pay_money{
+	height: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.pay_money h2{
+	font-size: .32rem;
+	font-family: "黑体";
+	color: #333333;
+}
+.pay_money h2 span{
+	font-size: .32rem;
+	color: #FF5E46;
+}
+.self{
+	margin-left: .4rem;
+}
+.self p{
+	font-size: .28rem;
+	font-family: "苹方";
+	color: #666666;
+}
+.self p input{
+	width: 2rem;
+	height: .5rem;
+	font-size: .28rem;
+	font-family: "苹方";
+	color: #666666;
+	border: none;
+	outline: none;
+}
+.self p textarea{
+	width: 4.75rem;
+	height: 2rem;
+	border: none;
+	outline: none;
+	resize: none;/* 禁止用户拖放大小 */
+	vertical-align:top; /* 行内-块状元素的上下对齐方式 */
+	font-size: .28rem;
+	font-family: "苹方";
+	color: #666666;
+}
+.btn{
+	width: 7.5rem;
+	height: .8rem;
+	display: flex;
+	justify-content: center;
+	
+}
+.btn ul{
+	width: 3.9rem;
+	height: .6rem;
+}
+.btn ul li{
+	width: 1.95rem;
+	height: .6rem;
+	float: left;
+}
+.btn ul li input{
+	width: 1.5rem;
+	height: .6rem;
+	font-size: .28rem;
+	font-family: "黑体";
+	color: #FF5E46;
+	background-color: white;
+	border:0.01rem solid #FF5E46;
+	border-radius: .5rem;
+}
+@media screen and (max-width:375px) {
+		 html{ font-size: 50px;}
+		 
+	 }

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<p>hello</p>
+		<script>
+			var xhr=new XMLHttpRequest();
+			xhr.open("GET","http://localhost:2000/ajax?id=7",true);
+			xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");//请求头
+			xhr.onload=function(){
+				console.log(this.responseText);
+			}
+			xhr.send();
+		</script>
+	</body>
+</html>

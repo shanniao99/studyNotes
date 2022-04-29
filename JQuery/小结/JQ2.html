@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/jquery-1.7.2.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			table{
+				margin: 0 auto;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<table border="1" cellspacing="0" cellpadding="0">
+			<col width="100px" />
+			<col width="100px" />
+			<col width="100px" />
+			<col width="100px" />
+			<tr>
+				<td>姓名</td>
+				<td>性别</td>
+				<td>年龄</td>
+				<td>学号</td>
+			</tr>
+			<tr>
+				<td>吴邪</td>
+				<td>男</td>
+				<td>20</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>阿宁</td>
+				<td>女</td>
+				<td>18</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>张起灵</td>
+				<td>男</td>
+				<td>永生</td>
+				<td>3</td>
+			</tr>
+		</table>
+	</body>
+	<script type="text/javascript">
+		$(function(){
+			$("table tr").first().css("backgroundColor","lightgreen");
+			$("table tr").eq(3).css("backgroundColor","yellow");
+			$("table tr:odd").css("backgroundColor","lightyellow");
+			$("table tr:even").css("backgroundColor","lightblue")
+		})
+	</script>
+</html>

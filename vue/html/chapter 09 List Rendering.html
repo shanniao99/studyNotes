@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div id="app">
+	<ul>
+		<li v-for="item,index in items" :key="index"><!--key:实时跟踪遍历的情况-->
+		{{index}}{{ item.message }}
+		</li>
+	</ul>
+	<ul>
+		<li v-for="value, key in object">
+			{{key}} : {{ value }}
+		</li>
+	</ul>
+</div>
+<!-- v-for数组/对象遍历  
+ v-for="value,index/key in array/object" 
+ value:元素,index:下标,key:键名
+ -->
+<script type="text/javascript">
+var vm = new Vue({
+	el : "#app",
+	data : {
+		items : [
+			{ message: 'Foo' },
+			{ message: 'Bar' }
+		],
+		object: {
+			title: 'How to do lists in Vue',
+			author: 'Jane Doe',
+			publishedAt: '2016-04-10'
+		}
+	}
+});
+</script>
+</body>
+</html>

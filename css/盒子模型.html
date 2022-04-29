@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+		.app{
+			width: 400px;
+			height: 600px;
+			background-color: #800080;
+			/* 外边距  上 右 下 左*/
+			/* margin: 10px 20px 30px 40px; */
+			/* margin-left: 50px; */
+			/* 水平居中 */
+			/* margin: 0 auto; */
+			
+			/* 解决外边距重叠 */
+			/* border-top: 1px solid #000000; */
+			/* overflow: hidden; */
+			
+			
+			/* padding-top: 80px; */
+			/* 不影响元素大小 */
+			/* box-sizing: border-box; */
+		}
+		.box3{
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+			/* margin-top: 80px; */
+			
+		}
+		
+			.box1{
+				width: 200px;
+				height: 200px;
+				background-color: #0086B3;
+				/* margin-top: 10px; */
+				/* border-width: 10px;
+				border-style: solid;
+				border-color: red; */
+				/* 边框简写 */
+				/* border: 20px solid #000000; */
+				/* 上边框 */
+				/* border-top:  20px solid #000000; */
+			}
+			.box2{
+				width: 200px;
+				height: 200px;
+				background-color: #008000;
+				/* 内边距  上 右 下 左*/
+				/* padding: 10px 20px 30px 40px; */
+				/* 第一个是 上下  第二个是 左右 */
+				/* padding: 60px 30px; */
+				padding-left: 40px;
+				/* 不影响元素大小 */
+				box-sizing: border-box;
+			}
+			
+			/* 行内元素加边距不会影响别的元素
+				也不会外边距重叠
+			 */
+			span{
+				background-color: #7FFFD4;
+				/* padding: 50px; */
+				margin: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="app">
+			<div class="box3">45678</div>
+			<div class="box1"></div>
+			<div class="box2">14534</div>
+		</div>
+		
+		<span>132423</span><span>132423</span><span>132423</span><span>132423</span>
+	</body>
+</html>

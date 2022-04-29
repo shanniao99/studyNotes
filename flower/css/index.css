@@ -1,0 +1,183 @@
+html {
+	font-size: 100px;
+	/* 定下一个标准  1rem==100px */
+}
+
+body {
+	font-size: 16px;
+	font-family: "苹方";
+}
+header{
+	background-color: #EEEEEE;
+}
+.mid {
+	width: 7.5rem;
+	margin: 0 auto;
+	background-color: #EEEEEE;
+	position: fixed;
+	top: .6rem;
+	bottom: 1rem;
+	left: 0;
+	overflow: scroll;
+}
+
+.inp {
+	width: 7.5rem;
+	height: 1.2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.inp input {
+	width: 6.4rem;
+	height: .7rem;
+	outline: none;
+	border: none;
+	border-radius: .5rem;
+	padding-left: .7rem;
+	font-size: .26rem;
+	color: #9f9f9f;
+	position: relative;
+}
+
+.inp img {
+	width: .26rem;
+	height: .26rem;
+	position: absolute;
+	top: .47rem;
+	left: .6rem;
+	z-index: 1;
+}
+
+.banner {
+	width: 7.5rem;
+	height: 3rem;
+}
+
+.banner img {
+	width: 100%;
+}
+
+.flowers {
+	width: 7.5rem;
+	height: 3.9rem;
+}
+
+.flowers ul {
+	height: 3.9rem;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.flowers ul li {
+	width: 1.8rem;
+	height: 1.3rem;
+}
+
+.flowers ul li a {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.flowers ul li a span {
+	font-size: .28rem;
+	color: #333333;
+}
+
+.flowers ul li a img {
+	width: .9rem;
+	height: .9rem;
+}
+
+.s_banner {
+	width: 7.5rem;
+	height: 4.8rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.list {
+	width: 7.5rem;
+}
+
+.sell {
+	width: 7.1rem;
+	height: .6rem;
+	margin: 0 auto;
+}
+
+.sell h3 {
+	font-size: .36rem;
+	color: #333333;
+	position: relative;
+}
+
+.sell h3 span {
+	display: block;
+	width: .5rem;
+	height: .1rem;
+	background-color: #e37198;
+	border-radius: .5rem;
+	position: absolute;
+	bottom: 0.06rem;
+	left: 0.1rem;
+	z-index: -1;
+}
+
+.list ul {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.list ul li {
+	width: 3.45rem;
+	height: 5.15rem;
+}
+
+.list ul li img {
+	width: 3.45rem;
+	height: 3.75rem;
+}
+
+.text {
+	width: 3.45rem;
+	height: 1.25rem;
+	background-color: white;
+	border-bottom-right-radius: .5rem;
+}
+
+.text p {
+	font-size: .32rem;
+	color: #333333;
+}
+
+.text span {
+	font-size: .28rem;
+	color: #e37198;
+}
+
+.car {
+	width: 3rem;
+	height: .4rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.car span {
+	font-size: .22rem;
+	color: #999999;
+}
+
+@media screen and (max-width:375px) {
+	html {
+		font-size: 50px;
+	}
+
+}

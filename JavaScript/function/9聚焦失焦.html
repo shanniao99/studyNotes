@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>聚焦失焦</title>
+	</head>
+	<body>
+		<div class="box">
+			<input type="text" value="请输入内容" />
+		</div>
+		<script type="text/javascript">
+			var input = document.getElementsByTagName("input")[0];
+			input.onfocus = function() {
+				this.value = "";
+				console.log("聚焦");
+			}
+			// input.onblur = function() {
+			// 	this.value = "请输入内容";
+			// 	console.log("失去焦点");
+			// }
+			input.onchange = function() {
+				console.log("失去焦点且内容被改变");
+			}
+			input.onkeydown=function(){
+				
+			}
+		</script>
+	</body>
+</html>

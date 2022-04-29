@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script>
+			// JS 内置对象函数
+			// 字符串
+			var str="Hello Word!"
+			console.log(str.length) //读取长度
+			console.log(str.indexOf("x")) //读取字符所在索引值位置，没有则-1
+			console.log(str.toUpperCase()) // 大写
+			console.log(str.toLowerCase()) // 小写
+			console.log(str.split("")) //分割字符串形成数组
+			console.log(str.substr(2,3)) //复制片段(从索引值开开始，到它后面几个成员,没有第二参数，自动到末尾)
+			console.log(str.substring(2,5)) //复制片段(从索引值开开始，到整个字符串的第几个成员)
+			console.log(str.replace("l","T")) //替换字符串（用正则忽略大小写，多值匹配）
+
+			
+			// 数组
+			var arr1=["aa","bb","cc"]
+			var arr2=[123,456,789]
+			var arr3=[1,8,3,4]
+			console.log(arr1.concat(arr2,arr3)) //数组合并
+			console.log(arr3.join("")) //连接数组成员形成字符串
+			
+			console.log(arr3.push("66")) //数组末尾添加成员，返回长度
+			console.log(arr3.unshift("99")) //数组头部添加成员，返回长度
+			
+			console.log(arr3.pop())//删除末尾成员，返回该成员
+			console.log(arr3.shift())//删除头部成员，返回该成员
+			console.log(arr3.slice(1,3))//复制数组片段(从索引值开开始，到整个数组的第几个成员)	
+				
+			console.log(arr3.sort()) //正序（按照阿斯克码值从小到大排序）
+			console.log(arr3.reverse())	//反序(会改变原数组)
+			console.log(arr3)
+				
+			console.log(arr3.splice(1,2))//截取数组片段(从索引值开开始，到它后面几个成员)
+			
+			
+			// es6新增方法
+			var arr=[
+				{tit:"111",time:"12-27",id:1001,bool:true},
+				{tit:"222",time:"12-27",id:1002,bool:false},
+				{tit:"333",time:"12-27",id:1002,bool:false}
+			]
+			console.log(arr)
+			
+			// forEach遍历数组
+			// arr.forEach(function(v,i){
+			// 	console.log(v.tit,i)
+			// })
+			
+			//find遍历数组并查找到第一个符合return的结果返回，并停止遍历
+			var res=arr.find(function(v,i){				
+				console.log(v,i)
+				return v.id==1002
+			})
+			console.log(res)
+			
+			// filter遍历数组并查找到所有符合return的结果返回
+			// var res=arr.filter(function(v,i){				
+			// 	console.log(v,i)
+			// 	return !v.bool
+			// })
+			// console.log(res)//结果是数组
+			
+			// findIndex遍历数组并查找到第一个符合return的结果的索引值返回，并停止遍历 
+			// var res=arr.findIndex(function(v,i){
+			// 	console.log(v,i)
+			// 	return v.bool
+			// })
+			// console.log(res)
+			
+			//some遍历数组,遇到return为true时停止遍历，并返回true，没有则false
+			// var bool=arr.some(function(v,i){
+			// 	console.log(v,i)
+			// 	return v.id==1001
+			// })
+			// console.log(bool)
+			
+			
+			// every遍历数组,遇到return为false时停止遍历，并返回false，没有则true
+			// var bool=arr.every(function(v,i){
+			// 	console.log(v,i)
+			// 	return v.id!=1004
+			// })
+			// console.log(bool)
+			
+			// map遍历数组,把return的结果返回形成新数组
+			// var newarr=arr.map(function(v,i){
+			// 	return v.tit+"--"+(v.id+110)
+			// })
+			// console.log(newarr)
+			
+			
+			
+			
+			
+			
+			
+// 练习：
+// 如何在数组指定位置添加成员？
+// "hello word!"首字母大写，然后反序
+// 随机四位数（不重复，区分大小写）验证码
+// 读取字符串“http://www.baidu.com?b=456&a=123”中的a和b的数据
+// 模拟数组sort排序写法: [4,9,3,5,7]
+// 每隔1s向数组添加新成员（不重复），满15个后，每隔1s随机输出其中一个成员(不能重复)，直到全部输出
+			
+		</script>
+		
+	</body>
+</html>

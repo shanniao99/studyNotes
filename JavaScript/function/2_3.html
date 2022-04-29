@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>点击显示隐藏</title>
+		<style type="text/css">
+		#tab{
+			padding-bottom: 30px;
+		}
+			#tab li{
+				width: 80px;
+				height: 40px;
+				line-height: 40px;
+				cursor: pointer;
+				float: left;
+				list-style: none;
+				text-align: center;
+				border: 1px solid #D3D3D3;
+			}
+			.box{
+				position: relative;
+			}
+			#box1,#box2,#box3{
+				width: 300px;
+				height: 100px;
+				position: absolute;
+				top: 30px;
+				left: 0px;
+				padding: 30px;
+			}
+			#box1{
+				background-color: #90EE90;
+			}
+			#box2{
+				background-color: #DB7093;
+			}
+			#box3{
+				background-color: darkorchid;
+			}
+		</style>
+	</head>
+	<body>
+		<button class="box" value="1">第一个</button>
+		<button value="2">第二个</button>
+		<button value="3">第三个</button>
+		<div class="box">
+			<div class="box1" style="display: block;"></div>
+			<div style="display: none;"></div>
+			<div style="display: none;"></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var btn=document.getElementsByTagName("button");
+		var divs=document.getElementsByClassName("box1");
+		// for(var i=0;i<btn.length;i++){
+		// 	btn[i].onclick=function(){
+		// 		this.className="box";
+		// 	}
+			// .className=""
+		}
+	</script>
+</html>

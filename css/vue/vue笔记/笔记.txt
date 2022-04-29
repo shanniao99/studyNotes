@@ -1,0 +1,84 @@
+vue
+网址：http://cn.vuejs.org/
+
+使用vue：
+1 https://cn.vuejs.org/v2/guide/installation.html
+单文件使用（官网教程的使用方式）
+
+2 脚手架cli开发（实际工作中的使用方式，需要node环境）
+npm install vue        安装vue
+npm install -g @vue/cli 安装脚手架
+vue create xxx     创建xxx项目（xxx为项目名称，会自动生成对应目录）
+cd xxx   进入xxx对应项目目录
+yarn serve  运行项目
+然后就可以 http://localhost:8080 查看项目
+
+npm run build 项目打包（自动生成dist目录，文件都在里面，需要放置到服务器环境进行查看）
+
+项目运行流程
+main.js-->App.vue-->index.html
+
+项目目录里面：
+src/mian.js             入口文件
+public/index.html       单页文件
+src/App.vue             首页vue文件
+components              组件目录（放置可复用模块）
+assets                  资源文件目录
+
+
+vue页面:
+data           放置静态数据（字符串 数组 对象 ...）
+methods        放置函数方法（调用才会执行）
+components     组建注册
+computed       计算属性（初始会自动执行一次，然后把结果记录在缓存中，下一次使用就不必再次执行，直接从缓存中拿结果）
+watch          侦听器（用来接听data数据的变化）
+
+生命周期钩子函数：
+beforeCreate   实例创建前（data数据没有值）
+created        实例创建后（data数据有值）
+beforeMount    页面挂载前（页面还未加载，没有dom结构）
+mounted        页面挂载后（页面加载完毕，dom结构可以查找到）
+beforeUpdate   页面更新前（data数据已发生变化，但页面还未渲染更新）
+updated        页面更新后（data数据已发生变化，页面已更新完成）
+beforeDestroy  页面销毁前（dom结构还存在，但只能通过ref的方式查询）
+destroyed      页面销毁后（dom结构不存在，页面以销毁）
+
+
+
+v指令：
+v-once
+v-html
+v-show
+v-if
+v-else
+v-bind:   -->  :
+v-on:     -->  @
+v-for
+v-key
+
+
+
+
+
+vant ui 使用:
+
+1 安装vant-ui
+npm i vant@latest-v2 -S
+
+2 安装按需引入插件
+npm i babel-plugin-import -D
+
+3 修改配置文件 babel.config.js 添加一下语句内容
+ plugins: [
+    ['import', {
+      libraryName: 'vant',
+      libraryDirectory: 'es',
+      style: true
+    }, 'vant']
+  ]
+	
+4 页面使用
+import Vue from 'vue';
+import { Calendar } from 'vant';
+
+Vue.use(Calendar);

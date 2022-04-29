@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "17204031",
+      "name": "右箭头",
+      "font_class": "xianxingtubiaozhizuomoban-07",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    }
+  ]
+}

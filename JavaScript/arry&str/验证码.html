@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>随机四位数验证码</title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 100px;
+				background-color: beige;
+				font-size: 26px;
+				color: #000000;
+				font-weight: bolder;
+				text-align: center;
+				line-height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		<script type="text/javascript">
+			var str="qwertyuiopasdfghjklzxcvbnm1234567890QWERTYUIOPASDFGHJKLZXCVBNM";
+			var arr=new Array(4)
+			for(var i=0;i<4;i++){
+				arr[i]=str[Math.floor(Math.random()*(str.length))];
+			}
+			arr.sort();//正序排序
+			for(var j=0;j<arr.length-1;j++){
+				if(arr[j]==arr[j+1]){
+					for(var k=j+1;k<arr.length-1;k++){
+						arr[k]=arr[k+1];
+					}
+					arr[arr.length-1]=str[Math.floor(Math.random()*(str.length))];
+				}
+			}
+			document.getElementById("box").innerHTML=(arr.join(" "));
+		</script>
+	</body>
+</html>

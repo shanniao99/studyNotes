@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		.box{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			
+		</div>
+		<script>
+			// js防抖和节流
+			var  box= document.getElementsByClassName("box")[0]
+			// 鼠标移动事件（触发频率太高）
+			// 只有停下来时才触发			
+			// box.onmousemove=(function(){
+			// 	var time=null				
+			// 	return function(){
+			// 		clearTimeout(time)
+			// 		time=setTimeout(function(){
+			// 		console.log(222)
+			// 		},100)	
+			// 	}	
+			// }())
+			
+			// 一直不停下来，永远不会触发
+			// 间隔触发 每隔1s自动触发一次			
+			// box.onmousemove=(function(){
+			// 	var bool=true				
+			// 	return function(){
+			// 		if(bool){
+			// 			bool=false
+			// 			setTimeout(function(){
+			// 				console.log(222)
+			// 				bool=true
+			// 			},100)	
+			// 		}
+			// 	}	
+			// }())
+		</script>
+		<hr>
+		<div class="banner">
+					<ul style="left: 0;">
+						<li style="background:red">11</li>
+						<li style="background:yellow">22</li>
+						<li style="background:green">33</li>
+						<li style="background:cyan">44</li>
+						<li style="background:blue">55</li>
+						<li style="background:purple">66</li>
+					</ul>
+					<div class="btn">
+						<a href="#">&lt;</a>
+						<a href="#">&gt;</a>
+					</div>
+					<div class="icon">
+						<ol>
+							<li class="on">0</li>
+							<li>1</li>
+							<li>2</li>
+							<li>3</li>
+							<li>4</li>
+							<li>5</li>
+						</ol>
+					</div>
+		</div>
+		<script>
+		var ul=document.getElementsByTagName("ul")[0]
+		var ol=document.getElementsByTagName("ol")[0]
+		var lis=ol.getElementsByTagName("li")
+		var len=ul.getElementsByTagName("li").length
+		var btns=document.getElementsByTagName("a")
+		var index=0
+		var bool=true
+		
+		
+		for(var i=0;i<len;i++){
+			// ol.innerHTML+="<li></li>"
+			lis[i].onclick=function(){
+				index=this.innerText
+				bool?turn(index):""
+				on(index)
+			}
+		}
+		
+		function on(val){
+			for(var i=0;i<len;i++){
+				lis[i].className=""
+			}
+			lis[val].className="on"
+		}
+		
+		 
+		btns[0].onclick=function(){
+		 	console.log("左")
+			bool?turn(index>len-2?index=0:++index):""
+		}
+		btns[1].onclick=function(){
+			console.log("右")			
+			bool?turn(index?--index:index=len-1):""
+		}
+		
+		function turn(val){
+			bool=false
+			one=parseInt(ul.style.left) //读取初始位置    0
+			two=-100*val                //设置要到达的位置  0
+			var cha=(two-one)/100       //计算差距并分成100份
+			move=setInterval(function(){	//定时器 每次1ms移动一份的距离
+				one = one+cha
+				ul.style.left=one+"%"				 
+				if(one==two){ 
+					clearInterval(move)			
+					bool=true
+					on(val)
+				}				
+			},1)
+		}
+		
+		var auto=setInterval(function(){
+			btns[0].onclick()
+		},3000)
+		
+		ul.onmouseenter=function(){
+			clearInterval(auto)
+		}
+		ul.onmouseleave=function(){
+			auto=setInterval(function(){
+				btns[0].onclick()
+			},3000)
+		}
+		
+		
+		 
+		</script>
+		<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		a{
+			text-decoration: none;
+		}
+		.banner{
+			width: 200px;
+			height: 200px;
+			border: 1px solid red;
+			overflow: hidden;
+			position: relative;
+		}
+		.banner ul{
+			width: 1000%;		
+			position: absolute;
+		}
+		.banner ul li{
+			width: 10%;
+			height: 200px;
+			float: left;
+			list-style: none;
+		}
+		.btn a{
+			position: absolute;
+			right:0;
+			top: 50%;
+			font-size: 30px;
+			color:#666666;
+		}
+		.btn a:first-child{
+			right: auto;
+			left: 0;
+		}
+		
+		.banner ol{
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			margin-left: -54px;
+		}
+		.banner ol li{
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			float: left;
+			background-color: white;
+			list-style: none;
+			margin: 0 3px;
+			line-height: 50px;
+		}
+		.banner ol .on{
+			background-color: black;
+		}
+		</style>
+	</body>
+</html>

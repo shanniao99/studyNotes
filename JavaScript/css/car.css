@@ -1,0 +1,190 @@
+html,
+body,
+ul,
+li,
+ol,
+dl,
+dd,
+dt,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+legend,
+img {
+	margin: 0;
+	padding: 0
+}
+
+html {
+	font-size: 100px;
+	/* 定下一个标准  1rem==100px */
+}
+
+fieldset,
+img {
+	border: 0
+}
+
+img {
+	display: block
+}
+
+ul,
+ol {
+	list-style: none;
+	overflow: hidden;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	font-size: 16px;
+}
+.big{
+	width: 7.5rem;
+	margin: 0 auto;
+	overflow: hidden;
+	background-color: #DDDDDD;
+	position: relative;
+}
+.box {
+	width: 7.5rem;
+	margin: 0 auto;
+	overflow: hidden;
+	text-align: center;
+}
+.none{
+	font-size: .3rem;
+}
+table{
+	width: 7.5rem;
+	border: none;
+	border-collapse: collapse;
+	text-align: center;
+}
+table tr td{
+	width: 1rem;
+	height: 1rem;
+}
+table tr td img{
+	width: 100%;
+}
+table tr td.head{
+	width: .3rem;
+}
+table tr td input[type="text"]{
+	width: .5rem;
+	text-align: center;
+}
+table tr td.zong{
+	font-size: .2rem;
+	color: #DF5000;
+}
+table tr td button{
+	width: 1rem;
+	height: .5rem;
+	outline: none;
+	border: none;
+	background-color: #FF0000;
+	font-size: .20rem;
+	color: white;	
+}
+table tr td.head span{
+	font-size: .3rem;
+	color: white;
+}
+.footer{
+	width: 7.5rem;
+	height: .5rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.footer span,.all span#a{
+	font-size: .2rem;
+	color: #333333;
+}
+.all{
+	width: 1.2rem;
+	height: .5rem;
+	line-height: .5rem;
+	text-align: center;
+}
+.all span{
+	font-size: .3rem;
+	color: white;
+	padding-right: .15rem;
+}
+.right{
+	width: 4.5rem;
+	line-height: .5rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.right b{
+	font-size: .24rem;
+	color: #BD2C00;
+}
+.right button{
+	width: 1.2rem;
+	height: .5rem;
+	font-size: .22rem;
+	color: white;
+	background-color: #FF0000;
+	outline: none;
+	border: none;
+}
+.tab{
+	position: fixed;
+	bottom: 1rem;
+	top: 0;
+	overflow: scroll;
+	background-color:  #DDDDDD;
+}
+.last{
+	width: 7.5rem;
+	height: 1rem;
+	background-color:  #DDDDDD;
+	margin: 0 auto;
+	position: fixed;
+	bottom: 0;
+}
+.last ul{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding-top:.1rem
+}
+
+.last ul li{
+	float: left;
+	font-size: .3rem;
+}
+.last ul li span{
+	font-size: .4rem;
+	/* color: black; */
+}
+.last ul li a{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: black;/* firebrick */
+}
+.last ul li.on a,.last ul li a:hover{
+	color:firebrick ;
+}
+@media screen and (max-width:375px) {
+	html {
+		font-size: 50px;
+	}
+}

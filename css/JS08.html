@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		.box{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<button class="btn" onclick="console.log(123)">html绑定事件</button>
+		</div>
+		<ul>
+			<li>111</li>
+			<li>222<span>222</span></li>
+			<li>333<b>333</b></li>
+		</ul>
+		<script>
+			// JS
+			// 事件：网页本身和用户特有一些交互行为
+			// 事件绑定：通过特定的侦听器，来监听事件行为的产生，事件产生时，又通过预设执行程序来响应用户的操作	
+			// 1 事件的源头 
+			// 2 事件的产生方式
+			// 3 事件发生了什么			
+			
+			
+			// DOM0级事件：不能重复绑定(后面的会覆盖前面)
+			// html绑定事件
+			// <button onclick="alert(123)">html绑定事件</button>
+			// 在js中绑定事件
+			var box=document.getElementsByClassName("box")[0]
+			var btn=document.getElementsByClassName("btn")[0]
+			// box.onclick=function(){
+			// 	console.log(456)
+			// }
+			
+			
+			// 事件流：事件的执行流程顺序
+			// 1 捕获事件：从外往里触发事件
+			// 2 目标事件：直接绑定在元素上的DOM0级事件
+			// 3 冒泡事件：从里往外触发事件（默认）
+			
+			// DOM2级事件：可重复绑定事件
+			// 事件源.addEventListener(事件名,执行程序,是否走捕获流事件)
+			// box.addEventListener('click',function(){
+			// 	console.log(111)
+			// },true)
+			// btn.addEventListener('click',function(){
+			// 	console.log(222)
+			// },true)
+			// btn.addEventListener('click',function(){
+			// 	event.stopPropagation()// 阻止事件冒泡：防止事件继续往外传递
+			// 	console.log(333)
+			// },false)
+			// box.addEventListener('click',function(){
+			// 	console.log(444)
+			// },false)
+			
+			
+			
+			
+			// 阻止事件冒泡：防止事件继续往外传递
+			// event.stopPropagation()
+			// 阻止浏览器默认行为
+			// event.preventDefault() 
+			
+			
+			// 事件对象event：事件里面的黑匣子，详细记录事件发生的一些信息
+			box.onclick=function(event){
+				console.log(event)
+				console.log(event.shiftKey,event.ctrlKey,event.altKey) //判断是否按下了shift，ctrl，alt键
+				console.log(event.button) //鼠标左键0 右键2 
+				console.log(event.clientX) // 视口位置（固定定位）
+				console.log(event.pageX) // 页面位置（绝对定位以页面为参照物）
+				console.log(event.screenX) // 屏幕位置
+				console.log(event.offsetX) // 目标位置（绝对定位以事件源为参照物）
+			}
+			
+			// 鼠标右键事件
+			// box.oncontextmenu=function(){
+			// 	event.preventDefault() //阻止浏览器默认行为
+			// 	console.log(event.button)
+			// 	console.log("鼠标右键")
+			// }
+			
+			// 键盘按键事件
+			// var num=0
+			// document.onkeydown=function(){
+			// 	console.log(event)
+			// 	var key=event.charCode|| event.keyCode|| event.witch  
+			// 	console.log(key)// 读取键值  37 38 39 40
+			// 	if(key==39){
+			// 		console.log("你按下了右方向键")
+			// 		box.style.marginLeft=(num++)+"px"
+			// 	}
+			// 	console.log(event.shiftKey,event.ctrlKey,event.altKey)
+			// 	console.log("键盘按下触发")
+			// }
+			
+			
+			
+			// 事件关键字this和event.target
+			// this指向事件源
+			// event.target永远指向事件触发时最底层的元素
+			// var lis=document.getElementsByTagName("li")	
+					
+					
+			// for(var i=0;i<lis.length;i++){
+			// 	lis[i].title=i //设置对应属性值
+			// 	lis[i].onclick=function(){
+			// 		console.log(i) //事件在点击时才会调用，调用时循环已遍历完，i已经自增到3
+			// 		console.log(this.title) //读取点击时该事件源的对应属性值
+			// 		console.log(this,event.target)
+			// 	}
+			// }
+			// console.log(i)
+			
+			
+			// 事件委托：(必须保证底层元素干净且一致)
+			// 利用事件的冒泡特性和event.target永远指向事件触发时最底层的元素
+			// var ul=document.getElementsByTagName("ul")[0]
+			// ul.onclick=function(){
+			// 	console.log(event.target.innerHTML)
+			// }
+			
+			
+// 练习：
+// 1 键盘移动元素（可八个方向移动，不能出范围） 
+// 2 鼠标拖动某个元素移动  onmousedown  onmousemove  onmouseup
+box.onmousedown=function(){
+	console.log(123)
+	box.onmousemove=function(){	
+		console.log(456)
+	}
+}
+box.onmouseup=function(){	
+	console.log(789)
+	box.onmousemove=null
+}
+
+			
+			
+			
+			// h5新增：拖拽 ...触屏...
+			
+			
+			
+		
+				
+		</script>
+	</body>
+</html>

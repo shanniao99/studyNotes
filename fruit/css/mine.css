@@ -1,0 +1,248 @@
+html {
+	font-size: 100px;
+	/* 定下一个标准  1rem==100px */
+}
+
+body {
+	font-size: 16px;
+}
+
+.mid {
+	width: 7.5rem;
+	margin: 0 auto;
+	position: fixed;
+	top: .88rem;
+	bottom: 1rem;
+	left: 0;
+	overflow: scroll;
+	background-color: #f4f4f4;
+}
+
+.top {
+	width: 7.5rem;
+	height: 4.53rem;
+	background: url(../img/images/mine_top.jpg);
+	background-size: contain;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.tou {
+	width: 7.1rem;
+	height: 1.8rem;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+}
+
+.tou span {
+	font-size: .3rem;
+	font-family: "黑体";
+	color: #181818;
+}
+
+.tou:first-child {
+	position: relative;
+}
+
+#shua {
+	position: absolute;
+	top: 1rem;
+	left: 0.85rem;
+}
+
+#t {
+	padding-left: .4rem;
+}
+
+.text {
+	width: 7.1rem;
+	height: 2.6rem;
+	margin: 0 auto;
+	position: relative;
+}
+
+.logo {
+	width: 6.8rem;
+	height: .77rem;
+	margin: 0 auto;
+	border-bottom: 0.01rem solid #877c6e;
+}
+
+.logo button {
+	width: 1.86rem;
+	height: .6rem;
+	border: none;
+	border-radius: .5rem;
+	background-color: #ffdd88;
+	font-size: .28rem;
+	font-family: "苹方";
+	color: #292323;
+	float: right;
+	margin-top: 0.08rem;
+}
+
+.tequan {
+	width: 5.7rem;
+	height: 1.82rem;
+	margin: 0 auto;
+	position: absolute;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	align-content: space-around;
+}
+
+.tequan span {
+	font-family: "黑体";
+	font-size: .24rem;
+	color: #edd799;
+}
+
+.tequan ul li {
+	float: left;
+	display: flex;
+	width: 1.7rem;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-direction: row;
+}
+
+.tequan ol li {
+	float: left;
+	width: 1.7rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: row;
+}
+
+.order {
+	width: 7.5rem;
+	height: 3.2rem;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: white;
+	margin-bottom: .2rem;
+}
+
+.order_t {
+	width: 7.1rem;
+	height: .7rem;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.order_t h3 {
+	font-size: .28rem;
+	font-family: "黑体";
+	color: #181818;
+}
+
+.order_t span {
+	font-size: .24rem;
+	font-family: "黑体";
+	color: #949494;
+}
+
+.order ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.order ul li {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.order ul li span {
+	font-size: .24rem;
+	font-family: "苹方";
+	color: #2d2d2d;
+}
+
+.order ul li img {
+	width: .44rem;
+	height: .44rem;
+}
+
+.yuyue {
+	width: 7.1rem;
+	height: .8rem;
+	margin: 0 auto;
+	border-top: 0.01rem solid #e2e2e2;
+}
+
+.yu_t {
+	width: 1.8rem;
+	height: .8rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: row;
+}
+
+.yu_t span,
+.list_t span {
+	font-size: .28rem;
+	font-family: "苹方";
+	color: #181818;
+
+}
+
+.list {
+	background-color: white;
+	margin-bottom: .2rem;
+}
+
+.list ul li {
+	width: 7.1rem;
+	height: .8rem;
+	margin: 0 auto;
+	border-bottom: 0.01rem solid #e2e2e2;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.list ul li span,.last span {
+	font-size: .28rem;
+}
+
+.list_t {
+	height: .8rem;
+	display: flex;
+	align-items: center;
+}
+
+.list_t span {
+	padding-left: .35rem;
+}
+
+.last {
+	width: 7.1rem;
+	height: .8rem;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.last_list{
+	background-color: white;
+	margin-top: .2rem;
+}
+@media screen and (max-width:375px) {
+	html {
+		font-size: 50px;
+	}
+
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			canvas {
+				background-color: #999;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- <img src="../123.jpg" /> -->
+		<canvas id="box" width="400" height="300">h5画布</canvas>
+		<script>
+			var box = document.getElementById("box")
+			var obj = box.getContext("2d")
+
+			// fill 面   stroke 线		
+
+			// 矩形
+			obj.fillStyle = "red" //设置fill的样式
+			obj.fillRect(2, 2, 98, 48) //填充矩形
+
+			obj.strokeStyle = "rgba(255,255,0,1)" //设置stroke的样式
+			obj.strokeRect(1, 1, 100, 50) //描边矩形
+
+			// 线条
+			obj.moveTo(0, 300) //设置初始点
+			obj.lineTo(100, 200) //设置连接点
+			obj.lineTo(200, 300)
+			obj.stroke() //用线条连接
+			obj.fill() //用面填充
+
+
+			// 线条样式
+			obj.beginPath() //重新开始新的路径绘画（不继承前面的）
+			obj.lineWidth = "10" //线条粗细
+			obj.lineCap = "round" //单线条末端圆角
+			obj.lineJoin = "bevel" // 多线条转角设置
+			obj.lineTo(300, 0)
+			obj.lineTo(200, 100)
+			obj.lineTo(300, 100)
+			obj.stroke()
+
+
+			// 圆
+			obj.beginPath()
+			obj.arc(300, 200, 80, 0, 2 * Math.PI, false)
+			obj.fill()
+
+
+			// 文字
+			obj.font = "50px 楷体"
+			obj.fillStyle = "blue"
+			obj.lineWidth = "1"
+			obj.strokeText("测试", 0, 45) //坐标是以文字的左下角对齐
+
+
+			// 清除图形
+			obj.clearRect(0, 0, 400, 300)
+			
+			obj.save() //保存，存档（记录画布的数据） 
+			obj.save()
+
+			// 旋转图形		
+			obj.strokeStyle = "red"
+			obj.lineWidth = "4"
+			obj.beginPath()
+			obj.moveTo(0, 0)
+			obj.lineTo(0, 100)
+			obj.stroke()
+
+			for (var i = 0; i < 9; i++) {
+				obj.rotate(-Math.PI / 180 * 10) // 旋转图形
+				obj.beginPath()
+				obj.moveTo(0, 0)
+				obj.lineTo(0, 100)
+				obj.stroke()
+			}
+			
+			
+			// obj.rotate(Math.PI / 180 * 90) // 为了不被旋转影响，要把图形旋转回来
+			
+			obj.restore() //回档，应用上一次存档的画布数据（一次存档对应一次回档）
+			
+			obj.fillRect(200,150,100,5) //被旋转影响到了，看不到
+			
+			
+			
+			// 移动图形（校对基准点）
+			obj.translate(200,150)
+			var x=20
+			for(var i=0;i<x;i++){
+				obj.moveTo(0, 0)
+				obj.lineTo(0, 100)
+				obj.stroke()
+				obj.rotate(Math.PI / 180 * 360/x)
+			}
+			
+			// 回档或移动图形把画布重置回去
+			// obj.translate(-200,-150)			
+			obj.restore()			
+			
+			obj.fillRect(300,295,100,5)
+			
+			
+			
+			// 验证码制作
+			
+			
+			obj.clearRect(0,0,400,300)
+			
+			
+			// 阴影
+			obj.shadowColor="red"
+			obj.shadowOffsetX="2"
+			obj.shadowOffsetY="2"
+			obj.shadowBlur="5"
+			obj.fillRect(100,100,100,50)
+			
+			// 渐变
+			
+			var jb=obj.createLinearGradient(0,0,0,300)
+			jb.addColorStop(0,"red")
+			jb.addColorStop(0.3,"blue")			
+			obj.fillStyle=jb
+			
+			obj.fillRect(0,0,50,100)
+			
+			
+			// 透明度
+			obj.globalAlpha="0.5"
+			
+			// 图形叠加的显示设置
+			// obj.globalCompositeOperation="destination-in"
+			 
+			// 图片
+			var pic=document.createElement("img")
+			pic.src="../123.jpg"
+			window.onload=function(){
+				// var pic=document.getElementsByTagName("img")[0]				
+				obj.drawImage(pic,46,35,50,50,350,250,50,50)				
+			}
+			
+			obj.beginPath()
+			obj.arc(200,100,50,0,2*Math.PI,true)
+			obj.fill()
+			
+			
+			
+			
+			
+		</script>
+		
+
+	</body>
+</html>

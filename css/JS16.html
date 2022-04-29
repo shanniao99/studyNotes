@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		// js 面向对象：一种编程思维，如何优化代码，提升性能
+		// 封装 多态 继承
+		
+		// 等值判断
+		console.log(5==5)
+		// 等址判断
+		console.log(["aa"]==["aa"])
+		console.log({a:123}=={a:123})
+		console.log(function(){}==function(){})
+		
+		
+		
+		var p1={name:"张三",age:18} // p1=new Object({name:"张三",age:18})
+		var p2=p1 //赋址运算
+		p2.name="李四" //修改其中一个会影响到另外一个
+		console.log(p1)
+		console.log(p1==p2) //相同地址的数据
+		
+		
+		// 工厂模式
+		function fn(v1,v2){
+			var obj={}
+			obj.name=v1
+			obj.age=v2
+			return obj
+		}
+		var p3=fn("张三",19)
+		var p4=fn("李四",20)
+		p3.name="王五" //修改其中一个而不影响到另外一个
+		console.log(p3,p4)
+		console.log(p3==p4) //不同地址的数据
+		
+		
+		// 构造函数：把函数本身当成对象（工厂模式的简写)
+		// （放置不相同属性）
+		function People(v1,v2){
+			this.name=v1
+			this.age=v2
+			this.say=function(){
+				console.log("你好，我是"+this.name)
+			}
+		}
+		// 构造函数的使用须通过实例化实现
+		var p5=new People("张三",18)
+		var p6=new People("李四",18)
+		console.log(p5,p6)
+		console.log(p5==p6) //不同地址的数据
+		p5.say()
+		p6.say()
+		
+		console.log(p5.say==p6.say) // 方法一样，但因为地址来源不一样，所以false
+		
+		
+		// 查看构造函数指向
+		console.log(p1.constructor)
+		console.log(p5.constructor)
+		console.log(p6.constructor)
+		console.log(p5.constructor==p6.constructor) //相同地址
+		
+		
+		
+		
+		// 原型函数（放置相同方法）
+		People.prototype.a=function(){
+			console.log('你好，我是'+this.name+",今年"+this.age+"岁")
+		}		
+		p5.a()
+		p6.a()
+		console.log(p5.a==p6.a) //true 方法共享，节省资源
+		
+		
+		// 原型链： People.__proto__.__proto__....
+		// {} --> new Object
+		// p5 --> new People
+		// p6 --> new People
+		
+		People.__proto__.__proto__.b=456
+		console.log(p5.b)
+		
+		
+		// 继承		
+		// 属性继承用call或者apply
+		
+		function X(v1,v3){
+			this.name=v1
+			this.gen=v3
+		}
+		X.prototype.say=function(){
+			console.log(123456798)
+		}
+		
+		function Y(m,v2,n){
+			// X.call(this,m,n)
+			X.apply(this,[m,n])
+			this.age=v2
+		}
+		// 方法继承用修改原型链
+		Y.prototype=new X()  // 修改test的上一级指向，不再是Y 而是 X ,这样就有X的方法了
+		Y.prototype.constructor=Y  // 继承方法后，把指向改回去
+		
+		// test-->-->object
+		
+		var test=new Y("测试",20,"男")
+		console.log(test.constructor) //查看构造函数
+		test.say()	
+		
+		
+		// new Array()
+		// new Object()
+		// new Date()
+		
+		
+		
+		// 总结
+		// 构造函数：不同的属性
+		// 原型函数：相同的方法
+		// 属性继承：call或者apply
+		// 方法继承：修改prototype原型链指向
+		
+		
+		
+		</script>
+	</body>
+</html>

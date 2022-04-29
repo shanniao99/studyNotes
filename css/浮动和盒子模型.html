@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+	<div class="box">
+		<span class="box1">111</span>
+		<div class="box2">222123456798123456789</div>
+	</div>		
+	<div class="box3">333</div>
+	
+		<style>
+		.box{
+			background-color: grey;
+			overflow: hidden;/* 可以将浮动元素的文档流位置展示出来 */
+		}
+		.box1{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			float: left;
+		}
+		.box2{
+			width: 100px;
+			height: 100px;
+			background-color: green;
+			float: left;
+			overflow: hidden;/* 溢出内容隐藏 */
+			/*overflow-x: scroll;  x轴出现滚动条显示溢出内容 */
+		}
+		.box3{
+			width: 200px;
+			height: 100px;
+			background-color: orange;
+			clear:both;/* 清除浮动的影响：我的上面不允许有浮动元素挡着 */
+		}
+		/* 浮动布局：用来解决块状元素无法横向排列的问题 
+		float:left/right/none
+		先浮起来然后移动，浮起来时，会脱离文档流位置！！！
+		导致原来的位置不存在，后面内容自动挤上来被挡住（挡不住内容）
+		不想被挡住怎么办？
+		1 给被挡住的也加上float，实现横向排列效果
+		2 给被挡住的加上clear:both，继续竖向排列效果
+		
+		浮动元素：加了浮动属性的元素
+		可以设置宽高，但只会靠左或靠右，且会脱离文档流！！！
+		
+		------------------------------------------------------------
+		
+		盒子模型：
+		
+		指网页中各个元素之间的一个距离的控制，
+		可以像现实中的盒子一样，
+		分为：
+		
+		1 内容   width/height
+		
+		2 边框   border
+		三要素：颜色(黑色) 粗细(3px) 类型(实线solid/虚线dotted)
+		注意：边框的添加会使容器的大小发生变化
+		
+		3 内边距 padding
+		注意：内边距的添加会使容器的大小发生变化
+		
+		
+		4 外边距 margin
+		用法同padding内边距一样		
+		
+		*/
+		.box{
+			min-width: 500px; /* 最小宽度 */
+			max-width: 1000px; /* 最大宽度 */
+		}
+		.box3{
+			width: 180px;
+			height: 95px;
+			/* 
+			border: solid blue 10px;
+			border-left:3px dotted;
+			border-bottom:none; 
+			*/			
+			/* 分属性设置：四个值按照上右下左顺时针依次赋值，哪一边没有值，找他对面要 */
+			border-color: blue yellow purple cyan;
+			border-width: 5px 10px 0;
+			border-style: dotted solid; 
+		}
+		.box2{
+			/* css3 盒模型设置 box-sizing (可以把边框和内边距的修改算在宽高里面) */
+			box-sizing: border-box;
+			/* 
+			padding-top:10px;
+			padding-left:10px;
+			*/
+			padding: 20px 0 0 20px;
+		}
+		.box1{
+			/* 
+			margin-right: 10px;
+			margin-bottom: 20px; 
+			*/
+			margin: 10px 0 20px;
+		}
+		
+		
+		</style>
+		<hr>
+		<h2>
+			<div>123</div>
+			<p>标题</p>
+		</h2>
+		111<b>222</b>333
+		<p>段落</p>
+		<ul>
+			<li>123</li>
+		</ul>
+		<style>		
+		/* 
+		注意事项：
+		1 浏览器会默认的为一些标记添加间距，需要手动清除
+		2 行内元素没有上下间距（内边距有展示效果，没有位移效果）
+		3 块状元素的外边距重叠（浮动元素之间不存在此类问题）
+			当两个容器嵌套使用时，改变里面容器的上外边距，会发现连带着外面的容器也会一起移动
+			当两个容器并列使用时，他们上下外间距会重叠，浏览器会取最大的显示
+			
+		*/
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		html,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,img{margin:0;padding:0}
+		b{
+			background-color: green;
+			margin: 0px 0px 0px 0px;
+			padding: 0px 0px 0px 0px;
+		}
+		h2{
+			width: 200px;
+			height: 200px;
+			background-color: grey;
+			/* padding-top: 1px; */
+			/* border-top: 1px solid; */
+			/* overflow: hidden; */
+			/* 以上三个属性都可以解决外边距重叠问题 */
+		}
+		h2 div{
+			width: 50px;
+			height: 50px;
+			background-color: red;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		h2 p{
+			background-color: green;
+			margin-top: 30px;
+		}
+		</style>
+	</body>
+</html>

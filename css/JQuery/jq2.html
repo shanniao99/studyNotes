@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		.li1{
+			display: none;
+		}
+		.li2{
+			opacity: 0;
+		}
+		.li3{
+			visibility: hidden;
+		}
+		
+		</style>
+	</head>
+	<body>
+		
+		<div class="box">
+			<h1>标题</h1>
+			<h2>标题</h2>
+			<p>段落</p>
+			<ul>
+				<li class="li1"><b>111</b></li>
+				<li class="li2">222</li>
+				<li class="li3"></li>
+				<li class="li4">444</li>
+				<li class="li5">555</li>
+				<li class="li6">666</li>
+				<li class="li7">777</li>
+				<li class="li8">888</li>
+			</ul>
+			<input type="checkbox" checked>
+			<input type="text" value="1" disabled>
+			<input type="text" value="2">
+		</div>
+		<script src="jquery-1.7.2.js"></script>
+		<script>
+		
+		// jq DOM操作 ：增删改查
+		// console.log($(".li2~li")) //紧跟其后的所有元素
+		
+		
+		// console.log($("li:nth-child(2)"))
+		
+		
+		// console.log($("li:first"))
+		// console.log($("li").first())
+		
+		// console.log($("li").eq(2)) // 结果里面筛选
+		// console.log($("li:eq(2)")) // 选择器筛选
+		
+		
+		// console.log($("li").eq(2).text(123456)) //jq对象才能用JQ语法
+		// console.log($("li")[2].text(123456)) //js对象用不了JQ语法
+		
+		
+		// console.log($("li:odd")) //索引奇数，结果偶数
+		// console.log($("li:even")) //索引偶数，结果奇数
+		
+		// console.log($("li:not(.li4)")) // 选择器里面排除指定元素
+		// console.log($("li").not($("li").eq(3))) // 结果里面排除指定元素
+		
+		// console.log($("li:lt(3)")) // 索引值小于3的元素(不包含等于)
+		// console.log($("li:gt(3)")) // 索引值大于3的元素(不包含等于)		
+		// console.log($("li:gt(3),li:eq(3)")) //想要等于，可以用组合选择器
+		
+		// console.log($(":header")) //所有标题元素
+		
+		// console.log($("li:contains(444)")) //根据里面文本内容选择元素
+		
+		// console.log($("li").empty()) //清空内容
+		
+		// console.log($("li:parent")) //查找有内容的元素
+		
+		// console.log($("li:has(b)")) //根据里面元素内容选择元素
+		// console.log($("li").has("b")) //根据里面元素内容选择元素
+		
+		// console.log($("li:hidden")) // dispaly:none 的元素
+		// console.log($("li:visible"))
+		
+		// console.log($("input[type='text'][value=2]"))
+		
+		
+		// console.log($("input:enabled"))
+		
+		
+		// console.log($("li").hasClass("li2"))
+		
+		// console.log($("li").filter(".li2"))
+		
+		// console.log($("li").map(function(i,v){
+		// 	return this.innerText
+		// }))
+		
+		// console.log($(".box").is("div")) //
+		
+		// console.log($("li").slice(1,4))
+		
+		
+		// console.log($(".box ul").children(".li3"))
+		
+		// console.log($(".box ul").find(".li3"))
+		
+		// console.log($(".li3").next())
+		// console.log($(".li3").nextAll())
+		// console.log($(".li3").nextUntil(".li7"))
+		
+		
+		// console.log($(".li3").parentsUntil("body"))
+		
+		// console.log($(".li3").siblings().add(".li3"))
+		// console.log($(".li3").siblings().addBack())
+		
+		$(".li8,.li7").click(function(){
+			console.log(123)
+		})
+		
+		// $("h2").append("<i>666</i>")
+		// $("h1").append($(".li8").clone(true)) // jq 深克隆 ，绑定的事件也会克隆
+		
+		// $("<i>666</i>").appendTo($("h2"))
+		
+		// $("h2").prepend("<i>555</i>")
+		// $("<i>555</i>").prependTo($("h2"))
+		
+		
+		
+		// $(".li6").after("<li>6.5</li>")
+		// $(".li6").before("<li>5.5</li>")
+		
+		
+		// $("<li>5.5</li>").insertBefore($(".li6"))
+		// $("<li>6.5</li>").insertAfter($(".li6"))
+		
+		$("li").unwrap()		
+		$("li").wrapAll("<div></div>")
+		$("li").wrap("<span></span>")
+		$("li").wrapInner("<s></s>")
+		
+		
+		$("p").replaceWith("<i><b>123456</b></i>")
+		$("<p>新段落</p>").replaceAll($("i"))
+		
+		$(".li7").empty()
+		
+		var a=$(".li7")
+		a.remove()
+		var b=$(".li8")
+		b.detach()
+		console.log(a,b)
+		
+		$(".box").after(a).after(b)
+		
+		
+		
+		
+		</script>
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		// js 运算
+		// 基本运算： + - / * %
+		var a=5
+		a+=3 // a=a+3
+		a-=4 // a=a-4
+		a*=5 // a=a*5
+		a/=6 // a=a/6
+		console.log(a)
+		
+		// 比较运算： >  <  >=  <=  ==  ===(全等于)
+		// 结果为布尔值数据
+		// 常用于if...else...结构
+		console.log(a=0) //一个等号是赋值
+		console.log(a==0) //两个等号才是判断
+		console.log(a===0) //三个等号是全等于判断（不止值相等，且数据类型也要一至）
+		
+		// js中一些特殊的比较
+		console.log(1==true) //true    1可以当成true去使用
+		console.log(0==false) //true    0可以当成false去使用
+		console.log(null==undefined) //true
+		console.log(null==false) //false
+		console.log(Infinity==Infinity) //true
+		console.log(NaN==NaN) //false
+		
+		
+		// 0 null undefined false "" NaN  
+		// 以上数据默认不成立
+		var res=document.getElementById("box")
+		console.log(res)
+		if(res){
+			console.log("上")
+		}else{
+			console.log("下")
+		}
+		
+		
+		// 判断一个数是否在0-10之间？
+		var num=5
+		if(10>num && num>0){ //这里不能直接写成10>num>0
+			console.log("num在0-10之间")
+		}
+		
+		// 逻辑运算： 并且&&  或者||  非!
+		// 真且真 为真
+		// 真且假 为假
+		// 假且假 为假
+		// 真或真 为真
+		// 真或假 为真
+		// 假或假 为假
+		var c=!true  //取反
+		console.log(c)
+		console.log(5!=6) //非等于判断
+		
+		// 值1 && 值2  当值1成立时，使用值2，否则使用值1	
+		var d= 123 && 456
+		var e= null && 456
+		console.log(d,e)
+		
+		// 值1 || 值2  当值1成立时，使用值1，否则使用值2 	
+		var f= 123 || 456
+		var g= null || 456
+		console.log(f,g)
+		
+		
+		// 自增自减运算：++/--
+		var i=5		
+		console.log(++i) // 按顺序，先遇到++符号，则先进行自增，再使用自增后的值
+		console.log(i++) // 按顺序，先遇到变量，则先使变量的值，再进行自增
+		console.log(i)
+		
+		
+		var x=8  // 8
+		console.log(x++) // ?
+		console.log(x) // 9
+		
+		var m=12
+		var n=m++
+		console.log(m) //13
+		console.log(n) //12
+		console.log(m) //13
+		
+		var y=1
+		if(y--){
+			document.write(y+"上<br>") // 0 上
+		}else{
+			document.write(y+"下<br>")
+		}
+		if(++y){
+			document.write(y+"上<br>") // 1 上
+		}else{
+			document.write(y+"下<br>")
+		}
+		if(--y){
+			document.write(y+"上<br>")
+		}else{
+			document.write(y+"下<br>") // 0 下
+		}
+		if(y++){
+			document.write(y+"上<br>")
+		}else{
+			document.write(y+"下<br>") // 1 下
+		}
+		
+		
+		// 练习：
+		// 判断一个数是否是3的倍数，5的倍数 ，3和5的倍数
+		// 判断一个数是否是小于0的，大于10的，0--10之间的
+		// 猜大小
+		var str=prompt("请输入一个数：") //带输入框的弹框，结果为字符串
+		console.log(str)
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		</script>
+	</body>
+</html>

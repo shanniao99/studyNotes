@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		let a=new Set(["aa","bb","cc","cc"])
+		let b=new Map([
+			[123,"ee"],
+			[{a:123},"ff"],
+			[789,"gg"],
+		])
+		console.log(a,b)
+		
+		
+		// 新增数据类型：Symbol
+		// Symbol用来表示独一无二的值，
+		let c=Symbol()
+		let d=Symbol()
+		console.log(c,typeof(c))
+		console.log(c==d)
+		
+		// function fn1(){
+			
+		// }
+		// function fn2(){
+			
+		// }		
+		// console.log(fn1()==fn2())
+		
+		
+		// Symbol常用于对象中键名的设置
+		let test="age"
+		let sy=Symbol()
+		let obj={
+			name:"张三",
+			test:"测试",
+			[test]:18,
+			[Symbol()]:123456789,
+			[sy]:666
+		}
+		console.log(obj)
+		
+		console.log(obj.age)
+		console.log(obj["age"])
+		console.log(obj[test])
+		
+		console.log(obj[Symbol()]) //不能直接调用,因为每一个Symbol都不同
+		console.log(obj[sy]) //通过变量调用
+		
+		
+		// Symbol的备注
+		let e=Symbol("注册") //注释信息
+		let f=Symbol("注册")
+		console.log(e,f,e==f)
+		console.log(e.description) //读取Symbol的备注信息
+		
+		// Symbol.for()  创建Symbol数据
+		let g=Symbol.for("登录") // Symbol.for() 第一次创建是一个新的Symbol数据
+		let h=Symbol.for("登录") // Symbol.for() 第二次创建会把第一次的值直接拿过来引用，不会新建
+		console.log(g==h)
+		
+		
+		// 数组 Set Map 字符串等...
+		// 原型函数里面有[Symbol(Symbol.iterator)]   (对象不是)
+		// 称为：iterator 接口
+		// 它提供了另外一种访问机制
+		// 可用for...of...遍历
+		// 也提供了一个.next()的迭代器用法
+		
+		let arr=["hello",123,true]
+		
+		console.log(arr)
+		console.log(a)
+		console.log(b)
+		
+		// for...of...遍历
+		for(let i of b){
+			console.log(i)
+		}
+		
+		// 迭代器(类似php中的指针概念)
+		// 访问数据时，不再是整体访问，而是分步骤访问，跟有条理性，逻辑性更好
+		let it=a[Symbol.iterator]()
+		console.log(it)
+		console.log(it.next())
+		console.log(it.next())
+		console.log(it.next())
+		console.log(it.next())
+		
+		
+		// 对象没有iterator接口，无法迭代
+		// 1 给对象添加iterator接口，使它可以迭代
+		// 2 把对象转Map数据，使它可以迭代
+		console.log(obj)
+		console.log(Object.entries(obj))
+		
+		Object.prototype[Symbol.iterator]=function(){
+			let sz=Object.entries(this) //把对象转二维数组
+			let len=sz.length //读取长度
+			let i=0
+			return {
+				next:function(){
+					return {value:sz[i]&&sz[i][1],done:(i++)<len}				
+				}
+			}
+		}
+		
+		for(let x of obj){
+			console.log(x)
+		}		
+		
+		// let it2=obj[Symbol.iterator]()
+		// console.log(it2)
+		// console.log(it2.next())
+		// console.log(it2.next())
+		// console.log(it2.next())
+		// console.log(it2.next())
+		
+		
+		
+		
+		// 生成器：函数的迭代用法
+		// 函数名带“*”号
+		// 用yield关键字分割代码段
+		// 可以携带参数
+		function *fn(v){
+			console.log(v)
+			let m=yield; // 以第一次迭代的结果当成第二次迭代的形参去使用
+			console.log(m)
+			let n=yield;
+			console.log(n)
+		}
+		let it3=fn(111) //第一次迭代携带的参数
+		it3.next()
+		it3.next(222) //第二次迭代携带的参数
+		it3.next(333)
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "303543",
+      "name": "防伪查询",
+      "font_class": "fangweichaxun",
+      "unicode": "e656",
+      "unicode_decimal": 58966
+    },
+    {
+      "icon_id": "637757",
+      "name": "常见问题",
+      "font_class": "changjianwenti",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "10885298",
+      "name": "文件",
+      "font_class": "wenjian",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    }
+  ]
+}

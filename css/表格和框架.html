@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			table {
+				width: 500px;
+				border-collapse: collapse;/* 将表格边框合并 */
+			}
+			th,td,table{
+				border: 1px solid red;
+			}
+			td{
+				background: grey;
+				padding: 5px 0 5px 10px;
+			}
+			th{
+				height: 50px;
+				text-align: left;
+			}
+			tr:nth-child(2n+1) td{
+				background-color: green;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!-- 
+		表格：table（因为嵌套层级太多，不利于网站的优化，不建议使用）
+		tr 表格的行
+		td 表格的单元格
+		th 表格的表头
+		thead 表格的头部
+		tbody 表格的身体
+		colspan="n" 横向合并n个单元格
+		rowspan="n" 竖向合并n个单元格
+		col 表格列的控制
+		-->		
+		<table>
+			<col width="50" />
+			<col width="80" />
+			<col width="100" />
+			<col width="100" />
+			<col width="" />
+			<thead>
+				<tr>
+					<th>111</th>
+					<th>111</th>
+					<th colspan="2">111</th>
+					<th>111</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>111</th>
+					<td>111</td>
+					<td colspan="2" rowspan="2">111</td>
+					<td>111</td>
+				</tr>
+				<tr>
+					<th>111</th>
+					<td>111</td>
+					<td>111</td>
+				</tr>
+				<tr>
+					<th>111</th>
+					<td>111</td>
+					<td>111</td>
+					<td rowspan="2">111</td>
+					<td>111</td>
+				</tr>
+				<tr>
+					<th>111</th>
+					<td>111</td>
+					<td>111</td>
+					<td>111</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<hr>
+		
+		<!-- 
+		框架：页面里面嵌套页面（常用于百度地图生成器）
+		http://api.map.baidu.com/lbsapi/creatmap/ 
+		-->
+		<a href="map.html" target="asd">超链接跳转框架页</a>
+		<iframe src="css使用.html" name="asd">
+			内容不显示
+		</iframe>
+		<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		iframe{
+			display: block;
+			background-color: grey;
+			width: 100%;
+			min-width: 1180px;
+			height: 200px;
+			border: none;
+		}
+		</style>
+		
+	</body>
+</html>

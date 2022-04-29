@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>随机切换颜色和位置</title>
+		<style type="text/css">
+			.box {
+				width: 500px;
+				height: 500px;
+				border: 1px solid #9932CC;
+				position: relative;
+				top: 50px;
+				left: 20%;
+			}
+
+			#small {
+				width: 50px;
+				height: 50px;
+				border: 1px solid #FF4500;
+				position: absolute;
+			}
+
+			.btn {
+				margin-left: 170px;
+				margin-top: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div id="small"></div>
+		</div>
+		<div class="btn">
+			<button value="1">开始</button>
+			<button value="0">暂停</button>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var small = document.getElementById("small");
+		var change = null;
+		function anim() {
+			change = setInterval(fn, 100) //定时器
+			function fn() {
+				var a = Math.floor(Math.random() * 256);
+				var b = Math.floor(Math.random() * 256);
+				var c = Math.floor(Math.random() * 256);
+				var d = Math.floor(Math.random() * 256);
+				small.style.backgroundColor = "rgb(" + a + "," + b + "," + c + "," + d + ")";
+				small.style.top = Math.floor(Math.random() * 450) + "px";
+				small.style.left = Math.floor(Math.random() * 450) + "px";
+			}
+		}
+		var box=document.getElementsByClassName("btn")[0];
+		var clicks=box.getElementsByTagName("button");
+		console.log(clicks[0].value)
+		for(var i=0;i<clicks.length;i++){
+			clicks[i].onclick=function(){
+				if(this.value=="1"){
+					anim();
+				}else{
+					clearInterval(change);
+				}
+			}
+		}
+	</script>
+</html>

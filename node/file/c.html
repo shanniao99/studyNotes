@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../js/bootstrap.min.css"/>
+		<script src="../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<title>评论区</title>
+	</head>
+	<body>
+		<ul class="list-group comment-list">
+		  {{each comments}}
+		  <li class="list-group-item">{{$value.content}}<span class="time">{{$value.time}}</span> <span class="name">{{$value.name}}</span></li>
+		  {{/each}}
+		</ul>
+	</body>
+</html>

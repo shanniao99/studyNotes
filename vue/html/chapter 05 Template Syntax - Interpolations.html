@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div id="app">
+	{{msg}}
+	<p>内容: {{ rawHtml }}</p>
+	<p v-html="rawHtml"></p>
+	<div v-bind:class="color">blue blue blue</div>
+	<p>{{ number + 1 }}</p>
+	<p>{{ ok == 1 ? 'YES' : 'NO' }}</p>
+	<p>将字符串vue转换成数组，再倒序排序，再转换成字符串<br>{{ message.split('').reverse().join('') }}</p> 
+</div>
+<script type="text/javascript">
+//v-bind:动态绑定属性
+var vm = new Vue({
+	el : "#app",
+	data : {
+		msg : "hi vue",
+		rawHtml : '<span style="color:red">这里是红色</span>',
+		color:'blue',
+		number : 10,
+		ok : 1,
+		message : "vue"
+	}
+});
+vm.msg = "hi....";
+</script>
+<style type="text/css">
+.red{color:red;}
+.blue{color:blue; font-size:100px;}
+</style>
+</body>
+</html>

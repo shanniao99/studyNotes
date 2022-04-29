@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		/* css3弹性布局：display:flex  ie兼容性不好，适用于移动端 
+		总共13个属性 6个容器属性 6个项目属性
+		*/
+		.box{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			display: flex;/* 弹性布局 */
+			/* 6个容器属性 */
+			flex-direction:row-reverse; /* 确定主轴及其排序方式 */
+			flex-wrap:wrap-reverse;/* 换行设置 */
+			flex-flow:row nowrap ;/* 上面两个属性的简写 */
+			justify-content: space-between;/* 主轴上的对齐方式 */
+			align-items:stretch;/* 交叉轴上的对齐方式（适用于内容只有一行或一列时使用） */
+			align-content: flex-start;/* 交叉轴上的对齐方式（适用于内容有多行或多列时使用） */
+		}
+		.box div{
+			width: 30px;
+			height: 30px;
+			background-color: yellow;
+			border: 1px solid green;
+		}
+		.box div:nth-child(2){
+			background-color: orange;
+			line-height: 30px;
+			/* 6个项目属性 */
+			order: 2; /* 项目的排序 默认0，数字越小越靠前 */
+			flex-grow:3 ;/* 项目放大，默认0不放大 */
+			flex-shrink:0;/* 项目缩小，默认1缩小，0不缩小 */
+			flex-basis:50px ; /* 主轴上的基础尺寸 */
+			flex:3 0 50px ;/* 上面三个属性的简写 */
+			align-self: center ;/* 单独控制该项目（与众不同的对齐方式） */
+		}
+		.box div:nth-child(4){
+			background-color: green;
+			order: 1;
+			flex-grow:1 ;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div class="box">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+			<div>7</div>
+			<div>8</div>
+		</div>
+		<hr>
+		<div class="one">
+			<div>
+				
+			</div>
+		</div>
+		<style>
+		.one{
+			width: 100px;
+			height: 100px;
+			background-color: grey;
+			border-radius:10px ; /* css3圆角 */;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		/* 子代选择器 */
+		.one>div{
+			width: 40px;
+			height: 40px;
+			background-color: white;
+			border-radius: 50%;
+		}
+		</style>
+		<hr>
+		<div class="two">
+			<div>
+				
+			</div>
+			<div>
+				
+			</div>
+		</div>
+		<style>
+		.two{
+			width: 100px;
+			height: 100px;
+			background-color: grey;
+			border-radius:10px ; /* css3圆角 */;
+			display: flex;
+			justify-content: space-between;
+			padding: 15px;
+			border: 2px solid red;
+			box-sizing: border-box; /* css3盒模型设置 */
+		}		
+		.two>div{
+			width: 30px;
+			height: 30px;
+			background-color: white;
+			border-radius: 50%;
+		}
+		.two>div:last-child{
+			align-self: flex-end;
+		}
+		</style>
+		
+	</body>
+</html>

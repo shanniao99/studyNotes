@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.on {
+				background-color: red;
+			}
+			.box{
+				width: 400px;
+				padding: 0 10px;
+				border: 5px solid blue;
+				height: 200px;
+				overflow-y: scroll;
+				position: fixed;
+				left: 50%;
+				top: 50%;
+			}
+		</style>
+		<script src="jquery-1.7.2.js"></script>
+	</head>
+	<body>
+		<button class="btn1">按钮1</button>
+		<button class="btn2">按钮2</button>
+		<button id="btn3">按钮3</button>
+		<img src="" alt="" title="123">
+		<div class="box">
+			<ul>
+				<li class="li1">111</li>
+				<li class="li2">222</li>
+				<li class="li3">333</li>
+			</ul>
+			<input type="text" value="请输入">
+		</div>
+		<script>
+			// JQuery js的插件：写更少的代码，做更多的事情
+			// 2.0以上不再做ie的兼容	
+
+			// $("") 通过选择器查找元素,结果是数组
+			console.log($("#btn3"))
+
+			// 可以给数组里面的每一个元素绑定事件，不需要嵌套循环
+			$("button").click(function() {
+				console.log(this) //原生js写法 结果是dom节点
+				console.log($(this)) //jq写法  结果是jq对象
+
+				$("img").removeAttr("src")
+				
+				$(".box").toggleClass("on")
+				
+				// this.innerText="123" 
+				console.log($(this).html()) //读取内容
+				console.log($(".box input").val()) //读取内容
+				$(this).html("<b>123</b>")  //设置内容
+				// this.text("123") // 错误 js和jq语法不要混用
+				
+				
+				console.log($(".box").width())  //width
+				console.log($(".box").innerWidth()) //width+padding
+				console.log($(".box").outerWidth()) //width+padding+border
+				
+				$(".box").width(200) //修改宽度
+				
+				console.log($(".box").offset()) //读取固定定位位置
+				
+				// 修改位置
+				// $(".box").css("top":0)
+				// $(".box").offset({top:0})
+				
+				// 直接切换显示和隐藏
+				// $(".box").toggle()
+				
+				// 有效果（滑动和淡入淡出）切换显示和隐藏
+				// $(".box").toggle(1000,"linear",function(){
+				// 	console.log("动画执行完成")
+				// })
+				
+				// 滑动切换显示和隐藏
+				// $(".box").stop() // 停止前面动画
+				// $(".box").slideToggle()
+				
+				// 淡入淡出切换显示和隐藏
+				// $(".box").fadeToggle(2000,"linear",()=>{
+				// 	console.log(123456789)
+				// })
+				
+				// 自定义动画
+				// $(".box").animate({
+				// 	width:"500px",
+				// 	left:"60%"
+				// },1000,"linear",()=>{}).delay(1000).animate({
+				// 	top:0
+				// },1000,"linear",()=>{})
+				
+				
+				
+				// console.log($(".box").position()) //读取绝对定位位置
+			})
+
+			// 
+			var num = 6
+			$("img").attr("index", function() {
+				return num * 2
+			}) //设置属性
+			console.log($("img").attr("title")) //读取属性
+			
+			// 设置css
+			$(".box").css("color","green")
+			$(".box").css({"color":"green","fontSize":"50px"})
+			
+			// 读取css值
+			console.log($(".box").css("backgroundColor"))
+			
+			$(".box").scrollTop(85) //设置滚动条位置
+			
+			$(".box").scroll(function(){
+				console.log($(this).scrollTop()) //读取滚动条位置
+			})			
+			
+		</script>
+
+
+
+	</body>
+</html>

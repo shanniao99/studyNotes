@@ -1,0 +1,29 @@
+<view class="search">
+  <image src="../../images/search.png"></image>
+  <input type="text" placeholder="搜索" />
+</view>
+<view class="all">
+  <view class="left">
+    <ul>
+      <li wx:for="{{left}}" wx:key="index" class="{{num==index?'on':''}}"><text>{{item}}</text></li>
+    </ul>
+  </view>
+  <view class="right">
+    <ul>
+      <li wx:for="{{right}}" wx:key="index">
+        <image src="{{item.img}}" class="pic" style="width: 210rpx; height: 180rpx;"></image>
+        <view class="txt">
+          <view class="top">
+            <text class="tit">{{item.tit}}</text>
+          </view>
+          <view class="down">
+            <p style="padding-left: 20rpx;">￥<b class="p">{{item.price}}</b><text>{{item.oldprice}}</text></p>
+            <view class="img">
+              <image src="../../images/shoppingcar.png"></image>
+            </view>
+          </view>
+        </view>
+      </li>
+    </ul>
+  </view>
+</view>

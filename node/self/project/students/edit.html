@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>编辑信息</title>
+		<style type="text/css">
+			#say {
+				height: 80px;
+				font-size: 30px;
+				text-align: center;
+				font-weight: bolder;
+				line-height: 80px;
+			}
+			form{
+				width: 600px;
+				height: 600px;
+				margin: 0 auto;
+			}
+			.box{
+				width: 600px;
+				height: 50px;
+			}
+			.head{
+				width: 80px;
+				float: left;
+				
+			}
+			.txt{
+				width: 500px;
+				float: left;
+			}
+			.txt input{
+				width: 500px;
+				height: 30px;
+			}
+			.txt textarea{
+				width: 500px;
+				height: 100px;
+			}
+			.txt button{
+				margin-top: 25px;
+				margin-left: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="/change" method="post">
+			<div id="say">个人信息</div>
+			<div class="box">
+				<label class="head">学号：</label>
+				<div class="txt">
+					<input type="text" name="id" value="{{students.id}}" readonly>
+				</div>
+			</div>
+			<div class="box">
+				<label class="head">姓名：</label>
+				<div class="txt">
+					<input type="text" name="name" value="{{students.name}}">
+				</div>
+			</div>
+			<div class="box">
+				<label class="head">年龄：</label>
+				<div class="txt">
+					<input type="text" name="age" value="{{students.age}}">
+				</div>
+			</div>
+			<div class="box">
+				<label class="head">性别：</label>
+				<div class="txt">
+					<input type="text" name="sex" value="{{students.sex}}">
+				</div>
+			</div>
+			<div class="box">
+				<label class="head">爱好：</label>
+				<div class="txt">
+					<input type="text" name="hobbies" value="{{students.hobbies}}">
+				</div>
+			</div>
+			<div class="box">
+				<div class="txt">
+					<button type="submit" >提交</button>
+				</div>
+			</div>
+		</form>
+	</body>
+</html>

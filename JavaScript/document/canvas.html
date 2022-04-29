@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>六芒星</title>
+		<style type="text/css">
+			canvas{
+				background-color: #8FBC8F;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="box" width="400" height="400">130</canvas>
+	</body>
+	<script type="text/javascript">
+		var box=document.getElementById("box");
+		var use = box.getContext("2d");
+		use.arc(200,200,150,0,2*Math.PI,true);//小圆
+		use.stroke();
+		use.beginPath();
+		use.arc(200,200,160,0,2*Math.PI,true);//大圆
+		use.stroke();
+		use.beginPath();
+		use.moveTo(70,125);
+		use.lineTo(330, 125);
+		use.lineTo(200,350);
+		use.lineTo(70,125);
+		use.stroke();
+		use.beginPath();
+		
+		
+		use.translate(273,-72)
+		for(var i=0;i<1;i++){
+			use.rotate(Math.PI / 180 * 60)
+			use.moveTo(70,125);
+			use.lineTo(330, 125);
+			use.lineTo(200,350);
+			use.lineTo(70,125);
+			use.stroke();
+			
+		}
+	</script>
+</html>

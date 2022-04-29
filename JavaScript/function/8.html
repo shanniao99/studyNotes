@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>拖拽</title>
+		<style>
+			body {
+				width: 100%;
+				height: 50%;
+				display: flex;
+				justify-content: space-between;
+			}
+
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			body>* {
+				width: 150px;
+				height: 300px;
+				user-select: none;
+			}
+
+			#left {
+				text-align: center;
+				background-color: hotpink;
+				line-height: 300px;
+			}
+
+			ul li {
+				text-align: center;
+				height: 35px;
+				line-height: 35px;
+				color: blue;
+				margin: 15px auto;
+				border: 2px dashed #dddddd;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="left">请拖拽内容到此区域</div>
+		<ul id="list">
+			<li draggable="true">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<script>
+			const aLi = document.querySelectorAll('li');
+			const list = document.getElementById('list');
+			aLi.forEach((item, index) => {
+				//谷歌下
+				item.setAttribute('draggable', 'true');
+				item.ondragstart = function(e) {
+					console.log(e.dataTransfer);
+					const dt = e.dataTransfer;
+					//火狐
+					dt.setData('key', index);
+				}
+			})
+			//拖拽进入
+			left.ondragenter = function() {
+				this.innerText = '请释放你的鼠标';
+			};
+			//阻止默认事件
+			left.ondragover = function(e) {
+				e.preventDefault();
+				e.stopPropagation();
+				return false;
+			};
+			//拖拽离开目标物体时
+			left.ondragleave = function() {
+				this.innerText = '请拖拽内容到此区域';
+
+			};
+			//拖拽结束时
+			left.ondrop = function(e) {
+				const dt = e.dataTransfer;
+				console.log(dt.getData('key')); //获取索引
+				console.log(list);
+				list.removeChild(aLi[dt.getData('key')]);
+			}
+		</script>
+	</body>
+</html>

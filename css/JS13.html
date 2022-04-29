@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text">
+		<input type="password">
+		<button>存储</button>
+		<button>读取</button>
+		<button>删除</button>
+		<script>
+		// cookie 浏览器缓存 （练习：记住密码）
+		
+		// 格式：
+		// document.cookie="键=值;expires=过期时间;path=路径"
+		
+		// cookie使用，浏览器必须开启其功能（设置里面）
+		// cookie的使用必须以域名形式打开网页
+		// cookie只能存储字符串数据 用String()转换
+		// cookie一次只能存储一条数据
+		// expires 设置过期时间
+		// path 设置访问页面权限的路径
+		// cookie存储的数据4095长度和20-40条数有限制（用json数据来避免）
+		// 注意：同属性条件下的cookie才会修改，否则会新增
+		var btn=document.querySelectorAll("button")
+		var inp=document.querySelectorAll("input")
+		var today=new Date()
+		today.setHours(today.getHours()+1) //设置一小时后的时间
+			
+		btn[0].onclick=function(){
+			console.log(today)
+			console.log("存储")
+			// document.cookie="user="+inp[0].value+";expires="+today.toUTCString()+";path=/"
+			// document.cookie="password="+inp[1].value+";expires="+today.toUTCString()+";path=/"
+			
+			// cookie只能存储字符串数据 
+			// var arr=["aa","bb","cc"] // "test=aa,bb,cc"   json转换后   'test=["aa","bb","cc"]'
+			// var obj={a:123,b:456} //"test=[object Object]"  json转换后 'test={"a":123,"b":456}'
+			// document.cookie="test="+JSON.stringify(obj)
+			
+			var admin={
+				user:inp[0].value,
+				password:inp[1].value
+			}
+			
+			document.cookie="admin="+JSON.stringify(admin)+";expires="+today.toUTCString()+";path=/"
+			
+		}
+		btn[1].onclick=function(){			
+			console.log("读取")
+			// 读取所有cookie数据，结果是字符串
+			console.log(document.cookie)  //"password=123;user=阿萨德"
+			// var str=document.cookie
+			// console.log(str.split(";")[0].split("=")[1])
+			
+			var admin=JSON.parse(document.cookie.split("=")[1]) 
+			console.log(admin.user) 
+			console.log(admin.password)
+			
+		}
+		btn[2].onclick=function(){
+			console.log("删除")
+			// 赋值清空(会保留字段)
+			// document.cookie="admin=;expires="+today.toUTCString()+";path=/"
+			// 设置一个已经过期了的时间来清空(不会保留字段)
+			today.setHours(today.getHours()-2)
+			document.cookie="admin=1231;expires="+today.toUTCString()+";path=/"
+		}
+		
+		
+		// json数据：本质上是一个字符串，只是内容特别像对象或数组
+		var str1='["aa","bb","cc"]'
+		var str2='{"name":"张三","age":18}'
+		console.log(JSON.parse(str1))
+		console.log(JSON.parse(str2))
+		console.log(JSON.stringify(JSON.parse(str2)))
+		// JSON.parse() 把json字符串转换成对应的数组或对象
+		// JSON.stringify() 把数组或对象转换成对应的json字符串
+		
+		
+		
+		// localStorage h5本地存储 （练习：购物车的添加的读取）
+		// 只能储存字符串数据 （用json数据来避免）
+		// 没有时间限制，没有条数限制，没有权限限制，总大小5M
+		
+		// 存储数据
+		localStorage.setItem("shop","123456789")
+		localStorage.setItem("car","987654321")
+		
+		// 读取对应数据
+		console.log(localStorage.getItem("car"))
+		
+		// 删除对应数据
+		// localStorage.removeItem("shop")
+		
+		// 清除所有数据
+		// localStorage.clear()
+		
+		
+		console.log(localStorage.key(1)) //获取对应索引值数据的键值
+		
+		
+		
+		</script>
+	</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			// 新增 promise 异步处理函数，实现懒加载
+			// resolve处理成功
+			// reject处理失败
+			// 三个状态：  pending 待定中   rejected 失败  fulfilled 成功		
+			let a = new Promise(function(resolve, reject) {
+				setTimeout(function() {
+					reject(123)
+				}, 2000)
+			})
+
+			// .then()来处理成功的回调
+			// .catch()来处理失败的回调
+			a.then(function(res) {
+				console.log(res)
+			}).catch(function(err) {
+				console.log(err)
+			})
+
+
+			// .then()处理后有返回值，且返回值为promise，
+			// 那么.then().then()可以进行链式操作（更有条理性，逻辑性）
+
+			let b = new Promise((resolve, reject) => {
+				setTimeout(() => {
+					reject(456)
+				}, 1000)
+			})
+			
+			let c = new Promise((resolve, reject) => {
+				setTimeout(() => {
+					resolve(789)
+				}, 1000)
+			})
+
+			b.then((res) => {
+				if (res == 456) {
+					return c //变量c为promise数据，不进行嵌套使用，实现懒加载
+				}
+			}).then(res => {
+				console.log(res)				
+			}).catch(err=>{
+				console.log(err)
+			})
+			
+			
+			
+			// promise方法：
+			let d=Promise.resolve("success")
+			console.log(d)
+			let e=Promise.reject("fail")
+			e.catch(res=>{
+				console.log(res)
+			})
+			
+			// all方法：等待数组中的promise数据处理完毕，一但遇到第一个reject失败的，则马上停止，并得到失败的结果，如果没有失败的，则以数组形式得到所有成功的结果
+			// let f=Promise.all([a,b,c])
+			// console.log(f)
+			
+			
+			// allSettled方法:
+			// 区别于all方法，不管成功或失败，会以数组形式得到所有的结果
+			let g=Promise.allSettled([a,b,c])
+			console.log(g)
+			
+			
+			// async 函数：会自动把返回值变成promise数据,
+			// 返回值默认都是成功的promise数据，
+			// 除非返回值本身返回的就是一个失败的promise数据
+			
+			// await 关键字：只能在async函数内部使用，
+			// 会暂停的代码运行，并去等待promise结果出来，再继续往下运行代码
+			
+			async function fn(){	
+				console.log(111)
+				let i= await new Promise((resolve,reject)=>{
+					setTimeout(()=>{
+						resolve("成功")
+					},1000)
+				})
+				console.log(222)
+				return "测试"
+			}
+			let h=fn()
+			console.log(h)
+			
+			
+			
+			
+			// 错误捕捉 try...catch...
+			try{
+			console.lo(666)
+			}catch(err){
+				console.warn(err)
+			}
+			console.log(999)
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>读取字符串中的值</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str="http://www.baidu.com?a=123&b=456";
+			var a=str.indexOf("a=")+2;
+			var b=str.indexOf("b=")+2;
+			var strA=str.substring(a,(str.indexOf("&")));
+			var strB=str.substr(b)
+			document.write(str+"这个字符串中<br>a="+strA+"<br>b="+strB);
+		</script>
+	</body>
+</html>

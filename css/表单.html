@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+	
+	表单：用来处理用户输入
+	<form action="php.php" method="get">
+		文本域：<input type="text" name="a" value="默认的显示文字" readonly>
+		<hr>
+		密码：<input type="password" name="b" disabled>
+		<hr>
+		按钮：
+		<input type="submit" value="登录">
+		<input type="reset" value="重置">
+		<input type="button" value="自定义按钮" >
+		<button>双标记按钮</button>
+		<hr>
+		单选按钮：
+		<input type="radio" name="c" value="男" id="xxx"> 
+		<label for="xxx">男(文字绑定功能)</label>
+		<input type="radio" name="c" value="女"> 女
+		<input type="radio" name="c" value="保密" checked> 保密
+		<hr>
+		复选框：
+		<input type="checkbox" id="play" name="d[]" value="游戏">
+		<label for="play">游戏</label>
+		<input type="checkbox" name="d[]"  value="阅读"> 阅读
+		<input type="checkbox" name="d[]"  value="睡觉" checked> 睡觉
+		<hr>
+		选择列表：
+		<select>
+			<option>asdasdasd</option>
+			<option>1321321321</option>
+			<option selected>请选择...</option>			
+		</select>
+		<hr>
+		文件域：
+		<input type="file">
+		<hr >
+		隐藏域：
+		<input type="hidden" name="id" value="123456798">
+		<hr >
+		文本区域：
+		<textarea>请输入你的评论...文本区域</textarea>
+		<hr>
+		<h2>html5新增：pc端建议不要使用</h2> 
+		<hr>
+		数字：<input type="number" min="1" max="10" value="1" step="2">
+		<hr>
+		邮箱：<input type="email">
+		<hr>
+		日期（date/week/month/time）：<input type="date" value="2021-12-10">
+		<hr>
+		滑动条：
+		<input type="range" min="1" max="10" value="1" step="2">
+		<hr>
+		颜色：<input type="color" value="#ff0000">
+		<hr>
+		带输入提示功能的选择列表：
+		<input type="text" list="news">
+		<datalist id="news">
+			<option value ="12313213213"></option>
+			<option>asdasdasdasd</option>
+			<option value="内容">备注</option>
+		</datalist>
+		<hr>
+		自动获取焦点和必填设置：
+		<input type="text" autofocus required><!-- autofocus自动获取焦点；required：必填 -->
+		<hr>
+		文字自动消失：
+		<input type="text" placeholder="输入文字时自动消失">
+		<hr>
+		文件多选
+		<input type="file" multiple>		
+	</form>
+	<style>
+		/* 属性选择器 */
+		input[type="email"]{
+			height: 50px;
+			background-color: #00FFFF;
+			border: none;
+			outline: none; /* 清除焦点状态的边框 */
+		}
+		textarea{
+			vertical-align: middle; /* 行内-块状元素的上下对齐方式 */
+			width: 200px;
+			height: 100px;
+			resize: none;/* 禁止用户拖放大小 */
+			outline: none; /* 清除焦点状态的边框 */			
+			font-family: "microsoft yahei";/* 文本区域内容文字字体用的是宋体,需要重新定义 */
+			font-size: 16px;
+		}
+		/* 单选按钮，复选框，选择列表的箭头，无法用css控制显示效果 
+		input{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			border: 2px solid green;
+		}
+		*/
+		input[type="button"]{
+			background-color: red;
+			border: none;
+			cursor: pointer;/* 鼠标变手指状 */
+			padding: 0 1px 0 0;
+		}
+		input[type="button"]:active{
+			padding:0 0 0 1px;
+		}
+		/* 
+		所有的表单项都是行内-块状元素，类似图片img那种
+		可以设置宽高，但又不会换行，可以一行显示
+		很不好用，图片有间隔，不好对齐，对旁边元素有影响
+		以上问题可以通过vertical-align:top/middle/bottom（行内-块状元素的上下对齐方式）来解决
+		*/
+		img{
+			margin: 0;
+			padding: 0;
+			border: none;
+			vertical-align: middle;
+		}
+		
+	</style>
+	<hr>
+	<img src="123.jpg"><img src="123.jpg">123456
+	<br>
+	<img src="123.jpg">
+	<img src="123.jpg">
+		
+	</body>
+</html>

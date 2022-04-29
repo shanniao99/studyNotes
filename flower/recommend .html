@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>七夕推荐</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/recommend.css" />
+		<link rel="stylesheet" type="text/css" href="./font/font_icon/iconfont.css" />
+		<script src="js/jquery-1.7.2.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="box">
+			<header>
+				<div class="head">
+					<div class="tit"><span class="iconfont icon-zuojiantou"  onclick="history.go(-1)"></span><b>七夕推荐</b></div>
+					<div class="btn">
+						<div class="btn_l">
+							<div class="small"></div>
+							<div class="big"></div>
+							<div class="small"></div>
+						</div>
+						<div class="btn_r">
+							<div class="big_p">
+								<div class="big"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div class="list">
+				<img src="./img/search.png">
+				<input type="text" placeholder="商品搜索：请输入商品关键字" />
+				<ul>
+					<li class="on">综合<span class="iconfont icon-xialasanjiaoxia"></span></li>
+					<li>销量<span class="iconfont icon-xialasanjiaoxia"></span></li>
+					<li>价格<span class="iconfont icon-shengxujiangxu"></span></li>
+					<li>上新时间<span class="iconfont icon-xialasanjiaoxia"></span></li>
+				</ul>
+			</div>
+			<div class="mid">
+				<ul>
+					<li>
+						<img src="./img/images/1.png">
+						<div class="text">
+							<p>绣花香 128</p>
+							<span>￥128.00</span>
+							<div class="car"><span>销量：22</span><img src="./img/car.png"
+									style="width: .35rem; height: .35rem;"></div>
+						</div>
+					</li>
+					<li>
+						<img src="./img/images/5.png">
+						<div class="text">
+							<p>浪漫土耳其</p>
+							<span>￥280.00</span>
+							<div class="car"><span>销量：0</span><img src="./img/car.png"
+									style="width: .35rem; height: .35rem;"></div>
+						</div>
+					</li>
+					<li>
+						<img src="./img/images/6.png">
+						<div class="text">
+							<p>如初之光</p>
+							<span>￥198.00</span>
+							<div class="car"><span>销量：66</span><img src="./img/car.png"
+									style="width: .35rem; height: .35rem;"></div>
+						</div>
+					</li>
+					<li>
+						<img src="./img/images/2.png">
+						<div class="text">
+							<p>遇见时光遇见你</p>
+							<span>￥198.00</span>
+							<div class="car"><span>销量：99</span><img src="./img/car.png"
+									style="width: .35rem; height: .35rem;"></div>
+						</div>
+					</li>
+					<li>
+						<img src="./img/images/4.png">
+						<div class="text">
+							<p>晴空万里</p>
+							<span>￥239.00</span>
+							<div class="car"><span>销量：333</span><img src="./img/car.png"
+									style="width: .35rem; height: .35rem;"></div>
+						</div>
+					</li>
+					<li>
+						<img src="./img/images/7.jpg">
+						<div class="text">
+							<p>混搭满天星</p>
+							<span>￥129.00</span>
+							<div class="car"><span>销量：11</span><img src="./img/car.png"
+									style="width: .35rem; height: .35rem;"></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(function(){
+			$(".list li").click(function(){
+				for(let i=0;i<$(".list li").length;i++){
+					$(".list li").eq(i).removeAttr("class");
+				}
+				$(this).addClass("on");
+			})
+		})
+	</script>
+</html>

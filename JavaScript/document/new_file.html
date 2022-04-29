@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var box = document.getElementById("box");
+			var can = box.getContext("2d");
+			var body = document.getElementsByClassName("body")[0];
+			box.width = body.clientWidth;
+			box.height = body.clientHeight;
+			var arr=[];
+			var a=20;
+			var b=27;
+			var c=5;
+			var d=20;
+			var e=2;
+			var f=38;
+			var g=20;
+			var h=45;
+			var x1=c+30;
+			var x2=e+35;
+			var index=1;//成倍放大或缩小
+			var r = Math.floor(Math.random() * 256);
+			var g1 = Math.floor(Math.random() * 256);
+			var b1 = Math.floor(Math.random() * 256);
+			var tm = 1;
+			
+			can.fillStyle=`rgba(${r},${g1},${b1},${tm})`
+			can.beginPath();
+			can.moveTo(a,b);
+			can.bezierCurveTo(c,d,e,f,g,h);
+			can.fill();
+			can.beginPath();
+			can.moveTo(a,b);
+			can.bezierCurveTo(x1,d,x2,f,g,h);
+			can.fill();
+		</script>
+	</body>
+</html>

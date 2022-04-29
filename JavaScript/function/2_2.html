@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>点击显示隐藏</title>
+		<style type="text/css">
+			.box {
+				width: 300px;
+				height: 150px;
+				margin-top: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="bbox">
+			<button class="button" value="1">按钮1</button>
+			<button class="button" value="2">按钮2</button>
+			<button class="button" value="3">按钮3</button>
+			<button class="button" value="4">按钮4</button>
+			<div class="box" style="background-color: #90EE90; display: block;"></div>
+			<div class="box" style="background-color: blueviolet; display: none;"></div>
+			<div class="box" style="background-color: coral; display: none;"></div>
+			<div class="box" style="background-color: blueviolet; display: none;"></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var b1 = document.getElementsByClassName("button");
+		var b2 = document.getElementsByClassName("box");
+		// for (var i = 0; i < b1.length; i++) {
+		// 	b1[i].onclick = (function() {
+		// 		var x = i
+		// 		return function() {
+		// 			b2[x].style.display = "block";
+		// 		}
+		// 	}())
+		// 	for (var j = 0; j < i; j++) {
+		// 		var y = j;
+		// 		b2[y].style.display = "none";
+
+		// 	}
+		// 	for (var k = i + 1; k < b1.length; k++) {
+		// 		var z = k;
+		// 		b2[z].style.display = "none";
+		// 	}
+
+		// }
+		var index=0;
+		for(var i=0;i<b1.length;i++){
+			b1[i].value=i;
+			b1[i].onclick=function(){
+				b2[index].style.display="none";
+				var num=this.value;
+				b2[num].style.display="block";
+				index=num;
+			}
+		}
+	</script>
+</html>

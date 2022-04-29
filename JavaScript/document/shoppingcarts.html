@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<!-- 禁止用户缩放页面 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>购物车</title>
+		<link rel="stylesheet" type="text/css" href="../css/car.css" />
+		<link rel="stylesheet" type="text/css" href="../font/font_all/iconfont.css" />
+		<script src="../js/car.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="big">
+			<div class="tab">
+				<div class="box">
+					<!-- <table border="1">
+				<tr>
+					<th></th>
+					<th>图片</th>
+					<th>名称</th>
+					<th>单价</th>
+					<th>数量</th>
+					<th>操作</th>
+				</tr>
+				<tr>
+					<td class="head"><span class="iconfont icon-yixuanzhong"></span></td>
+					<td><img src="../img/r1.png"></td>
+					<td>喜钻白18K金显钻群镶钻戒女戒女人花求婚订婚结婚钻石戒指女</td>
+					<td>1659.00</td>
+					<td><input type="button" value="-" class="down" /><input type="text" value="1"
+							class="number" /><input class="up" type="button" value="+"></td>
+					<td><button>删除</button></td>
+				</tr>
+			</table> -->
+
+				</div>
+				<div class="footer">
+					<div class="all">
+						<span class="iconfont icon-yixuanzhong" style="color: white;"></span>
+						<span id="a">全选</span>
+					</div>
+					<div class="right">
+						<span>合计(元)：<b id="money">0</b></span>
+						<button type="button">立即结算</button>
+					</div>
+
+				</div>
+			</div>
+			<div class="last">
+				<ul>
+					<li><a href="../document/shop.html"><span class="iconfont icon-shouye"></span>
+							<p>首页</p>
+						</a></li>
+					<li class="on"><a href="../document/shoppingcarts.html"><span class="iconfont icon-gouwuche"></span>
+							<p>购物车</p>
+						</a></li>
+					<li><a href="#"><span class="iconfont icon-wode"></span>
+							<p>我的</p>
+						</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<!-- <script type="text/javascript">
+		window.onload = function() {
+			create();
+			function create() {
+				var span = "<span class='iconfont icon-yixuanzhong' style='color:white'></span>" //选中框
+				var box = document.getElementsByClassName("box")[0];
+				//判断本地存储是否有值
+				if (localStorage.length > 0) {
+					var result = "<table border='1'>";
+					result +=
+						"<tr><th></th><th>商品</th><th>名称</th><th>单价(元)</th><th>数量</th><th>总价(元)</th><th>操作</th></tr>"; //表头
+					var str = JSON.parse(localStorage.getItem("text")); //用JSON.parse()将本地存储的字符串转换成数组对象
+					for (var i = 0; i < str.length; i++) {
+						result += "<tr><td  class='head'>" + span + "</td><td><img src='" + str[i].img + "'</td>" +
+							"<td>" + str[i].txt + "</td><td class='price'>" + str[i].price +
+							"</td><td><input type='button' value='-' class='down' /><input type='text' value=" + str[i]
+							.num +
+							" class='number' /><input class='up' type='button' value='+'></td><td class='zong'>" + str[i]
+							.price * str[i].num + "</td><td><button class='del'>删除</button</td></tr>";
+					}
+					box.innerHTML = result;
+
+				} else {
+					result = "<span class='none'>购物车空空如也~~~<br>去逛一逛吧~~~</span>"
+					box.innerHTML = result;
+				}
+			}
+
+
+			var price = document.getElementsByClassName("price"); //单价
+			var money = document.getElementById("money"); //合计
+			var zong = document.getElementsByClassName("zong"); //总价
+			var all = document.getElementsByClassName("all")[0];
+			var all_dis = all.getElementsByTagName("span")[0]; //全选
+			var head = document.getElementsByClassName("head"); //单选
+			var num = document.getElementsByClassName("number"); //商品数量
+			var down = document.getElementsByClassName("down"); //数量-
+			var up = document.getElementsByClassName("up"); //数量+
+
+
+
+			countNum()
+
+			function countNum() {
+				//增加数量
+				for (var i = 0; i < up.length; i++) {
+					up[i].index = i;
+					up[i].onclick = function() {
+						num[this.index].value = Number(num[this.index].value) + 1;
+						zong[this.index].innerHTML = Number(price[this.index].innerText) * num[this.index].value;
+						var dis = head[this.index].getElementsByTagName("span")[0];
+						if (dis.style.color == "blue") {
+							allMoney(); //计算合计
+						}
+					}
+				}
+				//减少数量
+				for (var i = 0; i < down.length; i++) {
+					down[i].index = i;
+					down[i].onclick = function() {
+						num[this.index].value > 1 ? num[this.index].value-- : num[this.index].value = 1;
+						zong[this.index].innerHTML = Number(price[this.index].innerText) * num[this.index].value;
+
+						var dis = head[this.index].getElementsByTagName("span")[0];
+						if (Number(money.innerText) > Number(price[this.index].innerText) && dis.style.color ==
+							"blue") {
+							allMoney();
+							// money.innerHTML = Number(zong[this.index].innerText); //计算合计
+						}
+					}
+				}
+
+			}
+
+			function allMoney() { //总价计算
+				var sum = 0;
+				for (var i = 0; i < num.length; i++) {
+					sum += Number(zong[i].innerText);
+				}
+				money.innerHTML = sum;
+				return sum;
+			}
+
+
+			//商品选中和取消选中
+			count = 0; //记录单选次数
+			for (var i = 0; i < head.length; i++) {
+				head[i].index = i;
+				head[i].onclick = function() {
+					var dis = this.getElementsByTagName("span")[0];
+					if (dis.style.color == "white") { //判断单选  未选中为白色  已选中为蓝色
+						dis.style.color = "blue";
+						countNum(); //数量改变
+						money.innerHTML = Number(money.innerText) + Number(zong[this.index].innerText); //计算合计
+						count++;
+					} else {
+						dis.style.color = "white";
+						countNum();
+						money.innerHTML = Number(money.innerText) - Number(zong[this.index].innerText); //计算合计
+						count--;
+					}
+					if (count == head.length) {
+						all_dis.style.color = "blue";
+					} else {
+						all_dis.style.color = "white";
+					}
+				}
+			}
+
+			//全选
+			all_dis.onclick = function() {
+				if (this.style.color == "white") {
+					all_dis.style.color = "blue";
+					for (var i = 0; i < head.length; i++) {
+						var dis = head[i].getElementsByTagName("span")[0];
+						dis.style.color = "blue";
+						countNum(); //数量改变
+						money.innerHTML = Number(money.innerText) + Number(zong[i].innerText); //计算合计
+						count = head.length; //与上面判断全选关联，所以count=head.length使条件满足才行
+					}
+				} else {
+					this.style.color = "white";
+					for (var i = 0; i < head.length; i++) {
+						var dis = head[i].getElementsByTagName("span")[0];
+						dis.style.color = "white";
+						count = 0; //全选没有选中，count还原
+					}
+					money.innerHTML = 0;
+				}
+
+			}
+
+
+			var del = document.getElementsByClassName("del"); //删除
+			var arr = JSON.parse(localStorage.getItem("text"));
+			var tab = document.getElementsByTagName("table")[0];
+			var c = 0;
+			for (var i = 0; i < del.length; i++) {
+				del[i].index = i;
+				del[i].onclick = function() {
+					var zong = document.getElementsByClassName("zong")[this.index]
+					var tr = this.parentNode.parentNode; //找到对应的行 del[this.index]索引值没有更新，this表示当前点击的删除按钮，索引值会同步更新  
+					tr.remove(); //删除对应表格 行
+
+					// var dis =head[this.index].getElementsByTagName("span")[0];
+					var dis = tr.childNodes[0].childNodes[0]; //得到span  图标
+
+					if (dis.style.color == "white") { //判断span是否被选中  没有选中的情况下删除，合计没有数据
+
+						money.innerHTML = 0;
+
+					} else { //选中情况下删除，则是合计减去总价
+
+						money.innerHTML = Number(money.innerText) - Number(zong.innerText); //计算合计
+					}
+
+
+					for (var j = this.index; j < arr.length - 1; j++) {
+						arr[j] = arr[j + 1];
+					}
+					arr = arr.splice(0, arr.length - 1); //删除对应行的本地存储数据
+					localStorage.setItem("text", JSON.stringify(arr)); //刷新本地存储的数据
+
+
+
+
+
+
+					// var tr = this.parentNode.parentNode;  //找到对应的行
+					// // var tr=document.getElementsByTagName("tr")[this.index];
+					// var tbody=tr.parentNode
+					// dom=[...tbody.getElementsByTagName("tr")]
+					// console.log(dom)
+
+					// var i=dom.findIndex((v)=>v==tr)
+
+
+					// tr.remove();   //删除对应表格 行
+					// arr.splice(i-1,1);
+					// dom=[...tbody.getElementsByTagName("tr")]
+					// console.log(dom)
+					// localStorage.setItem("text", JSON.stringify(arr));
+
+
+				}
+			}
+		}
+	</script> -->
+</html>

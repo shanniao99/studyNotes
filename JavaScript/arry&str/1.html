@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数组指定位置添加成员、切换首字母大小写、反序</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//在数组正中间插入一个成员
+			var arr1=[5,6,2,9,3,8,7];
+			var arr2=arr1.splice(Math.floor(arr1.length/2));//截取从arr1数组中间索引值开始到结尾的片段给数组arr2
+			arr1.push(4);//给arr1数组末尾添加一个成员
+			arr1=arr1.concat(arr2); //连接arr1数组和arr2给arr1
+			document.write(arr1+"<br>")
+			//------------------------------------------------------------
+			var str="hello tom,how are you";
+			var arr=str.split("");//字符串转换成数组 
+			arr[0]=arr[0].toUpperCase() // 大写
+			for(var i=0;i<str.length;i++){
+				if((arr[i]>="a"&&arr[i]<="z")||(arr[i]>="A"&&arr[i])<="Z"){
+					continue;
+				}else{
+					arr[i+1]=arr[i+1].toUpperCase();//大写
+				}
+			}
+			str=(arr.reverse()).join("")//reverse()反序 数组转换成字符串
+			document.write(str)
+		</script>
+	</body>
+</html>

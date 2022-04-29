@@ -1,0 +1,156 @@
+/* pages/products/products.wxss */
+.search {
+	width: 750rpx;
+	height: 120rpx;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-bottom: 1rpx solid #f4f4f4;
+}
+
+.search input {
+	width:660rpx;
+	height: 60rpx;
+	border-radius: 50rpx;
+	background-color: #f4f4f4;
+	border: none;
+	font-size: 28rpx;
+	font-family: "苹方";
+	color: #bbbbbb;
+	position: relative;
+  outline: none;
+  overflow: hidden;
+}
+
+.search input[placeholder="搜索"] {
+	padding-left: 50rpx;
+}
+
+.search image {
+	position: absolute;
+	top: 45rpx;
+	left: 35rpx;
+	z-index: 1;
+	width: 28rpx;
+	height: 32rpx;
+}
+.all {
+	width: 750rpx;
+	margin: 0 auto;
+	position: fixed;
+	top: 120rpx;
+  left: 0;
+  bottom: 0;
+  overflow: scroll;
+  padding: 0;
+}
+
+.left {
+	width: 150rpx;
+	margin: 0 auto;
+	background-color: #EEEEEE;
+	position: fixed;
+	left: 0;
+  top: 120rpx;
+  bottom: 0;
+  overflow: scroll;
+}
+
+.left ul li {
+	width: 150rpx;
+	height: 100rpx;
+	display: flex;
+	justify-content: center;
+
+}
+
+.left ul li.on {
+	background-color: white;
+}
+
+.left ul li text {
+	font-size: 24rpx;
+	font-family: "苹方";
+	color: #181818;
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+	width: 110rpx;
+	height: 100rpx;
+	border-bottom: 1rpx solid #e2e2e2;
+}
+.right {
+	width: 580rpx;
+	margin: 0 auto;
+	position: fixed;
+	top: 120rpx;
+	left: 170rpx;
+	bottom: 0;
+	overflow: scroll;
+}
+
+.right ul li {
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 30rpx;
+}
+.txt {
+	width: 370rpx;
+	height: 180rpx;
+	display: flex;
+	flex-direction: column;
+	align-content: flex-end;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+}
+
+.top {
+	width: 350rpx;
+	height: 65rpx;
+	line-height: 65rpx;
+}
+
+.top text {
+	font-size: 24rpx;
+	font-family: "苹方";
+	color: #181818;
+	font-weight: bold;
+}
+
+.down {
+	width: 300rpx;
+  height: 60rpx;
+  margin: 0;
+  padding: 0;
+  display:flex;
+  justify-content: space-between;
+}
+
+.down p {
+  width: 200rpx;
+	font-family: "黑体";
+	font-size: 24rpx;
+	color: #ff7800;
+}
+
+.down p b {
+	font-size: 36rpx;
+}
+
+.down p text {
+	color: #a7a7a7;
+	text-decoration: line-through;
+	padding-left: 20rpx;
+
+}
+
+.down .img image {
+	width: 45rpx;
+	height: 45rpx;
+
+}

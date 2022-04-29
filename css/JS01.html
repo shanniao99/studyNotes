@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<!-- 
+		
+		JS  JavaScript  和Java无关，就是Script脚本
+		脚本语言
+		使用方式：
+		
+		行内    
+		<button onclick="alert(123)">按钮</button>
+		
+		内嵌
+		<script>
+		alert(456)
+		</script>
+		
+		外链
+		<script src="test.js"></script>	
+		
+		-->
+		
+		<div id="box">测试</div>
+		
+		<script>
+		/* 多行注释 */
+		// 单行注释
+		
+		// js基本测试命令
+		// alert(123)  //弹框
+		// console.log(456)  //控制台输出
+		// document.write(789)  //DOM输出		
+		
+		// js基本数据类型
+		console.log(12.3)  //数值number数据
+		console.log('12.3')  //字符串string数据:被双引号或单引号包起来的内容
+		console.log(true)  //布尔值boolean数据：true/false
+		console.log(undefined) //undefined数据：表示没有值
+		console.log(null) //object数据：表示有值，但值为空
+		console.log(typeof(null)) //typeof(xx) 动态 读取xx的数据类型
+		
+		// js变量：用来记录或存储数据用的
+		// 格式：var 变量名=值;
+		// 变量名不能数字开头，区分大小写
+		// "="等号，在这里表示一个赋值过程，将右边的数据通过等号赋给左边的变量进行记录
+		var hello1=666
+		var a=5		
+		console.log(hello1)
+		console.log(a==6) // "=="等于判断，结果是布尔值
+		
+		
+		// 变量可以只声明，但不赋值，得到undefined结果	
+		var b
+		console.log(b)
+			
+		// 注意变量提升
+		console.log(c)
+		var c=9 
+		console.log(c)
+		
+		// 可多个的重复的声明
+		var e=1,f=2,g=3
+		console.log(e,f,g)
+		var f=22
+		console.log(f)		
+		
+		// js操作DOM元素来添加行内样式
+		var box=document.getElementById("box")
+		console.log(box)
+		box.style.backgroundColor="red"
+		box.style.fontSize="50px"
+		box.style.color="yellow"
+		
+		
+		// js 基本运算： +  -  *  /  %（求余数）
+		
+		var x=3,y="6"
+		document.write(x+y+"<br>") 
+		// 左右两边只要有一边是字符串数据，那么加号起串联拼接效果，其结果为字符串数据
+		document.write(x-y+"<br>")
+		document.write(x*y+"<br>")
+		document.write(x/0+"<br>")
+		// 被除数不能为0，为0则无穷大Infinity
+		document.write(y%x+"<br>")
+		
+		
+		console.log(typeof(Infinity))  //number数据 
+		
+		
+		// 注意：非数字不能运算，否则得到NaN:表示这是一个非数值	
+		console.log("123"+1) 
+		console.log(Number("123")+1)  //Number()转换成数值型数据
+		console.log(Number("asd"))  //Number()转不出来得到NaN
+		console.log("a"*3)
+		console.log(typeof(NaN)) //number数据
+		
+		
+// 练习：
+// 1 输出以下数据效果：
+//   张三
+//   19
+//   180cm
+// 2 计算三个数的平均数
+// 3 数据交换
+// s1="红",s2="蓝"
+// console.log(s1+s2) 蓝红
+
+// 注意：js运行顺序 默认从上到下，从左到右的
+document.write(1+2+3+4+5+"是1到5的和")
+document.write("<br>")
+document.write("1到5的和是"+1+2+3+4+5)
+		
+		
+		</script>
+		
+		
+	</body>
+</html>

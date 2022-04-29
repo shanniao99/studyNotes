@@ -1,0 +1,144 @@
+ html{
+		 font-size: 100px; /* 定下一个标准  1rem==100px */
+	 }
+html,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,img{
+	margin:0rem;padding:0rem
+	}
+fieldset,img{
+	border:0rem
+	}
+img{
+	display:block
+	}
+ul,ol{
+	list-style:none;
+	overflow:hidden;
+	}
+a{
+	text-decoration: none;
+}
+.box{
+	width:7.5rem ;
+	margin: 0 auto;
+	overflow: hidden;
+	background-color: white;
+}
+.header{
+	width: 7.5rem;
+	height: 1.76rem;
+	background-color: #FF5E46;
+	overflow: hidden;
+	position: fixed;
+	top: 0rem;
+	left: 0rem;
+	z-index: 1;
+}
+.head_tit{
+	height: .88rem;
+	margin: 0rem auto;
+	text-align: center;
+	position: relative;
+}
+.head_tit h1{
+	font-size: .36rem;
+	font-family: "黑体";
+	color: white;
+	padding-top: .5rem;
+	
+}
+.head_tit .img{
+	float: right;
+	position: absolute;
+	top: .26rem;
+	right: .1rem;
+}
+.img img{
+	width: 1.58rem;
+	height: .61rem;
+}
+.search{
+	width: 7.5rem;
+	height:.88rem ;
+	position: relative;
+}
+.search input{
+	width: 6.75rem;
+	height: .55rem;
+	border: 0rem ;
+	border-radius: .5rem;
+	position: absolute;
+	top: .2rem;
+	left: .38rem;
+	font-size: .26rem;
+	font-family: "苹方";
+	color: #b2b2b2;
+	text-align: center;
+	outline: none;
+}
+.search span{
+	font-size: .3rem;
+	color:#b2b2b2 ;
+	position: absolute;
+	top: .35rem;
+	left: 2.65rem;
+}
+.footer{
+	width: 7.5rem;
+	margin: 0rem auto;
+	background-color: white;
+	border-top: 0.01rem solid #CCCCCC;
+	position: fixed;
+	bottom: 0rem;
+	left: 0rem;
+}
+.list{
+	width: 100%;s
+	display: flex;
+	justify-content: center;
+}
+.list ul{
+	width:7rem;
+	height: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: space-around;
+}
+.list ul li{
+	float: left;
+	width: 2.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.list ul li a{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: black;
+}
+.list ul li a span{
+	font-size: .65rem;
+	color: #999999;
+}
+.list ul li a p{
+	font-size: .2rem;
+	font-family: "黑体";
+}
+.list ul li:hover a span,.list ul li:hover a p,.list ul li.on a span,.list ul li.on a p{
+	color: #ff5e46;
+}
+.black{
+	width: 3rem;
+	height: 0.05rem;
+	background-color: #333333;
+	border-radius: 0.5rem;
+	position: absolute;
+	bottom: .2rem;
+	left: 2.25rem;
+}
+@media screen and (max-width:375px) {
+		 html{ font-size: 50px;}
+		 
+	 }

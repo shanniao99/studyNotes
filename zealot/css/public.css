@@ -1,0 +1,167 @@
+html,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,img{
+	margin:0rem;padding:0rem
+	}
+fieldset,img{
+	border:0rem
+	}
+img{
+	display:block
+	}
+ul,ol{
+	list-style:none;
+	overflow:hidden;
+	}
+a{
+	text-decoration: none;
+}
+.top{width: 100%;
+	height: 60px;
+	background-color: #131313;
+}
+
+.top_tit{
+	width: 1180px;
+	margin: 0 auto;
+	height: 60px;
+	line-height: 60px;/*仅适用于内容只有一行时*/
+}
+.top_tit span{
+	font-family: "microsoft yahei";
+	font-size: 20px;
+	color: #3399cc;
+}
+.top_tit ul{
+	float: right;
+}
+.top_tit ul li.on a,.top_tit ul li:hover a,.top_tit ul li:hover .top_box{
+	color: #3399CC;
+	display: block;
+}
+.top_tit ul li {
+	width: 70px;
+	height: 40px;
+	float: left;
+	position: relative;
+	text-align: center;
+	line-height: 40px;
+	margin: 10px;
+}
+.top_tit ul li a{
+	font-size: 18px;
+	color: #999999;
+}
+
+.top_box{
+	width: 60px;
+	height: 35px;
+	display: none;
+}
+ .border_top{
+   width: 30px;
+   height: 10px;
+   border-top: 1px solid #3399CC;
+   border-left: 1px solid #3399CC;
+   position: absolute;
+   top: 0px;
+   left: 0px;
+}
+.border_btm{
+   width: 30px;
+   height: 10px;
+   border-bottom: 1px solid #3399CC;
+   border-right: 1px solid #3399CC;
+   position: absolute;
+   bottom: 0px;
+   right: 0px;
+}
+#block{
+	display: block;
+}
+.contact_box{
+	width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+	background-color: #101010;
+}
+.box_body{
+	height: 370px;
+}
+.bd_top{
+	height:860px ;
+}
+.bd_tit{
+	text-align: center;
+	padding-top: 40px;
+	margin-bottom: 30px;
+}
+.bd_tit span{
+	font-size: 20px;
+	color: #999999;
+}
+.bd_tit span p{
+	font-size: 12px;
+	font-family: arial;
+}
+.top_body{
+	width: 1180px;
+	height: 210px;
+	margin: 0 auto;
+}
+.t_left {
+	width: 30%;
+	float: left;
+}
+.t_left h3{
+	font-size: 18px;
+	padding-right: 30px;
+	color: #999999;
+}
+.t_left dl dt{
+	float: left;
+	height: 210px;
+}
+.t_left dl dd {
+	padding-bottom: 30px;
+}
+.t_left dl dd span{
+	font-size: 30px;
+	color: #999999;
+}
+.t_left dl dd.on span,.t_left dl dd span:hover{
+	color: #3399CC;
+}
+.t_right{
+	width: 70%;
+	height: 165px;
+	float: right;
+}
+.t_right dl{
+	height: 165px;
+}
+.t_right dl dt{
+	font-size: 18px;
+	color: #999999;
+	line-height: 40px;
+}
+.t_right dl dd{
+	font-size: 14px;
+	color: #999999;
+	float: left;
+	width: 50%;
+	line-height: 40px;
+}
+.t_right dl dd:nth-child(2n+1){
+	float: right;
+	width: 200px;
+}
+.bd_footer{
+    height: 60px;
+	background-color: #141414;
+	margin: 0 auto;
+	text-align: center;
+}
+.bd_footer p{
+	font-size: 14px;
+	color: #666666;
+	line-height: 60px;
+}

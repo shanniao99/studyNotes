@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button>添加</button>
+		<button>删除</button>
+		<button>修改</button>
+		<div class="box" id="box">
+			<h2>标题</h2>
+			<p>段落</p>
+			<ul>
+				<li class="li1">11</li>
+				<li class="li2">22</li>
+				<li class="li3">33</li>
+			</ul>
+			<input type="text" name="test">
+		</div>
+		<script>
+			// DOM 操作：
+			// document object model  文档对象模型
+			// 增(appendChild)删(removeChild)改(replaceChild)查
+
+			// 查找
+			// 直接查找节点
+			// document.getElementById("box")
+			// document.getElementsByClassName("box")[0]
+			// document.getElementsByTagName("div")[0]
+			// document.getElementsByName("test")[0]		
+
+			// 不会更新，ie8下不兼容
+			// document.querySelector(".box li") //查找到第一个符合该选择器的元素
+			// document.querySelectorAll(".box li") //查找所有符合该选择器的元素
+
+			var ul = document.querySelector("ul")
+			var lis = ul.getElementsByTagName("li")
+			var lis2=document.querySelectorAll("ul li")
+			console.log(lis,lis2)
+
+			// 通过关系来查找
+			// console.log(ul.children) //查找所有子元素节点
+			// console.log(ul.childNodes) //查找所有子节点（包括文本节点）
+			// console.log(ul.firstChild)//查找第一个子节点（包括文本节点）
+			// console.log(ul.firstElementChild)//查找第一个子元素节点
+			// console.log(ul.lastChild)//查找最后一个子节点（包括文本节点）
+			// console.log(ul.lastElementChild)//查找最后一个子元素节点
+			
+			
+			// var html=document.documentElement // 查找HTML标记(父节点为文本类型)
+			// console.log(html.parentElement) //查找父元素节点
+			// console.log(html.parentNode) //查找父元素节点（包括文本节点）
+			
+			// console.log(ul.nextSibling)//查找紧邻的下一个子节点（包括文本节点）
+			// console.log(ul.nextElementSibling)//查找紧邻的下一个子元素节点
+			
+			// console.log(ul.previousSibling)//查找紧邻的上一个子节点（包括文本节点）
+			// console.log(ul.previousElementSibling)//查找紧邻的上一个子元素节点
+			
+			// 可以多个串联使用
+			// console.log(ul.previousElementSibling.previousElementSibling)
+			
+			
+			// 添加
+			var num=44
+			
+			var inp=document.getElementsByTagName("input")[0]
+			
+			
+			var btns=document.querySelectorAll("button")	
+					
+			btns[0].onclick=function(){
+				console.log("添加")
+				
+				ul.appendChild(inp.cloneNode())
+				// 如果用已存在的节点去添加，那么原来位置已存在的节点会消失
+				
+				// ul.innerHTML="<li>44</li>"+ul.innerHTML
+				var res=document.createElement("li") //创建一个li元素节点
+				// ul.appendChild(res) //把节点类型数据添加到ul末尾
+				ul.insertBefore(res,ul.lastElementChild) 
+				// 父.insertBefore(新,旧) 在父元素里面，把新节点查到旧节点前面
+				
+				
+				var txt=document.createTextNode(num) //创建文本节点
+				res.appendChild(txt) //把文本节点添加到创建的li末尾
+				num+=11
+				
+				// res.asd="提示文字"
+				var asd=document.createAttribute("data-id") //创建一个自定义属性节点
+				asd.value="属性值" //为属性赋值
+				res.setAttributeNode(asd) //绑定属性到元素上
+			}
+			
+			
+			// 删除
+			// 父.removeChild(子)  在父元素里面移除子元素节点
+			btns[1].onclick=function(){
+				console.log("删除")
+				var len = ul.children.length
+				var i=Math.floor( Math.random()*len )
+				if(ul.contains(ul.children[i])){ // 父.contains(子) 判断父元素里面是否存在该子元素
+					ul.removeChild(ul.children[i])	
+				}				
+				
+				// lis2=document.querySelectorAll("ul li")			
+				console.log(lis,lis2) // querySelector不会更新
+			}
+			
+			
+			
+			btns[2].onclick=function(){
+				console.log("修改")
+				// var h3=document.createElement("h3")
+				var h2=document.getElementsByTagName("h2")[0]
+				ul.replaceChild(h2.cloneNode(true),ul.lastElementChild)
+				// 父.replaceChild(新,旧) 在父元素里面，用新节点替换旧节点
+				// 如果用已存在的节点去替换，那么已存在的节点会消失
+				// 不想消失，可以用克隆 节点.cloneNode(true)    true为深克隆，里面的内容也会克隆
+			}
+			
+			
+			// 八方向移动
+			// left=false
+			
+			// document.onkeydown=function(){
+			// 	left=true
+			// }
+			// document.onkeyup=function(){
+			// 	left=false
+			// }
+			
+			// setInterval(function(){
+			// 	if(left){
+			// 		box.style.left=...
+			// 	}
+			// 	if(up){
+					
+			// 	}
+			// }，10)
+			
+			
+			
+		</script>
+
+	</body>
+</html>

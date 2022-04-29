@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<!-- 禁止用户缩放页面 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>商品</title>
+		<link rel="stylesheet" type="text/css" href="../css/shop.css" />
+		<link rel="stylesheet" type="text/css" href="../font/font_all/iconfont.css" />
+	</head>
+	<body>
+		<div class="bigbox">
+			<div class="box">
+				<ul>
+					<li>
+						<div style="float: left;"><img src="../img/r1.png"></div>
+						<div class="txt">
+							<span class="name">喜钻白18K金显钻群镶钻戒女戒女人花求婚订婚结婚钻石戒指女</span>
+							<p>￥<span class="price">1659.00 </span></p>
+							<div class="inp">
+								<input type="button" value="-" class="down" /><input type="text" value="1"
+									class="number" /><input class="up" type="button" value="+">
+								<button class="into">加入购物车</button>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div style="float: left;"><img src="../img/r2.png"></div>
+						<div class="txt">
+							<span class="name">玉萌色 18K金镶玉吊坠翡翠平安扣玉坠平安环项链玉石挂件</span>
+							<p>￥<span class="price">1718.00 </span></p>
+							<div class="inp">
+								<input type="button" value="-" class="down" /><input type="text" value="1"
+									class="number" /><input class="up" type="button" value="+">
+								<button class="into">加入购物车</button>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div style="float: left;"><img src="../img/r3.png"></div>
+						<div class="txt">
+							<span class="name">周六福珠宝 黄18K金手链女款时尚转运小花珠彩金手链</span>
+							<p>￥<span class="price">780.00 </span></p>
+							<div class="inp">
+								<input type="button" value="-" class="down" /><input type="text" value="1"
+									class="number" /><input class="up" type="button" value="+">
+								<button class="into">加入购物车</button>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div style="float: left;"><img src="../img/r4.png"></div>
+						<div class="txt">
+							<span class="name">Blue Nile涡状戒指白14K金镶钻婚戒男女情侣结婚对戒 </span>
+							<p>￥<span class="price">1715.00 </span></p>
+							<div class="inp">
+								<input type="button" value="-" class="down" /><input type="text" value="1"
+									class="number" /><input class="up" type="button" value="+">
+								<button class="into">加入购物车</button>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div style="float: left;"><img src="../img/r5.png"></div>
+						<div class="txt">
+							<span class="name">印象眸 翡翠飘花玉手镯女款玉镯子 </span>
+							<p>￥<span class="price">1629.00 </span></p>
+							<div class="inp">
+								<input type="button" value="-" class="down" /><input type="text" value="1"
+									class="number" /><input class="up" type="button" value="+">
+								<button class="into">加入购物车</button>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="footer">
+				<ul>
+					<li class="on"><a href="../document/shop.html"><span class="iconfont icon-shouye"></span>
+							<p>首页</p>
+						</a></li>
+					<li><a href="../document/shoppingcarts.html"><span class="iconfont icon-gouwuche"></span>
+							<p>购物车</p>
+						</a></li>
+					<li><a href="#"><span class="iconfont icon-wode"></span>
+							<p>我的</p>
+						</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload = function() {
+			var down = document.getElementsByClassName("down");
+			var up = document.getElementsByClassName("up");
+
+			//增加数量
+			for (var i = 0; i < up.length; i++) {
+				up[i].onclick = function() {
+					var count = this.previousElementSibling
+					count.value = Number(count.value) + 1;
+				}
+			}
+			//减少数量
+			for (var i = 0; i < down.length; i++) {
+				down[i].onclick = function() {
+					var count = this.nextElementSibling;
+					if (count.value > 1) {
+						count.value--;
+					} else {
+						count.value = 1;
+					}
+				}
+			}
+
+			//localStorage.setItem存储
+			var car = document.getElementsByClassName("into");
+			var arr = JSON.parse(localStorage.getItem("text")) || []; //读取判断重复  JSON.parse（）将字符串转换为数组
+			for (var i = 0; i < car.length; i++) { //点击加入购物车按钮时存入本地
+				car[i].index = i;
+				car[i].onclick = function() {
+					if (confirm("加入购物车了喔~~")) { //弹框再次确定是否添加到购物车
+					var spans=null;
+					var all=null;
+						var img = document.getElementsByTagName("img")[this.index].src; //图片地址
+						var txt = document.getElementsByClassName("name")[this.index].innerText; //商品详情
+						var price = document.getElementsByClassName("price")[this.index].innerHTML; //价格
+						var num = document.getElementsByClassName("number")[this.index].value;
+						var obj = {
+							spans,
+							all,
+							img,
+							txt,
+							price,
+							num
+						}
+						var res = arr.findIndex(function(v, i) {
+							return v.txt == txt;
+						})
+						if (res == -1) {
+							arr.push(obj);
+						} else {
+							arr[res].num++;
+						}
+						localStorage.setItem("text", JSON.stringify(arr));
+					}
+				}
+			}
+
+
+			// for (var i = 0; i < car.length; i++) {
+			// 	var img = document.getElementsByTagName("img")[i].src; //图片地址
+			// 	var txt = document.getElementsByClassName("name")[i].innerText; //商品详情
+			// 	var price = document.getElementsByClassName("price")[i].innerHTML; //价格
+			// 	var num = document.getElementsByClassName("number")[i].value;
+			// 	var obj = {
+			// 		img,
+			// 		txt,
+			// 		price,
+			// 		num
+			// 	}
+			// 	arr.push(obj);
+			// 	localStorage.setItem("text",JSON.stringify(arr));
+			// }
+		}
+	</script>
+</html>

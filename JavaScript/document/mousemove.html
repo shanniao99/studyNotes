@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>爱心</title>
+		<style type="text/css">
+			canvas {
+				background-color: #8FBC8F;
+			}
+
+			.body {
+				position: fixed;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				right: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="body">
+			<canvas id="box"></canvas>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var box = document.getElementById("box");
+		var can = box.getContext("2d");
+		var body = document.getElementsByClassName("body")[0];
+		box.width = body.clientWidth;
+		box.height = body.clientHeight;
+		
+		box.onmousemove=function(){
+			
+		}
+		
+		var arr = [];
+		var index = 1; //成倍放大或缩小
+		var tm = 1;//透明度
+		var timer=setInterval(function() {
+			change(index,tm);
+			index+=1;
+			tm-=0.2;
+			if(index>=10||tm==0){
+				clearInterval(timer);
+			}
+		}, 50)
+
+		function change(val,tm) {
+			var a = 20 * val;
+			var b = 27 * val;
+			var c = 5 *val;
+			var d = 20 * val;
+			var e = 2 * val;
+			var f = 38 * val;
+			var g = 20 * val;
+			var h = 45 * val;
+			var x1 = c + 30* val;
+			var x2 = e + 35 * val;
+
+			var r = Math.floor(Math.random() * 256);
+			var g1 = Math.floor(Math.random() * 256);
+			var b1 = Math.floor(Math.random() * 256);
+			
+
+			can.fillStyle = `rgba(${r},${g1},${b1},${tm})`
+			can.beginPath();
+			can.moveTo(a, b);
+			can.bezierCurveTo(c, d, e, f, g, h);
+			can.fill();
+			can.beginPath();
+			can.moveTo(a, b);
+			can.bezierCurveTo(x1, d, x2, f, g, h);
+			can.fill();
+		}
+	</script>
+</html>

@@ -1,0 +1,99 @@
+body{
+	min-width: 1180px;
+	font-size: 16px;
+	font-family: "microsoft yahei";
+}
+.case_box{
+	width: 100%;
+	margin: 0 auto;
+	background-color: #101010;
+}
+.case_head{
+	height: 520px;
+	margin: 0 auto;
+	background: url(../img/images/case_head.jpg) no-repeat center;
+}
+.case_body{
+	width: 1180px;
+	margin: 0 auto;
+	position: relative;
+	padding-bottom: 50px;
+}
+.case_body h2{
+	font-size: 20px;
+	color: #999999;
+	text-align: center;
+	padding-top: 40px;
+}
+.case_body h2 p{
+	font-size: 12px;
+	font-family: arial;
+}
+.body_mid{
+	width: 1010px;
+	margin: 0 auto;
+}
+.mid_head{
+	margin: 40px 0;
+}
+.mid_head span{
+	font-size: 22px;
+	color: #3399cc;
+}
+.mid_head img{
+    padding-top: 20px;
+}
+.mid_text h3{
+	font-size: 20px;
+	color: white;
+	padding: 30px 0;
+}
+.page p{
+	font-size: 16px;
+	color: #999999;
+	text-indent: 2em;
+	line-height: 24px;
+}
+.page1 p{
+	font-size: 16px;
+	color: #999999;
+	line-height: 24px;
+	padding: 15px 0;
+}
+.mid_footer{
+	height: 60px;
+	line-height: 60px;
+}
+.mid_left {
+	float: left;
+	font-size: 18px;
+}
+.mid_right{
+	float: right;
+	font-size: 18px;
+}
+.mid_left a{
+	color: #999999;
+	text-decoration: none;
+}
+.mid_right a{
+	color: #3399CC;
+	text-decoration: none;
+}
+.page2{
+	width: 100px;
+	position: absolute;
+	left: 540px;
+}
+.page2,.page2 input{
+	font-size: 18px;
+	color: #999999;
+}
+.page2 input{
+	width: 50px;
+	height: 20px;
+	outline: none;
+	border: none;
+	background: none;
+	text-align: center;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>拖拽</title>
+		<style type="text/css">
+			.box{
+				width: 200px;
+				height: 200px;
+				background-color: #DB7093;
+				text-align: center;
+				line-height: 200px;
+				font-size: 20px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+		<ul>
+			<li draggable="true">手牵手</li>
+			<li draggable="true">一步两步</li>
+			<li draggable="true">三步四步</li>
+			<li draggable="true">望着天</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		var box=document.getElementsByClassName("box")[0];
+		var lis=document.getElementsByTagName("li");
+		for(var i=0;i<lis.length;i++){
+			lis[i].ondragstart=function(){
+				console.log("开始拖拽");
+				event.dataTransfer.setData("key",this.innerText);
+			}
+			lis[i].ondragend=function(){
+				console.log("结束拖拽");
+				if(box.innerText!=this.innerText){
+					box.innerText="";
+				}
+				
+			}
+			box.ondragenter=function(){
+				console.log("拖拽目标进入");
+				this.innerHTML="放下吧放下吧";
+			}
+			box.ondragleave=function(){
+				console.log("拖拽目标离开");
+				this.innerHTML="请拖拽到这里来~~";
+			}
+			box.ondragover=function(){
+				event.preventDefault();
+			}
+			box.ondrop=function(){
+				box.innerHTML=event.dataTransfer.getData("key");  //读取拖拽时的携带信息
+			}
+		}
+		
+	</script>
+</html>

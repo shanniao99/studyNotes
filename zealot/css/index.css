@@ -1,0 +1,364 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "microsoft yahei";
+	
+}
+body{
+	min-width: 1180px;
+}
+.lb{
+	height: 520px;
+	background: url(../img/images/banner1.jpg) no-repeat center;
+	background-color:black ;
+}
+.lb_box{
+	width: 1180px;
+	height: 520px;
+	margin: 0 auto;
+	position: relative;/* 相对定位 */
+}
+.yuandian{
+	width: 80px;
+	height: 30px;
+	position:absolute;
+	bottom: 20px;
+	left: 550px;
+}
+.yuandian ul li{
+	float: left;
+	width: 16px;
+	padding-left: 10px;
+}
+.yuandian ul li span{
+	color: white;
+	opacity: 0.5;
+}
+.yuandian ul li.on span{
+	color: white;
+	opacity: 1.0;
+}
+.left span,.right span{
+	font-size: 65px;
+}
+.left{
+	position: absolute;/* 绝对定位 */
+	left: 0px;
+	top: 200px;
+}
+.right{
+	position: absolute;
+	right: 0px;
+	top: 200px;
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url(../font/iconfont.ttf?t=1638776332570) format('truetype');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 100px;
+  color: #3399CC;
+}
+.cp{
+	height: 512px;
+	background-color: #0e0e0e;
+}
+.cp_bd{
+	width: 1180px;
+	margin: 0 auto;
+	padding-top: 40px;
+}
+.cp_head{
+	height: 60px;
+}
+.cp_head span{
+	font-size: 20px;
+	color: #999;
+	line-height: 15px;
+	float: left;
+	text-align: center;
+}
+.cp_head span p{
+	font-family: "arial";
+	font-size: 12px;
+	transform: scale(0.7);
+}
+.cp_head ul{
+	float: right;
+}
+.cp_head ul li {
+	width: 100px;
+	float: left;
+	line-height: 40px;
+	text-align: center;
+	position: relative;
+}
+.cp_head ul li.cp_first a,.cp_head ul li:hover a,.cp_head ul li:hover .cp_border{
+	color: #3399CC;
+	display: block;
+}
+.cp_head ul li a{
+	font-size: 18px;
+	color: #999999;
+}
+.cp_border{
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	display: none;
+}
+#cp_block{
+	display: block;
+}
+.cp_mid{
+	overflow: hidden;
+	margin-bottom: 50px;
+}
+.cp_mid ul li{
+	float: left;
+	margin-left: 15px;
+	width: 280px;
+}
+.cp_mid ul li h2{
+	font-size: 18px;
+	color: #999;
+	font-weight: normal;
+}
+.cp_mid ul li p{
+	font-size: 18px;
+	color: #999;
+}
+.cp_mid ul li p span{
+	width: 80px;
+	height: 25px;
+	font-size: 14px;
+	float: right;
+	border: 1px solid #999;
+	text-align: center;
+	line-height: 25px;
+}
+.cp_mid ul li.mid_first h2,.cp_mid ul li.mid_first p,.cp_mid ul li:hover p,.cp_mid ul li:hover h2{
+	color: #3399CC;
+}
+.cp_mid ul li.mid_first p span,.cp_mid ul li:hover p span{
+	border: 1px solid #3399CC;
+}
+
+.cp_more{
+	width: 80px;
+	height: 40px;
+	text-align: center;
+	font-size: 18px;
+	font-family: arial;
+	color: #2b80aa;
+	border: 1px solid #2b80aa;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 47%;
+}
+.about{
+	height: 600px;
+	background-color: #000000;
+}
+.about_tit{
+	height: 45px;
+	padding-top: 50px;
+	text-align: center;
+}
+.about_tit span{
+	font-size: 20px;
+	color: #999999;
+}
+.about_tit span p{
+	font-size: 12px;
+	font-family: arial;
+}
+.about_bd{
+	width: 1180px;
+	height:450px;
+	margin: 0 auto;
+}
+.img{
+	width: 440px;
+	height: 450px;
+	float: left;
+	background: url(../img/images/erji.jpg) no-repeat;
+}
+.about_right{
+	width: 600px;
+	height: 450px;
+	float: right;
+	background: url(../img/images/shizijia.jpg) no-repeat;
+	background-position: 20px -25px;
+	position: relative;
+}
+.top1{
+	position: absolute;
+	top: 75px;
+	left: 80px;
+	
+}
+.top2{
+	position: absolute;
+	top: 75px;
+	right: 135px;
+}
+.btm1{
+	position: absolute;
+	bottom: 120px;
+	left: 85px;
+}
+.btm2{
+	position: absolute;
+	bottom: 120px;
+	right: 120px;
+}
+.about_right h2{
+	font-size: 50px;
+	color: white;
+}
+.about_right h2 span{
+	font-size: 14px;
+	display: inline-block;
+	vertical-align: top;
+}
+.about_right P{
+	font-size: 18px;
+	color: #999999;
+}
+.service{
+	height: 490px;
+	background-color: #0e0e0e;
+	margin: 0 auto;
+	position: relative;
+}
+.s_body{
+	width: 1180px;
+	height: 490px;
+	margin: 0 auto;
+	position: relative;
+}
+.s_body ul{
+	height: 230px;
+	position: absolute;
+	top: 200px;
+}
+.s_body ul li{
+	float: left;
+	width: 393px;
+	text-align: center;
+}
+.s_body ul li span{
+	font-size: 150px;
+	color: #999999;
+}
+.s_body ul li span p{
+	font-size: 18px;
+	padding-top: 20px;
+}
+.s_body ul li span:hover,.s_body ul li.on span{
+	color: #3399CC;
+}
+.case{
+	height: 700px;
+	margin: 0 auto;
+	background-color: black;
+}
+.case_bd{
+	width: 1180px;
+	height: 500px;
+	margin: 0 auto;
+}
+.case_bd ul li{
+	float: left;
+	width: 580px;
+	padding-left: 10px;
+	text-align: left;
+}
+.case_bd ul li p{
+	font-size: 18px;
+	color: #999999;
+}
+.case_bd ul li p span{
+	color: #999999;
+}
+.case_bd ul li.on p,.case_bd ul li.on p span,.case_bd ul li:hover p,.case_bd ul li:hover p span{
+	color: #3399CC;
+}
+.contact{
+	height: 370px;
+	background-color: #0e0e0e;
+	margin: 0 auto;
+}
+.c_top{
+	width: 1180px;
+	height: 310px;
+	margin: 0 auto;
+}
+.top_body{
+	width: 100%;
+	height: 210px;
+}
+.t_left {
+	width: 30%;
+	float: left;
+}
+.t_left h3{
+	font-size: 18px;
+	color: #999999;
+}
+.t_left dl dt{
+	float: left;
+	height: 210px;
+}
+.t_left dl dd {
+	padding-bottom: 30px;
+}
+.t_left dl dd span{
+	font-size: 30px;
+	color: #999999;
+}
+.t_left dl dd.on span,.t_left dl dd span:hover{
+	color: #3399CC;
+}
+.t_right{
+	width: 70%;
+	height: 165px;
+	float: right;
+}
+.t_right dl{
+	height: 165px;
+}
+.t_right dl dt{
+	font-size: 18px;
+	color: #999999;
+	line-height: 40px;
+}
+.t_right dl dd{
+	font-size: 14px;
+	color: #999999;
+	float: left;
+	width: 50%;
+	line-height: 40px;
+}
+.t_right dl dd:nth-child(2n+1){
+	float: right;
+	width: 200px;
+}
+.c_btm{
+	height: 60px;
+	background-color: #141414;
+	margin: 0 auto;
+	display: flex;/* 弹性布局 */
+	justify-content: center;/* 主轴上的对齐方式——>水平居中对齐 （容器属性）*/
+	align-items: center;/* 交叉轴上的对齐方式——>垂直居中对齐 */
+}
+.c_btm p{
+	font-size: 14px;
+	color: #666666;
+	text-align: center;
+	/* align-self: center; 项目属性:单个项目与其他项目不一样的对齐方式，可覆盖align-items属性,默认为auto，即继承父元素的align-items属性*/
+}

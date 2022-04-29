@@ -1,0 +1,119 @@
+.box {
+  width: 750rpx;
+  margin: 0 auto;
+  position: fixed;
+  top: 88rpx;
+  bottom: 1rem;
+  left: 0;
+  overflow: scroll;
+}
+
+.box image {
+  width: 750rpx;
+  height: 200rpx;
+
+}
+
+.banner {
+  width: 750rpx;
+  height: 160rpx;
+  text-align: center;
+  line-height: 160rpx;
+  background-image: url(../../images/imgs/song2.jpg) no-repeat center;
+  background-size: contain;
+
+}
+
+.banner h2 {
+  font-size: 36rpx;
+  font-family: "黑体";
+  color: #181818;
+
+}
+
+.text {
+  width: 750rpx;
+  height: 1000rpx;
+  background-image: url(../../images/imgs/song_bg.jpg) no-repeat center;
+  background-size: contain;
+  margin: 0 auto;
+  position: relative;
+}
+
+.text h1 {
+  width: 570rpx;
+  height: 200rpx;
+  font-size: 48rpx;
+  font-family: "苹方";
+  color: #ff1200;
+  text-align: center;
+  line-height: 250rpx;
+  position: absolute;
+  left: 100rpx;
+}
+
+.txt {
+  width: 710rpx;
+  height: 600rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 200rpx;
+  left: 20rpx;
+}
+
+.txt p {
+  font-size: 30rpx;
+  font-family: "苹方";
+  color: #181818;
+  font-weight: bold;
+}
+
+.contact {
+  width: 710rpx;
+  height: 300rpx;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.contact p,
+.contact text {
+  font-size: 28rpx;
+  font-family: "黑体";
+  color: #181818;
+}
+
+.contact p#qi image {
+  width: 49rpx;
+  height: 67rpx;
+}
+
+.contact p image {
+  width: 50rpx;
+  height: 46rpx;
+}
+
+.contact p#qi {
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  align-items: baseline;
+}
+
+.contact p#b {
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  align-items: baseline;
+}
+
+.contact p text {
+  padding-left: 20rpx;
+}
+
+.contact text {
+  padding-left: 70rpx;
+}

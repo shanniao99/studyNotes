@@ -1,0 +1,52 @@
+<!--pages/home/home.wxml-->
+<view class="box">
+  <view class="top_list">
+    <ul>
+      <li>
+        <navigator url="../guochan/guochan" open-type="navigate">
+          <image src="../../images/guochan.png"></image>
+          <p>国产专用</p>
+        </navigator>
+      </li>
+      <li>
+        <navigator>
+          <image src="../../images/jinkou.png"></image>
+          <p>进口专区</p>
+        </navigator>
+      </li>
+      <li>
+        <navigator>
+          <image src="../../images/wanghong.png"></image>
+          <p>网红推荐</p>
+        </navigator>
+      </li>
+      <li>
+        <navigator>
+          <image src="../../images/gift.png"></image>
+          <p>礼盒专区</p>
+        </navigator>
+      </li>
+    </ul>
+  </view>
+  <view class="item">
+    <ul>
+      <li wx:for="{{fruit}}" wx:key="index">
+        <image src="{{item.img}}"></image>
+        <view class="txt">
+          <view class="top">
+            <h2>{{item.tit}}</h2>
+            <p>{{item.mark}}<b>{{item.price}}</b><text>{{item.oldprice}}</text></p>
+          </view>
+          <view class="down">
+            <view class="down_l">
+              <p>{{item.look}}</p>
+              <p>{{item.buy}}</p>
+            </view>
+            <button type="button">立即抢购</button>
+          </view>
+        </view>
+      </li>
+    </ul>
+  </view>
+</view>
+<text></text>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<iframe src="" name="abc"></iframe>
+		<button onclick="window.open('canvas.html','abc')">open</button>
+		<button onclick="window.close()">close</button>
+		<button onclick="history.forward()">前进</button>
+		<button onclick="history.back()">后退</button>
+		<button onclick="history.go(1)">前进</button>
+		<button onclick="history.go(-1)">后退</button>
+		<button onclick="location.reload()">刷新</button>
+		<button onclick="location.replace('http://www.baidu.com')">替换</button>
+		<input type="text" id="xxx" >
+		123<br>
+		123<br>
+		123<br>
+		123<br>
+		123<br>
+		123<br>
+		123<br>
+		123<br>
+		123<br>
+		123<br>
+		123<br>
+		123<br>
+		123<br>
+		123<br>
+		123<br>
+		123<br>
+		123<br>
+		123<br>
+		<script>
+			// BOM brower object model  浏览器对象模型
+			// window
+			var b=123
+			window.a=456
+			console.log(a)
+			
+			// window.open("JS14.html","_self") 
+			// window.setTimeout(function(){
+				
+			// },1000)
+			
+			var inp=document.querySelector("input")
+			inp.focus() //自动获取焦点
+			
+			// history  历史记录
+			
+			// history.back()
+			// history.forward()
+			// history.go(-2)
+			
+			// vue路由history模式的实现原理
+			// history.pushState("","","canvas.html") //添加网址栏历史记录（可以后退），而不刷新页面
+						
+			// history.replaceState("","","canvas.html")  //替换历史记录（不可以后退）
+			
+			
+			
+			// screen 屏幕
+			// screen.availHeight  //屏幕有效高度（不包括任务栏）
+			
+			// location 网址栏信息
+			
+			// location.hash: "#asd"             超链接锚点（哈希值）
+			// location.host: "127.0.0.1:8848"   主机地址
+			// location.hostname: "127.0.0.1"    域名
+			// location.href: "http://127.0.0.1:8848/456/JS/JS15.html#asd"   完整的网址路径
+			// location.origin: "http://127.0.0.1:8848"  协议+主机
+			// location.pathname: "/456/JS/JS15.html"   文件地址
+			// location.port: "8848"            端口
+			// location.protocol: "http:"       协议
+			// location.search: "?a=132&b=456"   携带的get参数
+			// location.reload()     刷新页面
+			// location.replace('http://www.baidu.com')  替换页面（有后退记录）
+			
+			// 修改哈希值(跳页面指定位置)			 vue路由hash模式实现原理
+			// location.hash="xxx"
+			
+			// 页面劫持 (没有后退记录)
+			// location.href="http://www.baidu.com"
+			
+			
+			
+			
+			
+			// navigator  浏览器特性
+			var str=navigator.userAgent
+			console.log(str)
+			//"Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:94.0) Gecko/20100101 Firefox/94.0"
+			//"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36"
+			//"Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E)"
+			var reg=/Trident/ig
+			
+			if(reg.test(str)){
+				console.log("你用的是ie浏览器")
+			}		
+			
+			
+			
+			// DOM 文档对象模型  增删改查
+		</script>
+	</body>
+</html>

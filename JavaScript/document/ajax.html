@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>ajax</title>
+	</head>
+	<body>
+		<button onclick="btn()">点击</button>
+	</body>
+	<script type="text/javascript">
+	
+		function btn() {
+			var type = prompt("请选择请求方式：(GET/POST)");
+			var src = prompt("请输入地址或本地数据：");
+			console.log(typeof(src))
+			var bool = prompt("请选择是否异步：(true=异步  false=同步)");
+			XML(type, src, bool);
+		}
+
+		function XML(type, src, bool) {
+			var xhr = new XMLHttpRequest(); //创建服务
+			xhr.open(type, src, bool);
+			xhr.onload = function() { //等待反馈
+				console.log(JSON.parse(this.responseText));
+			}
+			xhr.send(); //发送请求
+		}
+	</script>
+</html>

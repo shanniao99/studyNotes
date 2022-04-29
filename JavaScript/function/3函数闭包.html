@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>函数闭包</title>
+		<style type="text/css">
+			input {
+				width: 50px;
+				outline: none;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" onclick="myadd()" value="计数"></button>
+		<p id="demo"></p>
+		<hr>
+		<div><button value="-">-</button><input type="text" id="num" value="0" /><button value="+">+</button></div>
+		
+	</body>
+	<script type="text/javascript">
+	//计数
+		var add = (function() {
+			var count = 0;
+			return function() {
+				return count += 1;
+			}
+		})();
+
+		function myadd() {
+			document.getElementById("demo").innerHTML = add();
+		}
+		
+		
+		//加减控制数量
+		var text = document.getElementById("num");
+		var btn = document.getElementsByTagName("button");
+		for (var i = 0; i < btn.length; i++) {
+			if (btn[i].value == "-"){
+				btn[i].onclick = (function() {
+					return function() {
+						// if (text.value > 0) {
+						// 	return text.value--;
+						// } else {
+						// 	return text.value = 0;
+						// }
+						text.value>0 ?text.value--:text.value = 0;
+						return text.value;
+					}
+				})();
+			}else{
+				btn[i].onclick = (function() {
+					return function() {
+						// if (text.value < 10) {
+						// 	return text.value++;
+						// } else {
+						// 	return text.value = 10;
+						// }
+						text.value<10?text.value++:text.value = 10
+						return text.value;
+					}
+				})();
+			}
+				
+		}
+	</script>
+</html>

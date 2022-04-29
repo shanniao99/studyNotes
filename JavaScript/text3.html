@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>onmouseover和onmouseout</title>
+		<style type="text/css">
+			#box{
+				width: 500px;
+				margin: 0 auto;
+			}
+			.change{
+				width: 462px;
+				height:350px;
+				font-size: 30px;
+				font-family: "arial narrow";
+				text-align: center;1
+			}
+			img{
+				width: 100%;
+			}
+			.up{
+				width: 500px;
+				font-size: 24px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div class="change" style="display: block;">
+				<img src="./img/5.gif">
+				<h1>Today is Friday!</h1>
+			</div>
+			<div class="up" style="display: none;">
+				<img src="./img/1.gif" alt="">
+				<p>
+					<h2>Happy Friday</h2>
+					快放假了很开心的意思,因为星期五是周末前的最后一天上班,所以会说happy friday, 就是周末快到了。
+				</p>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var box=document.getElementById("box");
+			var change=document.getElementsByClassName("change")[0];
+			var img=change.getElementsByTagName("img")[0];
+			var up=document.getElementsByClassName("up")[0];
+			change.onmouseover=function(){
+				// this.style.width=500+"px";
+				// this.getElementsByTagName("span")[0].style.fontSize=35+"px";
+				this.style.display="none"
+				up.style.display="block";
+			}
+			up.onmouseout=function(){
+				// this.style.width=462+"px";
+				this.style.display="none"
+				change.style.display="block";
+			}
+		</script>
+	</body>
+</html>

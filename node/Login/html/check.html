@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数据查询</title>
+		<style type="text/css">
+			.box {
+				width: 1000px;
+				margin: 0 auto;
+			}
+			.form{
+				width: 1000px;
+				height: 100px;
+				line-height: 100px;
+				margin: 0 auto;
+			}
+			.form form{
+				float: left;
+			}
+			form .inp input[type="text"] {
+				width: 100px;
+			}
+			
+			form input[type="submit"]{
+				width: 50px;
+				height: 30px;
+				background-color: lightskyblue;
+				border: 1px solid lightblue;
+				border-radius: 5px;
+				font-size: 16px;
+				/* margin-left: px; */
+			}
+			table {
+				border: 1px solid #EEEEEE;
+				text-align: center;
+			}
+			table tr{
+				height: 30px;
+			}
+			table tr td,table tr th{
+				border: 1px solid #EEEEEE;
+			}
+			table tr:nth-child(2n){
+				background-color: lavenderblush;
+			}
+			table tr:nth-child(1){
+				background-color: lightsteelblue;
+			}
+			table tr:hover{
+				background-color: palegoldenrod;
+			}
+			img{
+				width: 90px;
+				height: 90px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="form">
+			<form action="/check" method="post" enctype="multipart/form-data">
+				<span class="inp">按学号查询:<input type="text" name="id" placeholder="请输入学号" /></span>
+				<input type="submit" value="查询" />
+			</form>
+			<form action="/check" method="post" enctype="multipart/form-data">
+				<span class="inp">按姓名查询:<input type="text" name="name" placeholder="请输入姓名" /></span>
+				<input type="submit" value="查询" />
+			</form>
+			<form action="/check" method="post" enctype="multipart/form-data">
+				<span class="inp">按年龄查询:<input type="text" name="age" placeholder="请输入年龄" /></span>
+				<input type="submit" value="查询" />
+			</form>
+			<form action="/check" method="post" enctype="multipart/form-data">
+				<span class="inp">按性别查询:<input type="text" name="sex" placeholder="请输入性别" /></span>
+				<input type="submit" value="查询" />
+			</form>
+			</div>
+			<table border="1" cellspacing="0" cellpadding="0">
+				<col width="100px" />
+				<col width="100px">
+				<col width="150px">
+				<col width="100px">
+				<col width="100px">
+				<col width="200px">
+				<col width="300px">
+				<tr>
+					<th>头像</th>
+					<th>学号</th>
+					<th>姓名</th>
+					<th>性别</th>
+					<th>年龄</th>
+					<th>出生日期</th>
+					<th>爱好</th>
+				</tr>
+				{{if obj}}
+				{{each obj v i}}
+				<tr>
+					<td><img src="{{v.pic}}" ></td>
+					<td>{{v.id}}</td>
+					<td>{{v.name}}</td>
+					<td>{{v.sex}}</td>
+					<td>{{v.age}}</td>
+					<td>{{v.birthday}}</td>
+					<td>
+						<input type="checkbox" name="hobbies[]" value="1" {{if v.hobbies.some(v=>v=='1')}} checked {{/if}} >运动类
+						<input type="checkbox" name="hobbies[]" value="2" {{if v.hobbies.some(v=>v=='2')}} checked {{/if}}>文娱类
+						<input type="checkbox" name="hobbies[]" value="3" {{if v.hobbies.some(v=>v=='3')}} checked {{/if}}>冒险类
+						<input type="checkbox" name="hobbies[]" value="4" {{if v.hobbies.some(v=>v=='4')}} checked {{/if}}>其他
+					</td>
+				</tr>
+				{{/each}}
+				{{else}}
+				<tr><td><h1>没有查询到数据</h1></td></tr>
+				{{/if}}
+			</table>
+		</div>
+	</body>
+</html>

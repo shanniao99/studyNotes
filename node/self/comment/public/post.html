@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#say {
+				height: 80px;
+				font-size: 30px;
+				text-align: center;
+				font-weight: bolder;
+				line-height: 80px;
+			}
+			form{
+				width: 600px;
+				height: 500px;
+				margin: 0 auto;
+			}
+			.box{
+				width: 600px;
+				margin-bottom: 50px;
+			}
+			.head{
+				width: 80px;
+				float: left;
+				
+			}
+			.txt{
+				width: 500px;
+				float: left;
+			}
+			.txt input{
+				width: 500px;
+				height: 30px;
+			}
+			.txt textarea{
+				width: 500px;
+				height: 100px;
+			}
+			.txt button{
+				margin-top: 25px;
+				margin-left: 300px;
+			}
+		</style>
+
+	</head>
+	<body>
+		<form action="/comment" method="post">
+			<div id="say">畅所欲言吧~~~~~~~</div>
+			<div class="box">
+				<label class="head">尊姓大名：</label>
+				<div class="txt">
+					<input type="text" placeholder="请输入你的昵称" name="name">
+				</div>
+			</div>
+			<div class="box">
+				<label class="head">评论内容：</label>
+				<div class="txt">
+					<textarea name="text"></textarea>
+				</div>
+			</div>
+			<div class="box">
+				<div class="txt">
+					<button type="submit" >提交</button>
+				</div>
+			</div>
+		</form>
+	</body>
+</html>

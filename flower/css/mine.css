@@ -1,0 +1,80 @@
+html {
+	font-size: 100px;
+	/* 定下一个标准  1rem==100px */
+}
+
+body {
+	font-size: 16px;
+	font-family: "苹方";
+}
+
+.Top {
+	width: 7.5rem;
+	height: 5rem;
+	background: url(../img/images/mine_head.jpg)no-repeat center;
+	background-size: cover;
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+
+.touxiang {
+	width: 7.5rem;
+	height: 1.65rem;
+	position: fixed;
+	top: .6rem;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.touxiang img {
+	width: 1.29rem;
+	height: 1.29rem;
+}
+
+.touxiang h2 {
+	font-size: .32rem;
+	color: #333333;
+}
+
+.ul {
+	width: 7.5rem;
+	height: 1.65rem;
+	position: fixed;
+	top: 2.25rem;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.ul ul {
+	display: flex;
+	justify-content: space-around;
+}
+
+.ul ul li {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.ul ul li span {
+	font-size: .32rem;
+	color: #333333;
+}
+
+.ul ul li p {
+	font-size: .24rem;
+	color: #333;
+}
+
+@media screen and (max-width:375px) {
+	html {
+		font-size: 50px;
+	}
+
+}

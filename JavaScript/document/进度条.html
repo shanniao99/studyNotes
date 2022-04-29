@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>计时器</title>
+	</head>
+	<style>
+		#d2 {
+			width: 75px;
+			height: 19px;
+			border: 1px solid gray;
+			display: inline-block;
+		}
+
+		#d3 {
+			height: 20px;
+			background: firebrick;
+			display: inline-block;
+		}
+	</style>
+	<script>
+		var count = 0;
+		var clock;
+		var time;
+		var num = 0;
+		window.onload = f3;
+
+		function init() {
+			window.clearInterval(clock);
+			window.clearInterval(time);
+			clock = window.setInterval("f()", 500);
+			time = window.setInterval("f2()", 1000);
+		}
+
+		function f() {
+			var imgs = document.createElement("img");
+			imgs.src = "timg2.jpg";
+			imgs.onclick = f1;
+			imgs.width = Math.floor(Math.random() * 100 + 100);
+			imgs.style.position = "absolute";
+			imgs.style.left = Math.floor(Math.random() * 1720 + 100) + "px";
+			imgs.style.top = Math.floor(Math.random() * 680 + 100) + "px";
+			document.body.appendChild(imgs);
+			if (count >= 15) {
+				alert("结束");
+				window.clearInterval(clock);
+				location.reload();
+			}
+			count++;
+			var tempo = document.getElementById("d3");
+			tempo.style.width = count * 5 + "px";
+		}
+
+		function f1() {
+			this.parentNode.removeChild(this);
+			count--;
+			var tempo = document.getElementById("d3");
+			tempo.style.width = count * 5 + "px";
+		}
+
+		function f2() {
+			var d1 = document.getElementById("d1");
+			d1.innerHTML = num++;
+		}
+
+		function f3() {
+			window.open("Trash.html", "Trash", "width=620 height=370 top=400 left=300");
+		}
+	</script>
+	<body>
+		<input type="button" value="开始" onclick="init()">
+		<input type="button" value="暂停" onclick=alert("暂停")>
+		<span id="d2"><span id="d3"></span></span>
+		进行了<span id="d1">0</span>秒
+
+	</body>
+</html>

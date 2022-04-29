@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>game</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.box {
+				width: 500px;
+				height: 500px;
+				margin: 0 auto;
+				border: 1px solid coral;
+				position: relative;
+				overflow: hidden;
+			}
+
+			#small {
+				width: 30px;
+				height: 30px;
+				position: absolute;
+				background-color: lawngreen;
+			}
+
+			span {
+				width: 10px;
+				height: 10px;
+				background-color: darkorange;
+				position: absolute;
+			}
+
+			.btn {
+				width: 70px;
+				height: 30px;
+				margin-top: 50px;
+				margin-left: 48%;
+				text-align: center;
+				line-height: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="btn">
+			<button>开始</button>
+			<button>暂停</button>
+		</div>
+
+		<div class="box">
+			<div id="small" style="position: absolute;top:470px;"></div>
+		</div>
+
+	</body>
+	<script type="text/javascript">
+		window.onload = function() {
+			var box = document.getElementsByClassName("box")[0];
+			var timer = null;
+			var btn = document.getElementsByTagName("button");
+			btn[0].onclick = function() { //
+				timer = setInterval(function() {
+					create();
+				}, 1500)
+			}
+			btn[1].onclick = function() {
+				clearInterval(timer);
+			}
+
+			function create() { //创建小盒子
+				var smallbox = document.createElement("div"); //创建新的元素
+				smallbox.style.width = 20 + "px"; //小盒子尺寸
+				smallbox.style.height = 20 + "px";
+				smallbox.style.backgroundColor = "rgb(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math
+						.random() *
+						256) +
+					"," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ")"; //随机背景色
+				smallbox.style.position = "absolute";
+				smallbox.style.top = -20 + "px"; //固定小盒子在box顶部50像素的位置
+				smallbox.style.left = Math.floor(Math.random() * 480) + "px"; //小盒子随机出现在box顶部
+				box.appendChild(smallbox);
+				var move = null;
+				move = setInterval(function() { //小盒子下降
+					smallbox.style.top = parseInt(smallbox.style.top) + 3 + "px";
+					if (parseInt(smallbox.style.top) > 500) {
+						clearInterval(move);
+						if (box.contains(smallbox)) {//contains检测下降的盒子是否在box内
+							box.removeChild(smallbox);
+						}
+					}
+				}, 50)
+			}
+
+
+			//可移动的盒子
+			var small = document.getElementById("small");
+			var left = false;
+			var right = false;
+			var top = false;
+			var bottom = false;
+			var x = false;
+			document.onkeydown = function() {
+				var key = event.charCode || event.keyCode || event.witch;
+				event.preventDefault() //清除浏览器事件
+				switch (key) {
+					case 37:
+						left = true;
+						break;
+					case 38:
+						top = true;
+						break;
+					case 39:
+						right = true;
+						break;
+					case 40:
+						bottom = true;
+						break;
+					case 88:
+						x = true;
+						break;
+				}
+			}
+			setInterval(function() { //移动的盒子
+				if (left && small.offsetLeft > 0) {
+					small.style.left = small.offsetLeft - 5 + "px";
+				} else if (right && small.offsetLeft < 470) {
+					small.style.left = small.offsetLeft + 5 + "px";
+				}
+				if (top && small.offsetTop > 0) {
+					small.style.top = small.offsetTop - 5 + "px";
+				} else if (bottom && small.offsetTop < 470) {
+					small.style.top = small.offsetTop + 5 + "px";
+				}
+
+			}, 20)
+
+			setInterval(function() { //上升的盒子频率
+				if (x) {
+					auto();
+				}
+			}, 200)
+
+			document.onkeyup = function() {
+				var key = event.charCode || event.keyCode || event.witch;
+				event.preventDefault() //清除浏览器事件
+				switch (key) {
+					case 37:
+						left = false;
+						break;
+					case 38:
+						top = false;
+						break;
+					case 39:
+						right = false;
+						break;
+					case 40:
+						bottom = false;
+						break;
+					case 88:
+						x = false;
+						break;
+				}
+			}
+			
+			var app;
+			function auto() {
+				var newbox = document.createElement("span");
+				box.appendChild(newbox);
+				newbox.style.top = parseInt(small.style.top) - 30 + "px";
+				newbox.style.left = parseInt(small.style.left) + 10 + "px";
+				var move = null;
+				move = setInterval(function() {
+					newbox.style.top = parseInt(newbox.style.top) - 1 + "px";
+					if (parseInt(newbox.style.top) < -30) {
+						clearInterval(move);
+						box.removeChild(newbox);
+					} else {
+						app = box.getElementsByTagName("div"); //上升下降的盒子碰撞
+						for (var i = 0; i < app.length; i++) {
+							if (newbox.offsetTop > app[i].offsetTop && (app[i].offsetTop + app[i].offsetHeight) >
+								newbox.offsetTop && newbox.offsetLeft > app[i].offsetLeft - 10 && (app[i]
+									.offsetLeft + app[i].offsetWidth) > newbox.offsetLeft) {
+								clearInterval(move);
+								box.removeChild(newbox);
+								box.removeChild(app[i]);
+							}
+						}
+					}
+				}, 1)
+
+
+			}
+		}
+	</script>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>总结</title>
+		<style>
+			.box{
+				animation: name 2s linear 1s infinite alternate forwards;  /* 动画 */
+				background: url(xx.jpg) no-repeat center center #0000FF;/* 背景 */
+				background-size: 1920px 100%;/* 背景尺寸 */
+				background-image: linear-gradient(45deg,red,green);	/* 背景线性渐变 */		
+				border-radius: 50%;/* 边框圆角 */
+				box-shadow: 2px 2px 5px 0px #666 inset;/* 盒子阴影 */
+				border-collapse: collapse;/* 合并边框（表格） */
+				color: rgba(255,0,0,0.5);
+				cursor: pointer;/* 鼠标指针 pointer；手指状光标*/
+				display: block;/* 显示 ； 将行内元素改变为块状元素， */
+				display: inline-block;
+				display: inline;
+				display: none;/* 隐藏元素 */
+				font-size:25rem ;/* 字体大小 */
+				font-weight:bold ;/* 字体加粗 */
+				font-family:"microsoft yahei" ;/* 字体 */
+				font-style: italic;/* 斜体 */				
+				line-height: 25px;/* 行高 */
+				list-style: none;/* 列表属性 */
+				letter-spacing: 2px;/* 字符间距 */
+				opacity: 0.5;/* 透明度 */
+				overflow: hidden;/* 万能属性 */
+				overflow-x: scroll;/* x轴滚动条 */
+				overflow-y: scroll;/* y轴滚动条 */
+				outline: none;/* 取消表单聚焦效果 */
+				resize: none;/* 禁用文本框重置大小功能 */
+				text-align: justify;/* 文本位置 */
+				text-decoration: underline;/* 文本修饰  underline：文本下划线  overline：上划线 line-through：删除线 */
+				transform: rotate(36deg);/* 元素的2D或3D转换 */
+				transition: all 2s ease 1s;/* 元素过渡效果 */
+				text-shadow: 2px 2px 5px black;/* 文本阴影 */
+				text-indent: 2em; /* 文本首行缩进2字符 */				
+				text-overflow: ellipsis;  /* 溢出文字省略 配合overflow: hidden使用 */
+				white-space: nowrap;  /* 文本不换行 */
+								
+				
+				/* 盒子模型 */
+				margin: 0 auto;/* 注意外边距重叠 */
+				padding: 0 20px 40px; /* 内边距 */
+				border: 2px solid red; /* 边框 */
+				box-sizing: border-box;/* 元素的总高度和宽度包含内边距和边框(padding 与 border) */
+				width: 200px;
+				height: 100px;
+				min-width: 1200px; /* 最小宽度 */
+				min-height: 800px;/* 最小高度 */
+				max-width: 1920px;/* 最大宽度 */
+				max-height: 2000px;/* 最大高度 */
+				
+				
+				
+				
+				
+				
+				/* 表格布局 */
+				border-collapse: collapse;/* 边框合并成一条 */
+				
+				/* 浮动布局 */
+				float: left;
+				clear: both;
+				
+				/* 定位布局 */
+				position: relative;/* 相对定位 */
+				position: absolute;/* 绝对定位 */
+				position: fixed;/* 固定定位 */
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				z-index: 9999;/* 指定元素的堆叠顺序 */
+				
+				
+				/* 弹性布局 */
+				display: flex;
+				flex-direction: row;
+				/* 
+				主轴的方向（即项目的排列方向） row:水平 左——>右  row-reverse 水平 右——>左 
+				column：主轴为垂直方向，上——>下
+				column-reverse：垂直方向，下——>上
+				*/
+				flex-wrap: wrap;
+				/* 
+				项目换行 nowrap（默认）：不换行 wrap：换行，第一行在上方。
+				wrap-reverse：换行，第一行在下方  
+				*/
+				flex-flow: column nowrap; /* 主轴方向和项目换行的结合简写 */
+				justify-content:space-between;/* 主轴上的对齐方式 */
+				/* 
+				flex-start（默认值）：左对齐
+                flex-end：右对齐
+                center： 居中
+                space-between：两端对齐，项目之间的间隔都相等。
+                space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。 */
+				align-items: center;
+				/* 交叉轴上的对齐方式  
+				flex-start：交叉轴的起点对齐。
+                flex-end：交叉轴的终点对齐。
+                center：交叉轴的中点对齐。
+                baseline: 项目的第一行文字的基线对齐。
+                stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。*/
+				align-content: space-around;
+				/* 
+				多根轴线的对齐方式 
+				flex-start：与交叉轴的起点对齐。
+				flex-end：与交叉轴的终点对齐。
+				center：与交叉轴的中点对齐。
+				space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。
+				space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。
+				stretch（默认值）：轴线占满整个交叉轴。
+				*/
+				order: -1;/* 项目的排列顺序 数值越小，排列越靠前，默认为0 */
+				flex-grow:2; /* 项目的放大比例，默认为0 */
+				flex-shrink:0;/* 项目的缩小比例，默认为1 空间不足时，都将等比例缩小  负值无效 */
+				flex-basis: 50px;/* 在分配多余空间之前，项目占据的主轴空间（main size） 默认值为auto，即项目的本来大小*/
+				flex:2 0 50px ;/* 项目的放大比例，缩小比例及项目占据的主轴空间三者的结合简写 默认值为0 1 auto*/	
+				align-self:flex-end;
+				/* 项目个体与其他项目不同的对齐方式 (单一项目自己的对齐方式) 
+				可覆盖align-items属性 默认值为auto即继承父元素的对齐方式 
+				*/
+			}
+			@keyframes name{        /* @keyframes规则 创建动画   name为动画名 */
+				0%{}
+				100%{}
+			}
+			@font-face { /* 指定名为"myFirstFont"的字体，并指定URL */
+				font-family:;
+				src: url();
+			}
+			@media screen and (max-width:750px) {  /* @media screen可以针对不同的屏幕尺寸设置不同的样式 */
+				
+			}
+		</style>
+	</head>
+	<body>
+			html标记：
+			<a href="javascript:;" target="_blank"></a>  <!-- 超链接  _blank：跳转到新页面-->
+			<audio src="xxx.mp3" controls="controls" autoplay="autoplay"></audio><!-- 音频 -->
+			<b></b><!-- 字体加粗 -->
+			<br><!-- 换行 -->
+			<button></button><!-- 按钮 -->
+			<dl><!-- 自定义列表 -->
+				<dt></dt>
+				<dd></dd>
+			</dl>
+			<div style="width: 100px;">中文中文中文中文中文中文中文中文中文中文中文中文中文</div>
+			<em></em><!-- 强调 斜体 -->
+			<form></form><!-- 表单 -->
+			<hr><!-- 分隔线 -->
+			<h1></h1>	<!-- 标题 -->		
+			<iframe src="xxx.html"></iframe><!-- 框架 -->
+			<i></i><!-- 斜体 -->
+			<img src="xxx.pic" alt="图片不存在的提示文字" title="鼠标悬浮提示文字" /><!-- 图片 -->
+			<input type="text" id="a1" />  文本域  按钮  单选按钮  多选按钮  文件域 ... 
+			<label for="a1">点击文字选择表单元素</label><!-- 向控件定义标注（标记） -->
+			<link rel="stylesheet" href=""><!-- 链接样式表 -->
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+			禁止用户缩放
+			<marquee>文字滚动</marquee>			
+			<ol><!-- 有序列表 -->
+				<li></li>
+			</ol>
+			<p></p><!-- 段落 -->
+			<pre></pre><!-- 格式化代码 -->		
+			<select name=""><!-- 下拉列表 -->
+				<option value=""></option>
+			</select>
+			<span></span>
+			<strong></strong><!-- 把文本定义为语气更强的强调的内容。比em强调更高 -->
+			<style></style><!-- 为 HTML 文档定义样式信息 -->
+			<table><!-- 表格 -->
+				<col width="" /><!-- 给表格中的列定义不同的宽度，对齐方式等 -->
+				<col width="" />
+				<col width="" />
+				<tbody>
+					<tr><!-- 表格的行 -->
+						<th></th><!-- 表头 -->
+						<td></td><!-- 单元格 -->
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<textarea>文本区域</textarea>
+			<ul><!-- 无序列表 -->
+				<li></li>
+			</ul>
+			<video src="xxx.mp4" controls="controls" autoplay="autoplay"></video><!-- 视频 -->
+			
+			html5-----------------
+			<datalist id="name"><!-- 带输入提示功能的选择列表 -->
+				<option>张三</option>
+				<option>李四</option>
+			</datalist>
+			<input type="email" placeholder="文字自动消失" required="required" autofocus="autofocus" list="name" readonly="readonly">
+			<!-- required 必填项  autofocus 加载页面时自动获得焦点  readonly 只读，不允许更改内容-->
+			日期  数字  滑条  ...
+			<footer></footer><!-- 页脚 -->
+			<header></header><!-- 页眉 -->
+			<nav></nav><!-- 定义导航链接的部分 -->
+			<section></section><!-- 定义文档中的节 -->
+			
+	</body>
+</html>

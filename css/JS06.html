@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		.on{
+			background-color: red;
+			font-size: 50px;
+		}
+		.box{
+			color: blue;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="box" id="test">
+			<ul>
+				<li>11</li>
+				<li>22</li>
+			</ul>
+		</div>
+		<a href="#">超链接</a>
+		<img src="../123.jpg" title="提示文字" >
+		<input type="text" value="123" />
+		
+		<script>
+		// JS 内置对象和函数
+		var box=document.getElementsByClassName("box")[0] //通过类名查找元素（结果是数组）
+		
+		// 内置对象
+		box.className="box on" //读取或修改类名
+		box.id="box" //读取或修改id名
+		
+		// 读取或修改对应属性值
+		// box.src="../456.jpg"
+		// box.title="..."
+		// box.href="http//:www.baidu.com"
+		// box.value
+		
+		console.log(box.innerText) //读取或修改内部的文本内容
+		console.log(box.innerHTML) //读取或修改内部的html标记内容
+		
+		// 内置函数
+		// alert(123)
+		// function alert(val){
+			
+		// }
+		
+		// if(confirm("是否确定删除")){
+		// 	console.log("执行删除")
+		// }
+				
+		// var str=prompt("请输入一个数")
+		// console.log(Number(str)+1)
+		
+		console.log(parseInt("123.123")+1) //读取字符串前面整数部分并转换成数值类型		
+		console.log(parseFloat("123.123a")+1) //读取字符串前面数值部分并转换成数值类型		
+		console.log(String({a:123})) //转字符串数据 "[object Object]"
+		console.log(typeof(123))
+		console.log(isNaN("a"*5)) //判断是否是一个非数字
+		var a=5;
+		var b=3;
+		console.log(eval("a+b")) //eval() 格式化字符串并执行里面代码
+		
+		// 定时器
+		// setTimeout(fn,1000) 延迟1s执行fn里面的代码
+		// setInterval(fn,2000) 每隔2s执行一次fn里面的代码
+		// clearTimeout(xx) 停止xx的延迟执行
+		// clearInterval(xx) 停止xx的间隔执行
+		
+		// setTimeout(function(){
+		// 	console.log(123)
+		// },1000)
+		
+		// var num=10
+		// var xx=setInterval(function(){
+		// 	console.log(num++)
+		// 	num==15?clearInterval(xx):null
+		// },1000)
+		
+		
+		
+		// 内置对象函数
+		console.warn(123)
+		console.error(123)
+		
+		// Math 数学
+		console.log(Math.PI) //圆周率
+		console.log(Math.abs(3)) //绝对值
+		console.log(Math.ceil(3.14)) //向上取整
+		console.log(Math.floor(3.14)) //向下取整
+		console.log(Math.round(3.54)) //四舍五入
+		console.log(Math.random()) //随机数 0<=?<1
+		console.log(Math.max(5,3,7)) //最大值
+		console.log(Math.min(5,3,7)) //最大值
+		console.log(Math.pow(2,10)) // 2的10次方
+		console.log(Math.sqrt(16)) //求平方根
+		console.log(Math.sign(0)) //es新增方法 正数 1   负数 -1   0 0
+		
+		// 练习：每1s变化一次随机背景颜色 rgba(255,255,255,1)
+		
+		
+		// 时间 new Date()
+		var today=new Date() //获取当前时间
+		console.log(Date.now()) //获取时间戳（从格林威治时间（1970/1/1/0:0:0）到现在所过去的一个总的毫秒数）
+		// 计算循环所用的时间
+		for(var i=0;i<660;i++){
+			
+		}
+		console.log(Date.now())
+		
+		
+		console.log(today) //整体时间
+		// 拆分时间
+		console.log(today.getFullYear()) //年
+		console.log(today.getMonth()+1) //月（从0开始，0表示一月...）
+		console.log(today.getDate()) //日
+		console.log(today.getDay()) //星期   0表示星期天
+		console.log(today.getHours()) //小时
+		console.log(today.getMinutes()) //分钟
+		console.log(today.getSeconds()) //秒钟
+		console.log(today.getMilliseconds()) //毫秒数
+		console.log(today.getTime()) //时间戳
+		
+		
+		// 修改时间
+		console.log(today)
+		today.setHours(today.getHours()+24*5)		
+		console.log(today)
+		
+		// 获取特定时间（练习：倒计时）
+		var today=new Date()
+		var newyear=new Date(2022,0,1,0,0,0) //注意0表示一月
+		console.log(newyear)
+		var time=newyear.getTime()-today.getTime()
+		console.log(time/1000/60/60/24)
+		
+		
+		
+		// 数组
+		
+		
+		// 字符串
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		</script>
+		<button onclick="clearInterval(xx)">点击停止</button>
+	</body>
+</html>

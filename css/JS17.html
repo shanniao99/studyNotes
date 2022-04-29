@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button>点击</button>
+		<script>
+			// AJAX  异步的js和xml（json）
+			// 局部刷新技术
+			// 常用于数据的获取（本地或网站接口...）
+
+			// 免费网站接口数据：https://api.apiopen.top/getJoke?page=1&count=2&type=video
+			// 本地xml数据：test.xml
+			// 本地json数据：test.json
+			// 本地其他数据：test.txt
+
+			console.log(1111)
+			var num=1
+
+			var btn = document.querySelector("button")
+			btn.onclick = function() {
+				
+				// ajax 使用：
+				var xhr = new XMLHttpRequest() // 创建服务（打开浏览器）
+				xhr.open("GET", "https://api.apiopen.top/getJoke?page="+(num++)+"&count=5&type=video", true) // 建立连接（输入网址）   参数：（请求方式，请求地址，是否异步）
+				xhr.onload = function() { //等待反馈		
+
+					// 本地其他数据：test.txt
+					// console.log(this.responseText) // 读取响应文本内容	
+
+					// 本地json数据：test.json
+					// 免费网站接口数据：https://api.apiopen.top/getJoke?page=1&count=2&type=video
+					var str=this.responseText // 读取json数据
+					console.log(JSON.parse(str)) // 转换json数据
+
+					// 本地xml数据：test.xml
+					// var dom=this.responseXML // 获取xml数据（结果是DOM节点类型的数据）
+					// console.log(dom.getElementsByTagName("id")[0].innerHTML)
+
+				}
+				xhr.send() // 发送请求
+
+			}
+			console.log(2222) //因为ajax的异步访问会花费一点时间，导致该行代码执行靠前
+			
+			
+			
+			// get请求，其携带参数在网址栏后面，一起发送
+			// post请求，其携带参数不再网址栏后面，而是和http的请求头一起发送过去
+			var xhr=new XMLHttpRequest()
+			console.log(xhr.readyState)  // 0：未初始化，但是已经创建了XHR实例
+			xhr.open("POST","https://api.apiopen.top/getJoke",true)
+			console.log(xhr.readyState) // 1：调用了open()函数
+			// 一步加载
+			// xhr.onload=function(){
+			// 	console.log(JSON.parse(this.responseText))
+			// }
+			// 分步加载
+			xhr.onreadystatechange=function(){
+				// console.log(xhr.readyState)
+				// ajax 状态码： 
+				// 2：已经调用了send()函数，但还未收到服务器回应
+				// 3：正在接受服务器返回的数据  
+				// 4：完成响应
+				// console.log(xhr.status)// 服务器 状态码： 200 成功  404 找不到页面  502 服务器不可用
+				
+				if(xhr.status==200&&xhr.readyState==4){
+					console.log(JSON.parse(this.responseText))
+				}else if(xhr.status==404&&xhr.readyState==4){
+					console.log("页面请求路径出错，请检查")
+				}
+				
+			}
+			xhr.send("page=1&count=2&type=video")
+			
+			
+			
+			// 练习： ajax的封装			
+			function axios(){
+				
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>

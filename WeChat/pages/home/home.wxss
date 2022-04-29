@@ -1,0 +1,138 @@
+/* pages/home/home.wxss */
+.box{
+	width: 750rpx;
+	height: 100% !important;
+  background-color: #edecec;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.top_list{
+  width: 750rpx;
+	height: 200rpx;
+	margin: 0 auto;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 30rpx 0;
+}
+.top_list ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.top_list ul li navigator {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.top_list ul li image {
+	width: 70rpx;
+	height: 60rpx;
+}
+
+.top_list ul li p {
+	font-size: 28rpx;
+	font-family: "黑体";
+	color: #181818;
+}
+.item {
+	width: 750rpx;
+	height: auto;
+	margin: 0 auto;
+	background-color: white;
+}
+
+.item ul {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.item ul li {
+	width: 710rpx;
+	height: 290rpx;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.item ul li image {
+	width: 263rpx;
+	height: 240rpx;
+}
+
+.txt {
+	width: 415rpx;
+	height: 220rpx;
+	margin-top: 20rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.top {
+	width: 435rpx;
+	height: 130rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.top h2,
+.top p text {
+	font-size: 24rpx;
+	font-family: "黑体";
+	color: #181818;
+}
+
+.top p {
+	font-size: 24rpx;
+	color: #FF7800;
+}
+
+.top p b {
+	font-size: 36rpx;
+}
+
+.top p text {
+	padding-left: 10rpx;
+	color: #a7a7a7;
+	text-decoration: line-through;
+}
+
+.down {
+	width: 435rpx;
+	height: 60rpx;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.down_l{
+	height: 60rpx;
+	display: flex;
+	flex-direction: column;
+}
+
+.down_l p {
+	font-size: 22rpx;
+	color: #a7a7a7;
+}
+
+.down button {
+	font-size: 30rpx;
+	color: white;
+	font-family: "黑体";
+	width: 200rpx;
+	height: 60rpx;
+	border: none;
+	border-radius: 50rpx;
+	background-color: #ff7903;
+	padding: 0;
+	line-height: 60rpx;
+}

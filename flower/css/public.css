@@ -1,0 +1,189 @@
+html {
+	font-size: 100px;
+	/* 定下一个标准  1rem==100px */
+}
+
+body {
+	font-size: 16px;
+}
+
+html,
+body,
+ul,
+li,
+ol,
+dl,
+dd,
+dt,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+legend,
+img {
+	margin: 0rem;
+	padding: 0rem
+}
+
+fieldset,
+img {
+	border: 0rem
+}
+
+img {
+	display: block
+}
+
+ul,
+ol {
+	list-style: none;
+	overflow: hidden;
+}
+
+a {
+	text-decoration: none;
+}
+
+.box {
+	width: 7.5rem;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+header {
+	width: 7.5rem;
+	height: .6rem;
+	margin: 0 auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.head {
+	width: 7.1rem;
+	height: .6rem;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: row;
+}
+
+.tit {
+	width: 2.5rem;
+	height: .6rem;
+	display: flex;
+	align-items: center;
+}
+
+.tit b {
+	font-size: .34rem;
+	font-family: "黑体";
+	color: #333333;
+	padding-left: .3rem;
+}
+
+.tit span {
+	font-size: .4rem;
+	font-weight: bolder;
+	color: #333333;
+}
+
+.btn {
+	width: 1.6rem;
+	height: .55rem;
+	border: 0.01rem solid #333333;
+	border-radius: .5rem;
+	display: flex;
+	align-items: center;
+}
+
+.btn_l {
+	width: .79rem;
+	height: .4rem;
+	border-right: 0.01rem solid #999;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.small {
+	width: .1rem;
+	height: 0.1rem;
+	background-color: #333333;
+	border-radius: 50%;
+}
+
+.big {
+	width: .15rem;
+	height: .15rem;
+	background-color: #333333;
+	border-radius: 50%;
+}
+
+.btn_r {
+	width: .8rem;
+	height: .4rem;
+	display: flex;
+	align-items: center;
+}
+
+.big_p {
+	width: .3rem;
+	height: .3rem;
+	border: 0.03rem solid #333333;
+	border-radius: 50%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+footer {
+	width: 7.5rem;
+	height: 1rem;
+	margin: 0 auto;
+	background-color: white;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+footer ul {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+footer ul li a {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+footer ul li a span {
+	font-size: .22rem;
+	font-family: "苹方";
+	color: #333333;
+
+}
+
+footer ul li.on a span {
+	color: #e37198;
+}
+
+@media screen and (max-width:375px) {
+	html {
+		font-size: 50px;
+	}
+
+}

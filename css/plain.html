@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.box {
+				border: 1px solid red;
+				width: 300px;
+				height: 400px;
+				margin: 50px auto 0;
+				position: relative;
+			}
+
+			.box>div {
+				width: 20px;
+				height: 20px;
+				background-color: red;
+				position: absolute;
+			}
+
+			.box>span {
+				width: 20px;
+				height: 20px;
+				background-color: orange;
+				position: absolute;
+				z-index: -1;
+			}
+
+			.box>b {
+				width: 6px;
+				height: 6px;
+				background-color: red;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<button onclick="start()">开始</button>
+		<button onclick="stop()">暂停</button>
+		<div class="box">
+			<!-- <span style="top: -21px; left: 280px;"></span> -->
+			<!-- <b style="left: 147px;top: 180px;"></b> -->
+			<div style="left: 140px;top: 190px;"></div>
+		</div>
+		<script>
+			var box = document.getElementsByClassName("box")[0]
+			var arr = [] //正在显示的敌机
+			var diji = null //敌机出现频率
+			var zds = [] //显示的子弹
+
+			//开始
+			function start() {
+				for (var i = 0; i < arr.length; i++) { //for循环继续前面暂停的
+					move(arr[i])
+				}
+				for (var i = 0; i < zds.length; i++) { //for循环继续前面暂停的
+					up_move(zds[i])
+				}
+				diji = setInterval(function() { // 每隔1s出现一个敌机span
+					var span = document.createElement("span")
+					span.style.top = "-21px" // x坐标初始就在最上面
+					span.style.left = Math.floor(Math.random() * 281) + "px" // y坐标随机
+					arr.push(span) //数组进行记录敌机数据
+					box.appendChild(span)
+					move(span) //执行下落动画
+				}, 1000)
+			}
+
+			//下落
+			function move(val) {
+				val.move = setInterval(function() { //每1s移动100次，每移动一次都要修改x坐标和判断
+					val.style.top = parseInt(val.style.top) + 1 + "px" //修改x坐标
+					if (parseInt(val.style.top) >= 400) { //判断是否到底部
+						box.removeChild(val) //清除敌机
+						clearInterval(val.move) //停止动画
+						var index = arr.findIndex(function(v) { //查找对应数据
+							return v == val
+						})
+						arr.splice(index, 1) //删除数组中的对应记录
+					}
+				}, 10)
+			}
+
+
+			//暂停
+			function stop() {
+				clearInterval(diji) // 停止出现敌机
+				for (var i = 0; i < arr.length; i++) { //for循环停止所有下落
+					clearInterval(arr[i].move)
+				}
+				for (var i = 0; i < zds.length; i++) { //for循环停止所有下落
+					clearInterval(zds[i].move)
+				}
+			}
+
+
+			// 键盘按键
+			var zuo = false,
+				you = false,
+				shang = false,
+				xia = false,
+				zd = false
+
+			var mine = box.getElementsByTagName("div")[0]
+			document.onkeydown = function() {
+				var key = event.charCode || event.keyCode || event.which
+				if (key == 37) {
+					zuo = true
+				} else if (key == 39) {
+					you = true
+				}
+				if (key == 38) {
+					shang = true
+				} else if (key == 40) {
+					xia = true
+				}
+				if (key == 88) {
+					zd = true
+				}
+			}
+			document.onkeyup = function() {
+				var key = event.charCode || event.keyCode || event.which
+				if (key == 37) {
+					zuo = false
+				} else if (key == 39) {
+					you = false
+				}
+				if (key == 38) {
+					shang = false
+				} else if (key == 40) {
+					xia = false
+				}
+				if (key == 88) {
+					zd = false
+				}
+			}
+
+			setInterval(function() {
+				var mineX = parseInt(mine.style.left)
+				var mineY = parseInt(mine.style.top)
+				if (zuo) {
+					mine.style.left = (mineX <= 0 ? 1 : mineX) - 1 + "px"
+				} else if (you) {
+					mine.style.left = (mineX >= 280 ? 279 : mineX) + 1 + "px"
+				}
+				if (shang) {
+					mine.style.top = (mineY <= 0 ? 1 : mineY) - 1 + "px"
+				} else if (xia) {
+					mine.style.top = (mineY >= 380 ? 379 : mineY) + 1 + "px"
+				}
+			}, 10)
+
+
+			//子弹频率
+			setInterval(function() {
+				if (zd) {
+					var b = document.createElement("b")
+					b.style.left = parseInt(mine.style.left) + 7 + "px"
+					b.style.top = parseInt(mine.style.top) - 10 + "px"
+					zds.push(b) // [b,b]
+					box.appendChild(b)
+					up_move(b)
+				}
+			}, 500)
+
+
+			//子弹移动
+			function up_move(val) {
+				val.move = setInterval(function() {
+					val.style.top = parseInt(val.style.top) - 1 + "px"
+					if (parseInt(val.style.top) <= -7) {
+						clearInterval(val.move)
+						box.removeChild(val)
+						var index = zds.findIndex(function(v) {
+							return v == val
+						})
+						zds.splice(index, 1)
+					}
+				}, 10)
+			}
+
+			//碰撞检测
+			setInterval(function() {
+				for (var i = 0; i < arr.length; i++) {
+					for (var x = 0; x < zds.length; x++) {
+						var fx = parseInt(arr[i].style.left)
+						var zx = parseInt(zds[x].style.left)
+						var fy = parseInt(arr[i].style.top)
+						var zy = parseInt(zds[x].style.top)
+						if (zy > fy - 6 && zy < fy + 20) {
+							if (zx > fx - 6 && zx < fx + 20) {
+								console.log(123)
+								box.removeChild(zds[x])
+								box.removeChild(arr[i])
+								clearInterval(zds[x].move)
+								clearInterval(arr[i].move)
+								zds.splice(x, 1)
+								arr.splice(i, 1)
+							}
+						}
+					}
+				}
+			}, 10)
+		</script>
+	</body>
+</html>

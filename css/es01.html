@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button>按钮1</button>
+		<button>按钮2</button>
+		<button>按钮3</button>
+		<script>
+			var btns = document.getElementsByTagName("button")
+			// es ECMAScript 5 6 7 8 9 10 11
+			// 升级的JS，多了很多语法和功能
+			// 新增：块级作用域(“{}”范围内)和let变量
+			// 新增：const 常量声明
+			// 新增：模板字符串:``
+			// 新增：解构赋值
+			// 新增：扩展运算符“...”
+			// 新增：rest参数：“...” (默认靠后使用)
+			// 新增：函数可以携带默认值(默认靠后使用)
+			// 新增：箭头函数
+			// 新增：数组方法：foreach  find findindex  filter  some  every   map
+
+			// 新增：箭头函数
+			// 普通函数：
+			let m = function(val) {
+				// console.log(val)
+				return 666
+			}
+			m(123)
+
+			// 箭头函数简写：
+			// let n=(val,res)=>{
+			// 	console.log(val,res)
+			// }
+			// n(456,789)
+
+			// 当形参只有一个时，可省略掉小括号“()”
+			// let n=val=>{
+			// 	console.log(val)
+			// }
+			// n(456)
+
+			// 当函数的代码有返回值return，且只有一行代码时，可以省略掉“{}”和return关键字
+			let n = val => val * 2
+
+			let test = n(8)
+			console.log(test, n)
+
+
+			// 注意：箭头函数的this指向问题
+			btns[0].onclick=function(){
+				setTimeout(()=>{			
+					console.log(this) //箭头函数里面的this指向当前声明时所在作用域的this
+					this.style.background="red"
+				},1000)	
+			}
+			
+			// btns[0].onclick=function(){
+			// 	let that=this // 修改this指向
+			// 	window.setTimeout(function(){
+			// 		console.log(this)
+			// 		that.style.background="red"
+			// 	},1000)				
+			// }
+
+
+
+			// 函数可以携带默认值
+			function fn4(v1 = 3, v2 = 5) {
+				console.log(v1, v2)
+			}
+			fn4(12)
+
+
+			// rest参数：“...”：函数的形参
+
+			function fn1(v1, v2, v3) {
+				console.log(v1, v2, v3)
+			}
+			fn1(123, 456, 789)
+
+			// js函数关键字 arguments：可以动态读取函数调用时携带的实参
+			function fn2() {
+				console.log(arguments)
+			}
+			fn2(123, 456, 789)
+
+			// rest参数：同arguments功能一样，但可以拆分
+			function fn3(v1, ...val) {
+				console.log(val)
+			}
+			fn3(123, 456, 789)
+
+			/*			
+						
+						
+						//----------------------------------------------------
+						
+						// 新增：扩展运算符“...”
+						// 把数组或对象里面的数据展开形成参数一个序列
+						let f=["ee","ff","gg"]
+						console.log(...f)  // "ee","ff","gg"
+						
+						// 避免赋址问题的出现			
+						let g={a:123,b:456}
+						// console.log(...g)  // console.log(a:123,b:456)
+						let h={...g} 
+						h.a=789
+						console.log(g) 
+						
+						
+						
+						
+						
+						//----------------------------------------------------
+						
+						// 新增：解构赋值：按照数据的结构一一对应进行赋值
+						
+						let [,,cc]=["aa","bb","cc"]
+						let {gen,name}={name:"张三",age:18,gen:"男"}
+						console.log(cc)
+						console.log(gen,name)
+						
+						//----------------------------------------------------
+						
+						
+						// 新增：模板字符串:``
+						// 支持换行写法，支持变量解析
+						let e="测试"
+						let str=`<li>`+e+`</li>
+						<li>${e}</li>`
+						console.log(str)
+						
+						
+						//----------------------------------------------------
+						
+						
+						// 新增：const 常量声明
+						// 不能修改，一定要有初始值，不能重复声明，不存在变量提升
+						
+						const pi=3.1415926
+						// pi=3.14
+						console.log(pi)
+						
+						// const中针对数组或对象里面的值或属性修改是可以的
+						const d=["aa","bb"]
+						d[0]=123
+						console.log(d)
+						
+						// ----------------------------------------------------
+						
+						// 新增：块级作用域(“{}”范围内)和let变量
+						{
+							let a=5
+							console.log(a)
+						}
+						// console.log(a) //外部不能使用let变量
+						
+						// let不支持重复声明
+						let b=3
+						// let b=4 
+						
+						// let 没有变量提升：变量的使用可以提前到声明之前
+						// console.log(x)
+						let x=6
+						
+						
+						for(let i=0;i<btns.length;i++){
+							btns[i].asd=i
+							btns[i].onclick=function(){
+								console.log(i) //使用let，可以不用自定义索引下标
+								console.log(this.asd)
+							}
+						}
+						
+						
+			*/
+		</script>
+	</body>
+</html>

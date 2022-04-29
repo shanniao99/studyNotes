@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="box" id="grey">
+			<ul>
+				<li>111</li>
+				<li>222</li>
+				<li>333</li>
+				<li>444</li>
+				<li class="li5">555</li>
+				<li>666</li>
+			</ul>
+			<li>777</li>
+			<h2>标题</h2>
+			<h2>标题</h2>
+			<p>
+				<span>----</span>
+				更多
+				<span>&gt;&gt;</span>
+			</p>
+			<a href="123.html">123</a>
+			<a href="456.html">456</a>
+		</div>
+		<style>
+			/* 选择器：标签  class  id  后代  子代  组合  通配  属性  伪类  伪元素 伪对象... */
+			/* 同种情况下选择器的优先级 id(100) > class(10) > 标签(1)  */
+			/* .li5{
+				background-color: purple;
+			}
+			li{
+				background-color: blue
+			} 
+			ul li{
+				background-color: purple;
+			}
+			ul li{
+				background-color: blue;
+			}
+			*/
+			
+			/* 标签 */
+			div {
+				background-color: #999;
+			}
+
+			/* class */
+			.box {
+				height: 500px;
+			}
+
+			/* id */
+			#grey {
+				width: 400px;
+			}
+
+			/* 后代 */
+			.box li {
+				list-style: none;
+			}
+
+			/* 子代 */
+			.box>li {
+				background-color: green;
+			}
+
+			/* 组合 */
+			h2,
+			p,
+			.box>li {
+				color: red;
+			}
+
+			/* 通配	*/
+			* {
+				font-size: 25px;
+			}
+
+			/* 属性	ie8下无效*/
+			a[href="123.html"] {
+				color: #00FFFF;
+			}
+
+			/* 伪类	*/
+			a:link {
+				/* 未访问 */
+
+			}
+
+			a:hover {
+				/* 鼠标经过 */
+				color: red;
+			}
+
+			a:active {
+				/* 鼠标点击 */
+				color: yellow;
+			}
+
+			a:visited {
+				/* 访问后 */
+
+			}
+
+			/* 伪元素	 first-child在ie8下有效，其他无效
+nth-child 会计算该元素的父级元素下的所有子元素
+nth-of-type  不会计算该元素的父级元素下的所有子元素，只计算特定的元素 
+*/
+			li:nth-of-type(1) {
+				background-color: cyan;
+			}
+
+			/* li:first-child{
+				background-color: cyan;
+			}
+			li:nth-child(2n){
+				background-color: cyan;
+			}
+			li:last-child{
+				background-color: cyan;
+			} */
+			/* 伪对象 before after  ie8基本不支持*/
+			p span {
+				color: yellow;
+			}
+
+			p:hover {
+				color: #008000;
+			}
+
+			p:hover span {
+				color: #008000;
+			}
+
+			h2:before {
+				/* 行内元素 */
+				width: 100px;
+				height: 50px;
+				background-color: green;
+				color: yellow;
+				content: "----";
+				/* 必有属性 */
+			}
+
+			h2::after {
+				color: yellow;
+				content: ">>";
+			}
+
+			h2:hover,
+			h2:hover::before,
+			h2:hover::after {
+				color: green;
+			}
+			
+			
+			/* css兼容  csshank  ie6双倍间距问题*/
+			.box{
+				_margin-left: 5px;
+				margin-left: 10px; /* ie6下为20px */
+				_background-color: purple;
+				*background-color: #333;
+				/* css3属性 */
+				-o-transition: 1s;
+				-webkit-transition: 1s;
+				-moz-transition: 1s;
+			}
+		</style>
+	</body>
+</html>

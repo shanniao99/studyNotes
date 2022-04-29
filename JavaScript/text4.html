@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box {
+				width: 300px;
+				height: 300px;
+				background-color: #90EE90;
+				margin: 0 auto;
+				text-align: center;
+				line-height: 300px;
+			}
+
+			.box input {
+				width: 50px;
+				height: 50px;
+				font-size: 30px;
+				text-align: center;
+				outline: none;
+				
+			}
+
+			.btn {
+				height: 50px;
+				margin-left: 46%;
+				line-height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="btn">
+			<button type="button" id="stop">暂停</button>
+			<button type="button" id="action">开始</button>
+			<button type="button" id="clear">清除</button>
+		</div>
+		<div class="box">
+			<input type="text" id="seconds" value="0" readonly><input type="text" id="ms" value="0" readonly>
+
+		</div>
+	</body>
+	<script type="text/javascript">
+		var box = document.getElementsByClassName("box")[0];
+		var seconds = document.getElementById("seconds");
+		var ms = document.getElementById("ms");
+		var a = document.getElementById("action");
+		var s = document.getElementById("stop");
+		var c = document.getElementById("clear");
+		var num = 0;
+		a.addEventListener("click", action);
+		s.addEventListener("click", stop);
+		c.addEventListener("click", clear);
+		var go = null;
+
+		function action() { //开始按钮
+			if (go) {
+				return;
+			}
+			go = setInterval(function() {
+				ms.value = num++;
+				if (ms.value == 99) {
+					seconds.value++;
+					num = 0;
+				}
+			}, 10)
+		}
+
+		function stop() { //暂停按钮
+			clearInterval(go);
+			go = null;
+			if (seconds.value == 6 && ms.value == 0) {
+				alert("也太幸运了叭~~~");
+			} else {
+				alert("再努力一下吧，你离6s就差一点啦")
+			}
+		}
+
+		function clear() { //清除按钮
+			clearInterval(go);
+			go = null;
+			ms.value = 0;
+			seconds.value = 0;
+		}
+	</script>
+</html>

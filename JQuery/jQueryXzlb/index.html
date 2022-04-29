@@ -1,0 +1,108 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>JS旋转图片轮播代码</title>
+		<link rel="stylesheet" type="text/css" href="move.css" />
+
+		<script type="text/javascript" src="move3.js"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				var oPic = document.getElementById('pic'); //图片容器(div)
+				var oPrev = getByClass(oPic, 'prev')[0]; //上一张
+				var oNext = getByClass(oPic, 'next')[0]; //下一张
+
+				var aLi = oPic.getElementsByTagName('li');  //li标签
+
+				var arr = [];
+
+				for (var i = 0; i < aLi.length; i++) {
+					var oImg = aLi[i].getElementsByTagName('img')[0]; //每张图片
+
+					arr.push([parseInt(getStyle(aLi[i], 'left')), parseInt(getStyle(aLi[i], 'top')),
+						getStyle(aLi[i], 'zIndex'), oImg.width, parseFloat(getStyle(aLi[i], 'opacity') * 100)
+					]); //每个li的left top z-index 图片宽度 opacity  数组对象
+				}
+
+				oPrev.onclick = function() {
+					arr.push(arr[0]);
+					arr.shift(); //删除数组的第一项
+					for (var i = 0; i < aLi.length; i++) {
+						var oImg = aLi[i].getElementsByTagName('img')[0];
+
+						aLi[i].style.zIndex = arr[i][2];
+						startMove(aLi[i], {
+							left: arr[i][0],
+							top: arr[i][1],
+							opacity: arr[i][4]
+						});
+						startMove(oImg, {
+							width: arr[i][3]
+						});
+					}
+
+				}
+
+				oNext.onclick = function() {
+					arr.unshift(arr[arr.length - 1]);
+					arr.pop();
+					for (var i = 0; i < aLi.length; i++) {
+						var oImg = aLi[i].getElementsByTagName('img')[0];
+
+						aLi[i].style.zIndex = arr[i][2];
+						startMove(aLi[i], {
+							left: arr[i][0],
+							top: arr[i][1],
+							opacity: arr[i][4]
+						});
+						startMove(oImg, {
+							width: arr[i][3]
+						});
+					}
+				}
+
+				function getStyle(obj, name) {
+					if (obj.currentStyle) {
+						return obj.currentStyle[name];
+					} else {
+						return getComputedStyle(obj, false)[name];
+					}
+				}
+			}
+
+			function getByClass(oParent, sClass) {
+				var aResult = [];
+				var aEle = oParent.getElementsByTagName('*');
+
+				for (var i = 0; i < aEle.length; i++) {
+					if (aEle[i].className == sClass) {
+						aResult.push(aEle[i]);
+					}
+				}
+				return aResult;
+			}
+		</script>
+
+	</head>
+
+	<body>
+
+		<div class="pic" id="pic">
+			<span class="prev"><img src="image/arrow1.png" alt="arrow" /></span>
+			<span class="next"><img src="image/arrow2.png" alt="arrow" /></span>
+			<ul>
+				<li class="pic1"><a href="#"><img src="image/f1.jpg" /></a></li>
+				<li class="pic2"><a href="#"><img src="image/f2.jpg" /></a></li>
+				<li class="pic3"><a href="#"><img src="image/f3.jpg" /></a></li>
+				<li class="pic4"><a href="#"><img src="image/f4.jpg" /></a></li>
+				<li class="pic5"><a href="#"><img src="image/f5.jpg" /></a></li>
+				<li class="pic6"><a href="#"><img src="image/f6.jpg" /></a></li>
+				<li class="pic7"><a href="#"><img src="image/f7.jpg" /></a></li>
+				<li class="pic7"><a href="#"><img src="image/f8.jpg" /></a></li>
+			</ul>
+		</div>
+
+
+	</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>		
+		<style>
+			img{
+				width: 100px;
+				height: 100px;
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		{{if data}}		
+		
+		<form method="post" action="/change" enctype="multipart/form-data">
+			<input type="hidden" name="_id" value="{{@data._id}}">
+			名称：<input type="text" name="name" required value="{{data.name}}">
+			<hr>
+			图片：<input type="file" id="file" name="pic">
+			<br>
+			<img id="tu" src="{{data.pic}}">
+			<hr>
+			数量：<input type="number" name="num" required value="{{data.num}}">
+			<hr>
+			价格：<input type="text" name="money" required value="{{data.money}}">
+			<hr>
+			分类：
+			<input type="checkbox" name="classify[]" value="1" {{if data.classify.some(v=>v=='1')}} checked {{/if}} >推荐			
+			<input type="checkbox" name="classify[]" value="2" {{if data.classify.some(v=>v=='2')}} checked {{/if}} >热门			
+			<input type="checkbox" name="classify[]" value="3" {{if data.classify.some(v=>v=='3')}} checked {{/if}} >折扣			
+			<hr>
+			<input type="submit">
+		</form>
+		
+		{{else}}
+		
+		<form method="post" action="/add" enctype="multipart/form-data">
+			名称：<input type="text" name="name" required>
+			<hr>
+			图片：<input type="file" name="pic" required>			
+			<hr>
+			数量：<input type="number" name="num" required>
+			<hr>
+			价格：<input type="text" name="money" required>
+			<hr>
+			分类：
+			<input type="checkbox" name="classify[]" value="1">推荐			
+			<input type="checkbox" name="classify[]" value="2">热门			
+			<input type="checkbox" name="classify[]" value="3">折扣			
+			<hr>
+			<input type="submit">
+		</form>
+		
+		{{/if}}
+		
+		
+		<script>
+		var file=document.getElementById("file")
+		var tu=document.getElementById("tu")		
+		file.onchange=function(){
+			tu.src=window.URL.createObjectURL(this.files[0])
+		}
+		</script>
+		
+		
+		
+	</body>
+</html>

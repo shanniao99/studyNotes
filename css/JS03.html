@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script>
+		// JS 流程控制:  顺序结构   分支结构   循环结构
+		
+		// 1 顺序结构：从上到下，从左到右
+		document.write(1+2+3+4+5+"是1到5的和<br>")
+		document.write("1到5的和是"+1+2+3+4+5+"<br>")
+		
+		var a=5
+		var b=a++
+		console.log(a)
+		console.log(b)
+		console.log(a)
+		
+		// 2 分支结构：if...else...
+		// 单路分支 if(条件式){ 代码段 }
+		// 双路分支 if(条件式){ 代码段1 }else{ 代码段2 }
+		// 多路分支 if(条件式1){ 代码段1 }else if(条件式2){ 代码段2 }else if...
+		var num=15		
+		if(num>10){
+			console.log("大于10")
+		}else if(num<0){
+				console.log("小于0")
+		}else{
+			console.log("0-10")
+		}
+		
+		// switch 结构：if...else...针对等于判断的简写：
+		var today=2.5
+		// if(today==0){
+		// 	document.write("今天星期天<br>")
+		// }else if(today==1){			
+		// 	document.write("今天星期一<br>")
+		// }else{
+		// 	document.write("没有这个星期<br>")
+		// }
+		switch(today){
+			case 0:
+			document.write("今天星期天<br>")
+			break; //破坏，停止执行
+			case 1:
+			document.write("今天星期一<br>")
+			break;
+			default:
+			document.write("没有这个星期<br>")
+		}
+		
+		
+		// 三元运算：  条件式?值1:值2
+		num=0
+		num>0?console.log("num是正数"):console.log("num是负数")
+		console.log(num>0?"num是正数":"num是负数")
+		console.log("num是"+(num>0?"正":"负")+"数")
+
+		num=-8
+		console.log(num>10?"大于10":(num<0?"小于0":"0-10之间"))
+		
+		// 限制最小数
+		var x=-9
+		x>0?x:x=1
+		console.log(x)
+		
+		
+		// 3 循环结构： while  for
+		
+		
+		var i=1
+		
+		// while 先判断 再执行
+		// while(i<10){
+		// 	document.write(i+"<br>")
+		// 	i=i+1
+		// }
+		
+		// do...while() 先执行 再判断
+		// do{
+		// 	document.write(i+"<br>")
+		// 	i=i+1
+		// }while(i<10)
+		
+		// for循环:while循环的简写		
+		for(var i=1;i<10;i=i+1){
+			if(i==5){
+				continue;//停止当前循环，继续下一次循环，当前循环后面的代码不再执行
+			}
+			document.write(i+"<br>")
+			if(i==7){
+				break;//停止整个循环，后面的代码不再执行
+			}						
+		}
+		
+		
+		// 练习：
+		// 计算1到123的和（奇数，偶数，差，积...）
+		var he=null
+		for(var i=2;i<=100;i+=2){
+			he=he+i
+		}
+		document.write(he+"<br>")
+		
+		// he      i
+		// null
+		// 1       1
+		// 3       2
+		// 6       3
+		// 10      4
+		// ...
+		
+		
+// 练习：
+// 1 循环输出1到100,
+// 如果遇到3的倍数,则输出"---3的倍数"代替原数值
+// 如果遇到5的倍数,则输出"---5的倍数"代替原数值
+// 如果遇到3和5的倍数,则输出"---3和5的倍数"代替原数值
+// 如果都不是,则照常输出此数	
+
+// 1
+// 2
+// ---3的倍数
+// 4
+// ---5的倍数
+// ---3的倍数
+// ...
+
+
+
+
+// 2 国际象棋每个格子放置大米.第一个1粒 第二个2粒 第三个4粒...
+// 以此类推,前一个是上一个的两倍数,总共64个格子,计算总数
+// 1+1*2+1*2*2+1*2*2*2+...
+
+
+// 3 输出99乘法表（循环里面嵌套循环）
+// 1*1=1 
+// 1*2=2 2*2=4
+// 1*3=3 2*3=6 3*3=9
+// ...
+
+// 4 输出以下(正三角,倒三角,菱形)排列效果(行数不固定，变量决定)（循环里面嵌套两个循环）
+//   *
+//  ***
+// *****
+//  ***
+//   *
+
+// 5 百钱百鸡（枚举法，循环把所有可能都列出来）
+// 公鸡  5/只   i
+// 母鸡  3/只   j
+// 小鸡  1/3只  k
+// 100钱全部用掉,去买回来100只鸡
+// 问：公鸡 母鸡 小鸡 各有多少只？
+// 1 1 1
+// 1 1 2
+// 1 1 3
+// ...
+// 1 1 300
+// 1 2 1
+// 1 2 2
+// 1 2 3
+// ...
+// 1 2 300
+
+
+// 6  js中鸡兔同笼问题 头共24个,足共72只,求鸡与兔各有多少
+		// 鸡：一头两足    x
+		// 兔：一头四足    y
+		
+		</script>
+		
+	</body>
+</html>

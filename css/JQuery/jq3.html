@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		.tab div{
+			display: none;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="tab">
+			<div style="display: block;">11111</div>
+			<div>22222</div>
+			<div>33333</div>
+			<a href="#">111</a>
+			<a href="#">222</a>
+			<a href="#">333</a>
+		</div>
+		<div class="box">
+			<h1>标题</h1>
+			<h2>标题</h2>
+			<p>段落</p>
+			<ul>
+				<b>123</b>
+				<li class="li1"><b>111</b></li>
+				<li class="li2">222</li>
+				<li class="li3"></li>
+				<li class="li4">444</li>
+				<li class="li5">555</li>
+				<li class="li6">666</li>
+				<li class="li7">777</li>
+				<li class="li8">888</li>
+			</ul>
+			<input type="checkbox" checked>
+			<input type="text" value="1" disabled>
+			<input type="text" value="2">
+		</div>
+		<script src="jquery-1.7.2.js"></script>
+		<script>
+		// console.log($(".box"))
+		// console.log(jQuery(".box"))
+		// $("<i>666</i>").appendTo($("h2"))
+		
+		["aa","bb","cc"].forEach(v=>{
+			console.log(v)
+		})
+		
+		// jq数组的遍历
+		$("li").each((i,v)=>{
+			console.log(i,v)
+		})
+		
+		$.each(["aa","bb","cc"],(i,v)=>{
+			console.log(i,v)
+		})
+		
+		console.log($("li").eq(1)) // jq对象
+		console.log($("li")[1]) // js 节点
+		console.log($("li").get(1)) // js 节点
+		
+		// 获取索引值
+		console.log($(".li5").index("li"))
+		
+		// 书签切换
+		$(".tab a").click(function(event){
+			$(".tab div").hide()
+			$(".tab div").eq($(this).index("a")).show()
+			
+			//es6解构赋值
+			var {offsetX,offsetY}=event
+		})
+		
+		
+		// 
+		$.ajax({
+			type:"GET",  //请求方式 ("POST" 或 "GET")， 默认为 "GET"
+			url:"https://api.apiopen.top/getJoke", //发送请求的地址
+			data:{   //发送到服务器的数据
+				page:1,
+				count:5,
+				type:"video"
+			},
+			success:function(res){ //请求成功后的回调函数
+				console.log(res)
+			},
+			fail:function(){
+				
+			}
+		})
+		
+		$.get("https://api.apiopen.top/getJoke",{page:1,count:5,type:"video"}).then(res=>{
+			console.log(res)
+		})
+		
+		$.post("https://api.apiopen.top/getJoke",{page:1,count:5,type:"video"}).then(res=>{
+			console.log(res)
+		})
+		
+		window.onload=function(){
+			console.log("window加载完自动触发")
+		}
+		
+		// $(document).ready(function(){
+		// 	console.log("document加载完自动触发,效率更高更快")
+		// })
+		
+		// 上面的简写
+		$(function() {
+			console.log("document加载完自动触发,效率更高更快")
+		})
+		
+		
+		// .addEventListener("click",function(){},false)
+		// .removeEventListener()
+		
+		// .on("click",{a:123},function(event){})
+		// .off()
+		
+		// 只触发一次事件
+		// $(".box").one("click",function(){
+		// 	console.log(123456789)
+		// })
+		
+		// mouseenter+mouseleave
+		// $(".box").hover(function(){
+		// 	$(this).css("backgroundColor","red")
+		// },
+		// function(){
+		// 	$(this).css("backgroundColor","green")
+		// })
+		
+		
+		
+		$(".box").toggle(function(){
+			$(this).css("backgroundColor","red")
+		},function(){
+			$(this).css("backgroundColor","green")
+		})
+		
+		
+		</script>
+	</body>
+</html>

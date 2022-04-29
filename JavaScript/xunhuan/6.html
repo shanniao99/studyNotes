@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>鸡兔同笼问题</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// for(var x=0;x<=24;x++){
+			// 	for(var y=0;y<=24;y++){
+			// 		var sum=x+y;
+			// 		var num=x*2+y*4;
+			// 		if(sum==24&&num==72){
+			// 			document.write("鸡有"+x+"只<br>");
+			// 			document.write("兔有"+y+"只<br>");
+			// 		}
+			// 	}
+			// }
+			
+			var x=prompt("请输入头数：");
+			var y=prompt("请输入脚数：");
+			while((y<2*x) || (y%2!=0)){
+				alert("请重新输入脚的数量");
+				y=prompt("请输入脚数：");
+			}
+			for(var i=0;i<=x;i++){
+				for(var j=0;j<=x;j++){
+					if((i+j)==x&&(i*2+j*4)==y){
+						document.write("鸡有"+i+"只<br>");
+						document.write("兔有"+j+"只<br>");
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

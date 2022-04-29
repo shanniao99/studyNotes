@@ -1,0 +1,2 @@
+<!--pages/components/component/view.wxml-->
+<text bindtap="passValue">组件中的内容-----{{msg}}-----父传子的值：{{num}}</text>

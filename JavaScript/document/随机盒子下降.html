@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>随机生成盒子下降</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.box {
+				width: 500px;
+				height: 500px;
+				margin: 100px auto;
+				border: 1px solid coral;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+	</body>
+	<script type="text/javascript">
+		var box = document.getElementsByClassName("box")[0];
+		var timer = null;
+		
+		timer = setInterval(function() {
+			create();
+		}, 500)
+
+		function create() { //创建小盒子
+			var small = document.createElement("div");//创建新的元素
+			small.style.width = 50 + "px";  //小盒子尺寸
+			small.style.height = 50 + "px";
+			small.style.backgroundColor = "rgb(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) +
+				"," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ")"; //随机背景色
+			small.style.position = "absolute";
+			small.style.top = -50 + "px"; //固定小盒子在box顶部50像素的位置
+			small.style.left = Math.floor(Math.random() * 450) + "px"; //小盒子随机出现在box顶部
+
+			box.appendChild(small);
+			var move = null;
+			move = setInterval(function() {
+				small.style.top = parseInt(small.style.top) + 3 + "px";
+				if (parseInt(small.style.top) > 500) {
+					clearInterval(move);
+					box.removeChild(small);
+				}
+			}, 10)
+			
+			// console.log(small)
+		}
+	</script>
+</html>

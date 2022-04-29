@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>鼠标拖动元素移动</title>
+		<style type="text/css">
+			#box {
+				width: 100px;
+				height: 100px;
+				background-color: #90EE90;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+	<script type="text/javascript">
+		var box = document.getElementById("box");
+		var x = 0,
+			y = 0;
+		window.onresize = function() {
+			box.onmousedown = function(ev) {
+				var e = ev || window.event;
+				x = parseInt(e.clientX) - parseInt(box.offsetLeft); //e.clientX  x轴鼠标到视图窗口，box.offsetLeft  box目标位置
+				y = parseInt(e.clientY) - parseInt(box.offsetTop);
+
+				document.onmousemove = function(ev) {
+					var e = ev || window.event;
+					var left = parseInt(e.clientX) - x;
+					var top = parseInt(e.clientY) - y;
+					if (left < 0) {
+						left = 0;
+					}
+					if (top < 0) {
+						top = 0;
+					}
+					if (left > (document.documentElement.clientWidth - box.offsetWidth)) {
+						left = document.documentElement.clientWidth - box.offsetWidth;
+					} else if (top > (document.documentElement.clientHeight - box.offsetHeight)) {
+						top = document.documentElement.clientHeight - box.offsetHeight;
+					}
+					box.style.left = left + "px";
+					box.style.top = top + "px";
+				}
+				document.onmouseup = function() {
+					document.onmousemove = null;
+					document.onmouseup = null;
+				}
+			}
+		}
+		// window.onresize=function(){响应式窗口
+		// 	var width=document.documentElement.clientWidth;      html宽度
+		// 	var height=document.documentElement.clientHeight;    html高度
+		// 	console.log(document.documentElement.clientWidth,document.documentElement.clientHeight)
+		// }
+	</script>
+</html>

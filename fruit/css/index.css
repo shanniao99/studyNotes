@@ -1,0 +1,150 @@
+html {
+	font-size: 100px;
+	/* 定下一个标准  1rem==100px */
+}
+
+body {
+	font-size: 16px;
+}
+
+.mid {
+	width: 7.5rem;
+	margin: 0 auto;
+	position: fixed;
+	left: 0;
+	top: .88rem;
+	bottom: 1rem;
+	overflow: scroll;
+	background-color: #edecec;
+}
+
+.list {
+	width: 7.5rem;
+	height: 2rem;
+	margin: 0 auto;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: .3rem 0;
+}
+
+.list ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.list ul li {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.list ul li img {
+	width: .7rem;
+	height: .6rem;
+}
+
+.list ul li p {
+	font-size: .28rem;
+	font-family: "黑体";
+	color: #181818;
+}
+
+.item {
+	width: 7.5rem;
+	margin: 0 auto;
+	background-color: white;
+}
+
+.item ul {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.item ul li {
+	width: 7.1rem;
+	height: 2.9rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.item ul li img {
+	width: 2.63rem;
+	height: 2.4rem;
+}
+
+.txt {
+	width: 4.15rem;
+	height: 2.2rem;
+	margin-top: .2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.top {
+	width: 4.35rem;
+	height: 1.3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.top h2,
+.top p span {
+	font-size: .24rem;
+	font-family: "黑体";
+	color: #181818;
+}
+
+.top p {
+	font-size: .24rem;
+	color: #FF7800;
+}
+
+.top p b {
+	font-size: .36rem;
+}
+
+.top p span {
+	padding-left: .1rem;
+	color: #a7a7a7;
+	text-decoration: line-through;
+}
+
+.down {
+	width: 4.35rem;
+	height: .6rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.down_l p {
+	font-size: .22rem;
+	color: #a7a7a7;
+}
+
+.down button {
+	font-size: .3rem;
+	color: white;
+	width: 2rem;
+	height: .6rem;
+	border: none;
+	border-radius: .5rem;
+	background-color: #ff7903;
+}
+
+@media screen and (max-width:375px) {
+	html {
+		font-size: 50px;
+	}
+
+}

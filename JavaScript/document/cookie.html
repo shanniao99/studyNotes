@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Cookie 记住账号密码</title>
+
+		<script>
+			//页面加载完执行
+			window.onload = function() {
+				var check = document.getElementById("checkbox");
+
+				// 存入cookie
+				/**
+				 * cname:存入的属性名称
+				 * cvalue:存入的值
+				 * exdays:过期时间
+				 */
+				function setCookie(cname, cvalue, exdays) {
+					// 获取当前时间
+					// 调用时间函数
+					var date = new Date();
+					// 设置过期的时间，day
+					// getTime()获取的不是我们本地的，比我们晚8小时，但不影响我接下来的操作
+					// (exdays*24*60*60*1000)几天时间
+					date.setTime(date.getTime() + (exdays * 24 * 60 * 60 * 1000));
+					// 时间转换格式
+					var expires = "expires =" + date.toGMTString();
+					// 存入cookie
+					document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+				}
+
+				/**
+				 * 取出cookie中的值,根据名称
+				 */
+				function getCookie(cname) {
+					// 定义一个name属于key的部分
+					var name = cname + "=";
+					// 把cookie中的内容根据;分割成数组
+					var ca = document.cookie.split(";");
+					//遍历数组
+					for (var i = 0; i < ca.length; i++) {
+						// 把遍历出来的内容存放入一个变量中
+						var c = ca[i];
+						// 去除收尾空格
+						while (c.charAt(0) == " ") { //charAt(index),提取字符串中第几号字符
+							c = c.substring(1); //substring(start, end) 
+							//获取这个区间的内容，只有一个表示从他之后的所有值
+						}
+						// 如果首位没有空格，就判断name字符串是否是c字符串的第一段
+						// 是的话就满足要求
+						if (c.indexOf(name) == 0) {
+							return c.substring(name.length, c.length);
+						}
+					}
+					// 倘若cookie中没有存放有值，就返回空
+					return "";
+				}
+
+				/**
+				 *   删除cookie，我通过把过期时间设置到过去的某一时刻
+				 * 根据名称删除， cname
+				 */
+				function deleteCookie(cname) {
+					// 和设置时一样，先获取当前时间函数
+					var date = new Date();
+					// 把时间设置到当前时间的前一天
+					date.setTime(date.getTime() - (24 * 60 * 60 * 1000));
+					// 时间格式转换
+					var expires = "expires =" + date.toGMTString();
+					return document.cookie = cname + ";" + expires + ";path=/";
+				}
+
+				// 获取cookie的deleteCookie()中cname
+				function getCname() {
+					// 把cookie中的内容根据;分割成数组
+					var ca = document.cookie.split(";");
+					return ca[0];
+				}
+
+				// 检测是否存入了cookie
+				function checkCookie() {
+					// 获取cookie中的值
+					var user = getCookie("username");
+					var pass = getCookie("password");
+					// 判断从cookie中取出的值是否有内容
+					// 有，把他放入相应的输入框中显示，复选框显示勾选
+					// 没有就输入
+					if (user != "" && pass != "") {
+						// alert(user);
+						// 如果cookie中有值并且不为空，就直接填在输入框中，且复选框勾选
+						document.getElementById("username").value = user;
+						document.getElementById("password").value = pass;
+						check.checked = true;
+					} else { // 否则，先把复选框清空，获取输入框中的内容
+						// check.checked = false;
+						var username = document.getElementById("username").value;
+						var password = document.getElementById("password").value;
+						// 判断输入不为空存入cookie
+						if (username != "" && username != null &&
+							password != "" && password != null) {
+							setCookie("username", username, 1);
+							setCookie("password", password, 1);
+						}
+					}
+				}
+				// 页面加载完就检测是否有cookie
+				checkCookie();
+
+				//复选框变动，添加cookie或者是删除cookie
+				check.onchange = function() {
+					// 检测并设置cookie
+					if (check.checked == true) {
+						checkCookie();
+					} else { // check.checked == false，取消勾选
+						// 删除cookie
+						for (var i = 0; i < 2; i++) { // 这个2是存入cookie的元素个数，
+							var get = getCname(); // 手动修改，你的有几个就改为几个
+							deleteCookie(get);
+						}
+						// 删除之后把检测时放入输入框的内容去除
+						document.getElementById("username").value = "";
+						document.getElementById("password").value = "";
+					}
+				}
+			}
+		</script>
+<!-- //name:属性名称   value 值   days 过期时间
+		function setCookie(name, value, days) { //存储
+			var today = new Date(); //获取时间
+			today.setDate(today.getDate() + 7); //设置7天后过期
+			var expires = "expires =" + today.toGMTString();
+			document.cookie = name + "=" + value + ";" + expires + ";path=/";
+		}
+
+
+		function getCookie(name) { //获取值
+			var cname = name + "=";
+			var arr = document.cookie.split(";");
+			for (var i = 0; i < arr.length; i++) {
+				var res = arr[i];
+				if (res.indexOf(cname) == 0) {
+					return res.substring(cname.length, res.length);
+				}
+			}
+			return "";
+		}
+		
+		function deleteCookie(name){    //删除
+			var today = new Date(); //获取时间
+			today.setDate(today.getDate() + 7); //设置7天后过期
+			var expires = "expires =" + today.toGMTString();
+			return document.cookie=name + ";" + expires + ";path=/";
+		}
+		
+		function checkCookie(){  //检测是否存入
+			
+		} -->
+	</head>
+	<body>
+		<form>
+			用户名：<input type="text" name="username" id="username"><br>
+			密码<input type="text" name="password" id="password"><br>
+			<input type="checkbox" name="checkbox" id="checkbox">记住我
+		</form>
+	</body>
+</html>

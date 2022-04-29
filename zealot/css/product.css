@@ -1,0 +1,125 @@
+body{
+	font-size: 16px;
+	font-family: "microsoft yahei";
+	min-width: 1180px;
+}
+.product_box{
+	width: 100%;
+	background-color: #101010;
+	margin: 0 auto;
+	padding-bottom: 30px;
+}
+.product_head{
+	height: 500px;
+	margin: 0 auto;
+	background:url(../img/images/product_head.jpg) no-repeat center;
+}
+.product_body{
+	width: 1180px;
+	margin: 0 auto;
+}
+.product{
+	width: 1180px;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+.cp_head{
+	height: 60px;
+}
+.cp_head span{
+	font-size: 20px;
+	color: #999;
+	line-height: 15px;
+	float: left;
+	text-align: center;
+}
+.cp_head span p{
+	font-family: "arial";
+	font-size: 12px;
+	transform: scale(0.7);
+}
+.cp_head ul{
+	float: right;
+}
+.cp_head ul li {
+	width: 100px;
+	float: left;
+	line-height: 40px;
+	text-align: center;
+	position: relative;
+}
+.cp_head ul li.cp_first a,.cp_head ul li:hover a,.cp_head ul li:hover .cp_border{
+	color: #3399CC;
+	display: block;
+}
+.cp_head ul li a{
+	font-size: 18px;
+	color: #999999;
+}
+.cp_border{
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	display: none;
+}
+#cp_block{
+	display: block;
+}
+.product_det{
+	width: 1180px;
+	height: 930px;
+	margin: 0 auto;
+	position: relative;
+}
+.product_det ul li{
+	float: left;
+	margin-left: 15px;
+	width: 280px;
+	height: 300px;
+}
+.product_det ul li h2{
+	font-size: 18px;
+	color: #999;
+	font-weight: normal;
+}
+.product_det ul li p{
+	font-size: 18px;
+	color: #999;
+}
+.product_det ul li p span{
+	width: 80px;
+	height: 25px;
+	font-size: 14px;
+	float: right;
+	border: 1px solid #999;
+	text-align: center;
+	line-height: 25px;
+}
+.product_det ul li:hover h2,.product_det ul li:hover p{
+	color: #3399CC;
+
+}
+.product_det ul li:hover p span{
+	border: 1px solid #3399CC;
+}
+.list{
+	width: 180px;
+	position: absolute;
+	left: 500px;
+}
+.list ul li{
+	width: 20px;
+	height: 20px;
+	border: 1px solid white;
+	font-size: 18px;
+	color: #999999;
+	text-align: center;
+	line-height: 20px;
+	float: left;
+	margin-left: 20px;
+}
+.list ul li.on{
+	color: #3399CC;
+	border: 1px solid #39c;
+}

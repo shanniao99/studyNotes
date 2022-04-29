@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>画布随机验证码</title>
+		<style type="text/css">
+			canvas {
+				background-color: #DDDDDD;
+			}
+
+			a {
+				font-size: 20px;
+			}
+
+			.inp {
+				margin-bottom: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="inp">请输入验证码：<input type="text" /></div>
+		<button onclick="btn()">看不清，换一张</button><br>
+		<canvas id="box" width="200" height="100"></canvas>
+	</body>
+	<script type="text/javascript">
+		var box = document.getElementById("box");
+		var can = box.getContext("2d");
+		var arr = new Array(4);
+		var str = "qwertyuiopasdfghjklzxcvbnm1234567890QWERTYUIOPASDFGHJKLZXCVBNM";
+		var inp = document.getElementsByTagName("input")[0];
+
+
+		function btn() { //点击事件
+			a();
+		}
+
+		function a() {
+			can.clearRect(0, 0, 200, 100); //清除所有图形
+
+			for (var i = 0; i < arr.length; i++) { //从字符串中随机获取四个值给数组
+				arr[i] = str[Math.floor(Math.random() * str.length)];
+			}
+			//背景圆点绘画
+			for (var i = 0; i < 100; i++) { //背景画圆
+				can.fillStyle = "rgba(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math
+					.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ")"
+				can.arc(Math.random() * 200, Math.random() * 100, 2, 0, 2 * Math.PI, true);
+				can.fill();
+				can.beginPath(); //重新开始新的路径绘画
+			}
+
+			//背景线条绘画
+			for (var i = 0; i < 20; i++) { //背景线条
+				can.moveTo(Math.random() * 200, Math.random() * 200);
+				can.lineTo(Math.random() * 200, Math.random() * 200);
+				can.stroke();
+				can.strokeStyle = "rgba(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," +
+					Math
+					.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ")"
+				can.beginPath(); //重新开始新的路径绘画
+			}
+			//文字显示
+			for (var i = 0; i < arr.length; i++) {
+				can.font = "50px 楷体";
+				can.fillStyle = "rgba(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math
+					.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ")";
+				var x = Math.random() * 200; //横坐标
+				var y = Math.random() * 100; //纵坐标
+				while (true) { //判断文字坐标   x轴文字不能超过画布宽度  y轴文字不能超过画布高度
+					if (y >= 50 && x <= 150) {
+						break;
+					} else {
+						x = Math.random() * 200;
+						y = Math.random() * 100;
+					}
+
+				}
+				// while(y<50||x>150){
+				// 	x = Math.random() * 200;
+				// 	y = Math.random() * 100;
+				// }
+				can.fillText(arr[i], x, y); //从数组中取文字，设定其坐标
+				can.beginPath(); //重新开始新的路径绘画
+			}
+		}
+		a();
+		inp.onmouseout = function() {
+			var i = 0;
+			var val = inp.value;
+			console.log(val)
+			for (; i < arr.length; i++) {
+				if (val[i] == arr[i]) {
+					continue;
+				} else {
+					break;
+				}
+			}
+			if (i >= arr.length) {
+				alert("输入成功！");
+			} else {
+				inp.value = "";
+				alert("验证码错误，请重新输入！！！！");
+			}
+
+
+		}
+	</script>
+</html>

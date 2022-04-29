@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>点餐</title>
+		<!-- 禁止用户缩放页面 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="./css/public.css" />
+		<link rel="stylesheet" type="text/css" href="./css/order.css" />
+		<link rel="stylesheet" type="text/css" href="font/font_icon/iconfont.css" />
+		<script src="./js/order.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="box">
+			<div class="header">
+				<div class="head">
+					<span class="iconfont icon-zuojiantou"></span><span>点餐</span><img src="./img/right_img.png">
+				</div>
+			</div>
+			<div class="food">
+				<div class="address">
+					<div class="address_l">
+						<h2>选择地址<span class="iconfont icon-youjiantou"></span></h2>
+						<p><span>姓名</span><span>联系电话</span></p>
+					</div>
+					<div class="address_r">
+						<div class="btn">
+							<span>自提</span><span class="this">外卖</span>
+						</div>
+					</div>
+				</div>
+				<div class="drink">
+					<div class="drink_left">
+						<ul>
+							<li class="en"><a href="#hot"><span><img src="img/hot.png"></span>热销</a></li>
+							<li><a href="#hui"><span><img src="img/down.png"></span>优惠</a></li>
+							<li><a href="#">找奶茶</a></li>
+							<li><a href="#">找茗茶</a></li>
+							<li><a href="#">找芝士</a></li>
+							<li><a href="#">找鲜果茶</a></li>
+							<li><a href="#">找牛乳茶</a></li>
+							<li><a href="#">找水果茶</a></li>
+						</ul>
+					</div>
+					<div class="drink_right">
+						<span id="hot">
+							<h1>热销</h1>
+						</span>
+						<div class="list">
+							<ul>
+								<li>
+									<div class="img"><img src="./img/images/pic1.png"></div>
+									<div class="txt">
+										<div class="t">
+											<h2>金桔柠檬&nbsp;&nbsp;大杯</h2>
+											<p>新鲜柠檬，搭配鲜绿的金桔酸甜...</p>
+										</div>
+										<div class="b">
+											<b class="rmb">￥15</b>
+											<div class="date">
+												<img src="./img/images/jian.png" class="jian"><input readonly type="text" value="1" /><img
+													src="./img/images/jia.png" class="jia">
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="img"><img src="./img/images/pic2.png"></div>
+									<div class="txt">
+										<div class="t">
+											<h2>烧仙草&nbsp;&nbsp;大杯</h2>
+											<p>Q弹珍珠、甜糯蜜豆、清爽仙草...</p>
+										</div>
+										<div class="b">
+											<b class="rmb">￥18</b>
+											<div class="date">
+												<img src="./img/images/jian.png" style="display: none;" class="jian"><input readonly type="text" value="" /><img
+													src="./img/images/jia.png" class="jia">
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="img"><img src="./img/images/pic3.png"></div>
+									<div class="txt">
+										<div class="t">
+											<h2>霸气鲜橙</h2>
+											<p>颗颗饱满，粒粒新鲜，握着一杯...</p>
+										</div>
+										<div class="b">
+											<b class="rmb">￥10</b>
+											<div class="date">
+												<img src="./img/images/jian.png" style="display: none;" class="jian"><input readonly type="text" value="" /><img
+													src="./img/images/jia.png" class="jia">
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="img"><img src="./img/images/pic4.jpg"></div>
+									<div class="txt">
+										<div class="t">
+											<h2>蜜桃花茶</h2>
+											<p>蜜桃花茶是一种非常多元化的果...</p>
+										</div>
+										<div class="b">
+											<b class="rmb">￥15</b>
+											<div class="date">
+												<img src="./img/images/jian.png" style="display: none;" class="jian"><input readonly type="text" value="" /><img
+													src="./img/images/jia.png" class="jia">
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<span id="hui">
+							<h1>优惠</h1>
+						</span>
+						<div class="list">
+							<ul>
+								<li>
+									<div class="img"><img src="./img/images/pic1.png"></div>
+									<div class="txt">
+										<div class="t">
+											<h2>金桔柠檬&nbsp;&nbsp;大杯</h2>
+											<p>新鲜柠檬，搭配鲜绿的金桔酸甜...</p>
+										</div>
+										<div class="b">
+											<b class="rmb">￥15</b>
+											<div class="date">
+												<img src="./img/images/jian.png" style="display: none;" class="jian"><input readonly type="text" value="" /><img
+													src="./img/images/jia.png" class="jia">
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="img"><img src="./img/images/pic2.png"></div>
+									<div class="txt">
+										<div class="t">
+											<h2>烧仙草&nbsp;&nbsp;大杯</h2>
+											<p>Q弹珍珠、甜糯蜜豆、清爽仙草...</p>
+										</div>
+										<div class="b">
+											<b class="rmb">￥20</b>
+											<div class="date">
+												<img src="./img/images/jian.png" style="display: none;" class="jian"><input readonly type="text" value="" /><img
+													src="./img/images/jia.png" class="jia">
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="img"><img src="./img/images/pic3.png"></div>
+									<div class="txt">
+										<div class="t">
+											<h2>霸气鲜橙</h2>
+											<p>颗颗饱满，粒粒新鲜，握着一杯...</p>
+										</div>
+										<div class="b">
+											<b class="rmb">￥9</b>
+											<div class="date">
+												<img src="./img/images/jian.png" style="display: none;" class="jian"><input readonly type="text" value="" /><img
+													src="./img/images/jia.png" class="jia">
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="img"><img src="./img/images/pic4.jpg"></div>
+									<div class="txt">
+										<div class="t">
+											<h2>蜜桃花茶</h2>
+											<p>蜜桃花茶是一种非常多元化的果...</p>
+										</div>
+										<div class="b">
+											<b class="rmb">￥13</b>
+											<div class="date">
+												<img src="./img/images/jian.png" style="display: none;" class="jian"><input readonly type="text" value="" /><img
+													src="./img/images/jia.png" class="jia">
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bottom">
+				<div class="price">
+					<div class="pic"><img src="./img/images/box.png"></div>
+					<div class="money"><span>￥15</span><p>免费配送</p></div>
+					<div class="jie">去结算</div>
+				</div>
+			</div>
+			<div class="footer">
+				<ul>
+					<li>
+						<a href="index.html"><img src="./img/home_white.png">
+							<p>首页</p>
+						</a>
+					</li>
+					<li class="on">
+						<a href="order.html"><img src="./img/order_orange.png">
+							<p>点餐</p>
+						</a>
+					</li>
+					<li>
+						<a href="form.html"><img src="./img/dengdai_white.png">
+							<p>订单</p>
+						</a>
+					</li>
+					<li>
+						<a href="mine.html"><img src="./img/mine_white.png">
+							<p>我的</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

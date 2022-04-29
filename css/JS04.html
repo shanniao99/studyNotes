@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="fn()">按钮</button>
+		<script>
+		// JS 函数：function
+		// 格式：function 函数名(){ 代码段 }
+		// 可以将代码段封装打包，代码将不会运行，只有通过 函数名() 调用时才会执行里面的代码
+		// 在哪里调用就在哪里执行
+		// 函数也存在变量提升效果
+		fn()
+		console.log(111)		
+		console.log(222)
+		function fn(){
+			var a=5;
+			console.log(a)
+		}
+		console.log(fn) //函数名不带括号：展示代码的写法
+		fn() //函数名带括号：执行函数里面的代码
+		
+		
+		
+		// 函数即变量
+		// b()  不能在变量赋值函数之前调用函数 
+		var b=function(){
+			console.log(123)
+		}
+		console.log(typeof b) //function数据类型
+		
+		console.log(b)
+		b()
+		
+		
+		// 函数的形参和实参（可以没有，也可以多个）
+		function s(x,y){ //形参：形式上参与运算，实际就是占个位置，给后面调用时携带的参数使用
+			console.log(x*y)
+		}
+		s(7,3) // 实参:实际上参与运算的参数数据
+		
+		
+		
+		// 回调函数：函数的参数里面有函数类型数据
+		// 数据需要处理时可以用到该方法
+		function test(v,val){
+			val(v)
+		}
+		test(123,function(m){
+			console.log(m*3)
+		})		
+		
+		
+		// 函数的返回值 return 
+		// 函数运行时，除了会执行里面的代码，本身还会有一个运行后的结果反馈的，这个反馈就是返回值
+		// return 会马上停整个函数，后面代码将不会运行
+		// return 可以没有，最多只能有一个
+		var c=fn()
+		console.log(c) //没有返回值
+		
+		function fn2(){
+			console.log("测试返回值")
+			return 456 
+			console.log(123465789)
+		}
+		var d=fn2()
+		console.log(d)
+		
+		
+		// 函数的作用域（局部作用域）及局部变量
+		var e=7 // 全局变量
+		function fn3(){
+			var e=3 //局部变量：只能在当前的作用范围内使用(即用即消，节省资源)
+			var f=4
+			g=4
+			e=e+3
+			console.log(e)
+		}
+		fn3()
+		console.log(e)
+		// console.log(f) //调用不到函数内部声明的变量（报错）
+		console.log(g) //函数内部不通过var声明的变量，默认为全局变量，外部可以使用
+		
+		
+		
+		// 注意变量提升效果
+		var h=1
+		function fn4(){
+			h=h+1
+			var h
+			console.log(h)
+		}
+		fn4()
+		
+		
+		// 函数闭包：在外面能使用到函数内部的变量（局部变量销毁不掉，会一直占用内存，慎用）
+		function bi(){
+			var m=5
+			return function(){
+				console.log(m++)
+			}
+		}
+		var bao=bi()		
+		bao()
+		bao()
+		bao()
+		
+		
+		
+		// 递归函数：函数内部调用函数本身的用法
+		// 5*4*3*2*1 ？		
+		function num(val){
+			if(val==1){
+				return 1
+			}else{				
+				return val*num(val-1)
+			}
+		}
+		console.log(num(5))
+		
+		
+		
+		// 练习：
+		// input数量的加减
+		// 书签切换效果
+		
+		
+		
+
+		
+		</script>
+		<script>
+			// alert(e)
+		</script>
+		<script>
+		// 自运行的匿名函数(为了利用局部变量的特性)
+		!function (){
+			var z=123;
+			console.log("自运行")
+		}()
+		
+		// (function (){
+		// 	console.log("自运行")
+		// })()
+		
+		// (function (){
+		// 	console.log("自运行")
+		// }())
+		
+		
+		// var i=5
+		// var index=(function(){
+		// 	var i=0
+		// 	return function(){
+		// 		return i
+		// 	}
+		// })()
+		// console.log(index())
+		
+		</script>
+		
+	</body>
+</html>

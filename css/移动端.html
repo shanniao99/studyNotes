@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- 禁止用户缩放页面 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	</head>
+	<body>
+		<div class="box">
+			字体<span class="iconfont">&#xe899;</span>
+			<span class="iconfont icon-zuojiantou"></span>
+		</div>
+		<style>
+		.box{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			font-family: "方正正黑简体";/* 用户电脑上有这个字体，才能使用这个字体的效果 */
+			font-family: abc;
+			font-size: 50px;
+		}
+		
+		/* css3自定义字体(字体文件太大，后期可以打包压缩使用) */
+		@font-face {
+			font-family:abc;
+			src: url("123.ttf");
+		}
+		
+		/* 字体图标：可以通过调整字体大小和颜色来调整图标 */
+		@font-face {
+		  font-family: 'iconfont';
+		  src: url('font/iconfont.ttf?t=1638771039449') format('truetype');
+		}
+		.iconfont {
+		  font-family: "iconfont" !important;
+		  font-size: 16px;
+		  font-style: normal;
+		  -webkit-font-smoothing: antialiased;
+		  -moz-osx-font-smoothing: grayscale;
+		}
+		.box span{
+			color: yellow;
+			font-size: 50px;
+		}
+		.box span:hover{
+			color: cyan;
+		}		
+		</style>
+		<link rel="stylesheet" href="./font/iconfont.css">
+		
+		<hr>
+		<ul>
+			<li>11</li>
+			<li>22</li>
+			<li>33</li>
+			<li>44</li>
+		</ul>
+		<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 880px;
+			margin: 0 auto;
+		}
+		ul li{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			float: left;
+			margin: 0 10px;
+		}
+		/* 响应式布局（媒体查询）：
+		响应窗口尺寸的改变，来使用里面的css，去覆盖原来的css，以达到变化页面的效果
+		320 360 375 ...
+		*/
+	 @media screen and (max-width:880px) {
+			ul{
+				width: 680px;
+			}
+			ul li{
+				width: 150px;
+				height: 150px;
+				background-color: green;
+			}
+	 }
+	 @media screen and (max-width:680px) {
+			ul{
+				width: 480px;
+			}
+			ul li{
+				width: 100px;
+				height: 100px;
+				background-color: cyan;
+			}
+	 }
+	 
+	 /* rem单位适配：会根据HTML标签下的字体大小来进行换算*/
+	 html{
+		 font-size: 100px; /* 定下一个标准  1rem==100px */
+	 }
+	 body{
+		 font-size: 16px;
+	 }
+	 .rem{
+		 width: 2rem;
+		 height: 2rem;
+		 font-size: .5rem;
+		 background-color: green;
+		 text-indent: 2em; /* 首行缩进2字符，em单位：根据字符大小来换算	 */
+		 font-family: 宋体;
+	 }
+	 @media screen and (max-width:880px) {
+		 html{ font-size: 75px;}
+	 }
+	 @media screen and (max-width:680px) {
+		 html{ font-size: 50px;}
+	 }
+	 
+	 
+	/* vw vh单位：根据屏幕分辨率换算 view width/100  view height/100
+	1920*1080   1vw == 19.2px  1vh == 10.8px
+	1600*960    1vw == 16px  1vh == 9.6px	
+	*/
+		</style>
+		<hr style="clear: both;">
+		<div class="rem">
+			你好，这是测试
+		</div>
+		
+		
+		
+		
+	</body>
+</html>

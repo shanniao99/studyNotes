@@ -1,0 +1,11 @@
+<view class="list">
+111111111111
+</view>
+<view class="list">
+111111111111
+</view>
+<view class="list">
+111111111111
+</view>
+<abc num="{{msg}}" bindtakeOver="takeValue"></abc>
+<view>子传父的值：{{msg}}</view>

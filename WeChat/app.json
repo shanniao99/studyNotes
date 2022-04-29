@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/shoppingcart/shoppingcart",
+    "pages/home/home",
+    "pages/serve/serve",
+    "pages/products/products",
+    "pages/mine/mine",
+    "pages/index/index",
+    "pages/guochan/guochan",
+    "pages/logs/logs"
+  ],
+  "tabBar": {
+    "selectedColor":"#ff7800",
+    "list": [{
+      "pagePath": "pages/home/home",
+      "text": "首页",
+      "iconPath": "./images/home02.png",
+      "selectedIconPath": "./images/home01.png"
+    },{
+      "pagePath":"pages/products/products",
+      "text": "全部商品",
+      "iconPath": "./images/products02.png",
+      "selectedIconPath": "./images/products01.png"
+    },{
+      "pagePath": "pages/serve/serve",
+      "text": "送货上门",
+      "iconPath": "./images/serve02.png",
+      "selectedIconPath": "./images/serve01.png"
+    },{
+      "pagePath": "pages/shoppingcart/shoppingcart",
+      "text": "购物车",
+      "iconPath": "./images/car02.png",
+      "selectedIconPath": "./images/car01.png"
+    },{
+      "pagePath": "pages/mine/mine",
+      "text": "我的",
+      "iconPath": "./images/mine02.png",
+      "selectedIconPath": "./images/mine01.png"
+    }]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "321鲜果行",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

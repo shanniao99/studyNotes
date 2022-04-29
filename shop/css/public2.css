@@ -1,0 +1,94 @@
+html,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,img{
+	margin:0;padding:0
+	}
+ html{
+		 font-size: 100px; /* 定下一个标准  1rem==100px */
+	 }
+fieldset,img{
+	border:0
+	}
+img{
+	display:block
+	}
+ul,ol{
+	list-style:none;
+	overflow:hidden;
+	}
+a{
+	text-decoration: none;
+}
+body{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.box{
+	width:7.5 rem;
+	margin: 0 auto;
+	overflow: hidden;
+	background-color: white;
+}
+.header{
+	width: 7.5rem;
+	height: 1.75rem;
+	margin: 0rem auto;
+	background-color: #ff5e46;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	position: fixed;
+	top: 0rem;
+	z-index: 1;
+}
+.header ul{
+	width: 7.1rem;
+	height: .85rem;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: space-around;
+}
+.header ul li{
+	float: left;
+	width: 2.33rem;
+	height: .8rem;
+}
+.header ul li span,.header ul li h2{
+	font-size: .36rem;
+	color: white;
+}
+.header ul li span{
+	display: block;
+	padding-top: .3rem;
+}
+.header ul li h2{
+	padding-top: .22rem;
+	text-align: center;
+}
+.header ul li img{
+	float: right;
+	width: 1.58rem;
+	height: .61rem;
+}
+.footer{
+	width: 7.5rem;
+	height: .65rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-top:0.01rem solid #EEEEEE;
+	position: fixed;
+	bottom: 0rem;
+	background-color: white;
+	
+}
+.black{
+	width: 3rem;
+	height: 0.05rem;
+	background-color: black;
+	border-radius: .5rem;
+}
+@media screen and (max-width:375px) {
+		 html{ font-size: 50px;}
+	 }

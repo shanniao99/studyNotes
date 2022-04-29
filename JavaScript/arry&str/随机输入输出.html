@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>随机输入输出</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr=new Array(15);
+			var str="qwertyuiopasdfghjklzxcvbnm1234567890QWERTYUIOPASDFGHJKLZXCVBNM";
+			var count=0;
+			var up=setInterval(function(){
+				var data=str[Math.floor(Math.random()*(str.length))];
+				
+				var res = arr.find(function(v) {//遍历判断重复值
+					return v == data;
+				})
+				if (res) {
+					count--;
+				}else{
+					arr[count]=data;
+					count++;
+				}
+				if(count>=15){
+					clearInterval(up);
+					p();
+				}
+				console.log(arr);
+			},1000)   //随机从str字符串中取值			
+			
+			
+			
+			function p(){
+				// setInterval(function(){
+				// 	var num=arr.length;
+				// 	for (var i = 0; i <num; i++) { //随机输出
+				// 		var count = arr[Math.floor(Math.random() * (num-i))];
+				// 		document.write(count + "<br>");
+				// 		for (var j = arr.indexOf(count); j <num - 1; j++) {
+				// 			arr[j] = arr[j + 1];
+				// 		}
+				// 		arr = arr.slice(0, num-i - 1);
+				// 		// console.log(arr)
+				// 	}
+				// },1000)
+				var down=setInterval(function(){
+					var num=arr.length;
+					var data=arr[Math.floor(Math.random()*num)];
+					document.write(data+"<br>");
+					for(var i=arr.indexOf(data);i<num-1;i++){
+						arr[i]=arr[i+1];
+					}
+					arr=arr.slice(0,num-1);
+					if(num<=1){
+						clearInterval(down);
+					}
+				},1000)
+			}
+		</script>
+	</body>
+</html>

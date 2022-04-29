@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="zh" i18n-processed="">
+	<head>
+		<meta charset="utf-8">
+		<meta name="google" value="notranslate">
+		<title id="title">评论</title>
+		<style type="text/css">
+			ul{
+				list-style: none;
+			}
+			ul li{
+				width: 500px;
+				border: 1px solid lightgrey;
+				background-color: lavenderblush;
+			}
+			ul li span{
+				font-size: 24px;
+				color: black;
+				padding-left: 20px;
+				
+			}
+			ul li p{
+				font-size: 18px;
+				text-indent: 2em; /* 首行缩进 */
+			}
+			.time{
+				font-size: 12px;
+				color: #666666;
+				padding-left: 20px;
+			}
+			.tit{
+				width: 250px;
+				height: 50px;
+				text-align: center;
+				position: relative;
+			}
+			.tit h1{
+				width: 180px;
+			}
+			a{
+				width: 70px;
+				height: 30px;
+				font-size: 18px;
+				border: none;
+				background-color: lightgreen;
+				border-radius: 5px;
+				position: absolute;
+				top: 10px;
+				right: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="tit">
+			<h1>请发表评论</h1>
+		<a href="post.html">发表</a>
+		</div>
+		<ul>
+			{{each comment v i}}<li><span>{{v.name}}</span><span class="time">{{v.time}}</span><p>{{v.text}}</p></li>{{/each}}
+		</ul>
+	</body>
+</html>

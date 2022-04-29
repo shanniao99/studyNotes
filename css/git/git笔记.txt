@@ -1,0 +1,55 @@
+git 笔记：版本控制管理工具(svn)
+
+git config配置（修改作者和邮箱）
+
+修改
+
+git config --replace-all user.name "name"
+
+
+git config --replace-all user.email "123@qq.com"
+
+
+
+配置
+
+git config --global user.name "username"
+
+git config --global user.email "email"
+
+
+
+
+git init 创建保存目录
+
+
+
+
+git add file 保存文件到暂存区（进行监控）
+gif diff 比较不同（暂存区和本地所有文件比较，按Q退出）
+gif diff -- file 比较不同（指定文件比较 file为文件名）
+
+
+
+git commit -m "xxx" 把暂存区的所有文件提交到仓库
+gif diff HEAD -- file 比较不同（仓库和本地比较）
+
+git status 查看状态（是否有改变，本地和暂存区做对比，暂存区和仓库做对比）
+
+git log 查看提交到仓库版本（详细）
+git log --pretty=oneline 查看提交到仓库版本（粗略）
+git log --graph --pretty=oneline --abbrev-commit  查看分支版本
+
+
+
+git reset HEAD <file>  仓库回退文件到暂存区
+git checkout -- file      回退暂存区版本到工作区
+
+git reset --hard HEAD^ 
+回退仓库版本到暂存区和本地
+（window 换行符报more问题解决 HEAD^^/"HEAD^"/HEAD~1）
+
+git reset --hard xxx
+回退或前进到指定仓库版本（xxx为commit id 前几位字符就可以）
+
+git reflog 仓库操作命令记录（上面不知道commit id的可通过此命令查看）

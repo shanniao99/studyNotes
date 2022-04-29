@@ -1,0 +1,53 @@
+
+body,ul,li,ol,img {
+  margin: 0;
+  padding: 0;
+}
+ul,li,ol {
+  list-style-type: none;
+}
+ 
+img {
+	width: 100%;
+  height: auto;
+  border: none;
+  display: block;
+}
+.carousel {
+	height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+.carousel ul{
+	height: 300px;
+}
+.carousel ul li {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  -webkit-transform: translateX(300%);
+  transform: translateX(300%);
+}
+ 
+.carousel .points {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+}
+ 
+/* 小圆点 */
+.carousel .points li {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  float: left;
+  margin: 0 2px;
+}
+ 
+/* 选中小圆点的样式类 */
+.carousel .points li.active {
+  background-color: #fff;
+}

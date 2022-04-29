@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		/* CSS3效果 PC端不建议使用 移动端放心使用 */
+		.box{
+			width: 200px;
+			height: 200px;
+			font-size: 50px;
+			background-color: #ff0000;
+			transition:all 1s ease-in-out 0s; 
+			/* css3过渡效果（适用于有中间值的属性）  变化属性 执行时间 速度曲线 延迟时间 
+			ease 先加速后减速(幅度大)
+			linear 匀速
+			ease-in  加速
+			ease-out 减速
+			ease-in-out 先加速后减速(幅度小)
+			*/
+			border-radius:0 ; /* css3圆角 */
+			box-shadow: 10px -10px 5px -10px blue ;/* CSS3容器阴影效果 inset*/
+			text-shadow: 3px 5px 5px yellow;/* CSS3文本阴影效果*/
+			background-image: linear-gradient(135deg,red,blue,yellow);/* css3线性渐变 */
+			background-image: radial-gradient(yellow,red,blue 80%);/* css3径向渐变 */
+			
+			/*transform-origin: 100% 100%; 设置2d/3d效果的中心点 */
+			transform-style: preserve-3d;/* 子元素3d效果显示 */
+		}
+		.box:hover{	
+			background-color: green;
+			transform:rotate(720deg) ; /* 2d旋转 */
+			transform: translate(30px,30px);/* 2d位移 */
+			transform: scale(1.2);/* 2d缩放 */
+			transform: skew(30deg,30deg);/* 2d翻转(不常用) */
+			transform: rotateX(360deg) ;/* 3d翻转 */
+		}		
+		.box1{
+			width: 200px;
+			height: 200px;
+			background-color: green;
+		}
+		.box1{
+			/* 2D/3D效果是可以串联使用的 */
+			transform:rotateZ(30deg) rotateX(30deg) translateZ(-30PX) ;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div class="box">
+			<div class="box1">123</div>			
+		</div>
+		<hr>
+		<div class="box2">
+			
+		</div>
+		<style type="text/css">
+			.box2{
+				width: 200px;
+				height: 100px;
+				background-color: blue;
+				/* transition: 1s; */
+				animation: move .5s linear 1s 3 alternate-reverse forwards;
+				
+			}
+			/* .box2:hover{
+				background-color: red;
+				transform: translateX(400px) rotate(360deg);
+			} */
+			/* css3动画 */
+			@keyframes move{
+				0%{transform: none; background: red;}
+				20%{transform: translate(400px,0) rotate(360deg); background: blue;}
+				55%{transform: translate(400px,200px) rotate(360deg); background: yellow;}
+				75%{transform: translate(0px,200px) rotate(0deg); background: green;}				
+				100%{transform: none; background: purple;}
+			}
+		</style>
+		
+	</body>
+</html>

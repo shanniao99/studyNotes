@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<!-- 
+		表单数据上传 
+		-->
+		<form action="data.php" method="post">
+			用户名：<input type="text" name="user" required>
+			<br>
+			密码：<input type="password" name="password">
+			<br>
+			爱好：(多值表单，name名字需要以数组形式命名)
+			<input type="checkbox" name="love[]" value="看书"> 看书
+			<input type="checkbox" name="love[]" value="游戏"> 游戏
+			<input type="checkbox" name="love[]" value="睡觉"> 睡觉
+			<br>
+			分类：
+			<select name="classify">
+				<option>1111111</option>
+				<option>2222222</option>
+				<option>3333333</option>
+			</select>
+			<br>
+			<input type="submit">
+		</form>
+		<hr>
+		<!--
+		表单上传文件(记得添加enctype="multipart/form-data")
+		php的配置文件php.ini 需要修改对应内容
+		-->
+		<form action="data.php" method="post" enctype="multipart/form-data">
+			选择文件：
+			<input type="file" name="pic">
+			<input type="file" name="file">
+			<br>
+			多选文件：
+			<input type="file" name="files[]" multiple>
+			<br>
+			<input type="submit">
+		</form>
+		
+		
+		<button>ajax上传数据（get）</button>
+		<button>ajax上传数据（post）</button>
+		<input type="file" id="box">
+		<button>ajax上传文件（post）</button>
+		<script>
+		var btns=document.getElementsByTagName("button")
+		
+		btns[0].onclick=function(){
+			var xhr=new XMLHttpRequest()
+			xhr.open("GET","ajax.php?a=中文&b=456",true)
+			xhr.onload=function(){
+				console.log(this.responseText)
+			}
+			xhr.send()
+		}
+		
+		// Post提交的数据必须设置请求头
+		btns[1].onclick=function(){
+			var xhr=new XMLHttpRequest()
+			xhr.open("POST","ajax.php",true)
+			xhr.setRequestHeader("content-type","application/x-www-form-urlencoded")
+			xhr.onload=function(){
+				console.log(this.responseText)
+			}
+			xhr.send("a=中文&b=456")
+		}
+		
+		// 上传文件需要用到 formData
+		btns[2].onclick=function(){
+			var a=new FormData()
+			a.set("asd","qwe") //添加成员
+			console.log(a.get("asd")) //读取对应成员
+			
+			var box=document.getElementById("box")
+			console.log(box.files[0]) //文件域出于保密性，value是读不到文件信息
+			a.set("pic",box.files[0]) //设置上传文件信息
+			
+			var xhr=new XMLHttpRequest()
+			xhr.open("POST","ajax.php",true)
+			xhr.onload=function(){
+				console.log(this.responseText)
+			}
+			xhr.send(a)
+		}
+		
+		</script>
+		
+		
+	</body>
+</html>

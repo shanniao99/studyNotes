@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+		/* 浮动     float   让元素浮动起来，按照文字的排列方式排列  值 left  向左浮动  right 向右浮动
+						1。必须给父集盒子固定宽度,各个元素的宽度必须计算好
+						2.宽度不够换行的时候，会被其他比较高的元素盒子卡主 （浮动的一个浮动原理 ）
+						3.不能撑起父级的高度会导致父级内容崩塌 */
+			.app{
+				width: 500px;
+				height: 500px;
+				background-color: #000000;
+				/* 利用overflow解决高度塌陷 */
+				overflow: hidden;
+			}
+			.box1{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				float: left;
+				margin-left: 10px;
+				margin-top: 20px;
+			}
+			.box2{
+				width: 120px;
+				height: 100px;
+				background-color: yellow;
+				float: left;
+			}
+			.box3{
+				width: 100px;
+				height: 100px;
+				background-color: blue;
+				/* clear: both; */
+				float: left;
+			}
+			
+			
+			/* 开启浮动后块 元素不会占据一行的问题，使块元素能在一行显示
+				开启浮动后 行内元素也可以设宽高
+			 */
+			span{
+				width: 100px;
+				height: 100px;
+				background-color: #00FFFF;
+				/* float: left; */
+			}
+			
+			
+			/* 利用空盒子解决高度塌陷 */
+			/* clear 清除浮动 */
+			#box5{
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="app">
+			<div class="box1"></div>
+			<!-- <div class="box2"></div>
+			<div class="box3"></div> -->
+			<span>123846549874987424854938e4t83543t655156465498421648645165165165w34598765</span>
+			<div id="box5">
+				
+			</div>
+		</div>
+	</body>
+</html>

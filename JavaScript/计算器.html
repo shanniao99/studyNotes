@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>计算器</title>
+		<style type="text/css">
+			table {
+
+				margin: 0 auto;
+
+			}
+
+			.but_ac {
+				width: 80px;
+				height: 60px;
+				background-color: lightgray;
+				font-size: 1.2em;
+			}
+
+			.but {
+				width: 80px;
+				height: 60px;
+				background-color: lightgray;
+				font-size: 1.2em;
+			}
+
+			.screen {
+				width: 350px;
+				height: 70px;
+				font-size: 1.5em;
+				color: white;
+				background-color: lightgray;
+				text-align: right;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td colspan="4"><input class="screen" type="text" disabled /></td>
+			</tr>
+			<tr>
+				<td><input class="but" type="button" value="AC" style="color: orange"></td>
+				<td><input class="but" type="button" value="<—" style="color: orange"></td>
+				<td><input class="but" type="button" value="+/-"></td>
+				<td><input class="but" type="button" value="/"></td>
+			</tr>
+			<tr>
+				<td><input class="but" type="button" value="7"></td>
+				<td><input class="but" type="button" value="8"></td>
+				<td><input class="but" type="button" value="9"></td>
+				<td><input class="but" type="button" value="*"></td>
+			</tr>
+			<tr>
+				<td><input class="but" type="button" value="4"></td>
+				<td><input class="but" type="button" value="5"></td>
+				<td><input class="but" type="button" value="6"></td>
+				<td><input class="but" type="button" value="-"></td>
+			</tr>
+			<tr>
+				<td><input class="but" type="button" value="1"></td>
+				<td><input class="but" type="button" value="2"></td>
+				<td><input class="but" type="button" value="3"></td>
+				<td><input class="but" type="button" value="+"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input class="but" type="button" value="0" style="width: 180px"></td>
+				<td><input class="but" type="button" value="."></td>
+				<td><input class="but" type="button" value="=" style="background-color:orange ;color:white"></td>
+			</tr>
+		</table>
+	</body>
+	<script type="text/javascript">
+		var list = document.getElementsByClassName("but"); //获取按钮数组 存放所有元素对象
+		var src = document.getElementsByClassName("screen")[0]; //获取显示屏对象
+		for (var i = 0; i < list.length; i++) { //通过循环给按钮组onclick（）点击事件
+			list[i].onclick = function() {
+				if (this.value == "AC") { //判断点击事件，如果点击的按钮是AC，清空显示屏内容
+					src.value = "";
+				} else if (this.value == "<—" && src.value != "") { //点击<—按钮且内容不为空
+					src.value = src.value.substr(0, src.value.length - 1);//去除最后一个元素
+				}
+				//如果显示屏为空且点击小数点
+				else if (src.value == "" && this.value == ".") {
+					src.value = "0.";
+				}
+				// 如果点击+/-
+				else if((this.value=="+/-"&&src.value!="")){
+					src.value="("+"-"+src.value+")";
+				}
+				else if (this.value == "=") {
+					src.value =eval(src.value);
+				}
+				//如果显示屏为空且点击的是运算符 显示屏内容为空
+				else if (src.value == "" && (this.value == "+" || this.value == "-" || this.value == "*" || this.value == "/"|| this.value=="<—")) {
+					src.value == "";
+				}
+				else{
+					src.value+=this.value;
+				}
+			}
+		}
+		
+	</script>
+</html>

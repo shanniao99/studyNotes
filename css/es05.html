@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		
+		
+		// 面向对象(封装 多态 继承) 原型构造函数
+		
+		function A(v1){
+			this.name=v1
+		}
+		
+		
+		A.prototype.say=function(){ //不能使用箭头函数，因为this的指向问题
+			console.log("你好，我是"+this.name)
+		}
+		var p1=new A("张三")
+		p1.say()
+		console.log(p1)
+		
+		var p2=new A("李四")
+		p2.say()
+		console.log(p2)
+		
+		console.log(p1.say==p2.say) // true
+		
+		
+		// 继承
+		// 属性继承用 call或者apply
+		// 方法继承用 修改原型链的方式
+		function B(v2,v1){
+			A.call(this,v1)
+			// A.apply(this,[v1])
+			this.gen=v2
+		}
+		B.prototype=new A()
+		B.prototype.constructor=B
+		var p3=new B("男","王五")
+		console.log(p3.constructor)
+		p3.say()
+		console.log(p3)
+		
+		
+		
+		
+		// 类 class
+		// 静态属性和方法 static   只能通过类名去访问
+		// 私有属性和方法 #  只能在类的内部使用
+		
+		class C{
+			#test=123456
+			static gen="男"
+			constructor(v1,v2) {
+			    this.name=v1
+					this.age=v2
+			}
+			say(){
+				console.log("hello!my name is "+this.#test) //使用私有属性
+				this.#abc() //调用私有方法
+			}
+			static hello(){
+				console.log("测试中...")
+			}
+			#abc(){
+				console.log("私有方法")
+			}
+		}
+		
+		var p4=new C("赵六",18)
+		p4.say()
+		console.log(C.gen) //静态属性 只能通过类名去访问
+		console.log(p4)
+		C.hello() //静态方法 只能通过类名去访问
+		console.log(p4.test) // 拿不到私有属性的值，因为只能在类的内部使用
+		// p4.abc()// 使用不了私有属性的方法，因为只能在类的内部使用
+		
+		var p5=new C("测试",19)
+		p5.say()
+		console.log(p5)
+		console.log(p4.say==p5.say) //true
+		
+		
+		// 类的继承
+		class D{
+			constructor(v1) {
+			    this.name=v1
+			}
+			say(){
+				console.log(666)
+			}
+		}
+		class E extends D{
+			constructor(v2,v1) {
+					super(v1)  // 属性继承
+			    this.age=v2
+			}
+			say(){ // 相同方法会覆盖继承的方法
+				console.log(777)
+			}
+		}
+		var p6 = new E(18,"张三")
+		p6.say()
+		console.log(p6)
+		
+		// 类的get和set   类似于代理器Object.defineProperty的功能
+		class F{
+			res="属性"
+			get prop(){
+				console.log("获取prop属性时自动触发")
+				return this.res
+			}
+			set prop(val){
+				console.log("设置或修改prop属性时自动触发",val)
+				this.res=val
+				return this.res
+			}
+		}
+		var p7=new F()
+		console.log(p7.prop) //读取属性
+		p7.prop="style" //设置属性
+		console.log(p7)
+		
+		
+		// 回顾总结：
+		// 新增：块级作用域(“{}”范围内)和let变量
+		// 新增：const 常量声明
+		// 新增：模板字符串:``
+		// 新增：解构赋值
+		// 新增：扩展运算符“...”
+		// 新增：rest参数：“...” (默认靠后使用)
+		// 新增：函数可以携带默认值(默认靠后使用)
+		// 新增：箭头函数
+		// 新增：数组方法：foreach  find findindex  filter  some  every   map
+		// 新增 对象方法 ...
+		// 新增 Set和Map 构造函数 他们的区别和特点
+		// 新增 Symbol
+		// 新增 迭代器 生成器
+		// 新增 Promise (resolve reject then catch)
+		// 新增 async函数，await ...
+		// 新增 class 类
+		// 新增 js模块化使用（需要 babel环境支持）：外链js的加强模式
+			
+			
+			
+		</script>
+		<!-- 外链js -->
+		<script src="test.js"></script>
+		<script>
+		console.log(a,b)
+		
+		//引入模块
+		// import abc from 'test.js'
+		// console.log(abc) // {a:123}
+		</script>
+		
+		
+		
+	</body>
+</html>

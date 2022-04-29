@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- 禁止用户缩放页面 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<style>
+			.box {
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				overflow-y: scroll;
+			}
+			body{
+				font-size: 16px;
+			}
+		</style>
+		<script>
+		window.onload=function(){
+			console.log("页面加载完，自动触发")
+			var box=document.getElementsByClassName("box")[0]
+			console.log(box)
+		}
+			
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<button>按钮</button>
+			123456798
+			<br>
+			123456798
+			<br>
+			123456798
+			<br>
+			123456798
+			<br>
+			123456798
+			<br>
+			123456798
+			<br>
+			123456798
+			<br>
+			123456798
+			<br>
+			123456798
+			<br>
+			123456798
+			<br>
+			123456798
+			<br>
+			123456798
+			<br>
+			123456798
+			<br>
+			123456798
+			<br>
+			123456798
+			<br>
+			123456798
+			<br>
+			123456798
+			<br>
+			123456798
+			<br>
+			123456798
+			<br>
+			123456798
+			<br>
+			123456798
+			<br>
+			123456798
+			<br>
+			123456798
+			<br>
+			123456798
+			<br>
+			123456798
+			<br>
+			123456798
+			<br>
+			123456798
+			<br>
+			123456798
+			<br>
+		</div>
+		<input type="text" value="请输入关键字">
+		<ul>
+			<li draggable="true">111</li>
+			<li>222</li>
+			<li>333</li>
+		</ul>
+		<script>
+			// JS 常用事件：
+			var box=document.getElementsByClassName("box")[0]
+			var inp=document.getElementsByTagName("input")[0]
+			// box.onclick=function(){
+			// 	console.log("点击触发")
+			// }
+			// box.ondblclick=function(){
+			// 	console.log("双击触发")
+			// }
+			// box.onmousedown=function(){				
+			// 		console.log("鼠标按下")
+			// }
+			// box.onmouseup=function(){				
+			// 		console.log("鼠标抬起")
+			// }
+			// box.onmousemove=function(){				
+			// 		console.log("鼠标移动")
+			// }
+			// box.onmouseover=function(){				
+			// 		console.log("鼠标悬浮")
+			// }
+			// box.onmouseout=function(){
+			// 		console.log("鼠标移出去")
+			// }
+			// onmouseover和onmouseout会同时绑定里面的元素
+			// onmouseenter和onmouseleave则不会
+			// box.onmouseenter=function(){
+			// 	console.log("鼠标进入")
+			// }
+			// box.onmouseleave=function(){
+			// 	console.log("鼠标离开")
+			// }
+			
+			// box.oncontextmenu=function(){
+			// 	event.preventDefault() //阻止右键菜单(浏览器默认行为)
+			// 	console.log("鼠标右键")
+			// }
+			
+			
+			// 仿h5表单 文字自动消失
+			
+			// inp.onfocus=function(){
+			// 	console.log("获取焦点")
+			// 	this.value=""
+			// }
+			// inp.onblur=function(){
+			// 	this.value="请输入关键字"
+			// 	console.log("失去焦点")
+			// }
+			// inp.onchange=function(){
+			// 	console.log("失去焦点且值被改变才触发")
+			// }
+			
+
+			// inp.onkeydown=function(){
+			// 	console.log("键盘按下")
+			// }
+			// inp.onkeyup=function(){
+			// 	console.log("键盘抬起")
+			// }
+			// inp.onkeypress=function(){
+			// 	console.log("键盘按住不松")
+			// }
+				
+				
+			// box.oncopy=function(){
+			// 	event.preventDefault()
+			// 	console.log("复制时触发")
+			// }
+			
+			
+			// h5拖拽事件：html必须设置draggable="true"
+			var li=document.getElementsByTagName("li")[0]
+			
+			li.ondragstart=function(){
+				console.log("开始拖拽")
+				event.dataTransfer.setData("key",this.innerText)//设置拖拽时的携带信息
+			}
+			// li.ondrag=function(){
+			// 	console.log("正在拖拽中...")
+			// }
+			li.ondragend=function(){
+				console.log("结束拖拽")
+			}
+			box.ondragenter=function(){
+				console.log("拖拽目标进入")
+			}
+			// box.ondragover=function(){
+			// 	event.preventDefault()
+			// 	console.log("拖拽目标正悬浮在目标上...")
+			// }
+			// box.ondragleave=function(){
+			// 	console.log("拖拽目标离开")
+			// }
+			// // ondrop默认不触发，想要触发，需要在ondragover里面阻止默认行为event.preventDefault()
+			// box.ondrop=function(){
+			// 	console.log("释放目标",event.dataTransfer.getData("key"))//读取拖拽时的携带信息
+			// }
+			
+			// 触屏事件:触屏轮播效果
+			// var first,last;
+			// box.ontouchstart=function(){
+			// 	console.log("开始触屏")
+			// 	// event.changedTouches  所有移动的接触点
+			// 	// event.targetTouches   最底层元素上的结束点
+			// 	// event.touches         所有接触点
+			// 	var finger=event.changedTouches[0] //记录第一根手指数据
+			// 	// console.log(finger.pageX) //页面位置
+			// 	// console.log(finger.clientX) //视口位置
+			// 	// console.log(finger.screenX) //屏幕位置
+			// 	first=finger.clientX				
+			// }			
+			// box.ontouchmove=function(){
+			// 	console.log("移动触屏")
+			// }
+			// box.ontouchend=function(){
+			// 	var finger=event.changedTouches[0]
+			// 	last=finger.clientX		
+			// 	console.log("结束触屏")
+			// 	if(last-first>50){
+			// 		console.log("往右移动")
+			// 	}
+			// }
+			
+			
+			// // 获取html元素
+			// var html=document.documentElement
+			// console.log(html)
+			
+			// // 获取body元素
+			// var body=document.body
+			// console.log(body)
+			
+			// // 移动端rem适配
+			// window.onresize=function(){
+			// 	console.log("页面窗口尺寸被改变时，自动触发")
+			// 	console.log(html.clientWidth) // 读取可视宽度
+			// 	html.style.fontSize=html.clientWidth/750*100+"px"
+			// }
+			
+			// // 粘性定位
+			// window.onscroll=function(){
+			// 	console.log("滚动条移动式时，自动触发")
+			// 	console.log(html.scrollTop) //读取滚动条移动距离
+			// 	if(html.scrollTop>50){
+			// 		box.style.background="green"
+			// 	}else{
+			// 		box.style.background="red"
+			// 	}
+			// }
+			
+			// box.scrollTop=100
+			// box.onscroll=function(){
+			// 	console.log(this.scrollTop)
+			// }
+			
+			
+		</script>
+	</body>
+</html>

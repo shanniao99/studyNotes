@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery效果</title>
+		<script src="../js/jquery-1.7.2.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.d1,.d2,.d3 {
+				width: 50px;
+				height: 50px;
+				margin: 20px 50px;
+			}
+
+			.box{
+				width: 500px;
+				height: 100px;
+				margin: 50px auto;
+			}
+
+			.d1 {
+				background-color: #EF4165;
+				float: left;
+			}
+
+			.d2 {
+				background-color: chocolate;
+				float: left;
+			}
+
+			.d3 {
+				background-color: darkolivegreen;
+				float: left;
+			}
+			.box2{
+				width: 500px;
+				height: 100px;
+				margin: 0 auto;
+			}
+			#tit,.panel{
+				padding: 5px;
+				text-align: center;
+				background-color: #e5eecc;
+				border: 1px solid #c3c3c3;
+			}
+			.panel{
+				padding: 50px;
+				display: none;
+			}
+			.box3{
+				width: 100px;
+				height: 100px;
+				margin: 0 50px;
+				background-color: powderblue;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<button type="button">显示</button>
+			<button type="button">隐藏</button>
+			<button type="button">显示/隐藏</button>
+			<button type="button">淡出</button>
+			<button type="button">淡入</button>
+			<button type="button">淡入/淡出</button>
+			<button type="button">上滑/下滑</button>
+			<button type="button">动画</button>
+			<div class="d1"></div>
+			<div class="d2"></div>
+			<div class="d3"></div>
+		</div>
+		<div class="box2">
+			<div id="tit">嘘...这里有秘密</div>
+			<div class="panel">
+				根本就没有，被骗了吧
+			</div>
+		</div>
+		<div class="box3"></div>
+	</body>
+	<script type="text/javascript">
+		$(function(){
+			$(".box button:nth-child(2)").click(function(){
+				$(".box div").hide(2000) // 隐藏
+			})
+			$(".box button:nth-child(1)").click(function(){
+				$(".box div").show(2000) // 显示
+			})
+			$(".box button:nth-child(3)").click(function(){
+				$(".box div").toggle(2000) // 显示/隐藏两者切换
+			})
+			$(".box button:nth-child(4)").click(function(){
+				$(".d1").fadeOut(3000) // 淡出
+				$(".d2").fadeOut(2000) // 淡出
+				$(".d3").fadeOut(1000) // 淡出
+			})
+			$(".box button:nth-child(5)").click(function(){
+				$(".d1").fadeIn(1000) // 淡入
+				$(".d2").fadeIn(2000) // 淡入
+				$(".d3").fadeIn(3000,function(){
+					 $(this).fadeTo("slow",0.5)  //透明度  必须规定效果时长 slow，fast或毫秒
+				}) // 淡入
+			})
+			$(".box button:nth-child(6)").click(function(){
+				$(".d1").fadeToggle(1000) // 淡入/淡出切换
+				$(".d2").fadeToggle(2000) 
+				$(".d3").fadeToggle(3000) 
+			})
+			
+			// ------------------------------------------------------
+			$("#tit").click(function(){
+				$(".panel").slideDown(1000,function(){ //下滑元素
+					$(".panel").click(function(){
+						$(this).slideUp(1000)  //上滑元素
+					})
+				})
+			})
+			$(".box button:nth-child(7)").click(function(){
+				$(".panel").slideToggle(1000);//上滑下滑切换
+			})
+			//---------------------------------------------------------
+			$(".box button:nth-child(8)").click(function(){  //动画效果  可叠加使用
+				$(".box3").animate({left:"200px",width:"+=100px",height:"+=100px"}).animate({width:"toggle"})  //动画  值可定义相对值=>+=  -=（只有两者）  可设置预定值：show hide toggle
+			})
+		})
+	</script>
+</html>

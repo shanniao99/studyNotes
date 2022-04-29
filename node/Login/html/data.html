@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>node数据</title>
+		<link rel="stylesheet" type="text/css" href="../css/add.css"/>
+		<style type="text/css">
+		#box{
+			width: 100% !important;
+			height: 100% !important;
+			background-color: #000000;
+			position: fixed;
+			left: 0;
+			top: 0;
+			opacity: 0.5;
+			z-index: 1;
+		}
+			table {
+				text-align: center;
+			}
+			a{
+				text-decoration: none;
+				color: #1D7400;
+				padding-left: 20px;
+			}
+			a:hover{
+				font-size: 18px;
+				color: royalblue;
+			}
+			#check {
+				margin-top: 20px;
+			}
+			#check a{
+				font-size: 20px;
+				color: #0077AA;
+			}
+			img{
+				width: 90px;
+				height: 90px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box" style="display: none;"></div>
+		<table border="1" cellspacing="0" cellpadding="0">
+			<col width="100px" />
+			<col width="50px" />
+			<col width="100px" />
+			<col width="50px" />
+			<col width="50px" />
+			<col width="150px" />
+			<col width="300px" />
+			<tr>
+				<th>头像</th>
+				<th>学号</th>
+				<th>姓名</th>
+				<th>性别</th>
+				<th>年龄</th>
+				<th>出生日期</th>
+				<th>爱好</th>
+				<th>操作</th>
+			</tr>
+			{{each obj v i}}
+			<tr>
+				<td><img src="{{v.pic}}" ></td>
+				<td>{{v.id}}</td>
+				<td>{{v.name}}</td>
+				<td>{{v.sex}}</td>
+				<td>{{v.age}}</td>
+				<td>{{v.birthday}}</td>
+				<td>
+					<input type="checkbox" name="hobbies[]" value="1" {{if v.hobbies.some(v=>v=='1')}} checked {{/if}} >运动类
+					<input type="checkbox" name="hobbies[]" value="2" {{if v.hobbies.some(v=>v=='2')}} checked {{/if}}>文娱类
+					<input type="checkbox" name="hobbies[]" value="3" {{if v.hobbies.some(v=>v=='3')}} checked {{/if}}>冒险类
+					<input type="checkbox" name="hobbies[]" value="4" {{if v.hobbies.some(v=>v=='4')}} checked {{/if}}>其他
+				</td>
+				<td>
+					<a href="/edit?id={{v.id}}" class="edit">编辑</a>					
+					<a href="/del?id={{v.id}}">删除</a>
+				</td>
+			</tr>
+			{{/each}}
+		</table>
+		<div id="check"><a href="/check">查询数据</a><a href="#" id="add">添加数据</a></div>
+		
+		<!-- 添加数据 -->
+		<div class="add" style="display: none;">
+			<form action="/add" method="post" enctype="multipart/form-data">
+				<div id="say">添加信息</div>
+				<div class="box">
+					<label class="head">头像：</label>
+					<div class="txt">
+						<input type="file" name="pic" required>
+					</div>
+				</div>
+				<div class="box">
+					<label class="head">姓名：</label>
+					<div class="txt">
+						<input type="text" name="name" required>
+					</div>
+				</div>
+				<div class="box">
+					<label class="head">年龄：</label>
+					<div class="txt">
+						<input type="text" name="age" required>
+					</div>
+				</div>
+				<div class="box">
+					<label class="head">性别：</label>
+					<div class="txt">
+						<input type="text" name="sex" required>
+					</div>
+				</div>
+				<div class="box">
+					<label class="head">出生日期：</label>
+					<div class="txt">
+						<input type="text" name="birthday">
+					</div>
+				</div>
+				<div class="box">
+					<label class="head">爱好：</label>
+					<div class="txt">
+						<input type="checkbox" name="hobbies[]" value="1">运动类
+						<input type="checkbox" name="hobbies[]" value="2">文娱类
+						<input type="checkbox" name="hobbies[]" value="3">冒险类
+						<input type="checkbox" name="hobbies[]" value="4">其他
+					</div>
+				</div>
+				<div class="box">
+					<div class="txt">
+						<button type="submit">提交</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</body>
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var token = "{{token}}";
+		if (token) {  //token有值，存入本地存储
+			console.log(12)
+			localStorage.setItem("token", token);
+		} else {  //没有传值过来
+			if (localStorage.getItem("token")) { //判断本地存储是否有值
+				// $.ajax({
+				// 	type: "POST",
+				// 	url: "/ver",
+				// 	data: {
+				// 		token: localStorage.getItem("token")
+				// 	},
+				// 	success:function(res){
+				// 		console.log(res)
+				// 		if(res=="token过期或无效"){
+				// 			location.href="/login";
+				// 		}
+				// 	}
+				// })
+				//ajax将本地存储的token数据传入后台
+				var xhr = new XMLHttpRequest()
+				xhr.open("POST", "/ver", true)
+				xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded"); //请求头
+				xhr.onload = function() {
+					if (this.responseText == "token过期或无效") {
+						location.href = "/login";
+					}
+				}
+				xhr.send("token=" + localStorage.getItem("token"))
+
+			} else {
+				location.href = "/login";
+			}
+		}
+	</script>
+	<script type="text/javascript">
+		var add=document.getElementById("add");
+		var box=document.getElementsByClassName("add")[0];
+		var bg=document.getElementById("box");
+		var edit=document.getElementsByClassName("edit");
+		var change=document.getElementsByClassName("change");
+		add.onclick=function(){
+			bg.style.display="block";
+			box.style.display="block";
+			box.classList.add("on");
+		}
+		for(let i=0;i<edit.length;i++){
+			edit[i].onclick=function(){
+				bg.style.display="block";
+				change[i].style.display="block";
+				change[i].classList.add("on");
+			}
+		}
+	</script>
+</html>

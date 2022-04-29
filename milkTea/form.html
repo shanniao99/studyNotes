@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<!-- 禁止用户缩放页面 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>订单</title>
+		<link rel="stylesheet" type="text/css" href="./css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/form.css"/>
+	</head>
+	<body>
+		<div class="box">
+			<div class="header">
+				<div class="head">
+					<span>订单</span><img src="./img/right_img.png">
+				</div>
+			</div>
+			<div class="title">
+				<ul>
+					<li class="on">全部<div class="block" style="display: block;"></div></li>
+					<li>待消费<div class="block" style="display: none;"></div></li>
+					<li>已完成<div class="block" style="display: none;"></div></li>
+					<li>已退款<div class="block" style="display: none;"></div></li>
+				</ul>
+			</div>
+			<div class="order">
+				<div class="order_box">
+					<div class="one">
+						<div class="one_l">
+							<div class="waimai">外卖</div>
+							<span>星月绿洲  月亮岛106号（1楼106）</span>
+						</div>
+						<div class="one_r">已完成</div>
+					</div>
+					<div class="two">
+						<div class="shopping">
+							<h2>橙意满满<span>等共<b>1</b>件商品</span></h2>
+							<span>￥<input type="text" value="13" /></span>
+						</div>
+						<div class="txt">
+							<div class="time">2019-11-7  10:31</div>
+							<button type="button">再来一单</button>
+						</div>
+					</div>
+				</div>
+				<div class="order_box">
+					<div class="one">
+						<div class="one_l">
+							<div class="waimai">外卖</div>
+							<span>星月绿洲  月亮岛106号（1楼106）</span>
+						</div>
+						<div class="one_r">已取消</div>
+					</div>
+					<div class="two">
+						<div class="shopping">
+							<h2>满杯西柚<span>等共<b>1</b>件商品</span></h2>
+							<span>￥<input type="text" value="13" /></span>
+						</div>
+						<div class="txt">
+							<div class="time">2019-11-7  10:31</div>
+							<button type="button">再来一单</button>
+						</div>
+					</div>
+				</div>
+				<div class="order_box" style="display: none;">
+					<div class="one">
+						<div class="one_l">
+							<div class="waimai">外卖</div>
+							<span>星月绿洲  月亮岛106号（1楼106）</span>
+						</div>
+						<div class="one_r">已完成</div>
+					</div>
+					<div class="two">
+						<div class="shopping">
+							<h2>橙意满满<span>等共<b>1</b>件商品</span></h2>
+							<span>￥<input type="text" value="13" /></span>
+						</div>
+						<div class="txt">
+							<div class="time">2019-11-7  10:31</div>
+							<button type="button">再来一单</button>
+						</div>
+					</div>
+				</div>
+				<div class="order_box" style="display: none;">
+					<div class="one">
+						<div class="one_l">
+							<div class="waimai">外卖</div>
+							<span>星月绿洲  月亮岛106号（1楼106）</span>
+						</div>
+						<div class="one_r">已取消</div>
+					</div>
+					<div class="two">
+						<div class="shopping">
+							<h2>满杯西柚<span>等共<b>1</b>件商品</span></h2>
+							<span>￥<input type="text" value="13" /></span>
+						</div>
+						<div class="txt">
+							<div class="time">2019-11-7  10:31</div>
+							<button type="button">再来一单</button>
+						</div>
+					</div>
+				</div>
+				<button type="button" id="btn">点击查看更多</button>
+			</div>
+			<div class="footer">
+				<ul>
+					<li>
+						<a href="index.html"><img src="./img/home_white.png">
+							<p>首页</p>
+						</a>
+					</li>
+					<li>
+						<a href="order.html"><img src="./img/order_white.png">
+							<p>点餐</p>
+						</a>
+					</li>
+					<li class="on">
+						<a href="form.html"><img src="./img/dengdai_orange.png">
+							<p>订单</p>
+						</a>
+					</li>
+					<li>
+						<a href="mine.html"><img src="./img/mine_white.png">
+							<p>我的</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var tit=document.getElementsByClassName("title")[0];
+		var lis=tit.getElementsByTagName("li");
+		function all(){  //清除li标签的类名，下划线全部隐藏
+			for(let i=0;i<lis.length;i++){
+				lis[i].className="";
+				lis[i].getElementsByClassName("block")[0].style.display="none";
+			}
+		}
+		for(let i=0;i<lis.length;i++){
+			lis[i].onclick=function(){
+				all();
+				this.className="on";
+				this.getElementsByClassName("block")[0].style.display="block";
+			}
+		}
+		
+		var btn=document.getElementById("btn");
+		var order=document.getElementsByClassName("order_box");
+		btn.onclick=function(){
+			for(var i=0;i<order.length;i++){
+				order[i].style.display="block";
+			}
+			btn.style.display="none";
+			
+		}
+	</script>
+</html>
+
