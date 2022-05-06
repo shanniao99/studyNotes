@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './shoeHome.vue'
 import router from './router'
 import store from './store'
+import '@/rem/rem.js'
 
 Vue.config.productionTip = false
 

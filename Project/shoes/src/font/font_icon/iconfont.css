@@ -1,6 +1,6 @@
 @font-face {
   font-family: "iconfont"; /* Project id  */
-  src: url('iconfont.ttf?t=1651731399756') format('truetype');
+  src: url('iconfont.ttf?t=1651808809515') format('truetype');
 }
 
 .iconfont {
@@ -19,8 +19,16 @@
   content: "\e642";
 }
 
+.icon-shuxian:before {
+  content: "\e638";
+}
+
 .icon-shouye:before {
   content: "\e8c6";
+}
+
+.icon-youjiantou_huaban:before {
+  content: "\e63e";
 }
 
 .icon-fenlei:before {

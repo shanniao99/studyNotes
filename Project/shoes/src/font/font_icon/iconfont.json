@@ -20,11 +20,25 @@
       "unicode_decimal": 58946
     },
     {
+      "icon_id": "6941232",
+      "name": "竖线",
+      "font_class": "shuxian",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
       "icon_id": "11372774",
       "name": "首页",
       "font_class": "shouye",
       "unicode": "e8c6",
       "unicode_decimal": 59590
+    },
+    {
+      "icon_id": "12754195",
+      "name": "右箭头",
+      "font_class": "youjiantou_huaban",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
     },
     {
       "icon_id": "28898795",
