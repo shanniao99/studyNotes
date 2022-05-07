@@ -1,0 +1,68 @@
+/* pages/myCollection/myCollection.wxss */
+.my_collection_body {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+}
+.my_collection_box{
+  width: 710rpx;
+  height: 260rpx;
+  margin: 20rpx auto;
+  border: 1rpx solid #eee;
+  border-radius: 10rpx;
+}
+.my_collection_image{
+  float: left;
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 10rpx;
+  margin: 20rpx 0 0 20rpx;
+}
+.my_collection_content{
+  float: right;
+  width: 430rpx;
+  height: 220rpx;
+  margin: 20rpx 0;
+}
+.my_collection_title{
+  font-size: 28rpx;
+  color: #666;
+  font-weight: bold;
+  margin-top: 20rpx;
+}
+.my_collection_information{
+  width: 430rpx;
+  height: 100rpx;
+  margin-top: 60rpx;
+}
+.my_collection_price{
+  float: left;
+  font-size: 36rpx;
+  color: #ff5e46;
+  margin-top: 20rpx;
+}
+.my_collection_btn{
+  float: right;
+  width: 140rpx;
+  height: 100rpx;
+  margin-right: 20rpx;
+}
+.my_collection_product{
+  width: 140rpx;
+  line-height: 50rpx;
+  border-radius: 25rpx;
+  background-color: #ff5e46;
+  font-size: 24rpx;
+  color: #fff;
+  text-align: center;
+}
+.cancel_collection{
+  width: 140rpx;
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 20rpx;
+  text-align: center;
+}

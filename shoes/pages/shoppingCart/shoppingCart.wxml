@@ -1,0 +1,43 @@
+<!--pages/shoppingCart/shoppingCart.wxml-->
+<scroll-view scroll-y="true">
+  <checkbox-group bindchange="radioChange">
+    <view class="boxStyle {{ item.isTouchMove ? 'touch-move-active' : '' }}" wx:for="{{shoppingCartData}}" wx:key="index" bindtouchstart="touchStart" bindtouchmove="touchMove" data-index="{{ index }}">
+      <label class="labelStyle">
+        <checkbox class="selectIcon" value="{{index}}" checked="{{item.selected}}"></checkbox>
+      </label>
+      <image src="{{item.imgUrl}}" class="productImg" bindtap="routerToProduct"></image>
+      <view class="contentBody" bindtap="routerToProduct">
+        <text class="productTitle">{{item.title}}</text>
+        <view class="bottomBox">
+          <view class="sizeBox">
+            <text class="colerText">{{item.color}}</text>
+            <text class="sizeText">{{item.size}}</text>
+            <image class="arrowIcon" src="../../images/downArrow.png"></image>
+          </view>
+          <view class="priceText">￥ {{item.price}}</view>
+          <view class="stepper">
+            <!-- 减号 -->
+            <text class="{{minusStatus}}" catchtap="bindMinus" data-index="{{index}}">-</text>
+            <!-- 数值 -->
+            <input type="number" catchtap="bindManual" value="{{item.num}}" data-index="{{index}}" />
+            <!-- 加号 -->
+            <text class="normal" catchtap="bindPlus" data-index="{{index}}">+</text>
+          </view>
+        </view>
+      </view>
+      <view class="deleteBtn" bindtap="delList" data-index="{{index}}">删除</view>
+    </view>
+  </checkbox-group>
+</scroll-view>
+<view class="footer">
+  <view class="selectBody">
+    <label>
+      <radio class="selectBtn" color="#ff5e46" checked="{{isCheck}}" bindtap="changeCheck">全选</radio>
+    </label>
+    <view class="totalPrice">
+      <text>合计：</text>
+      <text class="totalPriceText">￥ {{totalPrice}}</text>
+    </view>
+  </view>
+  <view class="settlementBtn" bindtap="routerToPayed">去结算</view>
+</view>

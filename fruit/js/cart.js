@@ -10,7 +10,7 @@ window.onload = function() {
 
 		if (localStorage.length > 0) { //判断本地存储是否有数据
 			var ul = "<ul>";
-			for (var i = 0; i < arr.length; i++) {
+			for (let i = 0; i <arr.length; i++) {
 				ul +=
 					"<li><div class='point'><div class='checked'><img class='picture' src='./img/gouxuan.png' style='display:" +
 					arr[i].display + "'></div></div><div class='r'><img src='" + arr[i].img +

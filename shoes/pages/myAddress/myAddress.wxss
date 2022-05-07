@@ -1,0 +1,132 @@
+/* pages/myAddress/myAddress.wxss */
+.my_address_body {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.my_address_scroll {
+  position: fixed;
+  top: 0;
+  bottom: 90rpx;
+  left: 0;
+  right: 0;
+}
+
+.my_address_box {
+  width: 750rpx;
+  height: 210rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.my_address_header {
+  position: relative;
+  width: 750rpx;
+  height: 140rpx;
+  border-bottom: 1rpx solid #999;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.my_address_name {
+  float: left;
+  margin-left: 40rpx;
+  line-height: 60rpx;
+}
+
+.my_address_telephone {
+  float: right;
+  margin-right: 40rpx;
+  font-weight: bold;
+  line-height: 60rpx;
+}
+
+.my_specific_address {
+  position: absolute;
+  top: 60rpx;
+  left: 40rpx;
+}
+
+.my_address_footer {
+  width: 750rpx;
+  height: 70rpx;
+}
+
+.my_address_select {
+  float: left;
+  margin: 9rpx 0 0 40rpx;
+}
+
+.my_address_select .wx-checkbox-input {
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+  border-color: #ff5e46;
+}
+
+.my_address_select .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #ff5e46;
+}
+
+.my_address_select .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 24rpx;
+  height: 24rpx;
+  line-height: 24rpx;
+  text-align: center;
+  font-size: 20rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+.my_default_address {
+  float: left;
+  line-height: 70rpx;
+  font-size: 24rpx;
+  color: #ff5e46;
+}
+
+.my_address_change {
+  float: right;
+  line-height: 70rpx;
+  margin-right: 40rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.my_address_icon{
+  width: 20rpx;
+  height: 24rpx;
+  float: left;
+  margin: 23rpx 10rpx 0 0;
+}
+.my_address_edit {
+  float: left;
+  margin-right: 30rpx;
+}
+
+.my_address_delete {
+  float: right;
+}
+
+
+
+
+.add_new_address {
+  position: fixed;
+  bottom: 0;
+  width: 750rpx;
+  height: 90rpx;
+  background-color: #ff5e46;
+  text-align: center;
+}
+
+.add_new_address>text {
+  line-height: 90rpx;
+  font-size: 36rpx;
+  color: #fff;
+}

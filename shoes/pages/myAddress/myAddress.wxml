@@ -1,0 +1,27 @@
+<!--pages/myAddress/myAddress.wxml-->
+<view class="my_address_body">
+  <scroll-view scroll-y="true" class="my_address_scroll">
+    <view class="my_address_box" wx:for="{{myAddressList}}" wx:key="index">
+      <view class="my_address_header">
+        <view class="my_address_name">{{item.userName}}</view>
+        <view class="my_address_telephone">{{item.userTelephone}}</view>
+        <view class="my_specific_address">{{item.userAddress}}</view>
+      </view>
+      <view class="my_address_footer">
+        <label>
+          <checkbox class="my_address_select" checked="{{item.isDefault}}" bindtap="radioChange" data-index="{{index}}"></checkbox>
+        </label>
+        <view class="my_default_address">默认地址</view>
+        <view class="my_address_change">
+          <image class="my_address_icon" src="../../images/edit.png"></image>
+          <view class="my_address_edit"  bindtap="routerToDeliveryAddress" data-name="edit">编辑</view>
+          <image class="my_address_icon" src="../../images/delete.png"></image>
+          <view class="my_address_delete">删除</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="add_new_address" bindtap="routerToDeliveryAddress" data-name="add">
+    <text>添加新地址</text>
+  </view>
+</view>

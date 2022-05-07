@@ -16,10 +16,10 @@ App({
     })
   },
   onShow(){  //
-    console.log("小程序显示或切换前台")
+    // console.log("小程序显示或切换前台")
   },
   onHide(){
-    console.log("隐藏，监听小程序切换后台")
+    // console.log("隐藏，监听小程序切换后台")
   },
   globalData: {
     userInfo: null

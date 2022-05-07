@@ -1,0 +1,38 @@
+<!-- "搜索框" -->
+<view class="searchBox">
+  <input class="searchInput" type="text" placeholder=" 搜索商品名称" placeholder-class="searchHodler iconfont icon-sousuo"  bindfocus="focusFn" bindblur="blurFn"/>
+</view>
+<!-- 轮播图 -->
+<swiper indicator-dots="true" autoplay="true" interval="3000" circular="true" indicator-color="rgba(255,255,255,0.3)" indicator-active-color="#ffffff">
+  <swiper-item wx:for="{{imgUrl}}" wx:key="index">
+    <image src="{{item.url}}" mode="scaleToFill" class="swiperImg"></image>
+  </swiper-item>
+</swiper>
+<!-- 商品分类 -->
+<view class="classifyNav">
+  <view wx:for="{{goodsClassify}}" wx:key="index" class="classifyBox" data-index="{{index}}" bindtap="routerTo">
+    <image src="{{item.iconUrl}}" class="classifyImg"></image>
+    <text class="classifyName">{{item.name}}</text>
+  </view>
+</view>
+<!-- 精品推荐 -->
+<homeComponent class="jingping" showData="{{jingpinList}}" boxTitle="精品推荐"></homeComponent>
+<!-- 特惠清仓 -->
+<homeComponent class="tehui" showData="{{jingpinList}}" boxTitle="清仓特惠"></homeComponent>
+<!-- 新品优选 -->
+<homeComponent class="xinpin" showData="{{jingpinList}}" boxTitle="新品优选"></homeComponent>
+<!-- 为你推荐 -->
+<view class="tuijianBody">
+    <view class="tuijianBox">
+      <view class="tuijianIcon"></view>
+      <text class="tuijianName">为你推荐</text>
+    </view>
+    <view class="tuijianProduct" wx:for="{{productList}}" wx:key="index" bindtap="routerToProduct">
+      <image class="tuijianImg" src="{{item.imgUrl}}"></image>
+      <view class="tuijianText">
+        <text class="tuijianTitle">{{item.title}}</text>
+        <text class="tuijianDiscountPrice">￥ {{item.discountPrice}}</text>
+        <text class="tuijianPrice">￥ {{item.price}}</text>
+      </view>
+    </view>
+</view>

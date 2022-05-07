@@ -1,0 +1,156 @@
+@import "../../iconfont/iconfont.wxss";
+
+.searchBox {
+  height: 88rpx;
+  background-color: #ff5e46;
+}
+
+.searchInput {
+  height: 56rpx;
+  width: 670rpx;
+  background-color: #fff;
+  border-radius: 28rpx;
+  margin: auto;
+  padding: 0 28rpx;
+  text-align: center;
+}
+
+.searchHodler {
+  text-align: center;
+  color: #b2b2b2;
+  font-family: "苹方";
+  font-size: 26rpx;
+}
+
+swiper {
+  height: 300rpx;
+  width: 100%;
+}
+
+swiper-item {
+  background-color: #154654;
+}
+
+.swiperImg {
+  width: 100%;
+  height: 300rpx;
+}
+
+.classifyNav {
+  display: flex;
+  width: 750rpx;
+  height: 388rpx;
+  padding: 40rpx 20rpx 0 20rpx;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+}
+
+.classifyBox {
+  width: 105rpx;
+  height: 134rpx;
+  margin: 0 36rpx;
+}
+
+.classifyImg {
+  width: 90rpx;
+  height: 90rpx;
+  margin-left: 8rpx;
+}
+
+.classifyName {
+  display: inline-block;
+  width: 100%;
+  font-size: 26rpx;
+  font-family: 苹方;
+  text-align: center;
+}
+
+.jingping,
+.tehui,
+.xinpin {
+  margin-bottom: 20rpx;
+}
+
+.tuijianBody {
+  width: 750rpx;
+  height: 100%;
+  background-color: #fff;
+}
+
+.tuijianBox {
+  width: 750rpx;
+  height: 70rpx;
+  padding: 20rpx;
+}
+
+.tuijianIcon {
+  display: inline-block;
+  vertical-align: top;
+  width: 4rpx;
+  height: 30rpx;
+  background-color: #ff5e46;
+  margin-right: 20rpx;
+}
+
+.tuijianName {
+  display: inline-block;
+  margin-top: -4rpx;
+  vertical-align: top;
+  font-size: 30rpx;
+  font-weight: bolder;
+  font-family: "黑体";
+  overflow: hidden;
+}
+
+.tuijianProduct {
+  position: relative;
+  display: inline-block;
+  width: 345rpx;
+  height: 400rpx;
+  margin: 0 0 20rpx 20rpx;
+  border-radius: 10rpx;
+}
+
+.tuijianImg {
+  width: 345rpx;
+  height: 265rpx;
+}
+
+.tuijianText {
+  position: absolute;
+  box-sizing: border-box;
+  width: 345rpx;
+  height: 135rpx;
+  top: 265rpx;
+  border: 2rpx solid #eeeeee;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+
+.tuijianTitle {
+  display: block;
+  font-size: 28rpx;
+  color: #666666;
+  margin: 0 10rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 40rpx;
+}
+
+.tuijianDiscountPrice {
+  font-size: 32rpx;
+  font-weight: bolder;
+  color: #ff5e46;
+  margin-left: 10rpx;
+}
+
+.tuijianPrice {
+  font-size: 26rpx;
+  font-weight: bolder;
+  color: #999999;
+  margin-left: 20rpx;
+  text-decoration: line-through;
+}

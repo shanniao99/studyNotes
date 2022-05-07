@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/shoppingcart/shoppingcart",
-    "pages/home/home",
-    "pages/serve/serve",
     "pages/products/products",
+    "pages/home/home",
+    "pages/shoppingcart/shoppingcart",
+    "pages/serve/serve",
     "pages/mine/mine",
     "pages/index/index",
     "pages/guochan/guochan",

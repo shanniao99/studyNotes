@@ -1,0 +1,87 @@
+/* pages/deliveryAddress/deliveryAddress.wxss */
+.delivery_address_body {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+}
+
+.delivery_address_name,
+.delivery_address_telephone,
+.delivery_roughly_address,
+.delivery_detailed_address,
+.user_default_box {
+  width: 750rpx;
+  height: 90rpx;
+  border-bottom: 1rpx solid #eee;
+  padding: 0 20rpx;
+}
+
+.user_name_text,
+.user_telephone_text,
+.user_address_text,
+.user_detailed_text {
+  line-height: 90rpx;
+  float: left;
+  font-size: 32rpx;
+}
+
+.user_name_input,
+.user_telephone_input,
+.user_address_input,
+.user_detailed_input {
+  float: right;
+  width: 520rpx;
+  height: 90rpx;
+  font-size: 32rpx;
+}
+
+.picker {
+  line-height: 90rpx;
+  color: #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pickerOther {
+  color: #000;
+}
+
+.delivery_detailed_address,
+.user_detailed_text,
+.user_detailed_input {
+  height: 150rpx;
+}
+
+.user_default_text {
+  float: left;
+  width: 230rpx;
+  line-height: 90rpx;
+}
+
+.select_default_btn {
+  float: right;
+  margin-top: 20rpx;
+}
+
+.user_save_btn {
+  width: 600rpx;
+  line-height: 90rpx;
+  border-radius: 45rpx;
+  font-size: 32rpx;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  background-color: #ff5e46;
+  margin: 100rpx 0 0 75rpx;
+}
+
+
+.select_address_body {
+  width: 750rpx;
+  height: 700rpx;
+  background-color: #fff;
+}

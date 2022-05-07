@@ -42,7 +42,7 @@
               <p>{{item.look}}</p>
               <p>{{item.buy}}</p>
             </view>
-            <button type="button">立即抢购</button>
+            <button bindtap="Tocar" data-index="{{index}}">立即抢购</button>
           </view>
         </view>
       </li>

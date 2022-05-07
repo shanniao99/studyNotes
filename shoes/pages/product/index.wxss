@@ -1,0 +1,222 @@
+/* pages/product/index.wxss */
+scroll-view {
+  position: fixed;
+  top: 0;
+  bottom: 100rpx;
+}
+
+.productImg {
+  height: 600rpx;
+  width: 100%;
+}
+
+.productContent {
+  height: 220rpx;
+  width: 100%;
+  padding: 0 20rpx;
+  background-color: #ffffff;
+  margin: -10rpx 0 20rpx 0;
+}
+
+.productBody {
+  float: left;
+}
+
+.priceBox {
+  margin-top: 20rpx;
+}
+
+.productDiscountPrice {
+  font-size: 48rpx;
+  color: #ff5e46;
+  font-weight: bold;
+}
+
+.productPrice {
+  font-size: 30rpx;
+  color: #666666;
+  font-weight: bold;
+  text-decoration: line-through;
+  margin-left: 20rpx;
+}
+
+.productTitle {
+  width: 630rpx;
+  font-size: 30rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-top: 20rpx;
+}
+
+.shareBox {
+  float: right;
+  margin-top: 90rpx;
+}
+
+.shareIcon {
+  display: block;
+  width: 32rpx;
+  height: 32rpx;
+  margin: 0 auto;
+}
+
+.shareText {
+  font-size: 24rpx;
+  color: #ff5e46;
+}
+
+.tipBody {
+  display: flex;
+  width: 710rpx;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+
+.tipBody>text {
+  font-size: 24rpx;
+  color: #888888;
+}
+
+.introduceBody {
+  height: 770rpx;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.introduceHeader {
+  width: 750rpx;
+  padding: 0 20rpx
+}
+
+.introduceHeader>text {
+  display: inline-block;
+  width: 355rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  color: #888888;
+  text-align: center;
+  margin: 35rpx 0;
+}
+
+.introduceHeader>text:first-child {
+  border-right: 1rpx solid #e3e3e3;
+}
+
+.detailsBox {
+  display: block;
+  width: 750rpx;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+}
+
+.commentBody {
+  width: 750rpx;
+  height: 430rpx;
+  padding: 0 20rpx;
+}
+.userComment{
+  height: 60rpx;
+  margin-top: 35rpx;
+}
+
+.userIcon {
+  display: inline-block;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+
+.inputStyle {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 625rpx;
+  height: 60rpx;
+  font-size: 28rpx;
+  background-color: #f3f3f3;
+  border-radius: 60rpx;
+  padding-left: 30rpx;
+  margin-left: 25rpx;
+}
+
+.placeholderStyle {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #888888;
+}
+.showComment{
+  height: 370rpx;
+  width: 710rpx;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.noComment {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #888888;
+}
+
+.footer {
+  position: fixed;
+  width: 750rpx;
+  height: 100rpx;
+  bottom: 0;
+  background-color: #549865;
+}
+
+.routerBox {
+  float: left;
+  display: flex;
+  width: 350rpx;
+  height: 100rpx;
+  padding: 0 20rpx;
+  background-color: #f7f7f7;
+  justify-content: space-between;
+}
+
+.routerBox>view {
+  display: inline-block;
+}
+
+.routerIcon {
+  width: 45rpx;
+  height: 45rpx;
+  margin-top: 10rpx;
+}
+
+.routerIcon:nth-of-type(3) {
+  margin-left: 14rpx;
+  width: 36rpx;
+}
+
+.routerBox>view>view {
+  font-size: 24rpx;
+  color: #555555;
+}
+
+
+.addBox {
+  display: inline-block;
+  width: 200rpx;
+  line-height: 100rpx;
+  background-color: #ffaa24;
+  text-align: center;
+  font-size: 28rpx;
+  color: #ffffff;
+  font-weight: bold;
+  vertical-align: top;
+}
+
+.buyBox {
+  display: inline-block;
+  width: 200rpx;
+  line-height: 100rpx;
+  background-color: #ff5e46;
+  text-align: center;
+  font-size: 28rpx;
+  color: #ffffff;
+  font-weight: bold;
+  vertical-align: top;
+}

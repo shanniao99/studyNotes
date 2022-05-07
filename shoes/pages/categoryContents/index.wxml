@@ -1,0 +1,27 @@
+<!--pages/categoryContents/index.wxml-->
+<view class="categoryNav">
+  <text class="navText {{index_focus==index?'text_focus':''}}" bindtap="changeNav" wx:for="{{navLists}}" wx:key="index" data-index="{{index}}">{{item}}</text>
+  <image class="sortIcon_up" src="{{upArrowUrl}}"></image>
+  <image class="sortIcon_down" src="{{downArrowUrl}}"></image>
+</view>
+<scroll-view class="mainBody" scroll-y="true">
+  <view class="mainBox" wx:for="{{productData}}" wx:key="index" bindtap="routerToProduct">
+    <image class="imgStyle" src="{{item.imgUrl}}"></image>
+    <view class="contentBox">
+      <text class="titleBox">{{item.title}}</text>
+      <view class="textBody">
+        <view class="textBox">
+          <view>
+            <text class="discountPriceStyle">￥ {{item.discountPrice}}</text>
+            <text class="priceStyle">￥ {{item.price}}</text>
+          </view>
+          <view>
+            <text class="buyAndViews">{{item.sell}}人购买</text>
+            <text class="buyAndViews">{{item.views}}浏览</text>
+          </view>
+        </view>
+        <view class="buyBtn">立即购买</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

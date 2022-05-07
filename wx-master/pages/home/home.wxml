@@ -22,14 +22,14 @@
 <abc mn="{{meg}}" bindzhi="zujian"></abc>
 
 <!-- 绑定点击事件及事件传值 -->
-<!-- <view bindtap="maopao" data-gen="男">
+<view bindtap="maopao" data-gen="男">
   <button bindtap="turn" data-name="张三" data-age="18">点击切换bool值</button>
-</view> -->
+</view>
 
 <view>{{meg}}</view>
 <view>123</view>
 
-引入其他页面的模板内容：
+引入其他页面的模板内容：（模板页面有事件，该页面没有，报警告提示）
 <import src="../classify/classify.wxml"></import>
 <template is="def" data="{{x:meg,y:num}}"></template>
 
@@ -37,7 +37,7 @@
 <view>123</view>
 
 引入其他页面所有内容
-<!-- <include src="../classify/classify.wxml"></include> -->
+<include src="../classify/classify.wxml"></include>
 
 <view>{{meg}}</view>
 <view>123</view>

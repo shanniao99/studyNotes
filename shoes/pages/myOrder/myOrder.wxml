@@ -1,0 +1,28 @@
+<!--pages/myOrder/myOrder.wxml-->
+<view class="my_order_body">
+  <view class="header_body">
+    <view class="nav_box {{navStyle == index ? 'nav_border_style' : ''}}" wx:for="{{navList}}" wx:key="index" bindtap="changeNav" data-index="{{index}}">{{item}}</view>
+  </view>
+  <scroll-view scroll-y="true" class="my_order_box">
+    <view class="order_item_content" wx:for="{{orderList}}" wx:key="index">
+      <view class="item_order_header">
+        <text class="order_number">订单编号：{{item.orderNumber}}</text>
+        <text class="order_state">{{item.orderState}}</text>
+      </view>
+      <image src="{{item.orderImage}}" class="order_image"></image>
+      <view class="order_information_box">
+        <view class="order_information_header">
+          <text class="order_information_title">{{item.orderTitle}}</text>
+          <text class="order_information_num">×{{item.orderProductNum}}</text>
+        </view>
+        <view class="order_information_content">
+          <view class="order_color_size">
+            <view class="order_Size">{{item.orderColor+ " " +item.orderSize}}</view>
+            <view class="order_price">￥{{item.orderPrice}}</view>
+          </view>
+          <view class="order_btn">{{item.orderBtn}}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

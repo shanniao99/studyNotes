@@ -1,0 +1,60 @@
+<!--pages/product/index.wxml-->
+<scroll-view scroll-y="true">
+  <image class="productImg" src="../../images/products/1.png"></image>
+  <view class="productContent">
+    <view>
+      <view class="productBody">
+        <view class="priceBox">
+          <text class="productDiscountPrice">￥ 123</text>
+          <text class="productPrice">￥ 654</text>
+        </view>
+        <view class="productTitle">这个商品的标题呀这个商品的标题呀这个商品的标题呀这个商品的标题呀这个商品的标题呀这个商品的标题呀这个商品的标题呀</view>
+      </view>
+      <view class="shareBox">
+        <image class="shareIcon" src="../../images/share.png"></image>
+        <text class="shareText">分享</text>
+      </view>
+    </view>
+    <view class="tipBody">
+      <text>运费￥12</text>
+      <text>月售23件</text>
+      <text>浏览236次</text>
+    </view>
+  </view>
+  <view class="introduceBody">
+    <view class="introduceHeader">
+      <text>详情</text>
+      <text>评论(0)</text>
+    </view>
+    <text class="detailsBox">介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容</text>
+    <view class="commentBody">
+      <view class="userComment">
+        <image class="userIcon" src="../../images/touxiang_icon.png"></image>
+        <input type="text" class="inputStyle" placeholder="说点什么，让TA也来买买买吧！" placeholder-class="placeholderStyle" />
+      </view>
+      <!-- wx:if="{{commentData.length != 0}}" -->
+      <view class="showComment">
+        <text wx:if="{{commentData.length == 0}}" class="noComment">暂无评论</text>
+        <view class="commentBox" wx:for="{{commentData}}" wx:key="index">123</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<view class="footer">
+  <view class="routerBox">
+    <view>
+      <image class="routerIcon" src="../../images/service_icon.png"></image>
+      <view>客服</view>
+    </view>
+    <view bindtap="routerToHome">
+      <image class="routerIcon" src="../../images/home_icom.png"></image>
+      <view>主页</view>
+    </view>
+    <view bindtap="routerToCart">
+      <image class="routerIcon" src="../../images/cart_icon.png"></image>
+      <view>购物车</view>
+    </view>
+  </view>
+  <view class="addBox">加入购物车</view>
+  <view class="buyBox" bindtap="routerToPayed">立即购买</view>
+</view>

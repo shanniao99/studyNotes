@@ -1,0 +1,181 @@
+/* pages/sign/sign.wxss */
+.sign_body {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+}
+
+.week_box {
+  display: flex;
+  width: 750rpx;
+  padding: 0 20rpx;
+  margin-top: 20rpx;
+  justify-content: space-around;
+}
+
+.week_text,
+.pass_date {
+  display: block;
+  font-size: 30rpx;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+
+.week_text {
+  color: #333;
+}
+
+.pass_date {
+  color: #999;
+}
+
+.week_integral {
+  font-size: 22rpx;
+  color: #333;
+}
+
+.pass_sign {
+  font-size: 22rpx;
+  color: #999;
+}
+
+.sign_seccess {
+  display: block;
+  width: 40rpx;
+  line-height: 40rpx;
+  border-radius: 50%;
+  background-color: #ff5e46;
+  font-size: 22rpx;
+  color: #fff;
+  text-align: center;
+}
+
+.level_schedule_box {
+  position: relative;
+  width: 670rpx;
+  height: 250rpx;
+  margin: 0 auto;
+  background-color: #ff5e46;
+  border-radius: 10rpx;
+  margin-top: 40rpx;
+  padding: 35rpx 20rpx 0 20rpx;
+}
+
+.sign_date_text {
+  font-size: 26rpx;
+  color: #fff;
+}
+
+.sign_date_num {
+  font-size: 40rpx;
+  color: #fff;
+}
+
+.integral_progress_box {
+  width: 630rpx;
+  margin-top: 30rpx;
+}
+
+.integral_progress_dowm,
+.integral_progress_up {
+  display: inline-block;
+  font-size: 32rpx;
+  color: #fff;
+  font-weight: bold;
+  vertical-align: top;
+}
+
+.integral_progress_up {
+  float: right;
+}
+
+.integral_progress_middle {
+  position: absolute;
+  display: inline-block;
+  width: 90rpx;
+  height: 50rpx;
+  background-image: url("https://656e-env-8gushvn29420d6a7-1307792031.tcb.qcloud.la/integral_progress.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-size: 30rpx;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  top: 105rpx;
+}
+
+.level_progress_box {
+  width: 630rpx;
+}
+
+.level_progress_down,
+.level_progress_up {
+  font-size: 32rpx;
+  color: #fff;
+  font-weight: bold;
+}
+
+.level_progress_up {
+  float: right;
+}
+.task_body{
+  width: 670rpx;
+  height: 440rpx;
+  margin: 40rpx 0 0 40rpx;
+}
+.header_box{
+  width: 670rpx;
+}
+.task_icon{
+  display: inline-block;
+  width: 4rpx;
+  height: 30rpx;
+  background-color: #ff5e46;
+  vertical-align: middle;
+  margin-right: 25rpx;
+}
+.task_text{
+  font-size: 32rpx;
+  font-weight: bold;
+  vertical-align: middle;
+}
+.task_content{
+  width: 670rpx;
+  height: 100rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.task_item{
+  float: left;
+  margin-left: 20rpx;
+}
+.task_title{
+  font-size: 28rpx;
+  color: #666;
+  margin-right: 55rpx;
+}
+.task_num{
+  font-size: 28rpx;
+  color: #666;
+}
+.task_progress{
+  font-size: 28rpx;
+  color:#ff5e46;
+}
+.task_award{
+  font-size: 22rpx;
+  color: #666;
+}
+.task_over{
+  float: right;
+  width: 130rpx;
+  line-height: 50rpx;
+  border-radius: 25rpx;
+  background-color: #ff5e46;
+  margin-top: 25rpx;
+  font-size: 24rpx;
+  color: #fff;
+  text-align: center;
+}

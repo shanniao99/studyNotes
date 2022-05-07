@@ -1,0 +1,39 @@
+<scroll-view scroll-y="true" class="mineBody">
+  <view class="headerBody">
+    <image class="user_icon" src="../../images/touxiang_icon.png"></image>
+    <view class="user_body">
+      <text class="user_name">用户名用户名用户名</text>
+      <image class="level_icon"></image>
+      <text class="user_integral">积分：1123</text>
+    </view>
+    <view class="sign_box" bindtap="routerToSign">
+      <image class="sign_icon" src="../../images/sign_icon.png"></image>
+      <text class="sign_text">签到</text>
+    </view>
+  </view>
+  <view class="order_body">
+    <view class="order_header">
+      <view class="text_box">
+        <text class="text_icon"></text>
+        <text class="order_text">我的订单</text>
+      </view>
+      <view class="check_body" bindtap="routerToMyOrder">
+        <text class="check_text">查看全部</text>
+        <image class="arrow_icon" src="../../images/more.png"></image>
+      </view>
+    </view>
+    <view class="order_box">
+      <view class="order_box_little" wx:for="{{orderProcessList}}" wx:key="index" bindtap="routerToMyOrder" data-index="{{index}}">
+        <image class="order_icon" mode="aspectFit" src="{{item.iconUrl}}"></image>
+        <text class="order_title">{{item.title}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="router_body">
+    <view class="router_box" wx:for="{{routerList}}" wx:key="index" bindtap="routerToOther" data-index="{{index}}">
+      <image class="router_icon" mode="aspectFit" src="{{item.iconUrl}}"></image>
+      <text class="router_title">{{item.title}}</text>
+      <image class="router_arrow" src="../../images/more.png"></image>
+    </view>
+  </view>
+</scroll-view>

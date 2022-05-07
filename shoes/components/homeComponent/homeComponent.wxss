@@ -1,0 +1,101 @@
+/* components/homeComponent/homeComponent.wxss */
+.recommendBody {
+  height: 408rpx;
+  width: 100%;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.recommendBox {
+  width: 710rpx;
+  height: 70rpx;
+  padding: 20rpx 0;
+  margin: 0 auto;
+}
+
+.recommendTitle {
+  float: left;
+}
+
+.recommendIcon {
+  display: inline-block;
+  vertical-align: top;
+  width: 4rpx;
+  height: 30rpx;
+  background-color: #ff5e46;
+  margin-right: 20rpx;
+}
+
+.recommendName {
+  display: inline-block;
+  margin-top: -4rpx;
+  vertical-align: top;
+  font-size: 30rpx;
+  font-weight: bolder;
+  font-family: "黑体";
+  overflow: hidden;
+}
+.moreTip{
+  float: right;
+  height: 24rpx;
+}
+.moreTitle{
+  display: inline-block;
+  margin-top: -4rpx;
+  vertical-align: top;
+  font-size: 24rpx;
+  color: #696969;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+.moreIcon{
+  width: 24rpx;
+  height: 24rpx;
+  vertical-align: top;
+}
+.showBody{
+  width: 100%;
+  height: 320rpx;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.showBox{
+  position: relative;
+  display: inline-block;
+  width: 200rpx;
+  height: 320rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-left: 20rpx;
+}
+.imgBox{
+  width: 200rpx;
+  height: 210rpx;
+}
+.showText{
+  position: absolute;
+  box-sizing: border-box;
+  width: 200rpx;
+  height: 110rpx;
+  top: 210rpx;
+  border: 2rpx solid #eeeeee;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+.showTitle{
+  display: block;
+  font-size: 20rpx;
+  color: #666666;
+  margin: 0 10rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.showPrice{
+  display: block;
+  font-size: 22rpx;
+  font-weight: bolder;
+  color: #ff5e46;
+  margin-left: 10rpx;
+  margin-top: 40rpx;
+}

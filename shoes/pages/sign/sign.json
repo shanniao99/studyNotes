@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-progress": "vant-weapp/progress"
+  },
+  "navigationBarTitleText": "签到"
+}

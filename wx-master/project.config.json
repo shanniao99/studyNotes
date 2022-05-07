@@ -44,10 +44,9 @@
     "tabIndent": "insertSpaces",
     "tabSize": 2
   },
-  "libVersion": "2.24.0",
+  "libVersion": "2.24.1",
   "packOptions": {
     "ignore": [],
     "include": []
-  },
-  "appid": "wxa9a56ff0f7c2746a"
+  }
 }

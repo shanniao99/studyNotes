@@ -1,11 +1,6 @@
-<view class="list">
-111111111111
+<view class="cartbox">
+  <view class="bg" wx:if="{{!show}}">
+    <image src="../../images/car_bg.png"></image>
+    <view><p>购物车空空如也</p></view>
+  </view>
 </view>
-<view class="list">
-111111111111
-</view>
-<view class="list">
-111111111111
-</view>
-<abc num="{{msg}}" bindtakeOver="takeValue"></abc>
-<view>子传父的值：{{msg}}</view>

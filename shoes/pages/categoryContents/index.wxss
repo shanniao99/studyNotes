@@ -1,0 +1,121 @@
+/* pages/categoryContents/index.wxss */
+.categoryNav {
+  position: relative;
+  line-height: 80rpx;
+  border-bottom: 2rpx solid #eeeeee;
+  background-color: #ffffff;
+  padding: 0 20rpx;
+}
+
+.navText {
+  display: inline-block;
+  width: 177.5rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-family: "苹方";
+  color: #666666;
+}
+
+.text_focus {
+  color: #ff5e46;
+}
+
+.mainBody {
+  width: 100%;
+  position: fixed;
+  top: 82rpx;
+  bottom: 0rpx;
+  background-color: #ffffff;
+}
+
+.sortIcon_up {
+  position: absolute;
+  height: 10rpx;
+  width: 16rpx;
+  top: 30rpx;
+  right: 60rpx;
+}
+
+.sortIcon_down {
+  position: absolute;
+  height: 10rpx;
+  width: 16rpx;
+  right: 60rpx;
+  bottom: 30rpx;
+}
+
+.mainBox {
+  width: 750rpx;
+  height: 260rpx;
+  padding: 0 20rpx;
+  border-bottom: 2rpx solid #eeeeee;
+}
+
+.imgStyle {
+  float: left;
+  width: 220rpx;
+  height: 220rpx;
+  margin-top: 20rpx;
+}
+
+.contentBox {
+  float: right;
+  width: 490rpx;
+  height: 260rpx;
+  padding: 30rpx 20rpx 0 20rpx;
+}
+
+.titleBox {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #666666;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.textBody {
+  position: relative;
+  width: 450rpx;
+  height: 100rpx;
+  margin-top: 70rpx;
+}
+
+.textBox {
+  float: left;
+}
+
+.discountPriceStyle {
+  font-size: 36rpx;
+  color: #ff5e46;
+  font-weight: bold;
+}
+
+.priceStyle {
+  font-size: 26rpx;
+  color: #999999;
+  font-weight: bold;
+  text-decoration: line-through;
+  margin-left: 20rpx;
+}
+
+.buyAndViews {
+  font-size: 22rpx;
+  color: #999999;
+}
+
+.buyAndViews:last-child {
+  margin-left: 20rpx;
+}
+
+.buyBtn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 140rpx;
+  line-height: 50rpx;
+  background-color: #ff5e46;
+  color: #ffffff;
+  font-size: 24rpx;
+  text-align: center;
+  border-radius: 26rpx;
+}

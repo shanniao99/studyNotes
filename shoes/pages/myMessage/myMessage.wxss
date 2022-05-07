@@ -1,0 +1,44 @@
+/* pages/myMessage/myMessage.wxss */
+.my_message_body {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+}
+
+.my_message_box {
+  height: 180rpx;
+  width: 750rpx;
+  padding: 0 20rpx;
+}
+
+.my_message_time {
+  width: 710rpx;
+  line-height: 70rpx;
+  font-size: 32rpx;
+  color: #666;
+  text-align: center;
+}
+
+.my_message_content {
+  width: 710rpx;
+  height: 110rpx;
+  padding: 0 20rpx;
+  background-color: #eee;
+  border-radius: 10rpx;
+}
+
+.my_message_sort {
+  width: 670rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.my_message_text {
+  width: 670rpx;
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 5rpx;
+}

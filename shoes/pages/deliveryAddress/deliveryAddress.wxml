@@ -1,0 +1,29 @@
+<!--pages/deliveryAddress/deliveryAddress.wxml-->
+<view class="delivery_address_body">
+  <view class="delivery_address_name">
+    <text class="user_name_text">收货人</text>
+    <input type="text" placeholder="姓名" class="user_name_input" />
+  </view>
+  <view class="delivery_address_telephone">
+    <text class="user_telephone_text">联系电话</text>
+    <input type="text" placeholder="手机或固定电话" class="user_telephone_input" />
+  </view>
+  <view class="delivery_roughly_address">
+    <text class="user_address_text">选择地区</text>
+    <!-- <input type="text" placeholder="地区信息" class="user_address_input" bindtap="showPageMeta" /> -->
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}" class="user_address_input">
+      <view class="picker {{region[2]=='请选择'?'':'pickerOther'}}">
+        {{region[0]}}，{{region[1]}}，{{region[2]}}
+      </view>
+    </picker>
+  </view>
+  <view class="delivery_detailed_address">
+    <text class="user_detailed_text">详细地址</text>
+    <input type="text" class="user_detailed_input"/>
+  </view>
+  <view class="user_default_box">
+    <view class="user_default_text">设置为默认地址</view>
+    <van-switch class="select_default_btn" checked="{{ checked }}" bind:change="onChange" size="24px" active-color="#ff5e46" />
+  </view>
+  <view class="user_save_btn">保存</view>
+</view>

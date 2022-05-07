@@ -1,0 +1,21 @@
+<!--pages/payed/payed.wxml-->
+<view class="payed_body">
+  <view class="payed_box">
+    <image class="cart_icon" mode="aspectFit" src="../../images/paySuccess.png"></image>
+    <text class="payed_text">买家已付款</text>
+    <text class="payed_text">您的包裹已蓄势待发~</text>
+  </view>
+  <view class="payment_box">
+    <text class="payment_text">实付款：</text>
+    <text class="payment_money">￥ 123</text>
+  </view>
+  <view class="payment_msg_box">
+    <text class="payment_name">收货人：张三</text>
+    <text class="payment_telephone">手机号：12345678965</text>
+    <text class="payment_address">收货地址：湖南省 长沙市 天心区 海伦国际902</text>
+  </view>
+  <view class="router_box">
+    <view class="router_order">查看订单</view>
+    <view class="router_home" bindtap="routerToHome">返回首页</view>
+  </view>
+</view>

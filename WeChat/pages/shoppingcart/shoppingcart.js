@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    msg: "111111"
+    show:false
   },
   takeValue(val) {
     console.log(val);

@@ -1,0 +1,19 @@
+<!--pages/category/category.wxml-->
+<!-- "搜索框" -->
+<view class="searchBox">
+  <input class="searchInput" type="text" placeholder=" 搜索商品名称" placeholder-class="searchHodler iconfont icon-sousuo" bindfocus="focusFn" bindblur="blurFn" />
+</view>
+<!-- 分类 -->
+<view class="mainBody">
+  <view class="asideBody">
+    <view class="categoryAside" wx:for="{{categoryList}}" wx:key="index">
+      <text class="{{categoryTitleStyle==item._id?'categoryTitle_focus':'categoryTitle'}}" data-id="{{item._id}}" bindtap="changeCatrgory">{{item.CategoryName}}</text>
+    </view>
+  </view>
+  <view class="contentBody">
+    <view wx:for="{{showData}}" wx:key="index" class="contentBox" data-index="{{index}}" bindtap="routerTo">
+      <image class="contentImg" src="{{item.imageUrl}}"></image>
+      <text class="contentText">{{item.CategoryName}}</text>
+    </view>
+  </view>
+</view>

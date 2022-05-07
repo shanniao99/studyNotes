@@ -1,0 +1,56 @@
+{
+  "entryPagePath":"pages/index/index",
+  "pages": [
+    "pages/index/index",
+    "pages/category/category",
+    "pages/categoryContents/index",
+    "pages/product/index",
+    "pages/shoppingCart/shoppingCart",
+    "pages/mine/mine",
+    "pages/payed/payed",
+    "pages/sign/sign",
+    "pages/myOrder/myOrder",
+    "pages/myMessage/myMessage",
+    "pages/myCollection/myCollection",
+    "pages/myAddress/myAddress",
+    "pages/deliveryAddress/deliveryAddress",
+    "pages/myFootprint/myFootprint",
+    "components/homeComponent/homeComponent"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ff5e46",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./images/tabBar_icon/home.png",
+        "selectedIconPath": "./images/tabBar_icon/home_select.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "./images/tabBar_icon/category.png",
+        "selectedIconPath": "./images/tabBar_icon/category_select.png"
+      },
+      {
+        "pagePath": "pages/shoppingCart/shoppingCart",
+        "text": "购物车",
+        "iconPath": "./images/tabBar_icon/shoppingCart.png",
+        "selectedIconPath": "./images/tabBar_icon/shoppingCart_select.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "./images/tabBar_icon/mine.png",
+        "selectedIconPath": "./images/tabBar_icon/mine_select.png"
+      }
+    ],
+    "selectedColor": "#ff5e46"
+  },
+  "sitemapLocation": "sitemap.json"
+}

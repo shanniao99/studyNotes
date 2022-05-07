@@ -1,0 +1,39 @@
+<!--pages/myFootprint/myFootprint.wxml-->
+<scroll-view scroll-y="true" class="my_footprint_boxy">
+  <view class="little_date_body" wx:if="{{isShow == 'little'}}">
+    <view class="little_date_box" wx:for="{{weekDayArr}}" wx:key="index">
+      <view class="little_date_week">{{item}}</view>
+      <view class="little_date_day">
+        <view class="{{weekDayList[index] == nowDay?'now_day_style':''}}">{{weekDayList[index]}}</view>
+      </view>
+      <view class="tip_point_body">
+        <view class="tip_point_box"></view>
+      </view>
+    </view>
+    <image class="arrow_icon" src="../../images/downArrow.png" bindtap="changeBig"></image>
+  </view>
+  <view class="big_data_body" wx:else="{{isShow == 'big'}}">
+    <view class="mouth_change_box">
+      <image class="last_icon" src="../../images/upArrow.png" bindtap="lastMouth"></image>
+      <text class="date_box">{{nowYear + "年" + nowMouth + "月"}}</text>
+      <image class="next_icon" src="../../images/downArrow.png" bindtap="nextMouth"></image>
+    </view>
+    <view class="big_week_body">
+      <view class="big_week_box" wx:for="{{weekDayArr}}" wx:key="index">
+        <view class="little_date_week">{{item}}</view>
+      </view>
+    </view>
+    <view class="big_date_body">
+      <view class="big_date_box" wx:for="{{mouthDayList}}" wx:key="index">
+        <view class="little_date_day">
+          <view class="{{item == nowDay?'now_day_style':''}} {{index < mouthFirstWeekday?'gree_style':''}} {{index>=mouthLastDay+mouthFirstWeekday-1?'gree_style':''}}">{{item}}</view>
+        </view>
+        <view class="tip_point_body">
+          <view class="tip_point_box"></view>
+        </view>
+      </view>
+      <image class="arrow_icon" src="../../images/upArrow.png" bindtap="changeLittle"></image>
+    </view>
+  </view>
+
+</scroll-view>

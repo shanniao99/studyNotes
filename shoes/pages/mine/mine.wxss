@@ -1,0 +1,204 @@
+/* pages/mine/mine.wxss */
+.mineBody {
+  position: relative;
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.headerBody {
+  position: relative;
+  width: 100%;
+  height: 250rpx;
+  background-color: #ff5e46;
+  padding: 0 20rpx;
+}
+
+.headerBody::after {
+  position: absolute;
+  left: -20%;
+  top: 0;
+  z-index: -1;
+  content: ' ';
+  height: 300rpx;
+  width: 140%;
+  border-radius: 0 0 50% 50%;
+  background-color: #ff5e46;
+}
+
+.user_icon {
+  float: left;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 2rpx solid #fff;
+  margin-top: 30rpx;
+}
+
+.user_body {
+  float: left;
+  width: 400rpx;
+  height: 90rpx;
+  margin: 55rpx 0 0 20rpx;
+}
+
+.user_name {
+  font-size: 32rpx;
+  color: #fff;
+}
+
+.level_icon {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  background-color: #eecf8b;
+  vertical-align: middle;
+  margin-left: 10rpx;
+}
+
+.user_integral {
+  display: block;
+  font-size: 24rpx;
+  color: #fff;
+}
+
+.sign_box {
+  float: right;
+  width: 103rpx;
+  height: 30rpx;
+  margin-top: 80rpx;
+}
+
+.sign_icon {
+  width: 37rpx;
+  height: 30rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+
+.sign_text {
+  font-size: 28rpx;
+  color: #fff;
+  vertical-align: middle;
+}
+
+.order_body {
+  position: absolute;
+  top: 180rpx;
+  left: 20rpx;
+  width: 710rpx;
+  height: 205rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+  box-shadow: 0 0 15rpx 5rpx #ffe8e5;
+}
+
+.order_header {
+  height: 65rpx;
+}
+
+.text_box {
+  float: left;
+  margin-left: 20rpx;
+}
+
+.text_icon {
+  display: inline-block;
+  width: 4rpx;
+  height: 30rpx;
+  background-color: #ff5e46;
+  vertical-align: middle;
+}
+
+.order_text {
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.check_body {
+  float: right;
+  height: 60rpx;
+  margin-right: 20rpx;
+}
+
+.check_text {
+  font-size: 24rpx;
+  color: #999;
+  vertical-align: middle;
+}
+
+.arrow_icon {
+  margin-left: 10rpx;
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.order_box {
+  width: 710rpx;
+  height: 140rpx;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25rpx;
+}
+
+.order_box_little {
+  width: 72rpx;
+  height: 70rpx;
+}
+
+.order_icon {
+  display: block;
+  width: 36rpx;
+  height: 36rpx;
+  margin: auto;
+}
+
+.order_title {
+  font-size: 24rpx;
+  color: #666;
+  text-align: center;
+}
+
+.router_body{
+  position: absolute;
+  top: 405rpx;
+  left: 20rpx;
+  width: 710rpx;
+  height: 616rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+  box-shadow: 0 0 15rpx 5rpx #ffe8e5;
+}
+.router_box{
+  width: 670rpx;
+  height: 88rpx;
+  border-bottom: 1rpx solid #eeeeee;
+  margin-left: 20rpx;
+}
+.router_icon{
+  width: 45rpx;
+  height: 88rpx;
+  margin-right: 20rpx;
+}
+.router_title{
+  display: inline-block;
+  line-height: 88rpx;
+  font-size: 28rpx;
+  color: #666;
+  overflow: hidden;
+}
+.router_arrow{
+  float: right;
+  width: 34rpx;
+  height: 34rpx;
+  border-radius: 50%;
+  margin-top: 25rpx;
+}

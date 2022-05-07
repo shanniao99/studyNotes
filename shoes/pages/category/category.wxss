@@ -1,0 +1,76 @@
+/* pages/category/category.wxss */
+@import "../../iconfont/iconfont.wxss";
+
+.searchBox {
+  height: 88rpx;
+  background-color: #ff5e46;
+}
+
+.searchInput {
+  height: 56rpx;
+  width: 670rpx;
+  background-color: #fff;
+  border-radius: 28rpx;
+  margin: auto;
+  padding: 0 28rpx;
+  text-align: center;
+}
+
+.searchHodler {
+  text-align: center;
+  color: #b2b2b2;
+  font-family: "苹方";
+  font-size: 26rpx;
+}
+
+.mainBody {
+  position: fixed;
+  width: 750rpx;
+  top: 88rpx;
+  bottom: 0;
+}
+
+.asideBody {
+  float: left;
+  width: 200rpx;
+  height: 100%;
+  background-color: #eeeeee;
+}
+
+.categoryTitle{
+  display: block;
+  line-height: 90rpx;
+  text-align: center;
+}
+.categoryTitle_focus{
+  display: block;
+  line-height: 90rpx;
+  text-align: center;
+  background-color: #ffffff;
+}
+.contentBody {
+  display: flex;
+  float: right;
+  width: 550rpx;
+  height: 100%;
+  padding-top: 100rpx;
+  background-color: #ffffff;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.contentBox{
+  width: 100rpx;
+  height: 110rpx;
+  margin: 0 40rpx;
+}
+.contentImg{
+  width: 100rpx;
+  height: 70rpx;
+}
+.contentText{
+  display: block;
+  width: 100rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  text-align: center;
+}

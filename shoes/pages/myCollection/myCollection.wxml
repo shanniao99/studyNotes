@@ -1,0 +1,16 @@
+<!--pages/myCollection/myCollection.wxml-->
+<scroll-view scroll-y="true" class="my_collection_body">
+  <view class="my_collection_box" wx:for="{{myCollectionList}}" wx:key="index">
+    <image class="my_collection_image" src="{{item.imgUrl}}"></image>
+    <view class="my_collection_content">
+      <view class="my_collection_title">{{item.collectionTitle}}</view>
+      <view class="my_collection_information">
+        <view class="my_collection_price">￥ {{item.collectionPrice}}</view>
+        <view class="my_collection_btn">
+          <view class="my_collection_product">去看看</view>
+          <view class="cancel_collection">取消收藏</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

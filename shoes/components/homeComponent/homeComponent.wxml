@@ -1,0 +1,23 @@
+<!--components/homeComponent/homeComponent.wxml-->
+<view class="recommendBody">
+  <view class="recommendBox">
+    <view class="recommendTitle">
+      <view class="recommendIcon"></view>
+      <text class="recommendName">{{boxTitle}}</text>
+    </view>
+    <view class="moreTip" bindtap="routerTo" data-title="{{boxTitle}}">
+      <text class="moreTitle">更多</text>
+      <image class="moreIcon" src="../../images/more.png"></image>
+    </view>
+  </view>
+  <scroll-view class="showBody" scroll-x="true">
+    <view class="showBox" wx:for="{{showData}}" wx:key="index" bindtap="routerToProduct">
+      <image class="imgBox" src="{{item.imgUrl}}"></image>
+      <view class="showText">
+        <text class="showTitle">{{item.title}}</text>
+        <text class="showPrice">￥ {{item.price}}</text>
+      </view>
+    </view>
+  </scroll-view>
+
+</view>

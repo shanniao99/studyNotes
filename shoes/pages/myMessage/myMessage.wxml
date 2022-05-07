@@ -1,0 +1,10 @@
+<!--pages/myMessage/myMessage.wxml-->
+<scroll-view scroll-y="true" class="my_message_body">
+  <view class="my_message_box" wx:for="{{messageList}}" wx:key="index">
+    <view class="my_message_time">{{item.messageTime}}</view>
+    <view class="my_message_content">
+      <view class="my_message_sort">{{item.messageSort}}</view>
+      <view class="my_message_text">{{item.messageContent}}</view>
+    </view>
+  </view>
+</scroll-view>

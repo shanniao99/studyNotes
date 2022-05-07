@@ -14,8 +14,22 @@ Page({
       {img:"../../images/imgs/r4.png",tit:"【澳洲无籽红提】21.8一斤...",price:"21.8",oldprice:"￥32"},
       {img:"../../images/imgs/r5.png",tit:"【美国手指黑提】19.8一斤...",price:"39.6",oldprice:"￥48"},
       {img:"../../images/imgs/r6.jpg",tit:"【轩妈蛋黄酥】32一盒，非...",price:"32",oldprice:"￥39"},
-    ]
+    ],
+    arr:[]
   },
+
+  save(event){  //点击加入购物车
+    //event.currentTarget.dataset
+    let date;
+    wx.getStorage({
+      key:"cart",
+      success(res){
+        date=res.data;
+      }
+    })
+  },
+
+
 
   /**
    * 生命周期函数--监听页面加载

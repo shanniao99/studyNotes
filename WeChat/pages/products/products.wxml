@@ -18,7 +18,7 @@
           </view>
           <view class="down">
             <p style="padding-left: 20rpx;">￥<b class="p">{{item.price}}</b><text>{{item.oldprice}}</text></p>
-            <view class="img">
+            <view class="img" bindtap="save" data-index="{{index}}">
               <image src="../../images/shoppingcar.png"></image>
             </view>
           </view>

@@ -1,0 +1,134 @@
+/* pages/myFootprint/myFootprint.wxss */
+.my_footprint_boxy {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.little_date_body {
+  position: relative;
+  display: flex;
+  width: 750rpx;
+  height: 120rpx;
+  background-color: #fff;
+  padding: 0 20rpx;
+  justify-content: space-around;
+}
+
+.little_week_box {
+  display: flex;
+  height: 120rpx;
+  width: 13.523%;
+  text-align: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.little_date_week,
+.little_date_day,
+.tip_point_body {
+  height: 40rpx;
+  line-height: 40rpx;
+  width: 100%;
+  text-align: center;
+}
+
+.little_date_week {
+  font-size: 30rpx;
+  color: #999;
+}
+
+.little_date_day {
+  font-size: 26rpx;
+  font-weight: bold;
+}
+
+.now_day_style {
+  width: 40rpx;
+  line-height: 40rpx;
+  background-color: #ff5e46;
+  color: #fff;
+  border-radius: 50%;
+  margin: 10rpx auto;
+
+}
+
+.tip_point_box {
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  background-color: #ff5e46;
+  margin: 15rpx auto;
+}
+
+.arrow_icon {
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  right: 20rpx;
+  bottom: -20rpx;
+  background-color: #fff;
+  border: 1rpx solid #eee;
+}
+
+.big_data_body {
+  width: 750rpx;
+  height: 560rpx;
+  background-color: #fff;
+}
+
+.mouth_change_box {
+  width: 750rpx;
+  height: 40rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.last_icon,
+.next_icon {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  transform: rotate(-90deg);
+}
+.date_box{
+  vertical-align: top;
+  margin: 0 20rpx;
+}
+
+.big_week_body {
+  position: relative;
+  width: 750rpx;
+  height: 40rpx;
+  padding: 0 20rpx;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+}
+
+.big_week_box {
+  height: 40rpx;
+  width: 13.523%;
+}
+
+.big_date_body {
+  position: relative;
+  width: 750rpx;
+  height: 480rpx;
+  padding: 0 20rpx;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.big_date_box {
+  height: 40rpx;
+  width: 13.523%;
+}
+
+.gree_style {
+  color: #999;
+}
