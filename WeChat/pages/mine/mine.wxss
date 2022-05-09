@@ -1,1 +1,25 @@
-/* pages/mine/mine.wxss */
+.scroll-view-y{
+  width: 100%;
+  height: 100px;
+  margin-top: 50px;
+  background: gray;
+  }
+  .scroll-view-y .scroll-item-y{
+    width: 100%;
+    height: 80px;
+  }
+  .bg_red{
+    background: red;
+  }
+  .bg_yellow{
+    background: yellow;
+  }
+  .bg_blue{
+    background: blue;
+  }
+  .bg_pink{
+    background: pink;
+  }
+  .bg_gray{
+  background: gray;
+  }

@@ -1,2 +1,13 @@
-<!--pages/guochan/guochan.wxml-->
-<text>pages/guochan/guochan.wxml</text>
+<view class="cont" style="height: {{allHeight}}rpx;">
+  <scroll-view class="lf" style="height: {{allHeight}}rpx;" scroll-y bindscroll="viewscroll" scroll-into-view="lf{{i}}" scroll-with-animation>
+    <view class="contline" style="top: {{conttop}}px;"></view>
+    <view class="item {{item.id == i ? 'active' : ''}}" wx:for="{{list}}" id="lf{{item.id}}" wx:key="index" data-id="{{item.id}}" bindtap="clicklf">{{item.name}}</view>
+  </scroll-view>
+  <swiper current="{{cate_id}}" vertical="{{true}}" class="swiper_cont">
+    <swiper-item wx:for="{{list}}" item-id="{{item.id}}" wx:key="id">
+      <scroll-view class="rf" style="height: {{allHeight}}rpx;" scroll-y enable-back-to-top='true' bindscrolltolower="loadmore" scroll-top="{{top}}">
+        {{item.name}}
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

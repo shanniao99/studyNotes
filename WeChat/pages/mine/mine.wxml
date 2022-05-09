@@ -1,2 +1,7 @@
-<!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+<scroll-view class="scroll-view-y" scroll-y="true">
+  <view class="scroll-item-y bg_red"></view>
+  <view id="yellow" class="scroll-item-y bg_yellow"></view>
+  <view class="scroll-item-y bg_blue"></view>
+  <view class="scroll-item-y bg_pink"></view>
+  <view class="scroll-item-y bg_gray"></view>
+</scroll-view>

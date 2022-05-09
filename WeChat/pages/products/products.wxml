@@ -3,27 +3,29 @@
   <input type="text" placeholder="搜索" />
 </view>
 <view class="all">
-  <view class="left">
-    <ul>
-      <li wx:for="{{left}}" wx:key="index" class="{{num==index?'on':''}}"><text>{{item}}</text></li>
-    </ul>
-  </view>
-  <view class="right">
-    <ul>
-      <li wx:for="{{right}}" wx:key="index">
-        <image src="{{item.img}}" class="pic" style="width: 210rpx; height: 180rpx;"></image>
-        <view class="txt">
-          <view class="top">
-            <text class="tit">{{item.tit}}</text>
-          </view>
-          <view class="down">
-            <p style="padding-left: 20rpx;">￥<b class="p">{{item.price}}</b><text>{{item.oldprice}}</text></p>
-            <view class="img" bindtap="save" data-index="{{index}}">
-              <image src="../../images/shoppingcar.png"></image>
+  <scroll-view scroll-y="true" class="left">
+      <ul>
+        <li wx:for="{{left}}" wx:key="index" class="{{num==index?'on':''}}" bindtap="check" data-id="{{index}}" id="{{index}}"><text>{{item}}</text></li>
+      </ul>
+  </scroll-view>
+  <scroll-view scroll-y="true" scroll-with-animation="true">
+    <view class="right">
+      <ul id="{{num}}">
+        <li wx:for="{{right}}" wx:key="index">
+          <image src="{{item.img}}" class="pic" style="width: 210rpx; height: 180rpx;"></image>
+          <view class="txt">
+            <view class="top">
+              <text class="tit">{{item.tit}}</text>
+            </view>
+            <view class="down">
+              <p style="padding-left: 20rpx;">￥<b class="p">{{item.price}}</b><text>{{item.oldprice}}</text></p>
+              <view class="img" bindtap="save" data-index="{{index}}">
+                <image src="../../images/shoppingcar.png"></image>
+              </view>
             </view>
           </view>
-        </view>
-      </li>
-    </ul>
-  </view>
+        </li>
+      </ul>
+    </view>
+  </scroll-view>
 </view>
