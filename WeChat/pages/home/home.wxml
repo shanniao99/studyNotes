@@ -9,7 +9,7 @@
         </navigator>
       </li>
       <li>
-        <navigator>
+        <navigator url="../jinkou/jinkou" open-type="navigate">
           <image src="../../images/jinkou.png"></image>
           <p>进口专区</p>
         </navigator>

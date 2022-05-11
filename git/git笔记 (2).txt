@@ -105,6 +105,10 @@ ssh-keygen -t rsa -C "youremail@example.com" 生成秘钥
 
 
 (https://github.com/shanniao99/project.git)
+github :git@github.com:shanniao99/studyNotes.git
+
+gitee:https://wmm99:9038f3259e47dbcc4bb43d8e5fe045ae@gitee.com/wmm99/projec.git
+
 
 https://github.com/new创建远程仓库
 关联远程库：（origin为默认仓库 xxx为网上用户名和仓库名）

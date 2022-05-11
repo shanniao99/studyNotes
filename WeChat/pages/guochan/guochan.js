@@ -37,7 +37,7 @@ Page({
             }
         })
 	},
-	clicklf(e){
+	clicklf(e){ //tab切换
 		let _this = this,
 			i = e.currentTarget.dataset.id,
             lasttop = parseInt(_this.data.lasttop),

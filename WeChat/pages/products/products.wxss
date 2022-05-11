@@ -64,11 +64,17 @@
 	height: 100rpx;
 	display: flex;
 	justify-content: center;
-
+}
+.left ul li text{
+  font-size: 24rpx;
+  color: #181818;
 }
 
 .left ul li.on {
-	background-color: white;
+  background-color: white;
+}
+.left ul li.on text{
+  color: #ff7726;
 }
 
 .left ul li text {
@@ -91,6 +97,15 @@
 	left: 170rpx;
 	bottom: 0;
 	overflow: scroll;
+}
+.tit_top{
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+}
+.tit_top h3{
+  font-size: 32rpx;
+  color: #ff7726;
 }
 
 .right ul li {

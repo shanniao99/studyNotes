@@ -111,16 +111,352 @@ export default new Vuex.Store({
 				}
 			]
 		],
-		special:[
-			[
-				{img:require("../assets/homeImg/s4_1.jpg"),txt:"左右鞋店春秋爆款断码...",price:"￥129"},
-				{img:require("../assets/homeImg/s4_2.jpg"),txt:"左右鞋店春秋爆款断码...",price:"￥129"},
+		special: [
+			[{
+					img: require("../assets/homeImg/s4_1.jpg"),
+					txt: "左右鞋店春秋爆款断码...",
+					price: "￥129"
+				},
+				{
+					img: require("../assets/homeImg/s4_2.jpg"),
+					txt: "左右鞋店春秋爆款断码...",
+					price: "￥129"
+				},
 			],
-			[
-				{img:require("../assets/homeImg/s4_2.jpg"),txt:"左右鞋店春秋爆款断码...",price:"￥129"},
-				{img:require("../assets/homeImg/s4_1.jpg"),txt:"左右鞋店春秋爆款断码...",price:"￥129"},
+			[{
+					img: require("../assets/homeImg/s4_2.jpg"),
+					txt: "左右鞋店春秋爆款断码...",
+					price: "￥129"
+				},
+				{
+					img: require("../assets/homeImg/s4_1.jpg"),
+					txt: "左右鞋店春秋爆款断码...",
+					price: "￥129"
+				},
 			]
+		],
+		newPro: [
+			[{
+					img: require("../assets/homeImg/s5_1.jpg"),
+					txt: "左右鞋店爆款...",
+					price: "￥389"
+				},
+				{
+					img: require("../assets/homeImg/s5_2.jpg"),
+					txt: "左右鞋店爆款...",
+					price: "￥469"
+				},
+				{
+					img: require("../assets/homeImg/s5_3.jpg"),
+					txt: "左右鞋店2019...",
+					price: "￥499"
+				},
+			],
+			[{
+					img: require("../assets/homeImg/s5_1.jpg"),
+					txt: "左右鞋店爆款...",
+					price: "￥389"
+				},
+				{
+					img: require("../assets/homeImg/s5_2.jpg"),
+					txt: "左右鞋店爆款...",
+					price: "￥469"
+				},
+				{
+					img: require("../assets/homeImg/s5_3.jpg"),
+					txt: "左右鞋店2019...",
+					price: "￥499"
+				},
+			],
+			[{
+					img: require("../assets/homeImg/s5_1.jpg"),
+					txt: "左右鞋店爆款...",
+					price: "￥389"
+				},
+				{
+					img: require("../assets/homeImg/s5_2.jpg"),
+					txt: "左右鞋店爆款...",
+					price: "￥469"
+				},
+				{
+					img: require("../assets/homeImg/s5_3.jpg"),
+					txt: "左右鞋店2019...",
+					price: "￥499"
+				},
+			],
+		],
+		morePro: [{
+				img: require("../assets/homeImg/s6_1.jpg"),
+				txt: "左右鞋店春夏爆款福利",
+				price: "￥169",
+				oldprice: "￥349"
+			},
+			{
+				img: require("../assets/homeImg/s6_2.jpg"),
+				txt: "左右鞋店春夏爆款凉拖",
+				price: "￥199",
+				oldprice: "￥409"
+			},
+			{
+				img: require("../assets/homeImg/s6_3.jpg"),
+				txt: "左右鞋店春夏爆款福利",
+				price: "￥149",
+				oldprice: "￥309"
+			},
+			{
+				img: require("../assets/homeImg/s6_4.jpg"),
+				txt: "左右鞋店春夏爆款福利",
+				price: "￥199",
+				oldprice: "￥409"
+			},
+			{
+				img: require("../assets/homeImg/s3_1.jpg"),
+				txt: "左右鞋店春夏爆款福利",
+				price: "￥169",
+				oldprice: "￥349"
+			},
+			{
+				img: require("../assets/homeImg/s3_2.jpg"),
+				txt: "左右鞋店春夏爆款福利",
+				price: "￥169",
+				oldprice: "￥349"
+			},
+		],
+		classifyShoes: [{
+				id: "female",
+				tit: "女鞋"
+			},
+			{
+				id: "male",
+				tit: "男鞋"
+			},
+			{
+				id: "pibao",
+				tit: "皮包"
+			},
+			{
+				id: "shipin",
+				tit: "饰品"
+			},
+			{
+				id: "femalebag",
+				tit: "女款包包"
+			},
+			{
+				id: "malebag",
+				tit: "男款包包"
+			},
+			{
+				id: "clothes",
+				tit: "左右服装"
+			}
+		],
+		right_item: [
+			[{
+					img: require("../assets/homeImg/c_1.jpg"),
+					txt: "帆布鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_2.jpg"),
+					txt: "高跟鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_3.jpg"),
+					txt: "休闲鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_4.jpg"),
+					txt: "运动鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_5.jpg"),
+					txt: "豆豆鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_6.jpg"),
+					txt: "拖鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_7.jpg"),
+					txt: "凉鞋"
+				},
+			],
+			[{
+					img: require("../assets/homeImg/c_2.jpg"),
+					txt: "高跟鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_3.jpg"),
+					txt: "休闲鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_4.jpg"),
+					txt: "运动鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_5.jpg"),
+					txt: "豆豆鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_6.jpg"),
+					txt: "拖鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_7.jpg"),
+					txt: "凉鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_1.jpg"),
+					txt: "帆布鞋"
+				},
+			],
+			[{
+					img: require("../assets/homeImg/c_3.jpg"),
+					txt: "休闲鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_4.jpg"),
+					txt: "运动鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_5.jpg"),
+					txt: "豆豆鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_6.jpg"),
+					txt: "拖鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_7.jpg"),
+					txt: "凉鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_1.jpg"),
+					txt: "帆布鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_2.jpg"),
+					txt: "高跟鞋"
+				},
+			],
+			[{
+					img: require("../assets/homeImg/c_4.jpg"),
+					txt: "运动鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_5.jpg"),
+					txt: "豆豆鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_6.jpg"),
+					txt: "拖鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_7.jpg"),
+					txt: "凉鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_1.jpg"),
+					txt: "帆布鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_2.jpg"),
+					txt: "高跟鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_3.jpg"),
+					txt: "休闲鞋"
+				},
+			],
+			[{
+					img: require("../assets/homeImg/c_5.jpg"),
+					txt: "豆豆鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_6.jpg"),
+					txt: "拖鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_7.jpg"),
+					txt: "凉鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_1.jpg"),
+					txt: "帆布鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_2.jpg"),
+					txt: "高跟鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_3.jpg"),
+					txt: "休闲鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_4.jpg"),
+					txt: "运动鞋"
+				},
+			],
+			[{
+					img: require("../assets/homeImg/c_6.jpg"),
+					txt: "拖鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_7.jpg"),
+					txt: "凉鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_1.jpg"),
+					txt: "帆布鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_2.jpg"),
+					txt: "高跟鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_3.jpg"),
+					txt: "休闲鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_4.jpg"),
+					txt: "运动鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_5.jpg"),
+					txt: "豆豆鞋"
+				},
+			],
+			[{
+					img: require("../assets/homeImg/c_7.jpg"),
+					txt: "凉鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_1.jpg"),
+					txt: "帆布鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_2.jpg"),
+					txt: "高跟鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_3.jpg"),
+					txt: "休闲鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_4.jpg"),
+					txt: "运动鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_5.jpg"),
+					txt: "豆豆鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_6.jpg"),
+					txt: "拖鞋"
+				},
+			],
 		]
+
 	},
 	getters: {},
 	mutations: {},

@@ -20,6 +20,13 @@
       "unicode_decimal": 58946
     },
     {
+      "icon_id": "6186654",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e662",
+      "unicode_decimal": 58978
+    },
+    {
       "icon_id": "6941232",
       "name": "竖线",
       "font_class": "shuxian",
