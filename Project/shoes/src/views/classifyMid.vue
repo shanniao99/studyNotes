@@ -15,9 +15,11 @@
 					</li>
 				</ul>
 			</div>
-			<div class="cla_right">
+			<div class="cla_right" @scroll="onscroll">
 				<div class="right_item" v-for="item,index in $store.state.classifyShoes" :key="index">
-					<div class="item_tit"><h5>{{item.tit}}</h5></div>
+					<div class="item_tit">
+						<h5>{{item.tit}}</h5>
+					</div>
 					<ul>
 						<li v-for="v,i in $store.state.right_item[index]" :key="i">
 							<img :src="v.img">
@@ -31,17 +33,59 @@
 </template>
 
 <script>
+	import Vue from 'vue';
+	import {
+		Icon
+	} from 'vant';
+	Vue.use(Icon);
 	export default {
 		data() {
 			return {
 				value: '',
-				id: "female"
+				id: "female",
+				scrollTop: [],
+				classArr: [],
 			}
 		},
+		created() {
+			this.init();
+			window.onresize = () => {
+				this.init();
+			};
+		},
 		methods: {
+			init() {
+				this.$nextTick(() => {
+					this.classArr = [];
+					this.scrollTop = [];
+					let item = document.getElementsByClassName("right_item");
+					for (let i = 0; i < item.length; i++) {
+						this.classArr.push(item[i]);
+					}
+					this.classArr.map(v => {
+						this.scrollTop.push(v.offsetTop);
+					})
+				})
+			},
+
 			turn(i) {
-				this.id = this.$store.state.classifyShoes[i].id;
+				// this.id = this.$store.state.classifyShoes[i].id;
+				let right = document.getElementsByClassName("cla_right")[0]
+				right.scrollTo({
+					top: this.scrollTop[i],
+					behavior: "smooth" //滑动属性  平滑滚动
+				})
+
+			},
+			onscroll(e) {
+				this.scrollTop.map((v, i) => {
+					if (e.target.scrollTop + 85 >= v) {
+						this.id = this.$store.state.classifyShoes[i].id;
+					}
+				})
 			}
+
+
 		}
 	}
 </script>
@@ -53,7 +97,7 @@
 		top: 87px;
 		left: 0;
 	}
-	
+
 	.search {
 		width: 750px;
 		height: 90px;
@@ -62,12 +106,14 @@
 		align-items: center;
 		justify-content: center;
 	}
-	.search_box{
+
+	.search_box {
 		width: 670px;
 		height: 56px;
 		position: relative;
 	}
-	.search_box input{
+
+	.search_box input {
 		box-sizing: border-box;
 		width: 670px;
 		height: 56px;
@@ -78,13 +124,15 @@
 		font-size: 26px;
 		color: #b2b2b2;
 	}
-	.search_box span{
+
+	.search_box span {
 		font-size: 32px;
 		color: #b2b2b2;
 		position: absolute;
-		top:12px;
-		left:240px;
+		top: 12px;
+		left: 240px;
 	}
+
 	.classify_box {
 		width: 750px;
 		position: fixed;
@@ -128,11 +176,13 @@
 		top: 26px;
 		left: 10px;
 	}
-	.cla_left ul li p{
+
+	.cla_left ul li p {
 		font-size: 32px;
 		color: #666666;
 	}
-	.cla_right{
+
+	.cla_right {
 		width: 550px;
 		position: fixed;
 		top: 178px;
@@ -140,24 +190,28 @@
 		bottom: 110px;
 		overflow: scroll;
 	}
-	.right_item{
+
+	.right_item {
 		width: 525px;
 		display: flex;
 		flex-direction: column;
 	}
-	.item_tit{
+
+	.item_tit {
 		height: 85px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		color: #FF5A46;
 	}
-	.right_item ul{
+
+	.right_item ul {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
 	}
-	.right_item ul li{
+
+	.right_item ul li {
 		width: 175px;
 		height: 190px;
 		display: flex;
@@ -165,11 +219,13 @@
 		align-items: center;
 		justify-content: flex-start;
 	}
-	.right_item ul li img{
+
+	.right_item ul li img {
 		width: 130px;
 		height: 100px;
 	}
-	.right_item ul li p{
+
+	.right_item ul li p {
 		font-size: 28px;
 		font-family: "苹方";
 		color: #666;

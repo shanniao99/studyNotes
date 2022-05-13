@@ -2,7 +2,7 @@
 	<div class="box">
 		<heads :title="headtit[num]"></heads>
 		<router-view></router-view>
-		<footer>
+		<footer v-if="!$route.meta.showFooter">
 			<ul>
 				<li v-for="v,i in $store.state.footer" :key="i" :class="title==v.tit?'on':''"
 					@click="title=v.tit,num=i">
@@ -13,6 +13,7 @@
 				</li>
 			</ul>
 		</footer>
+
 	</div>
 
 </template>
@@ -23,7 +24,8 @@
 			return {
 				title: "首页",
 				num: 0,
-				headtit:["QianQian左右鞋包","分类","购物车","我的"]
+				headtit: ["QianQian左右鞋包", "分类", "购物车", "我的"],
+
 			}
 		},
 		components: {
@@ -35,9 +37,10 @@
 <style scoped="scoped">
 	@import url("./font/font_icon/iconfont.css");
 
-	body{
+	body {
 		margin: 0;
 	}
+
 	* {
 		margin: 0;
 		padding: 0;

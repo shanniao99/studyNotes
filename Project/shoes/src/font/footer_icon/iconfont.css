@@ -1,10 +1,10 @@
 @font-face {
-  font-family: "iconfont"; /* Project id  */
+  font-family: "icon"; /* Project id  */
   src: url('iconfont.ttf?t=1652411378040') format('truetype');
 }
 
-.iconfont {
-  font-family: "iconfont" !important;
+.icon {
+  font-family: "icon" !important;
   font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;

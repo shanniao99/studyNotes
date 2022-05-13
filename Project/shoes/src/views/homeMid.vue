@@ -14,7 +14,7 @@
 			</van-swipe>
 			<div class="shoeslist">
 				<ul>
-					<li v-for="v,i in $store.state.itemClass" :key="i"><img :src="v.img">
+					<li v-for="v,i in $store.state.itemClass" :key="i" @click="items(i)"><img :src="v.img" >
 						<p>{{v.txt}}</p>
 					</li>
 				</ul>
@@ -37,7 +37,7 @@
 									<img :src="v.img">
 									<div class="recom_info">
 										<span>{{v.txt}}</span>
-										<p>{{v.price}}</p>
+										<span>{{v.price}}</span>
 									</div>
 								</li>
 							</ul>
@@ -63,7 +63,7 @@
 									<img :src="v.img">
 									<div class="sp_info">
 										<span>{{v.txt}}</span>
-										<p>{{v.price}}</p>
+										<span>{{v.price}}</span>
 									</div>
 								</li>
 							</ul>
@@ -88,7 +88,7 @@
 								<img :src="v.img">
 								<div class="newPro_info">
 									<span>{{v.txt}}</span>
-									<p>{{v.price}}</p>
+									<span>{{v.price}}</span>
 								</div>
 							</li>
 						</ul>
@@ -142,6 +142,14 @@
 		methods: {
 			onChange(index) {
 				this.current = index;
+			},
+			items(index){
+				this.$router.push({
+					name:"items",
+					params:{
+						title:this.$store.state.itemClass[index].txt,
+					}
+				})
 			},
 		}
 	}
@@ -363,12 +371,12 @@
 		justify-content: space-around;
 	}
 
-	.recom_info span {
+	.recom_info span:first-child {
 		font-size: 20px;
 		color: #666666;
 	}
 
-	.recom_info p {
+	.recom_info span:last-child {
 		font-size: 28px;
 		color: #ff5e46;
 	}
@@ -417,15 +425,15 @@
 		border-bottom-left-radius: 10px;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-evenly;
+		justify-content: space-around;
 	}
 
-	.sp_info span {
+	.sp_info span:first-child {
 		font-size: 28px;
 		color: #666666;
 	}
 
-	.sp_info p {
+	.sp_info span:last-child{
 		font-size: 32px;
 		color: #FF5E46;
 	}
@@ -473,15 +481,18 @@
 		border-bottom: 1px solid #eee;
 		border-bottom-right-radius: 10px;
 		border-bottom-left-radius: 10px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
 	}
 
-	.newPro .van-swipe-item ul li .newPro_info span,
+	.newPro .van-swipe-item ul li .newPro_info span:first-child,
 	.morePro_info span {
 		font-size: 28px;
 		color: #666;
 	}
 
-	.newPro_info p,
+	.newPro_info span:last-child,
 	.morePro_info .twoPrice span {
 		font-size: 32px;
 		color: #ff5e46;

@@ -1,6 +1,7 @@
 <template>
 	<header>
 		<div class="head">
+			<span class="iconfont icon-zuojiantou" v-if="$route.meta.showFooter" @click="$router.go(-1)"></span>
 			<h2>{{title}}</h2>
 			<right></right>
 		</div>
@@ -16,7 +17,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	* {
 		margin: 0;
 		padding: 0;
@@ -40,8 +41,15 @@
 		line-height: 88px;
 		position: relative;
 	}
+	.head span{
+		font-size: 50px;
+		color: white;
+		display: block;
+		position: absolute;
+	}
 
 	.head h2 {
+		width: ;
 		font-size: 36px;
 		font-family: "Adobe 黑体 Std";
 		color: white;

@@ -24,7 +24,15 @@ export default new Router({
 			path:"/mine",
 			name:"mine",
 			component:()=>import("../views/mineMid.vue")
-		}
+		},
+		{
+			path:"/items",
+			name:"items",
+			component:()=>import("../views/itemsCheck.vue"),
+			meta:{
+				showFooter:true
+			}
+		},
 	],
 	mode:"history"
 })

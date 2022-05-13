@@ -280,6 +280,18 @@ export default new Vuex.Store({
 					img: require("../assets/homeImg/c_7.jpg"),
 					txt: "凉鞋"
 				},
+				{
+					img: require("../assets/homeImg/c_1.jpg"),
+					txt: "帆布鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_2.jpg"),
+					txt: "高跟鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_3.jpg"),
+					txt: "休闲鞋"
+				},
 			],
 			[{
 					img: require("../assets/homeImg/c_2.jpg"),
@@ -309,6 +321,18 @@ export default new Vuex.Store({
 					img: require("../assets/homeImg/c_1.jpg"),
 					txt: "帆布鞋"
 				},
+				{
+					img: require("../assets/homeImg/c_2.jpg"),
+					txt: "高跟鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_3.jpg"),
+					txt: "休闲鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_4.jpg"),
+					txt: "运动鞋"
+				},
 			],
 			[{
 					img: require("../assets/homeImg/c_3.jpg"),
@@ -338,6 +362,18 @@ export default new Vuex.Store({
 					img: require("../assets/homeImg/c_2.jpg"),
 					txt: "高跟鞋"
 				},
+				{
+					img: require("../assets/homeImg/c_3.jpg"),
+					txt: "休闲鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_4.jpg"),
+					txt: "运动鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_5.jpg"),
+					txt: "豆豆鞋"
+				},
 			],
 			[{
 					img: require("../assets/homeImg/c_4.jpg"),
@@ -367,6 +403,18 @@ export default new Vuex.Store({
 					img: require("../assets/homeImg/c_3.jpg"),
 					txt: "休闲鞋"
 				},
+				{
+					img: require("../assets/homeImg/c_4.jpg"),
+					txt: "运动鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_5.jpg"),
+					txt: "豆豆鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_6.jpg"),
+					txt: "拖鞋"
+				},
 			],
 			[{
 					img: require("../assets/homeImg/c_5.jpg"),
@@ -396,6 +444,18 @@ export default new Vuex.Store({
 					img: require("../assets/homeImg/c_4.jpg"),
 					txt: "运动鞋"
 				},
+				{
+					img: require("../assets/homeImg/c_5.jpg"),
+					txt: "豆豆鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_6.jpg"),
+					txt: "拖鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_7.jpg"),
+					txt: "凉鞋"
+				},
 			],
 			[{
 					img: require("../assets/homeImg/c_6.jpg"),
@@ -425,6 +485,18 @@ export default new Vuex.Store({
 					img: require("../assets/homeImg/c_5.jpg"),
 					txt: "豆豆鞋"
 				},
+				{
+					img: require("../assets/homeImg/c_6.jpg"),
+					txt: "拖鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_7.jpg"),
+					txt: "凉鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_1.jpg"),
+					txt: "帆布鞋"
+				},
 			],
 			[{
 					img: require("../assets/homeImg/c_7.jpg"),
@@ -454,7 +526,80 @@ export default new Vuex.Store({
 					img: require("../assets/homeImg/c_6.jpg"),
 					txt: "拖鞋"
 				},
+				{
+					img: require("../assets/homeImg/c_7.jpg"),
+					txt: "凉鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_1.jpg"),
+					txt: "帆布鞋"
+				},
+				{
+					img: require("../assets/homeImg/c_2.jpg"),
+					txt: "高跟鞋"
+				},
 			],
+		],
+		items_nav:[
+			{tit:"综合",show:false},{tit:"最热",show:false},{tit:"新品",show:false},{tit:"价格",show:true}
+		],
+		items:[
+			{
+				img: require("../assets/homeImg/1_1.jpg"),
+				txt: "左右鞋店春夏爆款福利169",
+				price: "169",
+				oldprice: "￥349",
+				buy:8,
+				look:529
+			},
+			{
+				img: require("../assets/homeImg/1_2.jpg"),
+				txt: "左右鞋店春夏爆款209",
+				price: "209",
+				oldprice: "￥429",
+				buy:30,
+				look:357
+			},
+			{
+				img: require("../assets/homeImg/1_3.jpg"),
+				txt: "左右鞋店春夏爆款200",
+				price: "200",
+				oldprice: "￥409",
+				buy:34,
+				look:428
+			},
+			{
+				img: require("../assets/homeImg/1_4.jpg"),
+				txt: "左右鞋店春夏爆款175",
+				price: "175",
+				oldprice: "￥369",
+				buy:25,
+				look:593
+			},
+			{
+				img: require("../assets/homeImg/1_5.jpg"),
+				txt: "左右鞋店春夏爆款175",
+				price: "169",
+				oldprice: "￥349",
+				buy:49,
+				look:436
+			},
+			{
+				img: require("../assets/homeImg/1_1.jpg"),
+				txt: "左右鞋店春夏爆款福利169",
+				price: "169",
+				oldprice: "￥349",
+				buy:8,
+				look:529
+			},
+			{
+				img: require("../assets/homeImg/1_2.jpg"),
+				txt: "左右鞋店春夏爆款209",
+				price: "209",
+				oldprice: "￥429",
+				buy:30,
+				look:357
+			},
 		]
 
 	},
