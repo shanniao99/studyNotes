@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from "vue-router"
+import ca from '../views/itemDetails.vue'
 
 Vue.use(Router)
 
@@ -29,6 +30,14 @@ export default new Router({
 			path:"/items",
 			name:"items",
 			component:()=>import("../views/itemsCheck.vue"),
+			meta:{
+				showFooter:true
+			}
+		},
+		{
+			path:"/details",
+			name:"details",
+			component:ca,
 			meta:{
 				showFooter:true
 			}

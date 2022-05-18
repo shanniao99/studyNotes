@@ -33,11 +33,11 @@
 					<van-swipe :loop="false" class="info_box">
 						<van-swipe-item v-for="(item,i) in [1,2,3]" :key="item" class="changeImg">
 							<ul>
-								<li v-for="v,index in $store.state.recommend[i]" :key="index">
+								<li v-for="v,index in $store.state.recommend[i]" :key="index" @click="jingpin(i,index)">
 									<img :src="v.img">
 									<div class="recom_info">
 										<span>{{v.txt}}</span>
-										<span>{{v.price}}</span>
+										<span>￥{{v.price}}</span>
 									</div>
 								</li>
 							</ul>
@@ -148,6 +148,14 @@
 					name:"items",
 					params:{
 						title:this.$store.state.itemClass[index].txt,
+					}
+				})
+			},
+			jingpin(i,num){
+				this.$router.push({
+					name:'details',
+					params:{
+						list:this.$store.state.recommend[i][num]
 					}
 				})
 			},
