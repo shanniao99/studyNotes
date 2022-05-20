@@ -2,10 +2,10 @@
 	<div class="Debox">
 		<div class="details-Mid">
 			<van-swipe @change="onChange">
-				<van-swipe-item><img :src="$route.params.list.img"></van-swipe-item>
-				<van-swipe-item><img :src="$route.params.list.img"></van-swipe-item>
-				<van-swipe-item><img :src="$route.params.list.img"></van-swipe-item>
-				<van-swipe-item><img :src="$route.params.list.img"></van-swipe-item>
+				<van-swipe-item><img :src="list.img"></van-swipe-item>
+				<van-swipe-item><img :src="list.img"></van-swipe-item>
+				<van-swipe-item><img :src="list.img"></van-swipe-item>
+				<van-swipe-item><img :src="list.img"></van-swipe-item>
 				<template #indicator>
 					<div class="custom-indicator">{{ current + 1 }}/4</div>
 				</template>
@@ -16,7 +16,7 @@
 					<div class="active2">购买得积分</div>
 				</div>
 				<div class="P_serve">
-					<div class="pri">￥<span>{{$route.params.list.price}}</span></div>
+					<div class="pri">￥<span>{{list.price}}</span></div>
 					<div class="use-buy">
 						<span class="iconfont icon-xianyonghoufu"></span>
 						<b>先用后付</b>
@@ -24,7 +24,7 @@
 					</div>
 				</div>
 				<div class="itemtit">
-					<h2>{{$route.params.list.txt}}</h2>
+					<h2>{{list.txt}}</h2>
 				</div>
 				<div class="items-other">
 					<ul>
@@ -51,28 +51,30 @@
 						<van-action-sheet v-model="show" closeable>
 							<div class="content">
 								<div class="constent_top">
-									<img :src="col=='颜色'?$route.params.list.img:Img">
+									<img :src="col=='颜色'?list.img:Img">
 									<div class="topLeft">
-										<div class="carPrice">￥<span>{{$route.params.list.price}}</span></div>
+										<div class="carPrice">￥<span>{{list.price}}</span></div>
 										<span>剩余300件</span>
-										<p><span>{{choose}}</span><span>{{col}}</span><span
-												v-if="$route.params.list.shoeSize.length">{{size}}</span></p>
+										<p>
+											<span>{{choose}}</span><span>{{col}}</span>
+											<span v-if="baozhang">{{size}}</span>
+										</p>
 									</div>
 								</div>
 								<div class="topMid">
 									<span>颜色分类</span>
 									<ul>
-										<li :class="col==v.color?'on':''" v-for="v,i in $route.params.list.colors"
+										<li :class="col==v.color?'on':''" v-for="v,i in list.colors"
 											:key="i" @click="colorChoose(i)">
 											<img :src="v.image">
 											<span>{{v.color}}</span>
 										</li>
 									</ul>
 								</div>
-								<div class="topMid2" v-if="$route.params.list.shoeSize.length">
+								<div class="topMid2" v-if="baozhang">
 									<span>尺码</span>
 									<ul>
-										<li :class="size==v?'on':''" v-for="v,i in $route.params.list.shoeSize" :key="i"
+										<li :class="size==v?'on':''" v-for="v,i in list.shoeSize" :key="i"
 											@click="sizeChoose(i)">
 											<span>{{v}}</span>
 										</li>
@@ -90,7 +92,7 @@
 										<button>立即购买</button>
 									</div>
 									<div class="btn-sure" v-else>
-										<button>确定</button>
+										<button @click="intoCar">确定</button>
 									</div>
 								</div>
 							</div>
@@ -163,42 +165,65 @@
 			return {
 				current: 0,
 				show: false,
-				baozhang: false,
+				baozhang: true,
 				choose: "请选择",
 				col: "颜色",
 				size: "尺码",
 				sure: false,
 				Img: '',
+				list:{},
+				
 			}
 		},
-		mounted() {
-			console.log(this.$route.params)
-
+		created() {
+			if(this.$route.params.list){
+				this.list=this.$route.params.list
+			}else{
+				for(let i=0;i<this.$store.state.recommend.length;i++){
+					let arr=this.$store.state.recommend[i];
+					for(let j=0;j<arr.length;j++){
+						if(arr[j].id==this.$route.query.list.id){
+							this.list=arr[j];
+							break;
+						}
+					}
+				}
+				this.col=this.$route.query.list.color;
+				this.size=this.$route.query.list.size;
+				this.Img=this.$route.query.list.img;
+				this.choose="已选"
+			}
+			if(this.list.shoeSize.length>0){
+				this.baozhang=true;
+			}else{
+				this.baozhang=false;
+			}
 		},
+		
 		methods: {
 			onChange(index) {
 				this.current = index;
 			},
 			colorChoose(i) {
-				if (this.col == this.$route.params.list.colors[i].color) {
+				if (this.col == this.list.colors[i].color) {
 					if (this.size == "尺码") {
 						this.choose = "请选择"
 					}
 					this.col = "颜色"
 				} else {
-					this.col = this.$route.params.list.colors[i].color;
-					this.Img = this.$route.params.list.colors[i].image;
+					this.col = this.list.colors[i].color;
+					this.Img = this.list.colors[i].image;
 					this.choose = "已选";
 				}
 			},
 			sizeChoose(i) {
-				if (this.size == this.$route.params.list.shoeSize[i]) {
+				if (this.size == this.list.shoeSize[i]) {
 					if (this.col == "颜色") {
 						this.choose = "请选择"
 					}
 					this.size = "尺码"
 				} else {
-					this.size = this.$route.params.list.shoeSize[i];
+					this.size = this.list.shoeSize[i];
 					this.choose = "已选"
 				}
 			},
@@ -208,13 +233,13 @@
 					Dialog.alert({
 						message: '请选择颜色分类',
 					});
-				}else if(this.$route.params.list.shoeSize.length&&this.size=="尺码"){
+				}else if(this.list.shoeSize.length&&this.size=="尺码"){
 					Dialog.alert({
 						message: '请选择尺码大小',
 					});
 				}else{
 					let size;
-					if(this.$route.params.list.shoeSize.length>0){
+					if(this.list.shoeSize.length>0){
 						size=this.size;
 					}else{
 						size='';
@@ -222,12 +247,15 @@
 					let num=document.getElementsByClassName("buyNum")[0].getElementsByTagName("input")[0].ariaValueNow;
 					obj={
 						img:this.Img,
-						txt:this.$route.params.list.txt,
-						price:this.$route.params.list.price,
+						txt:this.list.txt,
+						price:this.list.price,
 						color:this.col,
 						size,
 						num,
-						id:this.$route.params.list.id
+						id:this.list.id
+					}
+					if(localStorage.length > 0){
+						this.$store.state.shoppingcart=JSON.parse(localStorage.getItem("info"));
 					}
 					let Index=this.$store.state.shoppingcart.findIndex((v)=>{
 						return v.id==obj.id&&v.color==obj.color&&v.size==obj.size
@@ -272,6 +300,7 @@
 	.van-swipe,
 	.van-swipe img {
 		width: auto !important;
+		height: 100%;
 	}
 
 	.van-swipe-item {
@@ -668,5 +697,7 @@
 	.foot-btn button {
 		width: 270px;
 		height: 65px;
+		font-size: 32px;
+		color: white;
 	}
 </style>

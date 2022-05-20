@@ -66,7 +66,7 @@ export default new Vuex.Store({
 					id:"01",
 					img: require("../assets/homeImg/s3_1.jpg"),
 					txt: "2019春季新款男鞋",
-					price: "249",
+					price: 249,
 					colors: [
 						{image: require("../assets/homeImg/s3_1.jpg"),
 							color: "黄色"
@@ -90,7 +90,7 @@ export default new Vuex.Store({
 					id:"02",
 					img: require("../assets/homeImg/s3_2.jpg"),
 					txt: "春夏鞋店爆款女鞋",
-					price: "169",
+					price: 169,
 					colors: [
 						{image: require("../assets/homeImg/s3_2.jpg"),
 							color: "粉色"
@@ -114,7 +114,7 @@ export default new Vuex.Store({
 					id:"03",
 					img: require("../assets/homeImg/s3_3.jpg"),
 					txt: "牛皮爆款时尚女包",
-					price: "239",
+					price: 239,
 					colors: [{
 							image: require("../assets/homeImg/s3_3.jpg"),
 							color: "黑色"
@@ -131,7 +131,7 @@ export default new Vuex.Store({
 					id:"04",
 					img: require("../assets/homeImg/s3_4.jpg"),
 					txt: "左右春夏爆款",
-					price: "289",
+					price: 289,
 					colors: [{
 							image: require("../assets/homeImg/s3_4.jpg"),
 							color: "棕色"
@@ -151,7 +151,7 @@ export default new Vuex.Store({
 					id:"05",
 					img: require("../assets/homeImg/s3_2.jpg"),
 					txt: "春夏鞋店爆款女鞋",
-					price: "169",
+					price: 169,
 					colors: [{
 							image: require("../assets/homeImg/s3_2.jpg"),
 							color: "粉色"
@@ -175,7 +175,7 @@ export default new Vuex.Store({
 					id:"06",
 					img: require("../assets/homeImg/s3_3.jpg"),
 					txt: "牛皮爆款时尚女包",
-					price: "239",
+					price: 239,
 					colors: [{
 							image: require("../assets/homeImg/s3_3.jpg"),
 							color: "黑色"
@@ -192,7 +192,7 @@ export default new Vuex.Store({
 					id:"07",
 					img: require("../assets/homeImg/s3_1.jpg"),
 					txt: "2019春季新款男鞋",
-					price: "249",
+					price: 249,
 					colors: [{
 							image: require("../assets/homeImg/s3_1.jpg"),
 							color: "黄色"
@@ -216,7 +216,7 @@ export default new Vuex.Store({
 					id:"08",
 					img: require("../assets/homeImg/s3_2.jpg"),
 					txt: "春夏鞋店爆款女鞋",
-					price: "169",
+					price: 169,
 					colors: [
 						{image: require("../assets/homeImg/s3_2.jpg"),
 							color: "粉色"
@@ -240,7 +240,7 @@ export default new Vuex.Store({
 					id:"09",
 					img: require("../assets/homeImg/s3_4.jpg"),
 					txt: "左右春夏爆款",
-					price: "289",
+					price: 289,
 					colors: [{
 							image: require("../assets/homeImg/s3_4.jpg"),
 							color: "棕色"
@@ -263,23 +263,23 @@ export default new Vuex.Store({
 			[{
 					img: require("../assets/homeImg/s4_1.jpg"),
 					txt: "左右鞋店春秋爆款断码...",
-					price: "￥129"
+					price: 129
 				},
 				{
 					img: require("../assets/homeImg/s4_2.jpg"),
 					txt: "左右鞋店春秋爆款断码...",
-					price: "￥129"
+					price: 129
 				},
 			],
 			[{
 					img: require("../assets/homeImg/s4_2.jpg"),
 					txt: "左右鞋店春秋爆款断码...",
-					price: "￥129"
+					price: 129
 				},
 				{
 					img: require("../assets/homeImg/s4_1.jpg"),
 					txt: "左右鞋店春秋爆款断码...",
-					price: "￥129"
+					price: 129
 				},
 			]
 		],
@@ -287,86 +287,86 @@ export default new Vuex.Store({
 			[{
 					img: require("../assets/homeImg/s5_1.jpg"),
 					txt: "左右鞋店爆款...",
-					price: "￥389"
+					price: 389
 				},
 				{
 					img: require("../assets/homeImg/s5_2.jpg"),
 					txt: "左右鞋店爆款...",
-					price: "￥469"
+					price: 469
 				},
 				{
 					img: require("../assets/homeImg/s5_3.jpg"),
 					txt: "左右鞋店2019...",
-					price: "￥499"
+					price: 499
 				},
 			],
 			[{
 					img: require("../assets/homeImg/s5_1.jpg"),
 					txt: "左右鞋店爆款...",
-					price: "￥389"
+					price: 389
 				},
 				{
 					img: require("../assets/homeImg/s5_2.jpg"),
 					txt: "左右鞋店爆款...",
-					price: "￥469"
+					price: 469
 				},
 				{
 					img: require("../assets/homeImg/s5_3.jpg"),
 					txt: "左右鞋店2019...",
-					price: "￥499"
+					price: 499
 				},
 			],
 			[{
 					img: require("../assets/homeImg/s5_1.jpg"),
 					txt: "左右鞋店爆款...",
-					price: "￥389"
+					price: 389
 				},
 				{
 					img: require("../assets/homeImg/s5_2.jpg"),
 					txt: "左右鞋店爆款...",
-					price: "￥469"
+					price: 469
 				},
 				{
 					img: require("../assets/homeImg/s5_3.jpg"),
 					txt: "左右鞋店2019...",
-					price: "￥499"
+					price: 499
 				},
 			],
 		],
 		morePro: [{
 				img: require("../assets/homeImg/s6_1.jpg"),
 				txt: "左右鞋店春夏爆款福利",
-				price: "￥169",
+				price: 169,
 				oldprice: "￥349"
 			},
 			{
 				img: require("../assets/homeImg/s6_2.jpg"),
 				txt: "左右鞋店春夏爆款凉拖",
-				price: "￥199",
+				price: 199,
 				oldprice: "￥409"
 			},
 			{
 				img: require("../assets/homeImg/s6_3.jpg"),
 				txt: "左右鞋店春夏爆款福利",
-				price: "￥149",
+				price: 149,
 				oldprice: "￥309"
 			},
 			{
 				img: require("../assets/homeImg/s6_4.jpg"),
 				txt: "左右鞋店春夏爆款福利",
-				price: "￥199",
+				price: 199,
 				oldprice: "￥409"
 			},
 			{
 				img: require("../assets/homeImg/s3_1.jpg"),
 				txt: "左右鞋店春夏爆款福利",
-				price: "￥169",
+				price: 169,
 				oldprice: "￥349"
 			},
 			{
 				img: require("../assets/homeImg/s3_2.jpg"),
 				txt: "左右鞋店春夏爆款福利",
-				price: "￥169",
+				price: 169,
 				oldprice: "￥349"
 			},
 		],
