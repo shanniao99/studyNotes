@@ -758,7 +758,22 @@ export default new Vuex.Store({
 				look: 357
 			},
 		],
-		shoppingcart:[]
+		shoppingcart:[],
+		mine_order:[
+			{icon:"icon-daifukuan",txt:"待付款"},
+			{icon:"icon-daifahuo",txt:"待发货"},
+			{icon:"icon-daifahuo1",txt:"待收货"},
+			{icon:"icon-yiwancheng-yiban-02",txt:"已完成"},
+		],
+		listFa:[
+			{icon:require("../assets/info.png"),txt:"我的消息"},
+			{icon:require("../assets/shoucang.png"),txt:"我的收藏"},
+			{icon:require("../assets/address.png"),txt:"我的地址"},
+			{icon:require("../assets/zuji.png"),txt:"我的足迹"},
+			{icon:require("../assets/kaquan.png"),txt:"我的卡券"},
+			{icon:require("../assets/jifen.png"),txt:"我的积分"},
+			{icon:require("../assets/kefu.png"),txt:"我的客服"},
+		]
 	},
 	getters: {},
 	mutations: {},

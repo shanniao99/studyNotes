@@ -21,7 +21,7 @@
 		<div class="car-nav">
 			<van-checkbox checked-color="#ff5e46" type="primary" @click="checkAll" v-model="checked">全选</van-checkbox>
 			<div class="total"><span>合计：</span>
-				<div class="tatal-box">￥<input type="text" ref="money" value="0" readonly></div>
+				<div class="tatal-box">￥<input type="text" ref="money" value="0.00" readonly></div>
 			</div>
 			<button>去结算</button>
 		</div>
@@ -70,7 +70,7 @@
 					this.checktrigger.push(this.$refs['checkbox'][i].checked); //选中状态
 				})
 			})
-			console.log(this.arr)
+			
 		},
 		methods: {
 			intoStorage(i) { //数量添加或减少,存入本地存储
@@ -87,8 +87,21 @@
 						sum += Number(local[i].price) * Number(local[i].num);
 					}
 				}
-				return sum
+				return (sum*100/100).toFixed(2)
 			},
+			
+			selectAll(arr){  //判断是否全选
+				let res = arr.some(v => {
+					return v == false
+				})
+				if (!res) { //判断是否全选
+					this.checked = true;
+				} else {
+					this.checked = false;
+				}
+				this.$refs['money'].value = this.totalPrice();
+			},
+			
 
 			checkAll() { //点击全选和取消全选
 				if (this.checked) {
@@ -117,17 +130,17 @@
 			},
 			trigger(i) { //点击切换选中状态
 				this.checktrigger[i] = this.$refs['checkbox'][i].checked;
-				let res = this.checktrigger.some(v => {
-					return v == false
-				})
-				if (!res) { //判断是否全选
-					this.checked = true;
-				} else {
-					this.checked = false;
-				}
-				this.$refs['money'].value = this.totalPrice();
+				// let res = this.checktrigger.some(v => {
+				// 	return v == false
+				// })
+				// if (!res) { //判断是否全选
+				// 	this.checked = true;
+				// } else {
+				// 	this.checked = false;
+				// }
+				// this.$refs['money'].value = this.totalPrice();
+				this.selectAll(this.checktrigger);
 			},
-			
 			beforeClose({position,instance}) {   //删除操作
 				switch (position) {
 					case 'right':
@@ -140,6 +153,9 @@
 							console.log(this.arr,i)
 							this.arr.splice(i,1);
 							localStorage.setItem("info",JSON.stringify(this.arr));
+							
+							this.checktrigger.splice(i,1);
+							this.selectAll(this.checktrigger)
 							
 							instance.close();
 						}).catch(()=>{

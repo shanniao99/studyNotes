@@ -55,11 +55,25 @@
       "unicode_decimal": 58899
     },
     {
+      "icon_id": "2121737",
+      "name": "签到",
+      "font_class": "qiandao",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
       "icon_id": "6941232",
       "name": "竖线",
       "font_class": "shuxian",
       "unicode": "e638",
       "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "10165693",
+      "name": "待发货",
+      "font_class": "daifahuo",
+      "unicode": "e604",
+      "unicode_decimal": 58884
     },
     {
       "icon_id": "12515449",
@@ -69,11 +83,25 @@
       "unicode_decimal": 58891
     },
     {
+      "icon_id": "12736667",
+      "name": "右箭头",
+      "font_class": "youjiantou",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
       "icon_id": "12754195",
       "name": "右箭头",
       "font_class": "youjiantou_huaban",
       "unicode": "e63e",
       "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "12812044",
+      "name": "待发货",
+      "font_class": "daifahuo1",
+      "unicode": "e649",
+      "unicode_decimal": 58953
     },
     {
       "icon_id": "15726773",
@@ -90,6 +118,13 @@
       "unicode_decimal": 58943
     },
     {
+      "icon_id": "24286299",
+      "name": "已完成-已办-02",
+      "font_class": "yiwancheng-yiban-02",
+      "unicode": "e7a5",
+      "unicode_decimal": 59301
+    },
+    {
       "icon_id": "24941071",
       "name": "分享",
       "font_class": "fenxiang",
@@ -102,6 +137,13 @@
       "font_class": "shezhongrenyuan",
       "unicode": "e617",
       "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "27194160",
+      "name": "代付款",
+      "font_class": "daifukuan",
+      "unicode": "e75d",
+      "unicode_decimal": 59229
     }
   ]
 }

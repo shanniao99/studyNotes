@@ -148,6 +148,7 @@
 					name:"items",
 					params:{
 						title:this.$store.state.itemClass[index].txt,
+						show:true
 					}
 				})
 			},

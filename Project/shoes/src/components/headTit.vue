@@ -2,7 +2,7 @@
 	<header>
 		<div class="head">
 			<span class="iconfont icon-zuojiantou" v-if="$route.meta.showFooter" @click="$router.go(-1)"></span>
-			<h2 v-if="!$route.meta.showFooter">{{title}}</h2>
+			<h2>{{title}}</h2>
 			<right></right>
 		</div>
 	</header>
@@ -10,6 +10,9 @@
 
 <script>
 	export default {
+		data(){
+			return{}
+		},
 		props: ["title"],
 		components: {
 			right: () => import("../components/rightIcon.vue")

@@ -42,6 +42,14 @@ export default new Router({
 				showFooter:true
 			}
 		},
+		{
+			path:"/order",
+			name:"order",
+			component:()=>import("../views/allOrder.vue"),
+			meta:{
+				showFooter:true
+			}
+		},
 	],
 	mode:"history"
 })

@@ -122,7 +122,7 @@
 		<footer>
 			<van-goods-action>
 				<van-goods-action-icon icon="chat-o" text="客服" />
-				<van-goods-action-icon icon="cart-o" text="购物车" />
+				<van-goods-action-icon icon="cart-o" text="购物车" @click="Toshoppingcart" />
 				<van-goods-action-icon icon="star-o" text="收藏" />
 
 				<div class="foot-btn">
@@ -204,7 +204,7 @@
 			onChange(index) {
 				this.current = index;
 			},
-			colorChoose(i) {
+			colorChoose(i) {   //选择商品颜色时的颜色更改
 				if (this.col == this.list.colors[i].color) {
 					if (this.size == "尺码") {
 						this.choose = "请选择"
@@ -216,7 +216,7 @@
 					this.choose = "已选";
 				}
 			},
-			sizeChoose(i) {
+			sizeChoose(i) {  //商品尺码动态更改
 				if (this.size == this.list.shoeSize[i]) {
 					if (this.col == "颜色") {
 						this.choose = "请选择"
@@ -227,7 +227,7 @@
 					this.choose = "已选"
 				}
 			},
-			intoCar() {
+			intoCar() {  //添加到购物车操作
 				let obj = {};
 				if (this.col == "颜色") {
 					Dialog.alert({
@@ -269,7 +269,15 @@
 					Toast('已加入购物车');
 					console.log(this.$store.state.shoppingcart)
 				}
-			}
+			},
+			Toshoppingcart(){
+				this.$router.push({
+					path:"/shoppingcart",
+					query:{
+						tit:"购物车"
+					}
+				})
+			},
 		},
 	}
 </script>
