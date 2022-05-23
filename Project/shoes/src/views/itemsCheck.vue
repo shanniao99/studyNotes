@@ -24,7 +24,7 @@
 											<p class="lookbuy"><span>{{item.buy}}人购买</span><span>{{item.look}}浏览</span>
 											</p>
 										</div>
-										<button>立即购买</button>
+										<button @click="Tobuy(index)">立即购买</button>
 									</div>
 								</div>
 							</li>
@@ -56,7 +56,15 @@
 			}
 		},
 		methods:{
-			
+			Tobuy(i){
+				this.$router.push({
+					name:'details',
+					params:{
+						list:this.$store.state.items[i]
+					}
+				})
+				
+			}
 		},
 		components: {
 			heads: () => import("../components/headTit.vue")

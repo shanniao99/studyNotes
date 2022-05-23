@@ -123,7 +123,7 @@
 			<van-goods-action>
 				<van-goods-action-icon icon="chat-o" text="客服" />
 				<van-goods-action-icon icon="cart-o" text="购物车" @click="Toshoppingcart" />
-				<van-goods-action-icon icon="star-o" text="收藏" />
+				<van-goods-action-icon :icon="collect?'star':'star-o'" text="收藏" :color="collect?'#ff5e46':''" @click="collect=!collect"/>
 
 				<div class="foot-btn">
 					<van-goods-action-button type="warning" text="加入购物车" @click="show = true,sure=true" />
@@ -172,27 +172,29 @@
 				sure: false,
 				Img: '',
 				list:{},
+				collect:false,
 				
 			}
 		},
 		created() {
 			if(this.$route.params.list){
 				this.list=this.$route.params.list
-			}else{
-				for(let i=0;i<this.$store.state.recommend.length;i++){
-					let arr=this.$store.state.recommend[i];
-					for(let j=0;j<arr.length;j++){
-						if(arr[j].id==this.$route.query.list.id){
-							this.list=arr[j];
-							break;
-						}
-					}
-				}
-				this.col=this.$route.query.list.color;
-				this.size=this.$route.query.list.size;
-				this.Img=this.$route.query.list.img;
-				this.choose="已选"
 			}
+			// else{
+			// 	for(let i=0;i<this.$store.state.recommend.length;i++){
+			// 		let arr=this.$store.state.recommend[i];
+			// 		for(let j=0;j<arr.length;j++){
+			// 			if(arr[j].id==this.$route.query.list.id){
+			// 				this.list=arr[j];
+			// 				break;
+			// 			}
+			// 		}
+			// 	}
+			// 	this.col=this.$route.query.list.color;
+			// 	this.size=this.$route.query.list.size;
+			// 	this.Img=this.$route.query.list.img;
+			// 	this.choose="已选"
+			// }
 			if(this.list.shoeSize.length>0){
 				this.baozhang=true;
 			}else{
@@ -471,6 +473,10 @@
 		margin: 20px auto;
 		display: flex;
 		justify-content: space-between;
+	}
+	.constent_top img{
+		width: 150px;
+		height: 150px;
 	}
 
 	.topLeft {

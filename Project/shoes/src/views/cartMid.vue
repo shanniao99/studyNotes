@@ -6,7 +6,7 @@
 				<van-checkbox :name="v.id+i" ref="checkbox" checked-color="#ff5e46" @click="trigger(i)"></van-checkbox>
 				
 				<van-card :price="(v.price*100/100).toFixed(2)" :desc="det[i]" :title="v.txt" class="goods-card"
-					:thumb="v.img" @click="toDet(i)" />
+					:thumb="v.img" />
 				<div class="stepper">
 					<van-stepper :ref="'step'+i" disable-input @plus="plus(i)" @minus="minus(i)" />
 				</div>
@@ -63,7 +63,7 @@
 			this.arr = JSON.parse(localStorage.getItem("info"));
 			this.arr.forEach((v, i) => {
 				let dec = v.color + "  " + v.size;
-				this.det.push(dec);
+				this.det.push(dec);  //颜色和尺码
 				let val = "step" + i;
 				this.$nextTick(() => {
 					this.$refs[val][0].currentValue = v.num;
@@ -94,7 +94,7 @@
 				let res = arr.some(v => {
 					return v == false
 				})
-				if (!res) { //判断是否全选
+				if (!res&&this.arr.length>0) { //判断是否全选
 					this.checked = true;
 				} else {
 					this.checked = false;
@@ -150,12 +150,18 @@
 							
 							let ele=instance.$refs.right.parentElement.parentElement;
 							let i=ele.getAttribute('aira-index')
-							console.log(this.arr,i)
-							this.arr.splice(i,1);
+							
+							this.arr.splice(i,1);  //删除arr中的对应数据，再存入本地存储实现删除
 							localStorage.setItem("info",JSON.stringify(this.arr));
 							
 							this.checktrigger.splice(i,1);
-							this.selectAll(this.checktrigger)
+							
+							this.arr.forEach((v,i)=>{
+								this.checktrigger[i]=this.$refs['checkbox'][i].checked
+							})
+							
+							this.selectAll(this.checktrigger)  //判断全选
+							
 							
 							instance.close();
 						}).catch(()=>{
@@ -164,14 +170,14 @@
 						break;
 				}
 			},
-			toDet(i){  //点击商品进入商品详情
-				this.$router.push({
-					path:'/details',
-					query:{
-						list:this.arr[i]
-					}
-				})
-			},
+			// toDet(i){  //点击商品进入商品详情
+			// 	this.$router.push({
+			// 		path:'/details',
+			// 		query:{
+			// 			list:this.arr[i]
+			// 		}
+			// 	})
+			// },
 		}
 	}
 </script>

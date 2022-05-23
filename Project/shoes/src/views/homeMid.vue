@@ -25,7 +25,7 @@
 						<span class="iconfont icon-shuxian"></span>
 						<h2>精品推荐</h2>
 					</div>
-					<div class="top_R">
+					<div class="top_R" @click="Tomore">
 						<p>更多<span class="iconfont icon-youjiantou_huaban"></span></p>
 					</div>
 				</div>
@@ -51,7 +51,7 @@
 						<span class="iconfont icon-shuxian"></span>
 						<h2>特惠清仓</h2>
 					</div>
-					<div class="top_R">
+					<div class="top_R" @click="Tomore">
 						<p>更多<span class="iconfont icon-youjiantou_huaban"></span></p>
 					</div>
 				</div>
@@ -59,11 +59,11 @@
 					<van-swipe class="my-swipe" :autoplay="3000" indicator-color="#ff5a46">
 						<van-swipe-item v-for="(item,index) in [1,2]" :key="item">
 							<ul class="sp_ul">
-								<li v-for="v,i in $store.state.special[index]" :key="i">
+								<li v-for="v,i in $store.state.special[index]" :key="i" @click="special(index,i)" >
 									<img :src="v.img">
 									<div class="sp_info">
 										<span>{{v.txt}}</span>
-										<span>{{v.price}}</span>
+										<span>￥{{v.price}}</span>
 									</div>
 								</li>
 							</ul>
@@ -77,18 +77,18 @@
 						<span class="iconfont icon-shuxian"></span>
 						<h2>新品优选</h2>
 					</div>
-					<div class="top_R">
+					<div class="top_R" @click="Tomore">
 						<p>更多<span class="iconfont icon-youjiantou_huaban"></span></p>
 					</div>
 				</div>
 				<van-swipe @change="onChange">
 					<van-swipe-item v-for="(item,index) in [1,2,3]" :key="index">
 						<ul>
-							<li v-for="v,i in $store.state.newPro[index]" :key="i">
+							<li v-for="v,i in $store.state.newPro[index]" :key="i" @click="newPro(index,i)">
 								<img :src="v.img">
 								<div class="newPro_info">
 									<span>{{v.txt}}</span>
-									<span>{{v.price}}</span>
+									<span>￥{{v.price}}</span>
 								</div>
 							</li>
 						</ul>
@@ -104,12 +104,12 @@
 				</div>
 				<div class="more_list">
 					<ul>
-						<li v-for="v,i in $store.state.morePro" :key="i">
+						<li v-for="v,i in $store.state.morePro" :key="i" @click="morePro(i)">
 							<img :src="v.img">
 							<div class="morePro_info">
 								<span>{{v.txt}}</span>
 								<div class="twoPrice">
-									<span>{{v.price}}</span><span>{{v.oldprice}}</span>
+									<span>￥{{v.price}}</span><span>{{v.oldprice}}</span>
 								</div>
 							</div>
 						</li>
@@ -143,6 +143,11 @@
 			onChange(index) {
 				this.current = index;
 			},
+			Tomore(){
+				this.$router.replace({
+					name:'classify'
+				})
+			},
 			items(index){
 				this.$router.push({
 					name:"items",
@@ -160,6 +165,30 @@
 					}
 				})
 			},
+			special(i,num){
+				this.$router.push({
+					name:'details',
+					params:{
+						list:this.$store.state.special[i][num]
+					}
+				})
+			},
+			newPro(i,num){
+				this.$router.push({
+					name:'details',
+					params:{
+						list:this.$store.state.newPro[i][num]
+					}
+				})
+			},
+			morePro(i){
+				this.$router.push({
+					name:'details',
+					params:{
+						list:this.$store.state.morePro[i]
+					}
+				})
+			}
 		}
 	}
 </script>

@@ -29,14 +29,9 @@
 			}
 		},
 		created() {
-			if (this.$route.query.tit) {
-				this.title = this.$route.query.tit;
-				this.num = this.headtit.findIndex(v => {
-					return v == this.title;
-				})
-				console.log(this.$route.query.tit)
-			}
-
+		},
+		methods:{
+			
 		},
 		components: {
 			heads: () => import("./components/headTit.vue")

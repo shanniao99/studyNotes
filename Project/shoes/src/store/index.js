@@ -63,12 +63,12 @@ export default new Vuex.Store({
 		],
 		recommend: [
 			[{
-					id:"01",
+					id: "01",
 					img: require("../assets/homeImg/s3_1.jpg"),
 					txt: "2019春季新款男鞋",
 					price: 249,
-					colors: [
-						{image: require("../assets/homeImg/s3_1.jpg"),
+					colors: [{
+							image: require("../assets/homeImg/s3_1.jpg"),
 							color: "黄色"
 						},
 						{
@@ -87,12 +87,12 @@ export default new Vuex.Store({
 					shoeSize: ["39", "40", "41", "42", "43", "44", "45"],
 				},
 				{
-					id:"02",
+					id: "02",
 					img: require("../assets/homeImg/s3_2.jpg"),
 					txt: "春夏鞋店爆款女鞋",
 					price: 169,
-					colors: [
-						{image: require("../assets/homeImg/s3_2.jpg"),
+					colors: [{
+							image: require("../assets/homeImg/s3_2.jpg"),
 							color: "粉色"
 						},
 						{
@@ -111,7 +111,7 @@ export default new Vuex.Store({
 					shoeSize: ["34", "35", "36", "37", "38"]
 				},
 				{
-					id:"03",
+					id: "03",
 					img: require("../assets/homeImg/s3_3.jpg"),
 					txt: "牛皮爆款时尚女包",
 					price: 239,
@@ -128,7 +128,7 @@ export default new Vuex.Store({
 				}
 			],
 			[{
-					id:"04",
+					id: "04",
 					img: require("../assets/homeImg/s3_4.jpg"),
 					txt: "左右春夏爆款",
 					price: 289,
@@ -148,7 +148,7 @@ export default new Vuex.Store({
 					shoeSize: ["39", "40", "41", "42", "43", "44", "45"],
 				},
 				{
-					id:"05",
+					id: "05",
 					img: require("../assets/homeImg/s3_2.jpg"),
 					txt: "春夏鞋店爆款女鞋",
 					price: 169,
@@ -172,7 +172,7 @@ export default new Vuex.Store({
 					shoeSize: ["34", "35", "36", "37", "38"]
 				},
 				{
-					id:"06",
+					id: "06",
 					img: require("../assets/homeImg/s3_3.jpg"),
 					txt: "牛皮爆款时尚女包",
 					price: 239,
@@ -189,7 +189,7 @@ export default new Vuex.Store({
 				}
 			],
 			[{
-					id:"07",
+					id: "07",
 					img: require("../assets/homeImg/s3_1.jpg"),
 					txt: "2019春季新款男鞋",
 					price: 249,
@@ -213,12 +213,12 @@ export default new Vuex.Store({
 					shoeSize: ["39", "40", "41", "42", "43", "44", "45"],
 				},
 				{
-					id:"08",
+					id: "08",
 					img: require("../assets/homeImg/s3_2.jpg"),
 					txt: "春夏鞋店爆款女鞋",
 					price: 169,
-					colors: [
-						{image: require("../assets/homeImg/s3_2.jpg"),
+					colors: [{
+							image: require("../assets/homeImg/s3_2.jpg"),
 							color: "粉色"
 						},
 						{
@@ -237,7 +237,7 @@ export default new Vuex.Store({
 					shoeSize: ["34", "35", "36", "37", "38"]
 				},
 				{
-					id:"09",
+					id: "09",
 					img: require("../assets/homeImg/s3_4.jpg"),
 					txt: "左右春夏爆款",
 					price: 289,
@@ -257,117 +257,396 @@ export default new Vuex.Store({
 					shoeSize: ["39", "40", "41", "42", "43", "44", "45"],
 				},
 			]
-			
+
 		],
 		special: [
 			[{
+					id: "sp01",
 					img: require("../assets/homeImg/s4_1.jpg"),
 					txt: "左右鞋店春秋爆款断码...",
-					price: 129
+					price: 129,
+					colors: [{
+							image: require("../assets/homeImg/s4_1.jpg"),
+							color: "黑色"
+						},
+						{
+							image: require("../assets/homeImg/s4_1.jpg"),
+							color: "蓝色"
+						},
+						{
+							image: require("../assets/homeImg/s4_1.jpg"),
+							color: "白色"
+						},
+					],
+					shoeSize: ["39", "40", "41", "42", "43", "44", "45"],
 				},
 				{
+					id: "sp02",
 					img: require("../assets/homeImg/s4_2.jpg"),
 					txt: "左右鞋店春秋爆款断码...",
-					price: 129
+					price: 129,
+					colors: [{
+							image: require("../assets/homeImg/s4_2.jpg"),
+							color: "黑色"
+						},
+						{
+							image: require("../assets/homeImg/s4_2.jpg"),
+							color: "银色"
+						},
+						{
+							image: require("../assets/homeImg/s4_2.jpg"),
+							color: "蓝色"
+						},
+						{
+							image: require("../assets/homeImg/s4_2.jpg"),
+							color: "白色"
+						},
+					],
+					shoeSize: ["34", "35", "36", "37", "38"]
 				},
 			],
 			[{
+					id: "sp02",
 					img: require("../assets/homeImg/s4_2.jpg"),
 					txt: "左右鞋店春秋爆款断码...",
-					price: 129
+					price: 129,
+					colors: [{
+							image: require("../assets/homeImg/s4_2.jpg"),
+							color: "黑色"
+						},
+						{
+							image: require("../assets/homeImg/s4_2.jpg"),
+							color: "银色"
+						},
+						{
+							image: require("../assets/homeImg/s4_2.jpg"),
+							color: "蓝色"
+						},
+						{
+							image: require("../assets/homeImg/s4_2.jpg"),
+							color: "白色"
+						},
+					],
+					shoeSize: ["34", "35", "36", "37", "38"]
 				},
 				{
+					id: "sp01",
 					img: require("../assets/homeImg/s4_1.jpg"),
 					txt: "左右鞋店春秋爆款断码...",
-					price: 129
+					price: 129,
+					colors: [{
+							image: require("../assets/homeImg/s4_1.jpg"),
+							color: "黑色"
+						},
+						{
+							image: require("../assets/homeImg/s4_1.jpg"),
+							color: "蓝色"
+						},
+						{
+							image: require("../assets/homeImg/s4_1.jpg"),
+							color: "白色"
+						},
+					],
+					shoeSize: ["39", "40", "41", "42", "43", "44", "45"],
 				},
 			]
 		],
 		newPro: [
 			[{
+					id: "new01",
 					img: require("../assets/homeImg/s5_1.jpg"),
 					txt: "左右鞋店爆款...",
-					price: 389
+					price: 389,
+					colors: [{
+							image: require("../assets/homeImg/s5_1.jpg"),
+							color: "黑色"
+						},
+						{
+							image: require("../assets/homeImg/s5_1.jpg"),
+							color: "白色"
+						},
+					],
+					shoeSize: []
 				},
 				{
+					id: "new02",
 					img: require("../assets/homeImg/s5_2.jpg"),
 					txt: "左右鞋店爆款...",
-					price: 469
+					price: 469,
+					colors: [{
+							image: require("../assets/homeImg/s5_2.jpg"),
+							color: "黑色"
+						},
+						{
+							image: require("../assets/homeImg/s5_2.jpg"),
+							color: "棕色"
+						},
+					],
+					shoeSize: []
 				},
 				{
+					id: "new03",
 					img: require("../assets/homeImg/s5_3.jpg"),
 					txt: "左右鞋店2019...",
-					price: 499
+					price: 499,
+					colors: [{
+							image: require("../assets/homeImg/s5_3.jpg"),
+							color: "黑色"
+						},
+						{
+							image: require("../assets/homeImg/s5_3.jpg"),
+							color: "棕色"
+						},
+					],
+					shoeSize: []
 				},
 			],
 			[{
+					id: "new01",
 					img: require("../assets/homeImg/s5_1.jpg"),
 					txt: "左右鞋店爆款...",
-					price: 389
+					price: 389,
+					colors: [{
+							image: require("../assets/homeImg/s5_1.jpg"),
+							color: "黑色"
+						},
+						{
+							image: require("../assets/homeImg/s5_1.jpg"),
+							color: "白色"
+						},
+					],
+					shoeSize: []
 				},
 				{
+					id: "new02",
 					img: require("../assets/homeImg/s5_2.jpg"),
 					txt: "左右鞋店爆款...",
-					price: 469
+					price: 469,
+					colors: [{
+							image: require("../assets/homeImg/s5_2.jpg"),
+							color: "黑色"
+						},
+						{
+							image: require("../assets/homeImg/s5_2.jpg"),
+							color: "棕色"
+						},
+					],
+					shoeSize: []
 				},
 				{
+					id: "new03",
 					img: require("../assets/homeImg/s5_3.jpg"),
 					txt: "左右鞋店2019...",
-					price: 499
+					price: 499,
+					colors: [{
+							image: require("../assets/homeImg/s5_3.jpg"),
+							color: "黑色"
+						},
+						{
+							image: require("../assets/homeImg/s5_3.jpg"),
+							color: "棕色"
+						},
+					],
+					shoeSize: []
 				},
 			],
 			[{
+					id: "new01",
 					img: require("../assets/homeImg/s5_1.jpg"),
 					txt: "左右鞋店爆款...",
-					price: 389
+					price: 389,
+					colors: [{
+							image: require("../assets/homeImg/s5_1.jpg"),
+							color: "黑色"
+						},
+						{
+							image: require("../assets/homeImg/s5_1.jpg"),
+							color: "白色"
+						},
+					],
+					shoeSize: []
 				},
 				{
+					id: "new02",
 					img: require("../assets/homeImg/s5_2.jpg"),
 					txt: "左右鞋店爆款...",
-					price: 469
+					price: 469,
+					colors: [{
+							image: require("../assets/homeImg/s5_2.jpg"),
+							color: "黑色"
+						},
+						{
+							image: require("../assets/homeImg/s5_2.jpg"),
+							color: "棕色"
+						},
+					],
+					shoeSize: []
 				},
 				{
+					id: "new03",
 					img: require("../assets/homeImg/s5_3.jpg"),
 					txt: "左右鞋店2019...",
-					price: 499
+					price: 499,
+					colors: [{
+							image: require("../assets/homeImg/s5_3.jpg"),
+							color: "黑色"
+						},
+						{
+							image: require("../assets/homeImg/s5_3.jpg"),
+							color: "棕色"
+						},
+					],
+					shoeSize: []
 				},
 			],
 		],
 		morePro: [{
+				id: "more01",
 				img: require("../assets/homeImg/s6_1.jpg"),
 				txt: "左右鞋店春夏爆款福利",
 				price: 169,
-				oldprice: "￥349"
+				oldprice: "￥349",
+				colors: [{
+						image: require("../assets/homeImg/s6_1.jpg"),
+						color: "粉色"
+					},
+					{
+						image: require("../assets/homeImg/s6_1.jpg"),
+						color: "杏色"
+					},
+					{
+						image: require("../assets/homeImg/s6_1.jpg"),
+						color: "黑色"
+					},
+					{
+						image: require("../assets/homeImg/s6_1.jpg"),
+						color: "白色"
+					},
+				],
+				shoeSize: ["34", "35", "36", "37", "38"]
 			},
 			{
+				id: "more02",
 				img: require("../assets/homeImg/s6_2.jpg"),
 				txt: "左右鞋店春夏爆款凉拖",
 				price: 199,
-				oldprice: "￥409"
+				oldprice: "￥409",
+				colors: [{
+						image: require("../assets/homeImg/s6_2.jpg"),
+						color: "粉色"
+					},
+					{
+						image: require("../assets/homeImg/s6_2.jpg"),
+						color: "杏色"
+					},
+					{
+						image: require("../assets/homeImg/s6_2.jpg"),
+						color: "黑色"
+					},
+					{
+						image: require("../assets/homeImg/s6_2.jpg"),
+						color: "白色"
+					},
+				],
+				shoeSize: ["34", "35", "36", "37", "38"]
 			},
 			{
+				id: "more03",
 				img: require("../assets/homeImg/s6_3.jpg"),
 				txt: "左右鞋店春夏爆款福利",
 				price: 149,
-				oldprice: "￥309"
+				oldprice: "￥309",
+				colors: [{
+						image: require("../assets/homeImg/s6_3.jpg"),
+						color: "粉色"
+					},
+					{
+						image: require("../assets/homeImg/s6_3.jpg"),
+						color: "杏色"
+					},
+					{
+						image: require("../assets/homeImg/s6_3.jpg"),
+						color: "黑色"
+					},
+					{
+						image: require("../assets/homeImg/s6_3.jpg"),
+						color: "白色"
+					},
+				],
+				shoeSize: ["34", "35", "36", "37", "38"]
 			},
 			{
+				id: "more04",
 				img: require("../assets/homeImg/s6_4.jpg"),
 				txt: "左右鞋店春夏爆款福利",
 				price: 199,
-				oldprice: "￥409"
+				oldprice: "￥409",
+				colors: [{
+						image: require("../assets/homeImg/s6_4.jpg"),
+						color: "杏色"
+					},
+					{
+						image: require("../assets/homeImg/s6_4.jpg"),
+						color: "黑色"
+					},
+					{
+						image: require("../assets/homeImg/s6_4.jpg"),
+						color: "白色"
+					},
+				],
+				shoeSize: ["34", "35", "36", "37", "38"]
 			},
 			{
+				id: "01",
 				img: require("../assets/homeImg/s3_1.jpg"),
 				txt: "左右鞋店春夏爆款福利",
-				price: 169,
-				oldprice: "￥349"
+				price: 249,
+				oldprice: "￥349",
+				colors: [{
+						image: require("../assets/homeImg/s3_1.jpg"),
+						color: "黄色"
+					},
+					{
+						image: require("../assets/homeImg/s3_1.jpg"),
+						color: "黑色"
+					},
+					{
+						image: require("../assets/homeImg/s3_1.jpg"),
+						color: "蓝色"
+					},
+					{
+						image: require("../assets/homeImg/s3_1.jpg"),
+						color: "白色"
+					},
+				],
+				shoeSize: ["39", "40", "41", "42", "43", "44", "45"],
+
 			},
 			{
+				id: "02",
 				img: require("../assets/homeImg/s3_2.jpg"),
 				txt: "左右鞋店春夏爆款福利",
 				price: 169,
-				oldprice: "￥349"
+				oldprice: "￥349",
+				colors: [{
+						image: require("../assets/homeImg/s3_2.jpg"),
+						color: "粉色"
+					},
+					{
+						image: require("../assets/homeImg/s3_2.jpg"),
+						color: "橙色"
+					},
+					{
+						image: require("../assets/homeImg/s3_2.jpg"),
+						color: "蓝色"
+					},
+					{
+						image: require("../assets/homeImg/s3_2.jpg"),
+						color: "白色"
+					},
+				],
+				shoeSize: ["34", "35", "36", "37", "38"]
+
 			},
 		],
 		classifyShoes: [{
@@ -702,78 +981,343 @@ export default new Vuex.Store({
 			show: true
 		}],
 		items: [{
+				id: "02",
 				img: require("../assets/homeImg/1_1.jpg"),
 				txt: "左右鞋店春夏爆款福利169",
-				price: "169",
+				price: 169,
 				oldprice: "￥349",
 				buy: 8,
-				look: 529
+				look: 529,
+				colors: [{
+						image: require("../assets/homeImg/1_1.jpg"),
+						color: "粉色"
+					},
+					{
+						image: require("../assets/homeImg/1_1.jpg"),
+						color: "橙色"
+					},
+					{
+						image: require("../assets/homeImg/1_1.jpg"),
+						color: "蓝色"
+					},
+					{
+						image: require("../assets/homeImg/1_1.jpg"),
+						color: "白色"
+					},
+				],
+				shoeSize: ["34", "35", "36", "37", "38"]
+
 			},
 			{
+				id: "it01",
 				img: require("../assets/homeImg/1_2.jpg"),
 				txt: "左右鞋店春夏爆款209",
-				price: "209",
+				price: 209,
 				oldprice: "￥429",
 				buy: 30,
-				look: 357
+				look: 357,
+				colors: [{
+						image: require("../assets/homeImg/1_2.jpg"),
+						color: "粉色"
+					},
+					{
+						image: require("../assets/homeImg/1_2.jpg"),
+						color: "杏色"
+					},
+					{
+						image: require("../assets/homeImg/1_2.jpg"),
+						color: "米白色"
+					},
+					{
+						image: require("../assets/homeImg/1_2.jpg"),
+						color: "白色"
+					},
+				],
+				shoeSize: ["34", "35", "36", "37", "38"]
 			},
 			{
+				id: "it02",
 				img: require("../assets/homeImg/1_3.jpg"),
 				txt: "左右鞋店春夏爆款200",
-				price: "200",
+				price: 200,
 				oldprice: "￥409",
 				buy: 34,
-				look: 428
+				look: 428,
+				colors: [{
+						image: require("../assets/homeImg/1_3.jpg"),
+						color: "黑色"
+					},
+					{
+						image: require("../assets/homeImg/1_3.jpg"),
+						color: "红色"
+					},
+					{
+						image: require("../assets/homeImg/1_3.jpg"),
+						color: "白色"
+					},
+				],
+				shoeSize: ["34", "35", "36", "37", "38"]
 			},
 			{
+				id: "it03",
 				img: require("../assets/homeImg/1_4.jpg"),
 				txt: "左右鞋店春夏爆款175",
-				price: "175",
+				price: 175,
 				oldprice: "￥369",
 				buy: 25,
-				look: 593
+				look: 593,
+				colors: [{
+						image: require("../assets/homeImg/1_4.jpg"),
+						color: "绿色"
+					},
+					{
+						image: require("../assets/homeImg/1_4.jpg"),
+						color: "黄色"
+					},
+					{
+						image: require("../assets/homeImg/1_4.jpg"),
+						color: "白色"
+					},
+					{
+						image: require("../assets/homeImg/1_4.jpg"),
+						color: "紫色"
+					},
+					{
+						image: require("../assets/homeImg/1_4.jpg"),
+						color: "蓝色"
+					},
+				],
+				shoeSize: ["34", "35", "36", "37", "38"]
 			},
 			{
+				id: "it04",
 				img: require("../assets/homeImg/1_5.jpg"),
 				txt: "左右鞋店春夏爆款175",
-				price: "169",
+				price: 169,
 				oldprice: "￥349",
 				buy: 49,
-				look: 436
+				look: 436,
+				colors: [{
+						image: require("../assets/homeImg/1_5.jpg"),
+						color: "焦糖色"
+					},
+					{
+						image: require("../assets/homeImg/1_5.jpg"),
+						color: "黄色"
+					},
+					{
+						image: require("../assets/homeImg/1_5.jpg"),
+						color: "白色"
+					},
+					{
+						image: require("../assets/homeImg/1_5.jpg"),
+						color: "黑色"
+					},
+				],
+				shoeSize: ["34", "35", "36", "37", "38"]
 			},
 			{
+				id: "02",
 				img: require("../assets/homeImg/1_1.jpg"),
 				txt: "左右鞋店春夏爆款福利169",
-				price: "169",
+				price: 169,
 				oldprice: "￥349",
 				buy: 8,
-				look: 529
+				look: 529,
+				colors: [{
+						image: require("../assets/homeImg/1_1.jpg"),
+						color: "粉色"
+					},
+					{
+						image: require("../assets/homeImg/1_1.jpg"),
+						color: "橙色"
+					},
+					{
+						image: require("../assets/homeImg/1_1.jpg"),
+						color: "蓝色"
+					},
+					{
+						image: require("../assets/homeImg/1_1.jpg"),
+						color: "白色"
+					},
+				],
+				shoeSize: ["34", "35", "36", "37", "38"]
+
 			},
 			{
+				id: "it01",
 				img: require("../assets/homeImg/1_2.jpg"),
 				txt: "左右鞋店春夏爆款209",
-				price: "209",
+				price: 209,
 				oldprice: "￥429",
 				buy: 30,
-				look: 357
+				look: 357,
+				colors: [{
+						image: require("../assets/homeImg/1_2.jpg"),
+						color: "粉色"
+					},
+					{
+						image: require("../assets/homeImg/1_2.jpg"),
+						color: "杏色"
+					},
+					{
+						image: require("../assets/homeImg/1_2.jpg"),
+						color: "米白色"
+					},
+					{
+						image: require("../assets/homeImg/1_2.jpg"),
+						color: "白色"
+					},
+				],
+				shoeSize: ["34", "35", "36", "37", "38"]
 			},
 		],
-		shoppingcart:[],
-		mine_order:[
-			{icon:"icon-daifukuan",txt:"待付款"},
-			{icon:"icon-daifahuo",txt:"待发货"},
-			{icon:"icon-daifahuo1",txt:"待收货"},
-			{icon:"icon-yiwancheng-yiban-02",txt:"已完成"},
+		shoppingcart: [],
+		mine_order: [{
+				icon: "icon-daifukuan",
+				txt: "待付款"
+			},
+			{
+				icon: "icon-daifahuo",
+				txt: "待发货"
+			},
+			{
+				icon: "icon-daifahuo1",
+				txt: "待收货"
+			},
+			{
+				icon: "icon-yiwancheng-yiban-02",
+				txt: "已完成"
+			},
 		],
-		listFa:[
-			{icon:require("../assets/info.png"),txt:"我的消息"},
-			{icon:require("../assets/shoucang.png"),txt:"我的收藏"},
-			{icon:require("../assets/address.png"),txt:"我的地址"},
-			{icon:require("../assets/zuji.png"),txt:"我的足迹"},
-			{icon:require("../assets/kaquan.png"),txt:"我的卡券"},
-			{icon:require("../assets/jifen.png"),txt:"我的积分"},
-			{icon:require("../assets/kefu.png"),txt:"我的客服"},
-		]
+		listFa: [{
+				icon: require("../assets/info.png"),
+				txt: "我的消息"
+			},
+			{
+				icon: require("../assets/shoucang.png"),
+				txt: "我的收藏"
+			},
+			{
+				icon: require("../assets/address.png"),
+				txt: "我的地址"
+			},
+			{
+				icon: require("../assets/zuji.png"),
+				txt: "我的足迹"
+			},
+			{
+				icon: require("../assets/kaquan.png"),
+				txt: "我的卡券"
+			},
+			{
+				icon: require("../assets/jifen.png"),
+				txt: "我的积分"
+			},
+			{
+				icon: require("../assets/kefu.png"),
+				txt: "我的客服"
+			},
+		],
+		orders: [{
+				tit: "全部",
+				is: "all"
+			},
+			{
+				tit: "待付款",
+				is: "payment"
+			},
+			{
+				tit: "待发货",
+				is: "delivered"
+			},
+			{
+				tit: "待收货",
+				is: "receipt"
+			},
+			{
+				tit: "已完成",
+				is: "completed"
+			}
+		],
+		allorder: [{
+				orderNnum: "6029342543633",
+				img: require("../assets/homeImg/s6_3.jpg"),
+				txt: "左右鞋店春夏爆款凉拖",
+				color: "粉",
+				size: "35",
+				price: 149,
+				num: 1,
+				state: "已完成",
+				btnTxt: "查看订单"
+			},
+			{
+				orderNnum: "6029335143468",
+				img: require("../assets/homeImg/s6_1.jpg"),
+				txt: "左右鞋店春夏爆款福利",
+				color: "黑",
+				size: "35",
+				price: 169,
+				num: 1,
+				state: "待支付",
+				btnTxt: "去支付"
+			},
+			{
+				orderNnum: "6029476239716",
+				img: require("../assets/homeImg/s3_2.jpg"),
+				txt: "左右鞋店春夏爆款福利169",
+				color: "白",
+				size: "35",
+				price: 169,
+				num: 1,
+				state: "已发货",
+				btnTxt: "查看物流"
+			},
+		],
+		payOrder: [{
+			orderNnum: "6029335143468",
+			img: require("../assets/homeImg/s6_1.jpg"),
+			txt: "左右鞋店春夏爆款福利",
+			color: "黑",
+			size: "35",
+			price: 169,
+			num: 1,
+			state: "待支付",
+			btnTxt: "去支付"
+		}, ],
+		delivered: [{
+			orderNnum: "6029335143578",
+			img: require("../assets/homeImg/s3_1.jpg"),
+			txt: "左右鞋店春夏爆款福利",
+			color: "橙",
+			size: "40",
+			price: 169,
+			num: 1,
+			state: "待发货",
+			btnTxt: "查看订单"
+		}, ],
+		receipt: [{
+			orderNnum: "6029476239716",
+			img: require("../assets/homeImg/s3_2.jpg"),
+			txt: "左右鞋店春夏爆款福利169",
+			color: "白",
+			size: "35",
+			price: 169,
+			num: 1,
+			state: "已发货",
+			btnTxt: "查看物流"
+		}, ],
+		completed: [{
+			orderNnum: "6029342543633",
+			img: require("../assets/homeImg/s6_3.jpg"),
+			txt: "左右鞋店春夏爆款凉拖",
+			color: "粉",
+			size: "35",
+			price: 149,
+			num: 1,
+			state: "已完成",
+			btnTxt: "查看订单"
+		}, ]
 	},
 	getters: {},
 	mutations: {},
@@ -784,8 +1328,10 @@ export default new Vuex.Store({
 			storage: window.localStorage,
 			key: "store",
 			render(state) {
-			// 要存储的数据:采用es6扩展运算符的方式存储了state中所有的数据
-				return {...state};
+				// 要存储的数据:采用es6扩展运算符的方式存储了state中所有的数据
+				return {
+					...state
+				};
 			}
 		})
 	]

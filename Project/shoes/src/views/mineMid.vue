@@ -45,7 +45,7 @@
 		<div class="mine-down">
 			<div class="list-box">
 				<ul>
-					<li v-for="v,i in $store.state.listFa" :key="i">
+					<li v-for="v,i in $store.state.listFa" :key="i" @click="list(i)">
 						<div class="info-list">
 							<img :src="v.icon">
 							<p>{{v.txt}}</p>
@@ -70,6 +70,14 @@
 					params:{
 						title:"全部订单",
 						show:true
+					}
+				})
+			},
+			list(i){
+				this.$router.push({
+					name:'list'+i,
+					params:{
+						title:this.$store.state.listFa[i].txt
 					}
 				})
 			}

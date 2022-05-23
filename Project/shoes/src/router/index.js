@@ -39,7 +39,8 @@ export default new Router({
 			name:"details",
 			component:ca,
 			meta:{
-				showFooter:true
+				showFooter:true,
+				show:true
 			}
 		},
 		{
@@ -48,6 +49,15 @@ export default new Router({
 			component:()=>import("../views/allOrder.vue"),
 			meta:{
 				showFooter:true
+			}
+		},
+		{
+			path:"/message",
+			name:"list0",
+			component:()=>import("../views/myMessage.vue"),
+			meta:{
+				showFooter:true,
+				show:false
 			}
 		},
 	],
