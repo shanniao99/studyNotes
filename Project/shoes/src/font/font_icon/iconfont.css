@@ -1,6 +1,6 @@
 @font-face {
   font-family: "iconfont"; /* Project id  */
-  src: url('iconfont.ttf?t=1653114466464') format('truetype');
+  src: url('iconfont.ttf?t=1653380070054') format('truetype');
 }
 
 .iconfont {
@@ -35,6 +35,10 @@
   content: "\e644";
 }
 
+.icon-shanchu:before {
+  content: "\e74b";
+}
+
 .icon-sousuo:before {
   content: "\e613";
 }
@@ -43,11 +47,23 @@
   content: "\e60f";
 }
 
+.icon-bianji:before {
+  content: "\e81d";
+}
+
+.icon-daifukuan:before {
+  content: "\e742";
+}
+
 .icon-shuxian:before {
   content: "\e638";
 }
 
 .icon-daifahuo:before {
+  content: "\e614";
+}
+
+.icon-daifahuo1:before {
   content: "\e604";
 }
 
@@ -61,10 +77,6 @@
 
 .icon-youjiantou_huaban:before {
   content: "\e63e";
-}
-
-.icon-daifahuo1:before {
-  content: "\e649";
 }
 
 .icon-dianzanaixin:before {
@@ -84,10 +96,6 @@
 }
 
 .icon-shezhongrenyuan:before {
-  content: "\e617";
-}
-
-.icon-daifukuan:before {
-  content: "\e75d";
+  content: "\e616";
 }
 

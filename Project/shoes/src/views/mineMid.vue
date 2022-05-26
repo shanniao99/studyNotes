@@ -35,7 +35,7 @@
 					</div>
 				</div>
 				<ul>
-					<li v-for="v,i in $store.state.mine_order" :key="i">
+					<li v-for="v,i in $store.state.mine_order" :key="i" @click="Tosome(i)">
 						<span :class="['iconfont',v.icon]"></span>
 						<p>{{v.txt}}</p>
 					</li>
@@ -61,7 +61,10 @@
 <script>
 	export default{
 		data(){
-			return{}
+			return{
+				isArr:["message","collect","addres","footprint","coupon","integral"],
+				orderlist:["all","payment","delivered","receipt","completed"],
+			}
 		},
 		methods:{
 			Toorder(){
@@ -75,12 +78,23 @@
 			},
 			list(i){
 				this.$router.push({
-					name:'list'+i,
+					name:'list',
 					params:{
-						title:this.$store.state.listFa[i].txt
+						title:this.$store.state.listFa[i].txt,
+						is:this.isArr[i]
 					}
 				})
-			}
+			},
+			Tosome(i){
+				this.$router.push({
+					name:'order',
+					params:{
+						title:"全部订单",
+						show:true,
+						active:i+1
+					}
+				})
+			},
 		}
 	}
 </script>

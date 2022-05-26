@@ -26,7 +26,12 @@
 				active: 0
 			}
 		},
-		mounted() {},
+		mounted() {
+			console.log(this.$route.params.active)
+			if(this.$route.params.active!=undefined){
+				this.active=this.$route.params.active
+			}
+		},
 		components: {
 			heads: () => import("../components/headTit.vue"),
 			all:()=>import("../components/allOrder.vue"),

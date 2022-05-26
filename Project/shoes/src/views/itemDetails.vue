@@ -64,8 +64,8 @@
 								<div class="topMid">
 									<span>颜色分类</span>
 									<ul>
-										<li :class="col==v.color?'on':''" v-for="v,i in list.colors"
-											:key="i" @click="colorChoose(i)">
+										<li :class="col==v.color?'on':''" v-for="v,i in list.colors" :key="i"
+											@click="colorChoose(i)">
 											<img :src="v.image">
 											<span>{{v.color}}</span>
 										</li>
@@ -123,8 +123,8 @@
 			<van-goods-action>
 				<van-goods-action-icon icon="chat-o" text="客服" />
 				<van-goods-action-icon icon="cart-o" text="购物车" @click="Toshoppingcart" />
-				<van-goods-action-icon :icon="collect?'star':'star-o'" text="收藏" :color="collect?'#ff5e46':''" @click="collect=!collect"/>
-
+				<van-goods-action-icon :icon="collect?'star':'star-o'" text="收藏" :color="collect?'#ff5e46':''"
+					@click="Tocollect" />
 				<div class="foot-btn">
 					<van-goods-action-button type="warning" text="加入购物车" @click="show = true,sure=true" />
 					<van-goods-action-button type="danger" text="立即购买" />
@@ -146,10 +146,11 @@
 		Toast,
 		Cell,
 		Sku,
-		Stepper,Dialog
+		Stepper,
+		Dialog
 	} from 'vant';
 
-	Vue.use(Toast); 
+	Vue.use(Toast);
 	Vue.use(Stepper);
 	Vue.use(Sku)
 	Vue.use(Cell);
@@ -171,14 +172,15 @@
 				size: "尺码",
 				sure: false,
 				Img: '',
-				list:{},
-				collect:false,
-				
+				list: {},
+				collect: false,
+				collectArr: [],
+
 			}
 		},
 		created() {
-			if(this.$route.params.list){
-				this.list=this.$route.params.list
+			if (this.$route.params.list) {
+				this.list = this.$route.params.list
 			}
 			// else{
 			// 	for(let i=0;i<this.$store.state.recommend.length;i++){
@@ -195,18 +197,18 @@
 			// 	this.Img=this.$route.query.list.img;
 			// 	this.choose="已选"
 			// }
-			if(this.list.shoeSize.length>0){
-				this.baozhang=true;
-			}else{
-				this.baozhang=false;
+			if (this.list.shoeSize.length > 0) {
+				this.baozhang = true;
+			} else {
+				this.baozhang = false;
 			}
 		},
-		
+
 		methods: {
 			onChange(index) {
 				this.current = index;
 			},
-			colorChoose(i) {   //选择商品颜色时的颜色更改
+			colorChoose(i) { //选择商品颜色时的颜色更改
 				if (this.col == this.list.colors[i].color) {
 					if (this.size == "尺码") {
 						this.choose = "请选择"
@@ -218,7 +220,7 @@
 					this.choose = "已选";
 				}
 			},
-			sizeChoose(i) {  //商品尺码动态更改
+			sizeChoose(i) { //商品尺码动态更改
 				if (this.size == this.list.shoeSize[i]) {
 					if (this.col == "颜色") {
 						this.choose = "请选择"
@@ -229,42 +231,43 @@
 					this.choose = "已选"
 				}
 			},
-			intoCar() {  //添加到购物车操作
+			intoCar() { //添加到购物车操作
 				let obj = {};
 				if (this.col == "颜色") {
 					Dialog.alert({
 						message: '请选择颜色分类',
 					});
-				}else if(this.list.shoeSize.length&&this.size=="尺码"){
+				} else if (this.list.shoeSize.length && this.size == "尺码") {
 					Dialog.alert({
 						message: '请选择尺码大小',
 					});
-				}else{
+				} else {
 					let size;
-					if(this.list.shoeSize.length>0){
-						size=this.size;
-					}else{
-						size='';
+					if (this.list.shoeSize.length > 0) {
+						size = this.size;
+					} else {
+						size = '';
 					}
-					let num=document.getElementsByClassName("buyNum")[0].getElementsByTagName("input")[0].ariaValueNow;
-					obj={
-						img:this.Img,
-						txt:this.list.txt,
-						price:this.list.price,
-						color:this.col,
+					let num = document.getElementsByClassName("buyNum")[0].getElementsByTagName("input")[0].ariaValueNow;
+					obj = {
+						img: this.Img,
+						txt: this.list.txt,
+						price: this.list.price,
+						color: this.col,
 						size,
 						num,
-						id:this.list.id
+						id: this.list.id
 					}
-					if(localStorage.length > 0){
-						this.$store.state.shoppingcart=JSON.parse(localStorage.getItem("info"));
+					if (localStorage.length > 0) {
+						this.$store.state.shoppingcart = JSON.parse(localStorage.getItem("info"));
 					}
-					let Index=this.$store.state.shoppingcart.findIndex((v)=>{
-						return v.id==obj.id&&v.color==obj.color&&v.size==obj.size
+					let Index = this.$store.state.shoppingcart.findIndex((v) => {
+						return v.id == obj.id && v.color == obj.color && v.size == obj.size
 					})
-					if(Index!=-1){
-						this.$store.state.shoppingcart[Index].num=Number(this.$store.state.shoppingcart[Index].num)+Number(num);
-					}else{
+					if (Index != -1) {
+						this.$store.state.shoppingcart[Index].num = Number(this.$store.state.shoppingcart[Index].num) +
+							Number(num);
+					} else {
 						this.$store.state.shoppingcart.push(obj);
 					}
 					localStorage.setItem("info", JSON.stringify(this.$store.state.shoppingcart))
@@ -272,14 +275,43 @@
 					console.log(this.$store.state.shoppingcart)
 				}
 			},
-			Toshoppingcart(){
+			Toshoppingcart() {
 				this.$router.push({
-					path:"/shoppingcart",
-					query:{
-						tit:"购物车"
+					path: "/shoppingcart",
+					query: {
+						tit: "购物车"
 					}
 				})
 			},
+			Tocollect() {  //点击收藏和取消收藏
+				this.collect = !this.collect;
+				if (this.collect) {
+					if (localStorage.getItem("collect")) {
+						this.collectArr = JSON.parse(localStorage.getItem("collect"))
+					}
+					let Index = this.collectArr.findIndex((v) => {
+						return v.id == this.list.id
+					})
+					if (Index != -1) {
+						this.collectArr.splice(Index, 1); //有相同的数据，只保留一条
+					} else {
+						this.collectArr.push(this.list);
+					}
+					localStorage.setItem("collect", JSON.stringify(this.collectArr));
+				} else {
+					if (localStorage.getItem("collect")) {
+						this.collectArr = JSON.parse(localStorage.getItem("collect"))
+						let Index = this.collectArr.findIndex((v) => {
+							return v.id == this.list.id
+						})
+						if (Index != -1) {
+							this.collectArr.splice(Index, 1); //有相同的数据，取消收藏
+						}
+						localStorage.setItem("collect", JSON.stringify(this.collectArr));
+					}
+
+				}
+			}
 		},
 	}
 </script>
@@ -474,7 +506,8 @@
 		display: flex;
 		justify-content: space-between;
 	}
-	.constent_top img{
+
+	.constent_top img {
 		width: 150px;
 		height: 150px;
 	}

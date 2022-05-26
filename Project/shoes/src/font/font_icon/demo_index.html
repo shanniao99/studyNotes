@@ -89,6 +89,12 @@
               </li>
           
             <li class="dib">
+              <span class="icon iconfont">&#xe74b;</span>
+                <div class="name">删除</div>
+                <div class="code-name">&amp;#xe74b;</div>
+              </li>
+          
+            <li class="dib">
               <span class="icon iconfont">&#xe613;</span>
                 <div class="name">搜索</div>
                 <div class="code-name">&amp;#xe613;</div>
@@ -101,9 +107,27 @@
               </li>
           
             <li class="dib">
+              <span class="icon iconfont">&#xe81d;</span>
+                <div class="name">编辑</div>
+                <div class="code-name">&amp;#xe81d;</div>
+              </li>
+          
+            <li class="dib">
+              <span class="icon iconfont">&#xe742;</span>
+                <div class="name">待付款</div>
+                <div class="code-name">&amp;#xe742;</div>
+              </li>
+          
+            <li class="dib">
               <span class="icon iconfont">&#xe638;</span>
                 <div class="name">竖线</div>
                 <div class="code-name">&amp;#xe638;</div>
+              </li>
+          
+            <li class="dib">
+              <span class="icon iconfont">&#xe614;</span>
+                <div class="name">待发货</div>
+                <div class="code-name">&amp;#xe614;</div>
               </li>
           
             <li class="dib">
@@ -131,12 +155,6 @@
               </li>
           
             <li class="dib">
-              <span class="icon iconfont">&#xe649;</span>
-                <div class="name">待发货</div>
-                <div class="code-name">&amp;#xe649;</div>
-              </li>
-          
-            <li class="dib">
               <span class="icon iconfont">&#xe60c;</span>
                 <div class="name">点赞爱心</div>
                 <div class="code-name">&amp;#xe60c;</div>
@@ -161,15 +179,9 @@
               </li>
           
             <li class="dib">
-              <span class="icon iconfont">&#xe617;</span>
+              <span class="icon iconfont">&#xe616;</span>
                 <div class="name">涉众人员</div>
-                <div class="code-name">&amp;#xe617;</div>
-              </li>
-          
-            <li class="dib">
-              <span class="icon iconfont">&#xe75d;</span>
-                <div class="name">代付款</div>
-                <div class="code-name">&amp;#xe75d;</div>
+                <div class="code-name">&amp;#xe616;</div>
               </li>
           
           </ul>
@@ -190,7 +202,7 @@
 <pre><code class="language-css"
 >@font-face {
   font-family: 'iconfont';
-  src: url('iconfont.ttf?t=1653114466464') format('truetype');
+  src: url('iconfont.ttf?t=1653380070054') format('truetype');
 }
 </code></pre>
           <h3 id="-iconfont-">第二步：定义使用 iconfont 的样式</h3>
@@ -271,6 +283,15 @@
           </li>
           
           <li class="dib">
+            <span class="icon iconfont icon-shanchu"></span>
+            <div class="name">
+              删除
+            </div>
+            <div class="code-name">.icon-shanchu
+            </div>
+          </li>
+          
+          <li class="dib">
             <span class="icon iconfont icon-sousuo"></span>
             <div class="name">
               搜索
@@ -289,6 +310,24 @@
           </li>
           
           <li class="dib">
+            <span class="icon iconfont icon-bianji"></span>
+            <div class="name">
+              编辑
+            </div>
+            <div class="code-name">.icon-bianji
+            </div>
+          </li>
+          
+          <li class="dib">
+            <span class="icon iconfont icon-daifukuan"></span>
+            <div class="name">
+              待付款
+            </div>
+            <div class="code-name">.icon-daifukuan
+            </div>
+          </li>
+          
+          <li class="dib">
             <span class="icon iconfont icon-shuxian"></span>
             <div class="name">
               竖线
@@ -303,6 +342,15 @@
               待发货
             </div>
             <div class="code-name">.icon-daifahuo
+            </div>
+          </li>
+          
+          <li class="dib">
+            <span class="icon iconfont icon-daifahuo1"></span>
+            <div class="name">
+              待发货
+            </div>
+            <div class="code-name">.icon-daifahuo1
             </div>
           </li>
           
@@ -330,15 +378,6 @@
               右箭头
             </div>
             <div class="code-name">.icon-youjiantou_huaban
-            </div>
-          </li>
-          
-          <li class="dib">
-            <span class="icon iconfont icon-daifahuo1"></span>
-            <div class="name">
-              待发货
-            </div>
-            <div class="code-name">.icon-daifahuo1
             </div>
           </li>
           
@@ -384,15 +423,6 @@
               涉众人员
             </div>
             <div class="code-name">.icon-shezhongrenyuan
-            </div>
-          </li>
-          
-          <li class="dib">
-            <span class="icon iconfont icon-daifukuan"></span>
-            <div class="name">
-              代付款
-            </div>
-            <div class="code-name">.icon-daifukuan
             </div>
           </li>
           
@@ -473,6 +503,14 @@
           
             <li class="dib">
                 <svg class="icon svg-icon" aria-hidden="true">
+                  <use xlink:href="#icon-shanchu"></use>
+                </svg>
+                <div class="name">删除</div>
+                <div class="code-name">#icon-shanchu</div>
+            </li>
+          
+            <li class="dib">
+                <svg class="icon svg-icon" aria-hidden="true">
                   <use xlink:href="#icon-sousuo"></use>
                 </svg>
                 <div class="name">搜索</div>
@@ -489,6 +527,22 @@
           
             <li class="dib">
                 <svg class="icon svg-icon" aria-hidden="true">
+                  <use xlink:href="#icon-bianji"></use>
+                </svg>
+                <div class="name">编辑</div>
+                <div class="code-name">#icon-bianji</div>
+            </li>
+          
+            <li class="dib">
+                <svg class="icon svg-icon" aria-hidden="true">
+                  <use xlink:href="#icon-daifukuan"></use>
+                </svg>
+                <div class="name">待付款</div>
+                <div class="code-name">#icon-daifukuan</div>
+            </li>
+          
+            <li class="dib">
+                <svg class="icon svg-icon" aria-hidden="true">
                   <use xlink:href="#icon-shuxian"></use>
                 </svg>
                 <div class="name">竖线</div>
@@ -501,6 +555,14 @@
                 </svg>
                 <div class="name">待发货</div>
                 <div class="code-name">#icon-daifahuo</div>
+            </li>
+          
+            <li class="dib">
+                <svg class="icon svg-icon" aria-hidden="true">
+                  <use xlink:href="#icon-daifahuo1"></use>
+                </svg>
+                <div class="name">待发货</div>
+                <div class="code-name">#icon-daifahuo1</div>
             </li>
           
             <li class="dib">
@@ -525,14 +587,6 @@
                 </svg>
                 <div class="name">右箭头</div>
                 <div class="code-name">#icon-youjiantou_huaban</div>
-            </li>
-          
-            <li class="dib">
-                <svg class="icon svg-icon" aria-hidden="true">
-                  <use xlink:href="#icon-daifahuo1"></use>
-                </svg>
-                <div class="name">待发货</div>
-                <div class="code-name">#icon-daifahuo1</div>
             </li>
           
             <li class="dib">
@@ -573,14 +627,6 @@
                 </svg>
                 <div class="name">涉众人员</div>
                 <div class="code-name">#icon-shezhongrenyuan</div>
-            </li>
-          
-            <li class="dib">
-                <svg class="icon svg-icon" aria-hidden="true">
-                  <use xlink:href="#icon-daifukuan"></use>
-                </svg>
-                <div class="name">代付款</div>
-                <div class="code-name">#icon-daifukuan</div>
             </li>
           
           </ul>

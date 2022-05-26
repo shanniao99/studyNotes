@@ -53,8 +53,17 @@ export default new Router({
 		},
 		{
 			path:"/message",
-			name:"list0",
+			name:"list",
 			component:()=>import("../views/myMessage.vue"),
+			meta:{
+				showFooter:true,
+				show:false
+			}
+		},
+		{
+			path:"/newaddress",
+			name:"newads",
+			component:()=>import("../views/newAddress.vue"),
 			meta:{
 				showFooter:true,
 				show:false

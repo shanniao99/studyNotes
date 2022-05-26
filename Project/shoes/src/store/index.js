@@ -1178,11 +1178,11 @@ export default new Vuex.Store({
 				txt: "待付款"
 			},
 			{
-				icon: "icon-daifahuo",
+				icon: "icon-daifahuo1",
 				txt: "待发货"
 			},
 			{
-				icon: "icon-daifahuo1",
+				icon:"icon-daifahuo",
 				txt: "待收货"
 			},
 			{

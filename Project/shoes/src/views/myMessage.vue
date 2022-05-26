@@ -1,7 +1,9 @@
 <template>
 	<div>
 		<heads :title="$route.params.title"></heads>
-		我的消息
+		<keep-alive>
+			<component :is="$route.params.is"></component>
+		</keep-alive>
 	</div>
 </template>
 
@@ -13,7 +15,13 @@
 			}
 		},
 		components: {
-			heads: () => import("../components/headTit.vue")
+			heads: () => import("../components/headTit.vue"),
+			message:()=>import("../components/myMsg.vue"),
+			collect:()=>import("../components/myCol.vue"),
+			addres:()=>import("../components/myAddress.vue"),
+			footprint:()=>import("../components/myFoot.vue"),
+			coupon:()=>import("../components/myCoupon.vue"),
+			integral:()=>import("../components/myInte.vue"),
 		},
 	}
 </script>
