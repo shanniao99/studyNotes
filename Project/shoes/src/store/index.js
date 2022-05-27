@@ -1317,7 +1317,18 @@ export default new Vuex.Store({
 			num: 1,
 			state: "已完成",
 			btnTxt: "查看订单"
-		}, ]
+		}, ],
+		integral:[
+			{num:5,time:"2022.05.30",require:500,now:"立即兑换",notPonit:"积分不足"},
+			{num:10,time:"2022.05.30",require:1000,now:"立即兑换",notPonit:"积分不足"},
+			{num:15,time:"2022.06.01",require:1500,now:"立即兑换",notPonit:"积分不足"},
+		],
+		signTask:[
+			{txt:"浏览20件宝贝",num:20,point:200,finished:0},
+			{txt:"收藏10件宝贝",num:10,point:100,finished:0},
+			{txt:"收藏20件宝贝",num:20,point:200,finished:0},
+			{txt:"购买1件宝贝",num:1,point:500,finished:1},
+		]
 	},
 	getters: {},
 	mutations: {},

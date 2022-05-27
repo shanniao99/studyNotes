@@ -32,6 +32,12 @@
 </template>
 
 <script>
+	import Vue from 'vue';
+	import {
+		Icon
+	} from 'vant';
+
+	Vue.use(Icon);
 	export default {
 		data() {
 			return {
@@ -64,6 +70,10 @@
 			//判断是否为闰年
 			isLeapYear(year) {
 				return year % 4 == 0 && year % 100 !== 0 || year % 400 == 0
+			},
+			getFebruary() {
+				let February = this.isLeapYear(this.year) ? 29 : 28
+				this.monthDay.splice(1, 1, February)
 			},
 
 			//获取当前日期
@@ -221,81 +231,81 @@
 	}
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 	.calendar {
 		font-size: .8em;
 		width: 80%;
 		margin: 0 auto;
 		height: auto;
+	}
 
-		.flex_sb {
-			display: flex;
-			justify-content: space-between;
-		}
+	.flex_sb {
+		display: flex;
+		justify-content: space-between;
+	}
 
-		.grey {
-			background-color: rgb(247, 244, 244);
-		}
+	.grey {
+		background-color: rgb(247, 244, 244);
+	}
 
-		.relative {
-			position: relative;
-		}
+	.relative {
+		position: relative;
+	}
 
-		&.hidden {
-			height: 4.8em;
-			overflow: hidden;
-		}
+	.hidden {
+		height: 4.8em;
+		overflow: hidden;
+	}
 
-		.week {
-			z-index: 10;
-			background: #fff;
-		}
+	.week {
+		z-index: 10;
+		background: #fff;
+	}
 
-		.cellbox {
-			flex-wrap: wrap;
-			margin: 0;
+	.cellbox {
+		flex-wrap: wrap;
+		margin: 0;
+	}
 
-			p {
-				display: inline-block;
-				width: 14.28%;
-				height: 2.4em;
-				line-height: 2.4em;
-				box-sizing: border-box;
-				margin: 0;
+	p {
+		display: inline-block;
+		width: 14.28%;
+		height: 2.4em;
+		line-height: 2.4em;
+		box-sizing: border-box;
+		margin: 0;
+	}
 
-				&.active {
-					color: #eee;
-					background-color: #409EFF;
-				}
-			}
-		}
+	p.active {
+		color: #eee;
+		background-color: #409EFF;
+	}
 
-		.border p {
-			border: 1px solid #eee;
-		}
+	.border p {
+		border: 1px solid #eee;
+	}
 
-		.row-1 {
-			top: 0
-		}
+	.row-1 {
+		top: 0
+	}
 
-		.row-2 {
-			top: -2.4em
-		}
+	.row-2 {
+		top: -2.4em
+	}
 
-		.row-3 {
-			top: -4.8em
-		}
+	.row-3 {
+		top: -4.8em
+	}
 
-		.row-4 {
-			top: -7.2em
-		}
+	.row-4 {
+		top: -7.2em
+	}
 
-		.row-5 {
-			top: -9.6em
-		}
+	.row-5 {
+		top: -9.6em
+	}
 
-		.row-6 {
-			top: -12em
-		}
+	.row-6 {
+		top: -12em
 	}
 </style>

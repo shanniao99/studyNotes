@@ -15,7 +15,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="box-right">
+					<div class="box-right" @click="signIn">
 						<div class="qiandao">
 							<span class="iconfont icon-qiandao"></span>
 							<span>签到</span>
@@ -68,7 +68,7 @@
 		},
 		methods:{
 			Toorder(){
-				this.$router.push({
+				this.$router.push({  //点击进入全部订单
 					name:'order',
 					params:{
 						title:"全部订单",
@@ -76,7 +76,7 @@
 					}
 				})
 			},
-			list(i){
+			list(i){  //点击进入我的系列
 				this.$router.push({
 					name:'list',
 					params:{
@@ -85,7 +85,7 @@
 					}
 				})
 			},
-			Tosome(i){
+			Tosome(i){//点击订单分类进入全部订单中对应分类
 				this.$router.push({
 					name:'order',
 					params:{
@@ -95,6 +95,15 @@
 					}
 				})
 			},
+			signIn(){  //签到
+				this.$router.push({
+					name:'list',
+					params:{
+						title:"签到",
+						is:"sign"
+					}
+				})
+			}
 		}
 	}
 </script>

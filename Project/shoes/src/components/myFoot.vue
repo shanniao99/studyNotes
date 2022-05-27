@@ -12,33 +12,35 @@
 					<li>六</li>
 				</ul>
 			</div>
-			<van-cell title="选择单个日期" :value="date" @click="show = true" />
-			<van-calendar v-model="show" @confirm="onConfirm"/>
+			<div class="con">
+				<Calendar v-on:choseDay="clickDay" v-on:changeMonth="changeDate" v-on:isToday="clickToday"></Calendar>
+			</div>
 		</div>
+
 	</div>
 </template>
 
 <script>
-	import Vue from 'vue';
-	import {
-		Calendar
-	} from 'vant';
-
-	Vue.use(Calendar);
+	import Calendar from 'vue-calendar-component';
 	export default {
+		components: {
+			Calendar
+		},
 		data() {
-			return {
-				show: false,
-				date:''
+			return {};
+		},
+		created() {},
+		methods: {
+			clickDay(data) {
+				console.log(data); //选中某天
+			},
+			changeDate(data) {
+				console.log(data); //左右点击切换月份
+			},
+			clickToday(data) {
+				console.log(data); // 跳到了本月
 			}
 		},
-		methods: {
-			onConfirm(date) {
-				this.show = false;
-				this.date = this.formatDate(date);
-			},
-		},
-
 	}
 </script>
 
@@ -77,7 +79,7 @@
 		color: #999;
 		font-family: "苹方";
 	}
-	.van-calendar__header{
-		display: none;
+	.wh_container[data-v-2ebcbc83] {
+		max-width: 750px;
 	}
 </style>
