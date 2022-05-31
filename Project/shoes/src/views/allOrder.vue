@@ -27,7 +27,6 @@
 			}
 		},
 		mounted() {
-			console.log(this.$route.params.active)
 			if(this.$route.params.active!=undefined){
 				this.active=this.$route.params.active
 			}

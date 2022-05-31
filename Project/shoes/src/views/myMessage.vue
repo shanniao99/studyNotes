@@ -22,7 +22,7 @@
 			footprint:()=>import("../components/myFoot.vue"),
 			coupon:()=>import("../components/myCoupon.vue"),
 			integral:()=>import("../components/myInte.vue"),
-			sign:()=>import("../components/signIn.vue")
+			sign:()=>import("../components/signIn.vue"),
 		},
 	}
 </script>

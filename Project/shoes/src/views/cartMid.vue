@@ -23,7 +23,7 @@
 			<div class="total"><span>合计：</span>
 				<div class="tatal-box">￥<input type="text" ref="money" value="0.00" readonly></div>
 			</div>
-			<button>去结算</button>
+			<button @click="Tobuy">去结算</button>
 		</div>
 	</div>
 </template>
@@ -80,11 +80,10 @@
 				localStorage.setItem("info", JSON.stringify(this.arr));
 			},
 			totalPrice() { //根据选中状态计算总价
-				let local = JSON.parse(localStorage.getItem("info"));
 				let sum = 0;
 				for (let i = 0; i < this.checktrigger.length; i++) {
 					if (this.checktrigger[i]) {
-						sum += Number(local[i].price) * Number(local[i].num);
+						sum += Number(this.arr[i].price) * Number(this.arr[i].num);
 					}
 				}
 				return (sum*100/100).toFixed(2)
@@ -170,14 +169,21 @@
 						break;
 				}
 			},
-			// toDet(i){  //点击商品进入商品详情
-			// 	this.$router.push({
-			// 		path:'/details',
-			// 		query:{
-			// 			list:this.arr[i]
-			// 		}
-			// 	})
-			// },
+			Tobuy(){
+				let data=[];
+				this.checktrigger.forEach((v,i)=>{
+					if(v){
+						data.push(this.arr[i]);
+					}
+				})
+				this.$router.push({
+					name: "settlement",
+					params: {
+						title: "确认订单",
+						obj:data,
+					}
+				})
+			}
 		}
 	}
 </script>

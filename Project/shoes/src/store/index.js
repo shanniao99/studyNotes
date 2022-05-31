@@ -1182,7 +1182,7 @@ export default new Vuex.Store({
 				txt: "待发货"
 			},
 			{
-				icon:"icon-daifahuo",
+				icon: "icon-daifahuo",
 				txt: "待收货"
 			},
 			{
@@ -1272,63 +1272,69 @@ export default new Vuex.Store({
 				num: 1,
 				state: "已发货",
 				btnTxt: "查看物流"
+			}, {
+				orderNnum: "6029335143578",
+				img: require("../assets/homeImg/s3_1.jpg"),
+				txt: "左右鞋店春夏爆款福利",
+				color: "橙",
+				size: "40",
+				price: 169,
+				num: 1,
+				state: "待发货",
+				btnTxt: "查看订单"
 			},
 		],
-		payOrder: [{
-			orderNnum: "6029335143468",
-			img: require("../assets/homeImg/s6_1.jpg"),
-			txt: "左右鞋店春夏爆款福利",
-			color: "黑",
-			size: "35",
-			price: 169,
-			num: 1,
-			state: "待支付",
-			btnTxt: "去支付"
-		}, ],
-		delivered: [{
-			orderNnum: "6029335143578",
-			img: require("../assets/homeImg/s3_1.jpg"),
-			txt: "左右鞋店春夏爆款福利",
-			color: "橙",
-			size: "40",
-			price: 169,
-			num: 1,
-			state: "待发货",
-			btnTxt: "查看订单"
-		}, ],
-		receipt: [{
-			orderNnum: "6029476239716",
-			img: require("../assets/homeImg/s3_2.jpg"),
-			txt: "左右鞋店春夏爆款福利169",
-			color: "白",
-			size: "35",
-			price: 169,
-			num: 1,
-			state: "已发货",
-			btnTxt: "查看物流"
-		}, ],
-		completed: [{
-			orderNnum: "6029342543633",
-			img: require("../assets/homeImg/s6_3.jpg"),
-			txt: "左右鞋店春夏爆款凉拖",
-			color: "粉",
-			size: "35",
-			price: 149,
-			num: 1,
-			state: "已完成",
-			btnTxt: "查看订单"
-		}, ],
-		integral:[
-			{num:5,time:"2022.05.30",require:500,now:"立即兑换",notPonit:"积分不足"},
-			{num:10,time:"2022.05.30",require:1000,now:"立即兑换",notPonit:"积分不足"},
-			{num:15,time:"2022.06.01",require:1500,now:"立即兑换",notPonit:"积分不足"},
+		integral: [{
+				num: 5,
+				time: "2022.05.30",
+				require: 500,
+				now: "立即兑换",
+				notPonit: "积分不足"
+			},
+			{
+				num: 10,
+				time: "2022.05.30",
+				require: 1000,
+				now: "立即兑换",
+				notPonit: "积分不足"
+			},
+			{
+				num: 15,
+				time: "2022.06.01",
+				require: 1500,
+				now: "立即兑换",
+				notPonit: "积分不足"
+			},
 		],
-		signTask:[
-			{txt:"浏览20件宝贝",num:20,point:200,finished:0},
-			{txt:"收藏10件宝贝",num:10,point:100,finished:0},
-			{txt:"收藏20件宝贝",num:20,point:200,finished:0},
-			{txt:"购买1件宝贝",num:1,point:500,finished:1},
-		]
+		signTask: [{
+				txt: "浏览20件宝贝",
+				num: 20,
+				point: 200,
+				finished: 0
+			},
+			{
+				txt: "收藏10件宝贝",
+				num: 10,
+				point: 100,
+				finished: 0
+			},
+			{
+				txt: "收藏20件宝贝",
+				num: 20,
+				point: 200,
+				finished: 0
+			},
+			{
+				txt: "购买1件宝贝",
+				num: 1,
+				point: 500,
+				finished: 1
+			},
+		],
+		signdays: 0, //签到天数
+		times: 0, //一天签到次数
+		points: 1123, //积分
+		data: [],
 	},
 	getters: {},
 	mutations: {},

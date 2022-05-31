@@ -69,6 +69,24 @@ export default new Router({
 				show:false
 			}
 		},
+		{
+			path:"/settlement",
+			name:"settlement",
+			component:()=>import("../views/orderSettlement.vue"),
+			meta:{
+				showFooter:true,
+				show:false
+			}
+		},
+		{
+			path:"/successbuy",
+			name:"buy",
+			component:()=>import("../views/successBuy.vue"),
+			meta:{
+				showFooter:true,
+				show:false
+			}
+		},
 	],
 	mode:"history"
 })

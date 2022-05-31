@@ -87,12 +87,15 @@
 									</div>
 								</div>
 								<div class="content-down">
-									<div class="down-btn" v-if="!sure">
+									<div class="down-btn" v-if="!sure&&!buy">
 										<button @click="intoCar">加入购物车</button>
 										<button>立即购买</button>
 									</div>
-									<div class="btn-sure" v-else>
+									<div class="btn-sure" v-else-if="!buy">
 										<button @click="intoCar">确定</button>
+									</div>
+									<div class="btn-sure" v-else>
+										<button @click="buyItem">确定</button>
 									</div>
 								</div>
 							</div>
@@ -122,12 +125,12 @@
 		<footer>
 			<van-goods-action>
 				<van-goods-action-icon icon="chat-o" text="客服" />
-				<van-goods-action-icon icon="cart-o" text="购物车" @click="Toshoppingcart" />
+				<van-goods-action-icon icon="shop" text="店铺" />
 				<van-goods-action-icon :icon="collect?'star':'star-o'" text="收藏" :color="collect?'#ff5e46':''"
 					@click="Tocollect" />
 				<div class="foot-btn">
 					<van-goods-action-button type="warning" text="加入购物车" @click="show = true,sure=true" />
-					<van-goods-action-button type="danger" text="立即购买" />
+					<van-goods-action-button type="danger" text="立即购买" @click="show=true,buy=true" />
 				</div>
 			</van-goods-action>
 		</footer>
@@ -165,12 +168,13 @@
 		data() {
 			return {
 				current: 0,
-				show: false,
+				show: false, //弹出框
 				baozhang: true,
 				choose: "请选择",
 				col: "颜色",
 				size: "尺码",
-				sure: false,
+				sure: false, //加入购物车
+				buy: false, //立即购买
 				Img: '',
 				list: {},
 				collect: false,
@@ -182,21 +186,6 @@
 			if (this.$route.params.list) {
 				this.list = this.$route.params.list
 			}
-			// else{
-			// 	for(let i=0;i<this.$store.state.recommend.length;i++){
-			// 		let arr=this.$store.state.recommend[i];
-			// 		for(let j=0;j<arr.length;j++){
-			// 			if(arr[j].id==this.$route.query.list.id){
-			// 				this.list=arr[j];
-			// 				break;
-			// 			}
-			// 		}
-			// 	}
-			// 	this.col=this.$route.query.list.color;
-			// 	this.size=this.$route.query.list.size;
-			// 	this.Img=this.$route.query.list.img;
-			// 	this.choose="已选"
-			// }
 			if (this.list.shoeSize.length > 0) {
 				this.baozhang = true;
 			} else {
@@ -207,6 +196,36 @@
 		methods: {
 			onChange(index) {
 				this.current = index;
+			},
+			beforeCar() { //存入本地前的准备工作
+				let obj = {};
+				if (this.col == "颜色") {
+					Dialog.alert({
+						message: '请选择颜色分类',
+					});
+				} else if (this.list.shoeSize.length && this.size == "尺码") {
+					Dialog.alert({
+						message: '请选择尺码大小',
+					});
+				} else {
+					let size;
+					if (this.list.shoeSize.length > 0) {
+						size = this.size;
+					} else {
+						size = '';
+					}
+					let num = Number(document.getElementsByClassName("buyNum")[0].getElementsByTagName("input")[0].ariaValueNow);
+					obj = {
+						img: this.Img,
+						txt: this.list.txt,
+						price: this.list.price,
+						color: this.col,
+						size,
+						num,
+						id: this.list.id
+					}
+				}
+				return obj;
 			},
 			colorChoose(i) { //选择商品颜色时的颜色更改
 				if (this.col == this.list.colors[i].color) {
@@ -232,58 +251,26 @@
 				}
 			},
 			intoCar() { //添加到购物车操作
-				let obj = {};
-				if (this.col == "颜色") {
-					Dialog.alert({
-						message: '请选择颜色分类',
-					});
-				} else if (this.list.shoeSize.length && this.size == "尺码") {
-					Dialog.alert({
-						message: '请选择尺码大小',
-					});
-				} else {
-					let size;
-					if (this.list.shoeSize.length > 0) {
-						size = this.size;
-					} else {
-						size = '';
-					}
-					let num = document.getElementsByClassName("buyNum")[0].getElementsByTagName("input")[0].ariaValueNow;
-					obj = {
-						img: this.Img,
-						txt: this.list.txt,
-						price: this.list.price,
-						color: this.col,
-						size,
-						num,
-						id: this.list.id
-					}
-					if (localStorage.length > 0) {
-						this.$store.state.shoppingcart = JSON.parse(localStorage.getItem("info"));
-					}
-					let Index = this.$store.state.shoppingcart.findIndex((v) => {
-						return v.id == obj.id && v.color == obj.color && v.size == obj.size
-					})
-					if (Index != -1) {
-						this.$store.state.shoppingcart[Index].num = Number(this.$store.state.shoppingcart[Index].num) +
-							Number(num);
-					} else {
-						this.$store.state.shoppingcart.push(obj);
-					}
-					localStorage.setItem("info", JSON.stringify(this.$store.state.shoppingcart))
-					Toast('已加入购物车');
-					console.log(this.$store.state.shoppingcart)
+				let obj = this.beforeCar()
+				let num = document.getElementsByClassName("buyNum")[0].getElementsByTagName("input")[0].ariaValueNow;
+				if (localStorage.length > 0) {
+					this.$store.state.shoppingcart = JSON.parse(localStorage.getItem("info"));
 				}
-			},
-			Toshoppingcart() {
-				this.$router.push({
-					path: "/shoppingcart",
-					query: {
-						tit: "购物车"
-					}
+				let Index = this.$store.state.shoppingcart.findIndex((v) => {
+					return v.id == obj.id && v.color == obj.color && v.size == obj.size
 				})
+				if (Index != -1) {
+					this.$store.state.shoppingcart[Index].num = Number(this.$store.state.shoppingcart[Index].num) +
+						Number(num);
+				} else {
+					this.$store.state.shoppingcart.push(obj);
+				}
+				localStorage.setItem("info", JSON.stringify(this.$store.state.shoppingcart))
+				Toast('已加入购物车');
+				console.log(this.$store.state.shoppingcart)
 			},
-			Tocollect() {  //点击收藏和取消收藏
+
+			Tocollect() { //点击收藏和取消收藏
 				this.collect = !this.collect;
 				if (this.collect) {
 					if (localStorage.getItem("collect")) {
@@ -311,6 +298,17 @@
 					}
 
 				}
+			},
+			buyItem() { //立即购买
+				let obj=[];
+				obj.push(this.beforeCar());
+				this.$router.replace({
+					name: "settlement",
+					params: {
+						title: "确认订单",
+						obj,
+					}
+				})
 			}
 		},
 	}

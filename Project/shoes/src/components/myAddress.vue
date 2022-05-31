@@ -1,7 +1,7 @@
 <template>
 	<div class="address-box">
 		<div class="address" v-for="v,i in local" :key="i">
-			<div class="mid-content1">
+			<div class="mid-content1" @click="Tobuy(i)">
 				<div class="up">
 					<p>{{v.name}}</p>
 					<p>{{v.tel}}</p>
@@ -16,8 +16,8 @@
 						<van-radio :name="i" checked-color="#ff5e46" icon-size="24px" ref="check">默认地址</van-radio>
 					</van-radio-group>
 					<div class="content-right">
-						<div @click="edit(i)"><span class="iconfont icon-bianji" ></span>编辑</div>
-						<div  @click="del(i)"><span class="iconfont icon-shanchu"></span>删除</div>
+						<div @click="edit(i)"><span class="iconfont icon-bianji"></span>编辑</div>
+						<div @click="del(i)"><span class="iconfont icon-shanchu"></span>删除</div>
 					</div>
 				</div>
 			</div>
@@ -49,16 +49,19 @@
 			this.local = [];
 			if (localStorage.getItem("address")) {
 				this.local = (JSON.parse(localStorage.getItem("address")))
-				
+
 			}
-			this.$nextTick(()=>{
-				let index=this.local.findIndex(v=>{
-					return v.isDefault==true;
+			this.$nextTick(() => {
+				let index = this.local.findIndex(v => {
+					return v.isDefault == true;
 				})
-				if(index>=0){  //设置默认地址
-					this.radio=this.$refs.check[index].name
+				if (index >= 0) { //设置默认地址
+					this.radio = this.$refs.check[index].name
 				}
 			})
+			if(this.$route.params.obj){
+				this.$store.state.data=this.$route.params.obj;
+			}
 		},
 		methods: {
 			newaddress() {
@@ -69,22 +72,35 @@
 					}
 				})
 			},
-			edit(i){
+			edit(i) {
 				this.$router.push({
 					name: 'newads',
 					params: {
 						title: '我的收货地址',
-						content:this.local[i],
-						id:i
+						content: this.local[i],
+						id: i
 					}
 				})
 			},
-			del(i){
-				this.local.splice(i,1);
-				localStorage.setItem("address",JSON.stringify(this.local))
+			del(i) {
+				this.local.splice(i, 1);
+				localStorage.setItem("address", JSON.stringify(this.local))
+			},
+			Tobuy(i) {
+				if (this.$store.state.data) {
+					this.$router.replace({
+						name: "settlement",
+						params: {
+							title: "确认订单",
+							num: i,
+							obj: this.$store.state.data
+						}
+					})
+				}
+
 			},
 		},
-		
+
 	}
 </script>
 
@@ -152,11 +168,13 @@
 		display: flex;
 		justify-content: space-between;
 	}
-	.content-box .van-radio-group{
+
+	.content-box .van-radio-group {
 		display: flex;
 		align-items: center;
 	}
-	.content-box .van-radio__icon{
+
+	.content-box .van-radio__icon {
 		height: 25px;
 	}
 

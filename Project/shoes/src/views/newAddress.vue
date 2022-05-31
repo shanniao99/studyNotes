@@ -156,6 +156,7 @@
 		background-color: #ff5e46;
 		border: none;
 		font-size: 32px;
+		color: white;
 
 	}
 </style>

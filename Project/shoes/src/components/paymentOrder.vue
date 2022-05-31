@@ -2,7 +2,7 @@
 	<div class="box">
 		<div class="listOrders">
 			<ul>
-				<li v-for="v,i in $store.state.payOrder" :key="i">
+				<li v-for="v,i in arr" :key="i">
 					<div class="order-num">
 						<p>订单编号：<span>{{v.orderNnum}}</span></p>
 						<span style="color: #ff5e46;">{{v.state}}</span>
@@ -29,6 +29,23 @@
 </template>
 
 <script>
+	export default{
+		data(){
+			return{
+				arr:[],
+			}
+		},
+		created() {
+			this.$nextTick(()=>{
+				this.arr=[];
+				this.$store.state.allorder.forEach(v=>{
+					if(v.state=="待支付"){
+						this.arr.push(v);
+					}
+				})
+			})
+		}
+	}
 </script>
 
 <style scoped>

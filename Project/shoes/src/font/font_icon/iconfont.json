@@ -125,6 +125,13 @@
       "unicode_decimal": 58942
     },
     {
+      "icon_id": "12781364",
+      "name": "成功",
+      "font_class": "chenggong",
+      "unicode": "e66f",
+      "unicode_decimal": 58991
+    },
+    {
       "icon_id": "15726773",
       "name": "点赞爱心",
       "font_class": "dianzanaixin",

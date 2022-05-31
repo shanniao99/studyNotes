@@ -2,7 +2,7 @@
 	<div class="inte-box">
 		<div class="points">
 			<span>当前积分</span>
-			<h2 ref="points">1123</h2>
+			<h2 ref="points">{{$store.state.points}}</h2>
 		</div>
 		<div class="coupon">
 			<ul>
@@ -43,14 +43,14 @@
 		},
 		created() {
 			this.$nextTick(() => {
-				this.points = this.$refs.points.innerText
+				this.points = this.$store.state.points;
 			})
 		},
 		methods: {
 			onchange(i) {
 				if(this.points>=this.$store.state.integral[i].require){
-					this.$refs.points.innerText=this.points-this.$store.state.integral[i].require;
-					this.points = this.$refs.points.innerText
+					this.$store.state.points=this.points-this.$store.state.integral[i].require;
+					this.points = this.$store.state.points;
 					Toast('兑换成功，还剩'+this.points+"积分");
 				}
 			},

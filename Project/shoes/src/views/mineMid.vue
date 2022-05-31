@@ -11,7 +11,7 @@
 								<div class="grade">lv2</div>
 							</div>
 							<div class="jifen">
-								<span>积分：</span><span>1123</span>
+								<span>积分：</span><span>{{$store.state.points}}</span>
 							</div>
 						</div>
 					</div>
