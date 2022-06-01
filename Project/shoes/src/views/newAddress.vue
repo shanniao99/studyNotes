@@ -33,19 +33,9 @@
 			if (localStorage.getItem("address")) {
 				this.addres = (JSON.parse(localStorage.getItem("address")))
 			}
-			console.log(this.$route.params.id)
 			if (this.$route.params.id != undefined) {
 				this.$nextTick(() => {
-					this.$refs.ads.addressInfo.addressDetail = this.$route.params.content.addressDetail
-					this.$refs.ads.addressInfo.areaCode = this.$route.params.content.areaCode
-					this.$refs.ads.addressInfo.city = this.$route.params.content.city
-					this.$refs.ads.addressInfo.country = this.$route.params.content.country
-					this.$refs.ads.addressInfo.county = this.$route.params.content.county
-					this.$refs.ads.addressInfo.isDefault = this.$route.params.content.isDefault
-					this.$refs.ads.addressInfo.name = this.$route.params.content.name
-					this.$refs.ads.addressInfo.postalCode = this.$route.params.content.postalCode
-					this.$refs.ads.addressInfo.province = this.$route.params.content.province
-					this.$refs.ads.addressInfo.tel = this.$route.params.content.tel
+					this.$refs.ads.data=this.$route.params.content
 				})
 			}
 
