@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>promise封装Ajax请求</title>
+	</head>
+	<body>
+		<script>
+			const Pro=new Promise((resolve,reject)=>{
+				const xhr=new XMLHttpRequest();
+				xhr.open("GET","http://poetry.apiopen.top/sentences");
+				xhr.send();
+				xhr.onreadystatechange=function(){
+					if(xhr.readyState===4){
+						if(xhr.status>=200&&xhr.status<300){
+							resolve(xhr.response);
+						}else{
+							reject(xhr.status);
+						}
+					}
+				}
+			})
+			Pro.then((value)=>{
+				console.log("成功",value)
+			},(reason)=>{
+				console.log("失败",reason)
+			})
+		</script>
+		<!-- <script>
+		    //  接口地址：http://poetry.apiopen.top/sentences （随机获取一句诗词）
+		
+		    // 新建一个Promise对象
+		    const Pro = new Promise((resolve, reject) => {
+		        // 1.创建对象
+		        const xhr = new XMLHttpRequest();
+		
+		        // 2.初始化,设置请求方式和接口地址
+		        xhr.open("GET", "http://poetry.apiopen.top/sentences");
+		
+		        // 3.发送请求
+		        xhr.send();
+		
+		        // 4.绑定事件，处理响应结果
+		        xhr.onreadystatechange = function () {
+		            // 判断
+		            if (xhr.readyState === 4) {
+		                // 判断响应状态码 200~299
+		                if (xhr.status >= 200 && xhr.status < 300) {
+		                    // 获取成功
+		                    resolve(xhr.response);
+		                    // console.log(xhr.response);
+		                } else {
+		                    // 获取失败
+		                    reject(xhr.status);
+		                    // console.log(xhr.status);
+		                }
+		            }
+		        }
+		    });
+		
+		    // 处理状态
+		    Pro.then((value) => {
+		        console.log("成功：", value);
+		    }, (reason) => {
+		        console.log("失败：", reason);
+		    })
+		</script> -->
+	</body>
+</html>
