@@ -5,7 +5,7 @@ import mn from './mine.js'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-	state:{
+	state:{ //存放数据
 		login:true,
 		navlist:[
 			{tit:"首页"},
@@ -21,7 +21,7 @@ export default new Vuex.Store({
 			{tit:"5555",time:"04-08",id:1005,classify:"推荐"}
 		]
 	},
-	getters:{
+	getters:{  //对state中的数据进行处理再返回 
 		hot:function(state){
 			console.log(1,state)			
 			return state.news.filter(v=>v.classify=="热门")
@@ -33,13 +33,13 @@ export default new Vuex.Store({
 			}
 		}
 	},
-	mutations:{
+	mutations:{  //存放处理数据的各种方法
 		change:function(state,val){
 			console.log(state,val)
 			state.login=val //修改state中的login值
 		} 
 	},
-	actions:{
+	actions:{ //提交mutation中的方法
 		abc:function(store,val){
 			setTimeout(()=>{
 				console.log(store,val)

@@ -1,8 +1,13 @@
 <template>
-	<div>搜索</div>
+	<div>
+		<typeNav></typeNav>
+	</div>
 </template>
 
 <script>
+	export default{
+		name:'Search'
+	}
 </script>
 
 <style>

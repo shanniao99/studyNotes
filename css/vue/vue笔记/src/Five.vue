@@ -39,7 +39,7 @@
 			that=this
 			this.fn() //调用混入的方法
 		},
-		directives:{
+		directives:{  //自定义指令
 			res1:function(el){
 				el.innerText=el.innerText.split("").reverse().join("")
 			},

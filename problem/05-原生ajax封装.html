@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var Ajax = {
+      get: function (url, fun) {
+        // XMLHttpRequest 对象用于在后台与服务器交换数据
+        var xhr = new XMLHttpRequest()
+        // true代表异步，false代表同步执行，即send()方法的异步或同步
+        xhr.open('GET', url, true)
+        // 设置监听函数
+        xhr.onreadystatechange = function () {
+          // readyState == 4 说明请求已完成
+          if (xhr.readyState == 4 && xhr.status == 200 || xhr.status == 304) {
+            // 从服务器获得数据
+            fun.call(this, xhr.responseText)
+          }
+        }
+        // 如果需要传参，可以在send里面，但是get方法send里面不带参数
+        // 因为会在open中拼接好参数
+        xhr.send()
+      },
+
+      // data 应为 'a=a1&b=b1' 这种字符串格式，在jq中，如果 data 为对象会自动转换
+      post: function (url, data, fun) {
+        var xhr = new XMLHttpRequest()
+        xhr.open('POST', url, true)
+        // 添加 http 请求头，发送信息至服务器时内容编码类型
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+        // 设置监听事件
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4 && xhr.status == 200 || xhr.status == 304) {
+            // 从服务器获得数据
+            fun.call(this, xhr.responseText)
+          }
+        }
+        xhr.send(data)
+      }
+    }
+  </script>
+</body>
+
+</html>

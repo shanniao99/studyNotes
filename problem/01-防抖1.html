@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+</style>
+
+<body>
+  <input type="text">
+  <button id="mngb">提交</button>
+
+  <script>
+    // 防抖：通过 setTimeout 实现在一定时间间隔内，将多次触发改为一次触发
+    const button = document.getElementById('mngb');
+    // button.addEventListener('click', submit, false)
+    button.addEventListener('click', fangdou(submit), false)
+
+    function submit () {
+      console.log(1)
+    }
+
+    function fangdou (fun) {
+      var timer = null
+      return function () {
+        if (timer) {
+          // 如果有定时器则进行清除
+          clearTimeout(timer)
+        }
+        timer = setTimeout(() => {
+          fun()
+        }, 1000);
+      }
+    }
+
+
+    // 此时在第一次发起请求的时候，也会有延时
+  </script>
+</body>
+
+</html>

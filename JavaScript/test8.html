@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数组去重</title>
+	</head>
+	<body>
+		<script>
+			var arr1 = [];
+			var arr2 = [];
+			var bool = true;
+			for (let i = 0; i < 10; i++) {
+				arr1[i] = prompt("请输入需要去重的数据：")
+			}
+			for(let i=0;i<arr1.length;i++){
+				bool=true;
+				for(let j=0;j<arr2.length;j++){
+					if(arr1[i]==arr2[j]){
+						bool=false;
+					}
+				}
+				if(bool){
+					arr2.push(arr1[i]);
+				}
+			}
+			console.log("原数组：", arr1)
+			console.log("去重后：", arr2);
+		</script>
+	</body>
+</html>

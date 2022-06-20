@@ -47,23 +47,23 @@ rem单位是怎么换算的？
 
 弹性布局有哪些属性
 1. flex-direction:项目的排列方向（主轴的方向）
-	        row：主轴为左端水平方向
-           row-reverse：主轴为右端水平方向
-                       column：主轴为上沿垂直方向
+    row：主轴为左端水平方向
+    row-reverse：主轴为右端水平方向
+    column：主轴为上沿垂直方向
     column-reverse：主轴为下沿垂直方向
 
 2.flex-wrap：轴线上的换行方式
-                      nowrap：（默认）不换行
-                           wrap：换行，第一行在上方
+        nowrap：（默认）不换行
+        wrap：换行，第一行在上方
         wrap-reverse：换行，第一行在下方
 
 3.flex-flow：flex-direction属性和flex-wrap属性的简写，默认：row nowrap
 
 4.justify-content：项目在主轴上的对齐方式
-                  flex-start：（默认）左对齐
-                    flex-end：右对齐
-                         center：居中对齐
-     space-between：两端对齐，项目之间间隔相等
+        flex-start：（默认）左对齐
+        flex-end：右对齐
+        center：居中对齐
+        space-between：两端对齐，项目之间间隔相等
         space-around：四周型对齐方式  项目两侧的间隔相等
 
 5.align-item：项目在交叉轴上的对齐方式
@@ -141,6 +141,10 @@ css的选择器种类和优先级判定
 flex 布局 12个属性
 
 css 的适配方案
+定位
+translate
+
+ js动态获取视图宽高
 
 
 
@@ -202,7 +206,12 @@ get和post请求的区别
 工厂模式，构造函数，原型函数...
 
   工厂模式：在函数内创建一个对象，给对象赋予属性及方法再将对象返回
-  构造函数：
+
+  构造函数：函数名与类名相同。无返回值。编译器自动调用对应的构造函数。构造函数可以重载。
+  
+  原形函数：解决数据共享，节省内存空间，实现继承。实例对象原型：__proto__:浏览器使用；构造函数原型：prototype：程序员使用。
+
+
 
 call和apply的区别
    
@@ -210,9 +219,11 @@ call和apply的区别
   call传递的参数用逗号隔开，apply方法执行传递数组
 
 js方法的继承
-  1.构造函数方法继承（用call()方法）将父构造函数的this指向子构造函数的实例，从而实现继承
-  2.原型链继承：
-  3.组合继承等
+  1.构造函数方法继承（用call()，apply()方法）将父构造函数的this指向子构造函数的实例，从而实现继承
+  
+  2.原型链继承：prototype
+
+  3.组合继承:将原型链和构造函数方法结合起来用
 
 ==和===的区别
 ==：等值   ===：等值及等址
@@ -226,6 +237,12 @@ node：
    art-template：模板渲染数据
    multer：文件上传
    jsonwebtoken：token令牌
+
+   1.http:处理网络客户端的请求；
+   2.URL:处理客户端请求过来的url；
+   3.querystrings:处理客户端通过get/post请求传递过来的参数；
+   4.filesystem（fs）:在客户端操作文件
+   5.path：操作文件的路径，为文件操作服务
 
 
 本地安装和全局安装的区别
@@ -241,6 +258,8 @@ node：
 
 express的功能
   是一个保持最小规模的灵活的 Node.js Web 应用程序开发框架，为 Web 和移动应用程序提供一组强大的功能。
+
+  
 
 
 
@@ -274,7 +293,7 @@ js的几种作用域
   this指向不同，箭头函数中没有this；箭头函数不能作为构造函数，不能使用new关键字；不绑定arguments，如果存在多余参数，可以使用rest解决；箭头函数会捕获上下文的this作为自己的this；箭头函数没有原型对象，不能在原型对象上添加方法，不能作为生成器函数。
 
 
-结构赋值
+解构赋值
 
 
 Symbol的作用
@@ -286,40 +305,102 @@ promise 封装ajax
 异步 (async await promise)
 
 es类的继承
+  属性继承
+
+
 
 set和map区别
+ 
+  都支持快速查找和删除，都是关联式容器，一般使用rb树来实现，不存在内存移动也就不容易出现迭代器失效的问题，所有元素都会被自动排序
+   
+  set:对象形式的数组。不能通过迭代器修改set的值，不允许出现键值重复
+
+  map:数组形式的对象。所有元素都是键值存在，不允许出现键重复，键不能修改，其值可以修改
+
 
 
 
 vue：
+
 data为什么是函数
-        vue中组件是用来复用的，为了防止data复用，将其定义为函数
+   vue中组件是用来复用的，为了防止data复用，将其定义为函数
+   防止组件之间的数据产生污染，如果data是对象的话，各组件的data会合并，指向同一个地址，如果是函数，合并的时候调用会产生不同的空间。
+
+
 
 常用v指令
+
        v-bind、v-on、v-if、v-for、v-show、v-model、v-html、v-once
 
 
+
+
 写过哪些常用自定义指令
+
        v-big：字母小写转大写
        v-sum：计算两数之和
+
+
+
+vue中key的作用和原理
+
+    vue在patch过程中，通过key可以判断出两个虚拟节点是否是相同节点，没有key会导致更新的时候出问题。
+
+
+
 
 vue双向数据绑定原理
        页面上控件输入的值同步更新到相关绑定的data属性，在更新data绑定属性时同步更新页面上输入控件的值
 
+       采用“数据劫持”结合“发布者-订阅者”模式的方式，通过“Object.defineProperty()”方法来劫持各个属性的setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。
+
+
+vue常用修饰符
+
+ 按键修饰符：.up、.down、.ctrl、.enter、.space
+ 事件修饰符：.prevent:阻止事件默认行为；.stop:阻止事件冒泡；.self:只触发自己范围内的事件(不包括子元素)；.capture:事件捕获；.once:只触发一次
+
+  修饰符可以串联使用
+
+
+
+vue中如何检测数组的变化
+
+   利用数组的方法来实现：push(尾部添加)、pop(尾部删除)、unshift(头部添加)、shift(头部删除)、splice(截取数组片段)、sort(正序)、reverse(反序)
+
+
 
 vue 生命周期(哪一步能做什么)
-        beforeCreate： vue实例初始化之前调用；
-        created：              vue实例初始化之后调用；
-        beforeMount：    挂载到dom树之前调用
-        mounted：            挂载到dom树之后调用
-        beforeUpdate： 数据更新前调用
-        updated：             数据更新之后调用 
-        beforeDestroy：vue实例销毁之前调用
-        destroyed：         vue实例销毁之后调用
+
+   vue生命周期：vue生命周期是指vue实例从创建到销毁的过程。生命周期的不同阶段用对应的钩子函数来实现组件数据管理和dom渲染
+
+    beforeCreate：vue实例初始化之前调用；数据和事件还没初始化(没有data，el),不能获取dom节点
+
+    created：vue实例初始化之后调用；实例已创建，数据观测，属性和方法的运算，watch/event事件回调等配置都已经完成，不能获取dom节点（$el还没生成）
+
+    beforeMount：挂载到dom树之前调用，vue挂载的根节点已经创建(data,el)，不能获取dom节点
+
+    mounted：挂载到dom树之后调用 ，数据和dom都被渲染出来
+
+    
+    keep-alive:组件保持活性  （activated组件激活时调用/deactivated组件停用时调用）
+
+
+    beforeUpdate：数据更新前调用，检测到数据更新时，dom更新前调用
+
+    updated：数据更新之后调用 
+
+    beforeDestroy：vue实例销毁之前调用 
+
+    destroyed：vue实例销毁时调用，vue实例的所有东西都被解绑，所有事件监听会被溢出，子实例被销毁
+
 
 
 vue 父子组件的生命周期执行顺序
     父 beforeCreate-->父 created-->父 beforeMount-->子beforeCreate-->子created-->子 beforeMount-->子 mounted-->父mounted-->父beforeUpdate-->子 beforeUpdate-->父updated-->子 updated-->父beforeDestroy-->子 beforeDestroy-->子 destroyed-->父destroyed
+
+
+
 
 vue 父子传值
 
@@ -333,7 +414,10 @@ vue 父子传值
            通过事件总线的方式传值（需要修改main.js）
 
 
+
+
 vue路由跳转
+
 
        path跳转页面
        name跳转页面  
@@ -344,19 +428,45 @@ vue路由跳转接收参数
     函数模式：path传参，创建一个返回props的函数，path属性配合query传值
     对象模式：当props是一个对象时，将原样设置为组件props
 
+     params，query
+
 
 vue路由导航钩子函数
-       全局钩子：beforeEach、afterEach、beforeResolve
-       局部钩子：beforeEnter
-       组件路由：beforeRouteEnter、 beforeRouteUpdate、 beforeRouteLeave
+       全局钩子：beforeEach、afterEach、beforeResolve  :无论访问哪一个路径，都会触发全局的钩子函数
+
+       局部路由钩子：beforeEnter  :写在路由配置中，只有访问到这个路径，才能触发钩子函数
+
+       组件路由：beforeRouteEnter、 beforeRouteUpdate、 beforeRouteLeave  :写在组件中,访问路径，即将渲染组件的时候触发的
+
+
 
 
 vue-router 实现原理
       原理：vue-router是前端路由，当路径切换的时候在浏览器端判断当前路径，并加载当前路径对应的组件，有两种模式：
        hash模式：以url中#后面的内容作为路由地址，可以直接通过location.url来切换浏览器的地址，当hash改变后，要监听hash的变化，并做响应的处理，可以监听hashchange事件，当hash发生变化时，会触发hashchange事件，在此事件中记录当前路由地址，并找到当前路由对应的组件，重新渲染在浏览器中。 可通过mode:"history"的方式更改hash模式为history模式。
 
-        history模式：路径就是普通的url，通过history.pushState()方式来改变地址栏，并把当前地址记录在浏览器的访问历史中，并不会真正的跳到指定的路径，也就是说浏览器不会向服务器发送。
+     兼容性好，
 
+        history模式：路径就是普通的url，通过history.pushState()方式来改变地址栏，并把当前地址记录在浏览器的访问历史中，并不会真正的跳到指定的路径，也就是说浏览器不会向服务器发送。
+        
+
+
+
+vue-router的组件
+  
+   router-link、router-view、keep-alive
+
+
+
+vue中$nextTick的理解
+ 
+    在下次dom更新循环结束之后执行延迟回调。在修改数据后立即使用这个方法，获取更新后的dom
+    
+    当数据更新之后并没有完成视图更新时，使用Vue.nextTick()
+
+    想要在修改数据后立刻得到更新后的DOM结构，可以使用Vue.nextTick()
+  
+     vue中的数据更新是异步的，使用nextTick可以保证定义的逻辑在更新之后执行。
 
 
 
@@ -365,15 +475,54 @@ watch 与 component 的区别
     component：组件；组件可以扩展HTML元素，封装可重用的代码。
 
 
+
+watch和computed的区别及用法
+  
+   watch和computed都是vue框架中基于watcher实现的，用于数据监听
+
+   computed：计算属性，具备缓存，所依赖的属性不变  对其取值时计算属性方法不会重复执行，必须有return，computed一般用于当一个属性受多个属性影响时；eg：购物车商品结算等。computed函数不能有异步
+  
+   watch：监听一个值的变化执行对应的回调；每次监听的值发生变化时都会调用回调；watch中可以没有return；一般用于当一条数据影响多条数据的时候 eg：搜索框。watch支持异步
+
+
+
+
+对vuex的理解
+
+  专门为vue提供的全局状态管理系统，用于多个组件中的数据共享，数据缓存
+
+
+
+
 vuex 的五个属性的作用
   1.state:存放组件之间共享的数据 采用单一状态树
   2.getter:相当于vuex中的计算属性 对state里面的数据做处理再返回，默认传state：访问数据，getters：访问函数
   3.mutation：放置改变数据方法的集合，存放处理数据的各种方法，使用$store.commit来触发方法，必须是同步函数
    4.action：提交mutation中的方法，不用直接变更状态，可以包含任何异步操作，通过$store.dispatch方法触发
     5.module：模块  解决store对象臃肿的问题
-v-for 与 v-if 在同一标签中 那个先执行
 
+
+    1.state：数据贮存；2.getter：state的计算属性；3.mutation：提交更改数据的方法；更改state中状态的逻辑，同步操作；4.action：提交mutation，异步操作 ；5.module：模块化vuex
+
+
+
+v-for 与 v-if 在同一标签中 哪个先执行
+   v-for优先级比v-if高
 
 v-show 与 v-if 的区别
    v-show:改变的是元素属性display，显示为block，隐藏为none,元素还存在dom中；v-show只是简单的基础css切换，由false变true时不会触发组件的声明周期
     v-if:显示隐藏是将整个dom元素添加或删除；v-if是真正的条件渲染，在切换过程中条件块内的事件监听和子组件适当地被销毁和重建；由false变true或true变false时会触发组件的生命周期钩子函数
+
+
+
+谈谈对组件的理解
+
+  组件化开发可以大幅度提高应用开发效率、测试性、复用性。
+  常用的组件化技术：自定义属性，自定义事件，插槽
+  高内聚、低耦合、单向数据流
+
+
+keep-alive平时在哪里使用，原理是什么
+ 
+   使用keep-alive包裹动态组件时，会对组件进行缓存，避免组件重新创建
+   两个场景：动态组件，router-view

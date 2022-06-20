@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<TypeNav></TypeNav>
+		<typeNav></typeNav>
 		<ListContainer></ListContainer>
 		<Recommend></Recommend>
 		<Rank></Rank>

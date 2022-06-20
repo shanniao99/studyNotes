@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 如果是数组，直接赋值就好
+    // 如 arr2 = arr1
+
+    // 对象 使用object.assign()方法
+    var name = "zhangsan";
+    var password = "1111111";
+    var obj = {
+      name,
+      password,
+      arr: [1, 2, 3, 4],
+      sayName: function () {
+        console.log(this.name);
+      }
+    };
+    // console.log(obj);
+    var obj1 = {
+      age: 20,
+    };
+    // 合并对象
+    // var nObj = Object.assign(obj, obj1)
+    // 实现浅拷贝
+    //花括号叫目标对象，后面的obj、obj1是源对象。对象合并是指：将源对象里面的属性添加到目标对象中去，若两者的属性名有冲突，后面的将会覆盖前面的
+    var nObj = Object.assign({}, obj)
+    // console.log(nObj)
+    // 检验
+    nObj.name = "lisi"
+    nObj.sayName = function () {
+      console.log(this.name)
+    }
+    nObj.sayName() // lisi
+    obj.sayName() // zhangsan
+    nObj.arr[0] = 10
+    console.log('------------')
+    console.log(nObj.arr) // [10, 2, 3, 4]
+    console.log(obj.arr) // [10, 2, 3, 4]
+    // 修改一个都改变，说明是浅拷贝
+
+  </script>
+</body>
+
+</html>

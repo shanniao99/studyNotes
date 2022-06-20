@@ -8,7 +8,8 @@
 		<button v-on:click.stop.capture="change">点击修改</button>
 	</div>
 	<input type="text" @keydown.65="key">
-	<abc v-if="bool"></abc>
+	<abc v-if="bool">显示和隐藏</abc>
+	<button @click="bool=!bool"></button>
 	</div>
 </template>
 

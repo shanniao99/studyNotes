@@ -1,7 +1,39 @@
 <template>
 	<div class="type-nav">
 		<div class="container">
-			<h2 class="all">全部商品分类</h2>
+			<div @mouseleave="leaveIndex" @mouseenter="enterShow">
+				<h2 class="all">全部商品分类</h2>
+				<!-- 过度动画 -->
+				<transition name="sort">
+					<div class="sort" v-show="show">
+						<div class="all-sort-list2" @click="goSearch">
+							<div class="item" :class="{on:current==index}" v-for="c1,index in categoryList.slice(0,16)"
+								:key="c1.categoryId">
+								<h3 @mouseover="changeIndex(index)">
+									<a :data-categoryName="c1.categoryName"
+										:data-category1Id="c1.categoryId">{{c1.categoryName}}</a>
+								</h3>
+								<div class="item-list clearfix">
+									<div class="subitem" v-for="c2 in c1.categoryChild" :key="c2.categoryId">
+										<dl class="fore">
+											<dt>
+												<a :data-categoryName="c2.categoryName"
+													:data-category2Id="c2.categoryId">{{c2.categoryName}}</a>
+											</dt>
+											<dd>
+												<em v-for="c3 in c2.categoryChild" :key="c3.categoryId">
+													<a :data-categoryName="c3.categoryName"
+														:data-category3Id="c3.categoryId">{{c3.categoryName}}</a>
+												</em>
+											</dd>
+										</dl>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</transition>
+			</div>
 			<nav class="nav">
 				<a href="###">服装城</a>
 				<a href="###">美妆馆</a>
@@ -12,43 +44,32 @@
 				<a href="###">有趣</a>
 				<a href="###">秒杀</a>
 			</nav>
-			<div class="sort">
-				<div class="all-sort-list2">
-					<div class="item" v-for="c1 in categoryList" :key="c1.categoryId">
-						<h3>
-							<a href="">{{c1.categoryName}}</a>
-						</h3>
-						<div class="item-list clearfix">
-							<div class="subitem" v-for="c2 in c1.categoryChild" :key="c2.categoryId">
-								<dl class="fore">
-									<dt>
-										<a href="">{{c2.categoryName}}</a>
-									</dt>
-									<dd>
-										<em v-for="c3 in c2.categoryChild" :key="c3.categoryId">
-											<a href="">{{c3.categoryName}}</a>
-										</em>
-									</dd>
-								</dl>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+
 		</div>
 	</div>
 </template>
 
 <script>
+	import throttle from "lodash/throttle";
 	import {
 		mapState
 	} from "vuex"
 	export default {
-		name: 'TypeNav',
+		name: 'typeNav',
+		data() {
+			return {
+				current: -1,
+				show: true,
+			}
+		},
 		//组件挂载完毕，向服务器发送请求
 		mounted() {
 			//通知vuex发请求，获取数据，存储于仓库中
 			this.$store.dispatch('categoryList')
+			//组件挂载完毕后，让show变为false(在搜索页面)
+			if (this.$route.path != '/home') {
+				this.show = false;
+			}
 		},
 		computed: {
 			...mapState({
@@ -57,6 +78,47 @@
 				}
 			})
 		},
+		methods: {
+			//鼠标悬停改变样式
+			changeIndex: throttle(function(index) {
+				this.current = index;
+			}, 50),
+			leaveIndex() { //鼠标离开还原样式
+				this.current = -1;
+				if (this.$route.path != '/home') {
+					this.show = false;
+				}
+			},
+			//搜索页面鼠标进入效果
+			enterShow() {
+				this.show = true;
+			},
+			goSearch(e) {
+				let {
+					categoryname,
+					category1id,
+					category2id,
+					category3id
+				} = e.target.dataset;
+				let query = {
+					categoryName: categoryname
+				};
+				let location = {
+					path: "/search"
+				}
+				if (categoryname) {
+					if (category1id) {
+						query.category1Id = category1id
+					} else if (category2id) {
+						query.category2Id = category2id
+					} else {
+						query.category3Id = category3id
+					}
+				}
+				location.query = query;
+				this.$router.push(location)
+			}
+		}
 	}
 </script>
 
@@ -177,10 +239,20 @@
 							}
 						}
 					}
-					.item:hover{
-						background-color:skyblue;
+
+					.on {
+						background-color: skyblue;
 					}
 				}
+			}
+			.sort-enter{  //过渡动画开始
+				height: 0px;
+			}
+			.sort-enter-to{
+				height: 461px;
+			}
+			.sort-enter-active{
+				transition: all .5s linear;
 			}
 		}
 	}

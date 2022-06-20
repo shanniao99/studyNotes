@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+</style>
+
+<body>
+  <input type="text">
+  <button id="mngb">提交</button>
+
+  <script>
+    var btn = document.querySelector('#mngb')
+    // btn.addEventListener('click', debounce(submit))
+    btn.addEventListener('click', throttle(submit))
+    function submit () {
+      console.log(arguments)
+      console.log('提交')
+    }
+
+    // 防抖
+    function debounce (fun, time = 1000) {
+      let timeout = null
+      return function () {
+        const context = this
+        if (timeout) {
+          // 如果有定时器，则清除
+          clearTimeout(timeout)
+        }
+        timeout = setTimeout(function () {
+          // 使用apply方法，当需要参数的时候可以进行传参，同时避免如果使用箭头函数的时候指向发生偏差
+          fun.apply(context)
+        }, time)
+
+      }
+    }
+
+    // 节流
+    function throttle (fun, time = 1000) {
+      let timer = null
+      return function () {
+        const context = this
+        const arg = arguments
+        if (!timer) {
+          timer = setInterval(() => {
+            timer = null
+            fun.apply(context, arg)
+          }, time)
+        }
+      }
+    }
+
+  </script>
+</body>
+
+</html>

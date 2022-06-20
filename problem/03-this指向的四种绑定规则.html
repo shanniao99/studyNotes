@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // this绑定有几种规则，然后手写一下他们的例子
+    //  - 默认绑定 隐式绑定 显示绑定 new绑定
+    // 1、默认绑定 当独立函数调用的时候，没有绑定到某一个对象身上
+    function foo () {
+      // console.log(this)
+    }
+    foo()
+
+    var obj = {
+      name: '111',
+      foo: function () {
+        // console.log(this)
+      }
+    }
+    var bar = obj.foo
+    bar()
+
+    // 2、隐式绑定 谁调用指向谁
+    var obj1 = {
+      name: 'obj1',
+      foo: function () {
+        // console.log(this)
+      }
+    }
+    obj1.foo()
+
+    var obj2 = {
+      name: 'obj2',
+      foo: obj1.foo
+    }
+    obj2.foo()
+
+    // 闭包函数在非严格模式下this指向window
+    // var obj3 = {
+    //   test: function () {
+    //     console.log("测试！！");
+    //     console.log(this);//打印this
+    //     function fun () {
+    //       console.log(this);//打印this
+    //       console.log(this === window);//比较this和window的关系
+    //     }
+    //     return fun;//返回一个函数
+    //   }
+    // }
+    // obj3.test()();//等同于fun();所以是独立调用
+
+    // 3、显示绑定 通过call apply bind 强制绑定this指向对象
+    function fun () {
+      console.log(this)
+    }
+    var obj4 = {
+      name: 'obj4',
+      fun: fun
+    }
+    // obj4.fun()
+    var test = obj4.fun
+    // test() // 此时指向window，可以强制指定回obj4
+    test.call(obj4)
+    console.log('---------');
+    test.apply(obj4)
+    console.log('---------');
+    test.bind(obj4)()
+
+    // new绑定 当使用new来使用一个函数的时候，函数就会变成构造函数，产生一个实例对象，返回的 this指向实例对象
+    function Fun () {
+      this.name = '1'
+      // console.log(this)
+      return this
+    }
+
+    var arr = new Fun()
+    console.log(arr)
+
+
+  </script>
+</body>
+
+</html>
